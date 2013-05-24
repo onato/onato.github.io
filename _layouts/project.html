@@ -1,0 +1,28 @@
+{% include header.html %}
+{% assign post = page %}
+
+<div class="slideshow">
+  <div class="flexslider">
+    <ul class="slides">
+    {% for slide in post.slides %}
+      {% include slide.html %}
+    {% endfor %}
+    </ul>
+  </div>  
+</div>
+</div>
+<div class="main clearfix">
+  <div id="content" class="clearfix full project" style="background-color:#FFFFFF;">
+    <div class="inside clearfix" style="padding-top:50px;">
+      <h2>{{ post.title }}</h2>
+      {{ content }}
+      {% if post.video.vimeoID %}
+        <div class="videoContainer">
+          <iframe src="http://player.vimeo.com/video/{{ post.video.vimeoID }}?title=0&amp;byline=0&amp;portrait=0&amp;color=FF6600" width="{{ post.video.width }}" height="{{ post.video.height }}" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div><!-- end main -->
+
+{% include footer.html %}

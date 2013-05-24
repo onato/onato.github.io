@@ -1,0 +1,27 @@
+{% include header.html %}
+  
+  <div class="slideshow">
+    <div class="flexslider">
+      <ul class="slides">
+      {% for slide in site.categories.slides %}
+        {% include slide.html %}
+      {% endfor %}
+      </ul>
+    </div>  
+  </div>
+</div>{% comment %} end header {% endcomment %}
+
+
+
+<div id="homeMessage" class="clearfix">
+  <p>CHECK OUT MY LATEST WORK </p>
+</div>
+<div class="main clearfix">
+  <div id="content" class="clearfix full">
+    {% for post in site.categories.projects %}
+      {% include project.html %}
+    {% endfor %}
+  </div>
+</div>
+
+{% include footer.html %}

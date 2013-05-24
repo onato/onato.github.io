@@ -1,0 +1,14 @@
+<li id="slide{{ forloop.index }}">
+  <p><img class="aligncenter size-full" alt="{{ slide.title }}" src="{{ slide.image }}" width="1300" height="590" /></p>
+  {% if slide.content %}
+  <div class="details {{ page.overlay-position }}">
+    <div class="box">
+      <div class="inside">
+        <div class="text">
+          {{ slide.content }}
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+</li>

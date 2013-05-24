@@ -1,0 +1,66 @@
+.flexslider {
+	z-index: 1;
+}
+
+#mainNav {
+	z-index: 50;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif !important;
+}
+
+.button,
+.button,
+.button,
+#searchsubmit  {
+	font-family: Arial, Helvetica, sans-serif !important;	
+}
+
+.home .slideshow .details p {
+	color: #fff;	
+}
+
+.project h2 {
+	color: #000 !important;	
+}
+
+.project h2 a{
+	color: #000 !important;
+}
+
+.project h2 a:hover{
+	color: #000 !important;
+}
+
+.project.darkBkg h2 {
+	color: #fff !important;	
+}
+
+.project.darkBkg h2 a{
+	color: #fff !important;
+}
+
+.project.darkBkg h2 a:hover{
+	color: #fff !important;
+}
+
+.project .description p {	
+	color: #000 !important;		
+}
+
+.project.darkBkg .description p {	
+	color: #fff !important;	
+}
+
+.project .topLine {
+	height: 1px;
+	border-top: 1px solid #000;
+}
+
+.project.darkBkg .topLine {	
+	border-top: 1px solid #fff;
+}
+
+.videoContainer { margin-bottom: 30px !important; padding-top: 1px; margin-top: 40px !important; }
+

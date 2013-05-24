@@ -1,0 +1,22 @@
+---
+---
+{% include css/flexslider.css %}
+{% include css/style.css %}
+{% include css/syntax.css %}
+#logo {
+  float:inherit;
+  width:200px;
+  clear: both;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.flex-control-nav{
+  position:inherit !important;
+  right:inherit !important;
+  clear: both;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

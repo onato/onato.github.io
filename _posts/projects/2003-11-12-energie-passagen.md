@@ -1,7 +1,7 @@
 ---
 layout: project
 title:  Energie Passagen
-video: {youtubeID: VCnVmCMJPbU, width: 1000, height: 750}
+video: {vimeoID: 66926487, width: 1000, height: 750}
 categories: projects
 backgroundImage: "subtle_dots.png"
 overlay-position: left
@@ -31,5 +31,5 @@ slides:
 ---
 Energie Passagen was an installation in front of the Literaturhaus München. It reflected the energy of the city by projecting the most relevant words from RSS feeds of the newspaper. Visitors were able to explore the information river through a voice recognition system. By selecting words of interest people could rebuild their own version of current events. 
 
-**Technical Details**<br/>
+###Technical Details
 Programming Language: C++/OpenGL, Java, Flash, MaxMSP

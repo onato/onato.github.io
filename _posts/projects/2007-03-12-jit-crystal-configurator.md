@@ -1,7 +1,7 @@
 ---
 layout: project
 title:  "JIT Crystal Configurator"
-video: {vimeoID: 66920444, width: 1000, height: 563}
+video: {vimeoID: 66940396, width: 1000, height: 563}
 categories: projects
 backgroundImage: "subtle_dots.png"
 overlay-position: left
@@ -18,6 +18,6 @@ The “Just in Time” renderer is designed for configuring color without loosin
 
 Since it works using flash or HTML5 canvas it can also be used in product configurators.
 
-Technical Details
+###Technical Details
 Technology: Flash or HTML5
 

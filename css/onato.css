@@ -20,3 +20,11 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+.home .slideshow .details .text {
+  width:100%;
+  background: rgb(0, 0, 0) transparent; /* default fallback */
+  background: rgba(0, 0, 0, 0.6); /* nice browsers */
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#CC000000, endColorstr=#CC000000); /* IE 6/7 */
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#CC000000, endColorstr=#CC000000)"; /* IE8 */
+}

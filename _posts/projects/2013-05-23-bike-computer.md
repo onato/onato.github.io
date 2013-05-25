@@ -14,3 +14,6 @@ BikeComputer shows you important training data and allows you to record your tra
 * Elevation Profile 
 * Grade 
 * Distance 
+
+###Technical Details
+Technology: iOS, Objective C

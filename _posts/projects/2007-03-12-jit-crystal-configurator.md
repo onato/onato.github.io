@@ -3,14 +3,14 @@ layout: project
 title:  "JIT Crystal Configurator"
 video: {vimeoID: 66940396, width: 1000, height: 563}
 categories: projects
-backgroundImage: "subtle_dots.png"
+backgroundImage: "pixel-squares.png"
 overlay-position: left
 slides:
-  - {image: /images/projects/jit-crystal-configurator/Onato-Crystal-Configurator-Overview.jpg, title: "Onato Crystal Configurator Overview"}
-  - {image: /images/projects/jit-crystal-configurator/Onato-Crystal-Configurator-Blue.jpg, title: "Onato Crystal Configurator Blue"}
-  - {image: /images/projects/jit-crystal-configurator/Onato-Crystal-Configurator-Dark-Effect.jpg, title: "Onato Crystal Configurator Dark with Effect"}
-  - {image: /images/projects/jit-crystal-configurator/Onato-Crystal-Configurator-Opaque.jpg, title: "Onato Crystal Configurator Opaque"}
-  - {image: /images/projects/jit-crystal-configurator/Onato-Crystal-Configurator-Black-BG.jpg, title: "Onato Crystal Configurator with a Black Background"}
+  - {image: /images/projects/jit-crystal-configurator/onato-crystal-configurator-overview.jpg, title: "Onato Crystal Configurator Overview"}
+  - {image: /images/projects/jit-crystal-configurator/onato-crystal-configurator-blue.jpg, title: "Onato Crystal Configurator Blue"}
+  - {image: /images/projects/jit-crystal-configurator/onato-crystal-configurator-dark-effect.jpg, title: "Onato Crystal Configurator Dark with Effect"}
+  - {image: /images/projects/jit-crystal-configurator/onato-crystal-configurator-opaque.jpg, title: "Onato Crystal Configurator Opaque"}
+  - {image: /images/projects/jit-crystal-configurator/onato-crystal-configurator-black-bg.jpg, title: "Onato Crystal Configurator with a Black Background"}
 
 
 ---

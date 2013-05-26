@@ -6,11 +6,11 @@ backgroundImage: "subtle_dots.png"
 categories: projects
 slides:
   - {image: /images/headers/video2brain.jpg, title: "Mesh Bust All"}
-  - {image: /images/projects/video2brain/Onato-video2brain-App-Dashboard.png, title: "video2brain Dashboard"}
-  - {image: /images/projects/video2brain/Onato-video2brain-App-My-Library.png, title: "video2brain My Library"}
-  - {image: /images/projects/video2brain/Onato-video2brain-App-Video-Trainings.png, title: "video2brain Trainings"}
-  - {image: /images/projects/video2brain/Onato-video2brain-App-Training.png, title: "video2brain Training"}
-  - {image: /images/projects/video2brain/Onato-video2brain-App-Fullscreen.png, title: "video2brain Fullscreen"}
+  - {image: /images/projects/video2brain/onato-video2brain-app-dashboard.png, title: "video2brain Dashboard"}
+  - {image: /images/projects/video2brain/onato-video2brain-app-my-library.png, title: "video2brain My Library"}
+  - {image: /images/projects/video2brain/onato-video2brain-app-video-trainings.png, title: "video2brain Trainings"}
+  - {image: /images/projects/video2brain/onato-video2brain-app-training.png, title: "video2brain Training"}
+  - {image: /images/projects/video2brain/onato-video2brain-app-fullscreen.png, title: "video2brain Fullscreen"}
 ---
 The iPad App for video2brain enables customers to comfortably view courses on or offline and save there favorite courses and videos for later viewing. Course can also be viewed on an apple-tv using air-play. 
 

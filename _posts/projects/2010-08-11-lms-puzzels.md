@@ -6,11 +6,11 @@ categories: projects
 backgroundImage: "subtle_dots.png"
 overlay-position: left
 slides:
-  - {image: /images/projects/lms-puzzels/Onato-Word-Salad-Crossword.jpg, title: "Onato Word Salad and Crossword"}
-  - {image: /images/projects/lms-puzzels/Onato-Crossword-Empty.jpg, title: "Onato Crossword Empty"}
-  - {image: /images/projects/lms-puzzels/Onato-Crossword-Started.jpg, title: "Onato Crossword Started"}
-  - {image: /images/projects/lms-puzzels/Onato-Word-Salad-Empty.jpg, title: "Onato Word Salad Empty"}
-  - {image: /images/projects/lms-puzzels/Onato-Word-Salad-Started.jpg, title: "Onato Word Salad Started"}
+  - {image: /images/projects/lms-puzzels/onato-word-salad-crossword.jpg, title: "Onato Word Salad and Crossword"}
+  - {image: /images/projects/lms-puzzels/onato-crossword-empty.jpg, title: "Onato Crossword Empty"}
+  - {image: /images/projects/lms-puzzels/onato-crossword-started.jpg, title: "Onato Crossword Started"}
+  - {image: /images/projects/lms-puzzels/onato-word-salad-empty.jpg, title: "Onato Word Salad Empty"}
+  - {image: /images/projects/lms-puzzels/onato-word-salad-started.jpg, title: "Onato Word Salad Started"}
 
 ---
 These puzzles are flash apps integrated and configured through javascript. They are built to be easily integrated into learning management systems enabling e-learning publishers to quickly develop course relevant learning exercises.

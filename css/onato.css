@@ -3,6 +3,7 @@
 {% include css/flexslider.css %}
 {% include css/style.css %}
 {% include css/syntax.css %}
+
 #logo {
   float:inherit;
   width:200px;
@@ -36,6 +37,9 @@
 .details .button {
   background-color:#000000 !important;
 }
-.details h2 a {
+.details h2 a, .darkBkg a {
   color:#FFFFFF !important;
+}
+.project.darkBkg .description p { 
+  color: rgba(255,255,255, .8); 
 }

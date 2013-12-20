@@ -1,7 +1,7 @@
 ---
 layout: project
 title: "Think Small"
-video: {vimeoID: 12730982, width: 500, height: 281}
+video: {vimeoID: 12730982, width: 1000, height: 563}
 backgroundColor: "#2e2e2e"
 backgroundDark: yes
 categories: projects
@@ -14,7 +14,7 @@ slides:
 <p>We all tend to want to think big, but often the small things, iterated over and over, are the most powerful and sustainable means of change.</p>
 </div>
 <div class="one_half column last">
-<p>By understanding how ant colonies self organize, with very little logic on the side of the individual ants, I tried to gain insight the principle of emergence.</p>
+<p>By understanding how ant colonies self organize, with very little logic on the side of the individual ants, I tried to gain insight into the principle of emergence.</p>
 </div>
 
 <p>

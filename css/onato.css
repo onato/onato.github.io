@@ -4,10 +4,6 @@
 {% include css/style.css %}
 {% include css/syntax.css %}
 
-#header .slideshow{
-  min-height: 607px;
-}
-
 #logo {
   float:inherit;
   width:200px;

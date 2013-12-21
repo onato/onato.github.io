@@ -1,7 +1,7 @@
 ---
 layout: project
 title:  Energie Passagen
-video: {vimeoID: 66926487, width: 1000, height: 750}
+video: {vimeoID: 66926487, width: 1000, height: 750, padding-bottom: "70%"}
 categories: projects
 backgroundImage: "subtle_dots.png"
 overlay-position: left

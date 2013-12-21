@@ -9,7 +9,7 @@ backgroundDark: yes
 categories: projects
 ---
 
-Maptoolkit is a framework I am responsible for the continued development of for the software house [Toursprung](http://toursprung.com). It was initially created by [Felix Krause](http://felixkrause.at/) 
+Maptoolkit is a framework I am responsible for the continued development of for the software house [Toursprung](http://toursprung.com). It was initially created by [Felix Krause](http://felixkrause.at/).
 
 <p>
 	<ul>

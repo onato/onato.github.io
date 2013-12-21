@@ -1,7 +1,7 @@
 ---
 layout: project
 title: video2brain
-video: {vimeoID: 66954929, width: 1000, height: 750}
+video: {vimeoID: 66954929, width: 1000, height: 750, padding-bottom: "75%"}
 backgroundImage: "subtle_dots.png"
 categories: projects
 slides:

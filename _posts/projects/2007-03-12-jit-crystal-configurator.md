@@ -1,7 +1,7 @@
 ---
 layout: project
 title:  "JIT Crystal Configurator"
-video: {vimeoID: 66940396, width: 1000, height: 563}
+video: {vimeoID: 66940396, width: 1000, height: 563, padding-bottom: "55%"}
 categories: projects
 backgroundImage: "pixel-squares.png"
 overlay-position: left

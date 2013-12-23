@@ -3,7 +3,7 @@ layout: project
 title:  "JIT Crystal Configurator"
 video: {vimeoID: 66940396, width: 1000, height: 563, padding-bottom: "55%"}
 categories: projects
-backgroundImage: "pixel-squares.png"
+backgroundColor: "#5adbcd"
 overlay-position: left
 slides:
   - {image: /images/projects/jit-crystal-configurator/onato-crystal-configurator-overview.jpg, title: "Onato Crystal Configurator Overview"}

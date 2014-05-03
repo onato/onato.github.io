@@ -4,10 +4,10 @@ title: "Bikecomputer"
 image: {src: images/projects/bike-computer/bike-computer.jpg, width: 500, height: 281, title: "Bike Computer Screenshots"}
 slides:
   - {image: /images/projects/bike-computer/bike-computer.jpg, title: "Onato Crystal Configurator Overview"}
-backgroundColor: "#b1bcb8"
+backgroundColor: "#ffffff"
 categories: projects
 ---
-BikeComputer shows you important training data and allows you to record your training sessions. By creating a training diary you can track your progress over time and help keep yourself and your motivation levels in great shape. On top of your training route BikeComputer displays and records 
+BikeComputer shows you important training data and allows you to record your training sessions. By creating a training diary you can track your progress over time and help keep yourself and your motivation levels in great shape. On top of your training route BikeComputer displays and records…
 
 * Time 
 * Speed 

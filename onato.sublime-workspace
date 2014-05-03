@@ -1,0 +1,365 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"re",
+				"response"
+			],
+			[
+				"req",
+				"require"
+			],
+			[
+				"print",
+				"print_r"
+			],
+			[
+				"mar",
+				"margin-bottom"
+			],
+			[
+				"loop",
+				"loopCount"
+			],
+			[
+				"sock",
+				"socketID"
+			],
+			[
+				"we",
+				"webSocketConnectionID"
+			],
+			[
+				"users",
+				"usersNearest"
+			],
+			[
+				"eac",
+				"each"
+			],
+			[
+				"tar",
+				"targetPath"
+			],
+			[
+				"ta",
+				"targetPath"
+			],
+			[
+				"json",
+				"jsonlint"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 300,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/stephen/Documents/Code/Faircheck/iOS/Fairchecker/iOS/EyeUp/Icon/iOS_icon_maker.sh",
+		"/Users/stephen/Documents/Code/OSX/CurlyServer/Test Items - Limit Parameter - Local.js",
+		"/Users/stephen/Documents/Code/MTKmobile/Testing/API/MTK/VerifyLimitParameter.js",
+		"/Users/stephen/Documents/Code/OSX/CurlyServer/logResults.js",
+		"/Users/stephen/Documents/Code/Faircheck/iOS/Fairchecker/VEXIntern/Podfile",
+		"/Users/stephen/Downloads/markdown/utf8/index.php",
+		"/Users/stephen/Documents/html/curly/chunked.php",
+		"/Users/stephen/Documents/Code/MTKmobile/Modules/TSRoutes/TSRoutes.podspec",
+		"/Users/stephen/tmp/http:::77.244.250.103:8998:size?polyline=%5B%5B46.",
+		"/Users/stephen/Library/Developer/Xcode/Archives/2013-11-13/Bikemap 13-11-2013 16.23.xcarchive/Products/Applications/Bikemap.app/config_bikemap.json",
+		"/Users/stephen/Library/Developer/Xcode/Archives/2013-10-20/Bikemap 20-10-2013 16.25.xcarchive/Products/Applications/Bikemap.app/config_bikemap.json",
+		"/Users/stephen/Library/Developer/Xcode/Archives/2013-11-19/Bikemap 19-11-13 10.22.xcarchive/Products/Applications/Bikemap.app/config_bikemap.json",
+		"/private/var/folders/x1/1794tkfs2fsbz0xvb84jnym00000gn/T/1b8d6417-55ca-4595-bf34-b5f81b82369e/home/mtkmobile/bikemap/1.4/iVersion.txt",
+		"/private/var/folders/x1/1794tkfs2fsbz0xvb84jnym00000gn/T/1b8d6417-55ca-4595-bf34-b5f81b82369e/home/mtkmobile/bikemap/1.3/iStoreVersion.txt",
+		"/Users/stephen/Downloads/iStoreVersion.txt",
+		"/Users/stephen/Documents/Code/NodeJS/example1.js",
+		"/Users/stephen/Documents/html/opjs/README.md",
+		"/Users/stephen/Documents/html/opjs/server/config.json",
+		"/Users/stephen/.cocoapods/master/Facebook-iOS-SDK/3.7.0/Facebook-iOS-SDK.podspec"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"2069554",
+			"max",
+			"clear",
+			"winston",
+			"config",
+			"arrow",
+			"map",
+			"lech",
+			"wiki",
+			"POI Test",
+			"webrtc",
+			",",
+			"webSocketConnectionKey",
+			",",
+			"TSAnnotation:4 coordinate:(47.139290,15.482480),",
+			".png",
+			"/Applications/Xcode.app//",
+			"console.lo",
+			"USER_STATUS_OFFLINE",
+			"webSocketConnectionKey",
+			"webSocketConnections",
+			"MESSAGE_TYPE_USER_LOG_IN",
+			"MESSAGES_LIMIT",
+			"deviceTokenDisconnect",
+			"MESSAGE_TYPE_USER_SIGN_UP",
+			"webSocketConnectionID",
+			"users",
+			"setUserOnlineThenDeviceTokenUpdate",
+			"webSocketServer",
+			"process",
+			"1943097668",
+			"TSPoiAnnotation: POI: TSRoute 2138062 at 47.106602,15.440867 (outdoorish_bikemap_routes): Pfeifferhofweg - Platte Runde () with downloadStatus: 0,",
+			"1943097668",
+			"539517",
+			"TSPoiAnnotation: POI: TSRoute 2138062 at 47.106602,15.440867 (outdoorish_bikemap_routes): Pfeifferhofweg - Platte Runde () with downloadStatus: 0,",
+			"TSPoiAnnotation: POI: TSRoute 539517 at 47.118170,15.440620 (outdoorish_bikemap_routes): Plattenrunde () with downloadStatus: 0,",
+			"1143913",
+			"2243434",
+			"1982070",
+			"280333",
+			"2305684",
+			"2062894",
+			"1157089",
+			"526640",
+			"83700",
+			"1423151",
+			"1714769",
+			"1103879",
+			"280017",
+			"1197230",
+			"538049",
+			"539517",
+			"1350032",
+			"566135",
+			"1248661",
+			"2305716",
+			"TSPoiAnnotation: POI: TSRoute 2138062 at 47.106602,15.440867 (outdoorish_bikemap_routes): Pfeifferhofweg - Platte Runde () with downloadStatus: 0,",
+			"2138062",
+			"1505956",
+			"2364883",
+			"1446346",
+			"1581030",
+			"2153728",
+			"83645",
+			"1221764",
+			"1395486",
+			"1625512",
+			"2338442",
+			"2088382",
+			"221878",
+			"1740920",
+			"1970415",
+			"2181103",
+			"2070074",
+			"1151456",
+			"891549",
+			"547786",
+			"1030648",
+			"541826",
+			"488599",
+			"57765",
+			"175641",
+			"1945324",
+			"1392609",
+			"575197",
+			"2282024",
+			"1459501",
+			"2233321",
+			"1041239",
+			"TSPoiAnnotation: POI: TSRoute 216825 at 48.160820,16.344390 (outdoorish_bikemap_routes): wien graz () with downloadStatus: 0,",
+			"TSPoiAnnotation: coordinate:(48.141140,11.576280),",
+			"TSPoiAnnotation: coordinate:(48.408820,15.598380),",
+			"TSPoiAnnotation: coordinate:(47.151870,15.470110),",
+			"TSPoiAnnotation: coordinate:(47.129810,13.808300),",
+			"TSPoiAnnotation: coordinate:(49.172530,17.512570),",
+			"TSPoiAnnotation: coordinate:(47.078090,15.453530),",
+			"TSPoiAnnotation: coordinate:(47.068060,15.483600),",
+			"TSPoiAnnotation: coordinate:(47.151870,15.470110),",
+			"TSPoiAnnotation: coordinate:(47.129810,13.808300),",
+			"TSPoiAnnotation: coordinate:(49.172530,17.512570),",
+			"TSPoiAnnotation: coordinate:(47.078090,15.453530),",
+			"TSPoiAnnotation: coordinate:(47.068060,15.483600),",
+			"TSPoiAnnotation: coordinate:(47.033730,15.460210),",
+			"TSPoiAnnotation: coordinate:(47.095560,15.419770),",
+			"TSPoiAnnotation: coordinate:(47.186090,15.486420),",
+			"TSPoiAnnotation: coordinate:(47.084583,15.422022),",
+			"TSPoiAnnotation: coordinate:(47.064640,15.084110),",
+			"TSPoiAnnotation: coordinate:(47.108050,15.417710),",
+			"TSPoiAnnotation: coordinate:(47.829900,16.161990),",
+			"TSPoiAnnotation: coordinate:(47.823510,13.033930),",
+			"TSPoiAnnotation: coordinate:(47.064430,15.397070),",
+			"TSPoiAnnotation: coordinate:(47.103780,15.417460),",
+			"TSPoiAnnotation: coordinate:(47.128420,15.341710),",
+			"TSPoiAnnotation: coordinate:(47.087170,15.459740),",
+			"TSPoiAnnotation: coordinate:(48.055140,16.129960),",
+			"TSPoiAnnotation: coordinate:(47.073990,15.471390),",
+			"TSPoiAnnotation: coordinate:(47.132550,15.439830),",
+			"TSPoiAnnotation: coordinate:(46.972860,15.370690),",
+			"TSPoiAnnotation: coordinate:(47.145340,15.571810),",
+			"TSPoiAnnotation: coordinate:(47.051030,15.451060),",
+			"TSPoiAnnotation: coordinate:(47.235220,16.621910),",
+			"TSPoiAnnotation: coordinate:(47.220330,14.820030),",
+			"TSPoiAnnotation: coordinate:(48.241750,14.288630),",
+			"TSPoiAnnotation: coordinate:(47.149890,15.471000),",
+			"TSPoiAnnotation: coordinate:(47.075870,15.438280),",
+			"TSPoiAnnotation: coordinate:(47.179600,15.636570),",
+			"TSPoiAnnotation: coordinate:(48.160820,16.344390),",
+			"    TSPoiAnnotation: coordinate:(47.051030,15.451060),"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			".png\"/>",
+			"	<image src=\"/Applications/Xcode.app/"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "index.html",
+					"settings":
+					{
+						"buffer_size": 300,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 275.0,
+	"status_bar_visible": true
+}

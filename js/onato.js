@@ -80,5 +80,7 @@ jQuery(window).load(function(){
     jQuery('#content .cItems').infinitescroll('retrieve');
     jQuery('.infscrBtn span').text("Loading...");
   }); 
+
+  jQuery(".slideshow").css({"background":"white"});
   
 });

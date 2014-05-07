@@ -93,7 +93,6 @@ a {
 .slideshow .flexslider {
   width: 100%;
   height: 100%;
-  display: table-cell;
 }
 
 .google-maps {

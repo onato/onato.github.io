@@ -25,7 +25,7 @@ a {
 {
   display: inline;
   list-style-type: none;
-  padding-right: 20px;
+  padding: 0 10px 0 10px;
 }
 
 .meta {
@@ -87,7 +87,6 @@ a {
   height: 0;
   background-image:url("../images/loading.gif");
   background-repeat:no-repeat;
-  background-attachment:fixed;
   background-position:center 40%;
 }
 .slideshow .flexslider {

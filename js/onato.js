@@ -31,6 +31,7 @@ jQuery(window).load(function() {
 });
 
 jQuery(window).load(function(){
+  decript(jQuery);
   jQuery('#content .cItems').infinitescroll({
 
     navSelector  : "div.pagination",
@@ -83,4 +84,18 @@ jQuery(window).load(function(){
 
   jQuery(".slideshow").css({"background":"white"});
   
+
 });
+
+
+function decript($) {
+  $('#my-email').html(function(){
+    var e = "stephen";
+    var a = "@";
+    var d = "onato";
+    var c = ".com";
+    var h = 'mailto:' + e + a + d + c;
+    $(this).parent('a').attr('href', h);
+    return e + a + d + c;
+  });
+}

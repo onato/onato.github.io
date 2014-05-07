@@ -28,11 +28,10 @@ Die Einhaltung der vereinbarten Zahlungstermine bildet eine wesentliche Bedingun
 ##6. Vertragsrücktritt
 Bei Annahmeverzug (Punkt 8.) oder anderen wichtigen Gründen, wie insbesondere Konkurs des Kunden oder Konkursabweisung mangels Vermögens, sowie bei Zahlungsverzug des Kunden ist die Onato zum Rücktritt vom Vertrag berechtigt, sofern er von beiden Seiten noch nicht zur Gänze erfüllt ist. Für den Fall des Rücktrittes hat die Onato bei Verschulden des Kunden die Wahl, einen pauschalierten Schadenersatz von 15 % des Bruttorechnungsbetrages oder den Ersatz des tatsächlich entstandenen Schadens zu begehren. Bei Zahlungsverzug des Kunden ist die Onato von allen weiteren Leistungs- und Lieferungsverpflichtungen entbunden und berechtigt, noch ausstehende Lieferungen oder Leistungen zurückzuhalten und Vorauszahlungen bzw. Sicherstellungen zu fordern oder nach Setzung einer angemessenen Nachfrist vom Vertrag zurückzutreten. Tritt der Kunde – ohne dazu berechtigt zu sein – vom Vertrag zurück oder begehrt er seine Aufhebung, so hat die Onato die Wahl, auf die Erfüllung des Vertrages zu bestehen oder der Aufhebung des Vertrages zuzustimmen; im letzteren Fall ist der Kunde verpflichtet, nach Wahl der Onato einen pauschalierten Schadenersatz in Höhe von 15 % des Bruttorechnungsbetrages oder den tatsächlich entstandenen Schaden zu bezahlen.
 
-Onato, 
-Stephen Williams, 
-Amschlgasse 33, 
-8010 Graz, 
-Österreich
-
-stephen@onato.com, 
+Onato<br />
+Stephen Williams<br />
+Amschlgasse 33<br />
+8010 Graz<br />
+Österreich<br />
+<br />
 www.onato.com

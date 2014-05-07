@@ -4,6 +4,14 @@
 {% include css/style.css %}
 {% include css/syntax.css %}
 
+h1, h2, h3, h4, h5, h6{ 
+  font-weight: normal !important;
+}
+
+a {
+  color: #FF6600;
+}
+
 #logo {
   float:inherit;
   width:200px;
@@ -11,6 +19,20 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+#menu li
+{
+  display: inline;
+  list-style-type: none;
+  padding-right: 20px;
+}
+
+.meta {
+  text-align: center;
+}
+.text-center {
+  text-align: center;
 }
 
 .flex-control-nav{
@@ -74,5 +96,17 @@
   display: table-cell;
 }
 
-
+.google-maps {
+    position: relative;
+    padding-bottom: 75%; // This is the aspect ratio
+    height: 0;
+    overflow: hidden;
+}
+.google-maps iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+}
 

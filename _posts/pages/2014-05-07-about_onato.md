@@ -25,8 +25,8 @@ Most apps require a web application to communicate with. I can lend my 12 years 
 
 ![Me](/images/icons/me.png){: .aligncenter}
 
-##Me in a few words
-In the 90's I developed call center applications and customer relationship management applications of large multinational clients. At the turn of the century I worked in the craziness of the dot com bubble. After the crash I studied design whilst working in the web development and media art branches. In 2005 I founded Fluid Forms, a design studio with online distribution of mass customised products. In 2010 I began developing mobile applications full time.
+##Me
+In the 90's I developed call center applications and customer relationship management applications for large multinational clients. At the turn of the century I worked in the craziness of the dot com bubble. After the crash I studied design whilst working in the web development and media art branches. In 2005 I founded Fluid Forms, a design studio with online distribution of mass customised products. In 2010 I began developing mobile applications full time.
 </div>
 
 <div class="one_half column last" markdown="1">

@@ -11,6 +11,9 @@ h1, h2, h3, h4, h5, h6{
 a {
   color: #FF6600;
 }
+a:hover {
+  color: #666666;
+}
 
 #logo {
   float:inherit;

@@ -1,0 +1,31 @@
+{% include header.html %}
+</div>
+<div class="main clearfix">
+  <div id="content" class="clearfix full" style="background-color:#FFFFFF;">
+    <div class="project center">
+    <div class="inside clearfix" style="padding-top:0px;">
+      <script>
+        (function() {
+          var cx = '009201104322909143866:s7cnegsbqqy';
+          var gcse = document.createElement('script');
+          gcse.type = 'text/javascript';
+          gcse.async = true;
+          gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+              '//www.google.com/cse/cse.js?cx=' + cx;
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(gcse, s);
+        })();
+      </script>
+      <gcse:search></gcse:search>
+  		<h2>{{ page.title }}</h2>
+  		<p class="meta">{{ page.date | date_to_string }}</p>
+
+  		<div id="post">
+  		{{ content }}
+  		</div>
+      </div>
+    </div>
+  </div>
+</div><!-- end main -->
+
+{% include footer.html %}

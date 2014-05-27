@@ -1,4 +1,4 @@
 name: Onato
-pygments: true
+highlighter: true
 permalink: none
 markdown: kramdown

@@ -2,3 +2,4 @@ name: Onato
 highlighter: true
 permalink: none
 markdown: kramdown
+baseurl: "http://onato.github.io"

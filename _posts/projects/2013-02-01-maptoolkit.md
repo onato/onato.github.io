@@ -1,9 +1,9 @@
 ---
 layout: project
 title: "Maptoolkit"
-image: {src: images/projects/maptoolkit/maptoolkit.jpg, width: 500, height: 281, title: "Drawify Screenshots"}
+image: {src: images/projects/maptoolkit/maptoolkit.jpg, width: 500, height: 281, title: "Maptoolkit Screenshots"}
 slides:
-  - {image: /images/projects/maptoolkit/maptoolkit.jpg, title: "Drawify Overview"}
+  - {image: /images/projects/maptoolkit/maptoolkit.jpg, title: "Maptoolkit Overview"}
 backgroundColor: "#18b1d3"
 backgroundDark: yes
 categories: projects

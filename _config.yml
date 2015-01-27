@@ -1,5 +1,5 @@
 name: Onato
-highlighter: true
+highlighter: pygments
 permalink: none
 markdown: kramdown
 baseurl: "http://www.onato.com"

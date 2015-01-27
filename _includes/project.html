@@ -7,7 +7,7 @@
           <div class="description clearfix">{{ post.excerpt }}</div>
         </div>
       {% if post.image %}
-        <p><a href="{{ post.url }}" rel="bookmark" ><img src="{{ post.image.src }}" alt="{{ post.image.title }}" width="{{ post.image.width }}" height="{{ post.image.height }}" class="aligncenter size-full" /></a></p>
+        <p><a href="{{ post.url }}{% if post.video.vimeoID %}#video{% endif %}" rel="bookmark" ><img src="{{ post.image.src }}" alt="{{ post.image.title }}" width="{{ post.image.width }}" height="{{ post.image.height }}" class="aligncenter size-full" /></a></p>
       {% elsif post.video.vimeoID %}
         <div class="videoContainer"{% if post.video.padding-bottom %} style="padding-bottom:{{ post.video.padding-bottom }};"{% endif %}>
           <iframe src="http://player.vimeo.com/video/{{ post.video.vimeoID }}?title=0&amp;byline=0&amp;portrait=0&amp;color=FF6600" width="{{ post.video.width }}" height="{{ post.video.height }}" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>

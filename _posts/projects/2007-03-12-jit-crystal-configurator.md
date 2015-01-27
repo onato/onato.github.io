@@ -1,6 +1,7 @@
 ---
 layout: project
 title:  "JIT Crystal Configurator"
+image: {src: "/images/projects/jit-crystal-configurator/video-thumbnail.jpg", width: 890, height: 587}
 video: {vimeoID: 66940396, width: 1000, height: 563, padding-bottom: "55%"}
 categories: projects
 backgroundColor: "#b7e5e0"

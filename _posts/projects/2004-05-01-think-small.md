@@ -1,6 +1,7 @@
 ---
 layout: project
 title: "Think Small"
+image: {src: "/images/projects/think-small/video-thumbnail.jpg", width: 1000, height: 563}
 video: {vimeoID: 12730982, width: 1000, height: 563}
 backgroundColor: "#2e2e2e"
 backgroundDark: yes

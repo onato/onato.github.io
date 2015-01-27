@@ -1,10 +1,10 @@
 ---
 layout: project
 title: "MBTilesViewer"
-image: {src: images/projects/MBTilesViewer/MBTilesViewer-Green.jpg, width: 500, height: 281, title: "MBTilesViewer Screenshots"}
+image: {src: images/projects/MBTilesViewer/MBTilesViewer.jpg, width: 500, height: 281, title: "MBTilesViewer Screenshots"}
 slides:
   - {image: /images/projects/MBTilesViewer/MBTilesViewer.jpg, title: "MBTilesViewer Screenshot"}
-backgroundColor: "#82d318"
+backgroundColor: "#ffffff"
 backgroundDark: no
 categories: projects
 ---

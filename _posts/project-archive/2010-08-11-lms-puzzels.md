@@ -2,7 +2,7 @@
 layout: project
 title:  "Puzzels for Learning Management Systems"
 image: {src: images/projects/lms-puzzels/lms-puzzels.jpg, width: 800, height: 531}
-categories: projects
+categories: project-archive
 backgroundImage: "subtle_dots.png"
 overlay-position: left
 slides:

@@ -15,7 +15,7 @@
   <div id="content" class="clearfix full" style="background-color:#FFFFFF;">
     <div class="project center">
     <div class="inside clearfix" style="padding-top:50px;" itemscope itemtype="http://data-vocabulary.org/Product">
-      <h2 itemprop="name">{{ post.title }}</h2>
+      <h2 class="entry-name" itemprop="name">{{ post.title }}</h2>
       {{ content }}
       {% if post.video.vimeoID %}
         <div class="videoContainer">
@@ -23,6 +23,10 @@
           <a name="video"></a>
         </div>
       {% endif %}
+      <div class="hidden author">By Stephen</div>
+      <time datetime="{{ page.path | file_date }}">
+        Updated: {{ page.path | file_date | date_to_string }}
+      </time>
     </div>
     </div>
   </div>

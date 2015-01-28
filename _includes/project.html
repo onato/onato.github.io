@@ -1,13 +1,13 @@
-    <div class="project hentry center {% if post.backgroundDark %}darkBkg{% endif %}" 
+    <div class="project h-entry center {% if post.backgroundDark %}darkBkg{% endif %}" 
       style="{% if post.backgroundImage %}background-image: url(images/backgrounds/{{ post.backgroundImage }});{% endif %}{% if post.backgroundColor %}background-color: {{ post.backgroundColor }};{% endif %}">
       <div class="inside clearfix">
         <span class="topLine"></span>
         <div class="head">
-          <h2><a href="{{ post.url }}" rel="bookmark" >{{ post.title }}</a></h2>
-          <div class="description clearfix">{{ post.excerpt }}</div>
+          <h2 class="p-name"><a class="u-url" href="{{ post.url }}" rel="bookmark" >{{ post.title }}</a></h2>
+          <div class="description clearfix p-summary">{{ post.excerpt }}</div>
         </div>
       {% if post.image %}
-        <p><a href="{{ post.url }}{% if post.video.vimeoID %}#video{% endif %}" rel="bookmark" ><img src="{{ post.image.src }}" alt="{{ post.image.title }}" width="{{ post.image.width }}" height="{{ post.image.height }}" class="aligncenter size-full" /></a></p>
+        <p><a href="{{ post.url }}{% if post.video.vimeoID %}#video{% endif %}" rel="bookmark" ><img class="p-photo" src="{{ post.image.src }}" alt="{{ post.image.title }}" width="{{ post.image.width }}" height="{{ post.image.height }}" class="aligncenter size-full" /></a></p>
       {% elsif post.video.vimeoID %}
         <div class="videoContainer"{% if post.video.padding-bottom %} style="padding-bottom:{{ post.video.padding-bottom }};"{% endif %}>
           <iframe src="http://player.vimeo.com/video/{{ post.video.vimeoID }}?title=0&amp;byline=0&amp;portrait=0&amp;color=FF6600" width="{{ post.video.width }}" height="{{ post.video.height }}" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
@@ -25,6 +25,10 @@
           {{ post.column2 }}
         </div>
       {% endif %}
+        <div class="hidden author">By Stephen</div>
+        <time class="dt-published" datetime="{{ post.date }}"></time>
+        <time class="dt-updated" datetime="{{ post.path | file_date }}"></time>
+
         <div class="clearboth"></div>
       </div>
     </div>

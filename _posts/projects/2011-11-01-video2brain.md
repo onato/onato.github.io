@@ -13,9 +13,9 @@ slides:
   - {image: /images/projects/video2brain/onato-video2brain-app-training.png, title: "video2brain Training"}
   - {image: /images/projects/video2brain/onato-video2brain-app-fullscreen.png, title: "video2brain Fullscreen"}
 ---
-The iPad App for video2brain enables customers to comfortably view courses on or offline and save there favorite courses and videos for later viewing. Course can also be viewed on an apple-tv using air-play. 
+The iPad App for video2brain enables customers to comfortably view courses on or offline and save there favorite courses and videos for later viewing. Course can also be viewed on an apple-tv using air-play. I created the video2brain App whilst working for the agency Parkside. 
 
-<a href="http://itunes.apple.com/en/app/video2brain/id460343904"><img src="http://www.onato.com/wp-content/uploads/App-Store-Badge.png" alt="" title="App-Store-Badge" width="152" height="52" class="alignnone size-full wp-image-769" /></a>
+<a href="http://itunes.apple.com/en/app/video2brain/id460343904"><img src="/images/icons/download-on-the-app-store.png" alt="" title="App-Store-Badge" width="152" height="52" class="alignnone size-full wp-image-769" /></a>
 
 ###Technical Details
 Programming Language: Objective-C

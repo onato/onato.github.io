@@ -41,7 +41,7 @@ I seldom work on projects alone. I usually work with a web developer, I often wo
 
 <div class="clearboth"></div>
 
-![Stephen Christopher Williams](/images/stephen_christopher_williams.jpg){: .aligncenter}
+![Stephen Christopher Williams](/images/stephen-christopher-williams.jpg){: .aligncenter}
 
 {: .text-center}
 Stephen Williams<br />

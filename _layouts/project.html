@@ -15,7 +15,7 @@
   <div id="content" class="clearfix full" style="background-color:#FFFFFF;">
     <div class="project center">
     <div class="inside clearfix" style="padding-top:50px;" itemscope itemtype="http://data-vocabulary.org/Product">
-      <h2 class="entry-name" itemprop="name">{{ post.title }}</h2>
+      <h1 class="entry-name" itemprop="name">{{ post.title }}</h1>
       {{ content }}
       {% if post.video.vimeoID %}
         <div class="videoContainer"{% if post.video.padding-bottom %} style="padding-bottom:{{ post.video.padding-bottom }};"{% endif %}>

@@ -120,3 +120,6 @@ a:hover {
     height: 100% !important;
 }
 
+main {
+  background-color: white;
+}

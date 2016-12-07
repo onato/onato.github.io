@@ -1,0 +1,25 @@
+---
+layout: blog
+title: Onato
+---
+
+<div class="main middle clearfix">
+  <div id="content" class="clearfix full wrap">
+    <div class="posts main">
+    {% for post in site.categories.posts %}
+      <article class="post left">
+        <h1 class="title">
+          <a href="{{ post.url }}">
+            {{ post.title }}
+          </a>
+        </h1>
+        <time datetime="{{ post.date | date_to_xmlschema }}" class="post-date">{{ post.date | date_to_string }}</time>
+        <div class="description">
+          {{ post.content }}
+        </div>
+      </article>
+    {% endfor %}
+	</div>
+  </div>
+</div>
+

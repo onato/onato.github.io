@@ -9,7 +9,7 @@ overlay-position: left
 ![App Development](/images/icons/phone.png){: .aligncenter}
 
 ## App Development
-With 16 years of experience in the IT industry and 5 years of app development, I can help you get your idea in the hands of your customers. Focusing on the development of apps for iOS and Android my work is download thousands of times every day. Educated in Computer Science in New Zealand and design in Germany I can ensure your users enjoy your app and it can grow in features without gathering technical debt.
+With 22 years of experience in the IT industry and 11 years of app development, I can help you get your idea in the hands of your customers. Focusing on the development of apps for iOS and Android my work is downloaded thousands of times every day. Educated in Computer Science in New Zealand and design in Germany I can ensure your users enjoy your app and it can grow in features without gathering technical debt.
 </div>
 
 <div class="one_half column last" markdown="1">

@@ -1,6 +1,6 @@
 ---
 layout: page
-title:  Stephen Christopher Williams
+title:  Stephen Williams
 overlay-position: left
 
 ---

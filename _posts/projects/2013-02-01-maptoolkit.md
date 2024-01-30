@@ -1,6 +1,6 @@
 ---
 layout: project
-title: "Maptoolkit"
+title: "Maptoolkit 2013"
 image: {src: images/projects/maptoolkit/maptoolkit.jpg, width: 500, height: 281, title: "Maptoolkit Screenshots"}
 slides:
   - {image: /images/projects/maptoolkit/maptoolkit.jpg, title: "Maptoolkit Overview"}

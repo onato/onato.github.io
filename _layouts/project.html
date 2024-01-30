@@ -14,12 +14,12 @@
 <div class="main clearfix">
   <div id="content" class="clearfix full" style="background-color:#FFFFFF;">
     <div class="project center">
-    <div class="inside clearfix" style="padding-top:50px;" itemscope itemtype="http://data-vocabulary.org/Product">
+    <div class="inside clearfix" style="padding-top:50px;" itemscope itemtype="https://data-vocabulary.org/Product">
       <h1 class="entry-name" itemprop="name">{{ post.title }}</h1>
       {{ content }}
       {% if post.video.vimeoID %}
         <div class="videoContainer"{% if post.video.padding-bottom %} style="padding-bottom:{{ post.video.padding-bottom }};"{% endif %}>
-          <iframe src="http://player.vimeo.com/video/{{ post.video.vimeoID }}?title=0&amp;byline=0&amp;portrait=0&amp;color=FF6600" width="{{ post.video.width }}" height="{{ post.video.height }}" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+          <iframe src="https://player.vimeo.com/video/{{ post.video.vimeoID }}?title=0&amp;byline=0&amp;portrait=0&amp;color=FF6600" width="{{ post.video.width }}" height="{{ post.video.height }}" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
           <a name="video"></a>
         </div>
       {% endif %}

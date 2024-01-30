@@ -1,6 +1,6 @@
 ---
 layout: project
-title: "Bikecomputer"
+title: "Bikecomputer 2012"
 image: {src: images/projects/bike-computer/bike-computer.jpg, width: 500, height: 281, title: "Bike Computer Screenshots"}
 slides:
   - {image: /images/projects/bike-computer/bike-computer.jpg, title: "Onato Crystal Configurator Overview"}

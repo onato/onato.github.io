@@ -9,12 +9,12 @@ backgroundDark: yes
 categories: projects
 ---
 
-Maptoolkit was the framework underlying the Bikemap App that I was responsible for the at the software house [Toursprung](http://toursprung.com) along with [Felix Krause](http://felixkrause.at/).
+Maptoolkit was the framework underlying the Bikemap app that I was responsible for at the software house [Toursprung](http://toursprung.com) along with [Felix Krause](http://felixkrause.at/).
 
 <p>
 	<ul>
-		<li>I created a modular achitecture using private cocoapods. Modules included Tracking, Authentication, Points of Interest Uploading, Routes Rendering, Route Recording etc…</li>
-		<li>The app and framework were compiled, tested, archived and uploaded to Testflight automatically on commit by a Jenkins CI setup.</li>
+		<li>I created a modular architecture using private cocoapods. Modules included Tracking, Authentication, Points of Interest Uploading, Routes Rendering, Route Recording, etc…</li>
+		<li>The app and framework were compiled, tested, archived, and uploaded to Testflight automatically on every commit to the main branch by a Jenkins CI setup.</li>
 		<li>The project was distributed as a binary framework for use by SDK customers.</li>
 		<li>Apple Frameworks used: 
 			<ul>

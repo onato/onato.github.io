@@ -13,9 +13,9 @@ slides:
   - {image: /images/projects/video2brain/onato-video2brain-app-training.png, title: "video2brain Training"}
   - {image: /images/projects/video2brain/onato-video2brain-app-fullscreen.png, title: "video2brain Fullscreen"}
 ---
-The iPad App for video2brain enabled customers to comfortably view courses on- or offline and save their favorite courses and videos for later viewing in the app or on an apple-tv using air-play. I created the video2brain App whilst working for the agency [Parkside Interactive](https://www.parkside-interactive.com/). 
+The iPad App for video2brain enabled customers to view courses online or offline and save their favorite courses and videos for later viewing in the app or on an Apple TV using airplay. I created the video2brain App whilst working for the agency [Parkside Interactive](https://www.parkside-interactive.com/). 
 
-Video2brain was bought by Lynda which was in turn bought by LinkedIn and rebranded as [LinkedIn Learning](https://en.wikipedia.org/wiki/LinkedIn_Learning).
+Video2brain was bought by Lynda, which was in turn bought by LinkedIn and rebranded as [LinkedIn Learning](https://en.wikipedia.org/wiki/LinkedIn_Learning).
 
 ### Technical Details
 Programming Language: Objective-C

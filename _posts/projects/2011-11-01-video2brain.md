@@ -17,7 +17,7 @@ The iPad App for video2brain enabled customers to comfortably view courses on- o
 
 Video2brain was bought by Lynda which was in turn bought by LinkedIn and rebranded as [LinkedIn Learning](https://en.wikipedia.org/wiki/LinkedIn_Learning).
 
-###Technical Details
+### Technical Details
 Programming Language: Objective-C
 Frameworks: CoreData, AVFoundation
 Keywords: HTTP Live Streaming

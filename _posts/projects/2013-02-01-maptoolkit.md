@@ -39,5 +39,5 @@ Maptoolkit was the framework underlying the Bikemap App that I was responsible f
 	</ul>
 </p>
 
-###Technical Details
+### Technical Details
 Technology: Objective-C, CocoaPods, Ruby, JSON, Jenkins

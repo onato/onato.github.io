@@ -793,8 +793,7 @@ a.action {
 	text-align: right;
 }
 
-.project .description p {
-	text-align: center;	
+.project .description p {	
 	font-size: 1.1em;
 	color: rgba(0,0,0, .5);		
 }

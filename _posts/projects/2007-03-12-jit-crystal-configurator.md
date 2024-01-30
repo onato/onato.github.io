@@ -19,6 +19,6 @@ The “Just in Time” renderer is designed for configuring color without loosin
 
 Since it works using flash or HTML5 canvas it can also be used in product configurators.
 
-###Technical Details
+### Technical Details
 Technology: Flash or HTML5
 

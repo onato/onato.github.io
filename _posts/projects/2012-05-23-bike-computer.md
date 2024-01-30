@@ -7,7 +7,7 @@ slides:
 backgroundColor: "#ffffff"
 categories: projects
 ---
-BikeComputer shows you important training data and allows you to record your training sessions. By creating a training diary you could track your progress over time and help keep yourself and your motivation levels in great shape. On top of your training route BikeComputer displays and records…
+BikeComputer showed you important training data and allowed you to record your training sessions. By creating a training diary, you could track your progress over time and help keep yourself and your motivation levels in great shape. BikeComputer was later integrated into [BikeMap](https://www.bikemap.net/).
 
 * Time 
 * Speed 

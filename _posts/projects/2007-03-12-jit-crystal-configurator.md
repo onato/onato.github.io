@@ -15,10 +15,10 @@ slides:
 
 
 ---
-The “Just in Time” renderer is designed for configuring color without loosing photo-realistic rendering quality. The renderer can be used instead of photographing many similar products in different colors.
+The “Just in Time” renderer is designed to configure color without losing photo-realistic rendering quality. It was developed for a crystal manufacturer to generate images for their catalogs instead of having to photograph many similar products.
 
-Since it works using flash or HTML5 canvas it can also be used in product configurators.
+The high-quality aspects of the rendering are prerendered in many layers. The layers are then combined at the last minute with the color and other effects to produce the final image.
 
 ### Technical Details
-Technology: Flash or HTML5
+Technology: Ray Tracing, Image Manipulation, In Browser
 

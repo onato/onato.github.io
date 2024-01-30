@@ -9,15 +9,14 @@ backgroundDark: yes
 categories: projects
 ---
 
-Maptoolkit is a framework I am responsible for the continued development of, for the software house [Toursprung](http://toursprung.com). It was initially created by [Felix Krause](http://felixkrause.at/).
+Maptoolkit is a framework I was responsible for the at the software house [Toursprung](http://toursprung.com) along with [Felix Krause](http://felixkrause.at/).
 
 <p>
 	<ul>
-		<li>All modules are organised as private cocoapods. Modules include Tracking, Login, Uploading of Points of Interest, Display of Routes, etc…</li>
+		<li>All modules are organised as private cocoapods. Modules included Tracking, Authentication, Points of Interest Uploading, Routes Rendering, Route Recording etc…</li>
 		<li>Projects are compiled, tested, archived and uploaded to Testflight automatically on commit by a Jenkins setup.</li>
-		<li>The project is compiled into a .Framework for use by SDK customers.</li>
-		<li>I implemented an extra build layer to perform tasks like removing comments from configuration files and ignoring warnings on code that is not controlled by us.</li>
-		<li>Frameworks used: 
+		<li>The project was distributed as a binary framework for use by SDK customers.</li>
+		<li>Apple Frameworks used: 
 			<ul>
 				<li>CoreData</li>
 				<li>CoreLocation</li>

@@ -9,14 +9,14 @@ overlay-position: left
 ![App Development](/images/icons/phone.png){: .aligncenter}
 
 ## App Development
-I have many years of experience in the IT industry and 14 years of native iOS app development. I worked with everything from pre-ARC Objective-C to modern SwiftUI and SwiftData. Since 2022, I have been working in Rust to offload business logic to a binary shared across iOS and Android apps.
+I have extensive experience in the IT industry, spanning many years. Specifically, I have dedicated 14 years to native iOS app development, working with various technologies ranging from pre-ARC Objective-C to modern SwiftUI and SwiftData. In recent years, starting from 2022, I have also ventured into Rust programming to effectively offload business logic to a binary that can be shared across iOS and Android applications.
 </div>
 
 <div class="one_half column last" markdown="1">
 ![Web Development](/images/icons/cloud.png){: .aligncenter}
 
 ## What else?
-I have worked with everything from microcontrollers and Bluetooth LE devices to complex server infrastructures and CNC production facilities. Whilst I am an expert in Apple platforms development, I am a profoundly curious person. Recently, I have been cutting my teeth on machine learning.
+I have experience working with a wide range of technologies, including microcontrollers, Bluetooth LE devices, server infrastructures, and CNC production facilities. While I specialize in Apple platforms development, I am always eager to explore new areas. Lately, I have been delving into machine learning, further expanding my skill set.
 </div>
 
 <div class="clearboth"></div>
@@ -26,7 +26,8 @@ I have worked with everything from microcontrollers and Bluetooth LE devices to 
 ![Me](/images/icons/me.png){: .aligncenter}
 
 ## Me
-In the 90s, I developed call center and customer relationship management applications for large multinational clients. At the turn of the century, I worked in the craziness of the dot com bubble. After the crash, I studied design whilst working in the web development and media art branches. In 2005, I founded Fluid Forms, a design studio with online distribution of mass-customized products. In 2010, I began developing mobile applications full-time.
+In the 90s, I developed call center and customer relationship management applications for large multinational clients. At the turn of the century, I worked in the fast-paced environment of the dot com bubble. Following the crash, I pursued my interest in design and gained further expertise in web development and media art. In 2005, I founded Fluid Forms, a design studio specializing in online distribution of mass-customized products. Since 2010, I have been fully dedicated to developing mobile applications.
+
 </div>
 
 <div class="one_half column last" markdown="1">
@@ -34,7 +35,7 @@ In the 90s, I developed call center and customer relationship management applica
 ![Partners](/images/icons/team.png){: .aligncenter}
 
 ## Continued Education
-Reading is something I really enjoy, and I don't limit myself to the canon of computer science. I have read many of the standard works in the fields of QA, UX Design, Management, and Machine Learning. I don't aim to be a jack of all trades, but having an education in adjacent fields aids greatly in communication and especially in the appreciation of talented colleagues.
+Reading is something I truly enjoy, and I have a passion for expanding my knowledge beyond the realm of software engineering. I have extensively explored various subjects such as QA, UX Design, Management, and Machine Learning through reading numerous standard works in these fields. While I don't strive to be a master of all trades, I firmly believe that having a well-rounded education in adjacent disciplines greatly enhances communication skills and fosters a deep appreciation for talented collaborators.
 </div>
 
 <div class="clearboth"></div>

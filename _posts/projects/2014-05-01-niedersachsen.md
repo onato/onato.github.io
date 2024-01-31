@@ -1,6 +1,6 @@
 ---
 layout: project
-title: "Niedersachsen Tourism 2014"
+title: "Rad-Navi Niedersachsen 2014"
 image: {src: images/projects/niedersachsen/niedersachsen-tourism.jpg, width: 500, height: 281, title: "Niedersachsen Tourism Screenshots"}
 slides:
   - {image: /images/projects/niedersachsen/niedersachsen-tourism.jpg, title: "Bike Navigation App - Niedersachsen Tourism"}

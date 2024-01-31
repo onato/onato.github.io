@@ -22,6 +22,11 @@
           <iframe src="https://player.vimeo.com/video/{{ post.video.vimeoID }}?title=0&amp;byline=0&amp;portrait=0&amp;color=FF6600" width="{{ post.video.width }}" height="{{ post.video.height }}" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
           <a name="video"></a>
         </div>
+      {% elsif post.video.youtubeID %}
+        <div class="videoContainer"{% if post.video.padding-bottom %} style="padding-bottom:{{ post.video.padding-bottom }};"{% endif %}>
+          <iframe width="{{ post.video.width }}" height="{{ post.video.height }}" src="https://www.youtube.com/embed/{{ post.video.youtubeID }}?rel=0" frameborder="0" allowfullscreen></iframe>
+          <a name="video"></a>
+        </div>
       {% endif %}
       <div class="hidden author">By Stephen</div>
       <time datetime="{{ page.path | file_date }}">

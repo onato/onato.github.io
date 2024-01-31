@@ -125,3 +125,9 @@ a:hover {
 main {
   background-color: white;
 }
+
+.LI-profile-badge {
+  width: 305px;
+  margin: auto;
+  padding-left: 50px;
+}

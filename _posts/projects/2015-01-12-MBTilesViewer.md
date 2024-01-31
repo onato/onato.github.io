@@ -9,7 +9,7 @@ backgroundDark: no
 categories: projects
 ---
 
-<span itemprop="description">MBTilesView was a macOS that helped you examine the contents of your MBTiles files. It shows you the file's metadata and its tiles at each zoom level.</span>
+<span itemprop="description">MBTilesView was a macOS app that helped you examine the contents of your MBTiles files. It showed you the file's metadata and its tiles at each zoom level.</span>
 
 ### Technical Details
 Technology: Objective-C, CocoaPods, MapKit

@@ -37,10 +37,9 @@ a:hover {
 }
 
 .intro {
-  margin-bottom: 35px !important;
   max-width: 50em;
   text-align: left;
-  margin: auto;
+  margin: 1em auto 3em auto;
 }
 
 .meta {

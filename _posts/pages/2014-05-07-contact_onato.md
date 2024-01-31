@@ -7,4 +7,6 @@ overlay-position: left
 {: .text-center}
 <a href="#"><span id="my-email">please enable javascript to view</span></a>
 
-<a href="http://at.linkedin.com/in/onato"><img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_profile_greytxt_80x15.png" width="80" height="15" border="0" alt="View Stephen Williams's profile on LinkedIn" style="margin:0 auto;"></a>
+<div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="light" data-type="VERTICAL" data-vanity="onato" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://nz.linkedin.com/in/onato?trk=profile-badge">Stephen Williams</a></div>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>

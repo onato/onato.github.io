@@ -9,14 +9,14 @@ overlay-position: left
 ![App Development](/images/icons/phone.png){: .aligncenter}
 
 ## App Development
-With 22 years of experience in the IT industry and 11 years of app development, I can help you get your idea in the hands of your customers. Focusing on the development of apps for iOS and Android my work is downloaded thousands of times every day. Educated in Computer Science in New Zealand and Design in Germany I can ensure your users enjoy your app and it can grow in features without gathering technical debt.
+I have donkey's years of experience in the IT industry and 14 years of native iOS app development. I worked with everything from the pre-ARC Objective-C days to modern SwiftUI and SwiftData. Since 2022, I have been working in Rust to offload business logic to a binary shared across iOS and Android apps.
 </div>
 
 <div class="one_half column last" markdown="1">
 ![Web Development](/images/icons/cloud.png){: .aligncenter}
 
-## Web Development
-Most apps require a web application to communicate with. I can lend my 12 years of web development experience to the development of scalable, stable and fast server applications. I have developed server applications with J2E, Spring, Grails, PHP, Python, Ruby on Rails, Node.js and this site is developed with Jekyl. I can also help out your marketing team with experience in analytics and online advertising.
+## What else?
+I have worked with everything from microcontrollers and Bluetooth LE devices to complex server infrastructures and CNC production facilities. Whilst I am an expert in Apple platforms development, I am a profoundly curious person. Recently, I have been cutting my teeth on machine learning.
 </div>
 
 <div class="clearboth"></div>
@@ -26,17 +26,15 @@ Most apps require a web application to communicate with. I can lend my 12 years 
 ![Me](/images/icons/me.png){: .aligncenter}
 
 ## Me
-In the 90's I developed call center and customer relationship management applications for large multinational clients. At the turn of the century I worked in the craziness of the dot com bubble. After the crash I studied design whilst working in the web development and media art branches. In 2005 I founded Fluid Forms, a design studio with online distribution of mass customised products. In 2010 I began developing mobile applications full time.
+In the 90s, I developed call center and customer relationship management applications for large multinational clients. At the turn of the century, I worked in the craziness of the dot com bubble. After the crash, I studied design whilst working in the web development and media art branches. In 2005, I founded Fluid Forms, a design studio with online distribution of mass-customized products. In 2010, I began developing mobile applications full-time.
 </div>
 
 <div class="one_half column last" markdown="1">
 
 ![Partners](/images/icons/team.png){: .aligncenter}
 
-## My Partners
-When skills are required that exceed my own, I have a network of talented people to get the job done. Be it graphic design, film making, usability testing, copywriting, system administration and more, I can help build a team to meet your needs.
-
-I seldom work on projects alone. I usually work with a web developer, I often work with designers.
+## Continued Education
+Reading is something I really enjoy, and I don't limit myself to the canon of computer science. I have read many of the standard works in the fields of QA, UX Design, Management, and Machine Learning. I don't aim to be a jack of all trades, but having an education in adjacent fields aids greatly in communication and especially in the appreciation of talented colleagues.
 </div>
 
 <div class="clearboth"></div>

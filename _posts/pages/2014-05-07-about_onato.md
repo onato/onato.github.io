@@ -9,7 +9,7 @@ overlay-position: left
 ![App Development](/images/icons/phone.png){: .aligncenter}
 
 ## App Development
-I have donkey's years of experience in the IT industry and 14 years of native iOS app development. I worked with everything from the pre-ARC Objective-C days to modern SwiftUI and SwiftData. Since 2022, I have been working in Rust to offload business logic to a binary shared across iOS and Android apps.
+I have many years of experience in the IT industry and 14 years of native iOS app development. I worked with everything from pre-ARC Objective-C to modern SwiftUI and SwiftData. Since 2022, I have been working in Rust to offload business logic to a binary shared across iOS and Android apps.
 </div>
 
 <div class="one_half column last" markdown="1">

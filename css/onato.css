@@ -97,7 +97,7 @@ a:hover {
 
 .slideshow {
   position: relative;
-  padding-bottom: 48% !important; /* 16:9 */
+  padding-bottom: 66% !important; /* 16:9 */
   height: 0;
   background-image:url("../images/loading.gif");
   background-repeat:no-repeat;

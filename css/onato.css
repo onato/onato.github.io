@@ -20,6 +20,11 @@ a:hover {
   color: #666666;
 }
 
+a.active {
+  border-bottom: 1px solid #FF6600;
+  padding-bottom: 4px;
+}
+
 #logo {
   float:inherit;
   width:200px;
@@ -62,8 +67,6 @@ a:hover {
   width:100%;
   background: rgb(0, 0, 0) transparent; /* default fallback */
   background: rgba(0, 0, 0, 0.6); /* nice browsers */
-  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#CC000000, endColorstr=#CC000000); /* IE 6/7 */
-  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#CC000000, endColorstr=#CC000000)"; /* IE8 */
 
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;

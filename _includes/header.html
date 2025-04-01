@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en-US">
+
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <title>{{ page.title }}</title>
   <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" />
-  <link rel='stylesheet' id='slideshow-css'  href='/css/onato.css' type='text/css' media='all' />
+  <link rel='stylesheet' id='slideshow-css' href='/css/onato.css' type='text/css' media='all' />
   <!--[if IE 7]>
   <link rel="stylesheet" href="/css/ie7.css" type="text/css" media="screen" />
   <![endif]-->
@@ -13,19 +14,21 @@
   <![endif]-->
 </head>
 
-<body  class="home page" >
+<body class="home page">
 
-<div id="container">  
-  <header id="header">
-    <div class="top">
-      <div class="inside clearfix">
-        <div id="logo">
-          <h1 class="logo"><a href="/"><img src="/images/logo.svg" alt="{{ site.name }}" /></a></h1>
+  <div id="container">
+    <header id="header">
+      <div class="top">
+        <div class="inside clearfix">
+          <div id="logo">
+            <h1 class="logo"><a href="/"><img src="/images/logo.svg" alt="{{ site.name }}" /></a></h1>
+          </div>
+          <ul id="menu">
+            <li><a href="/" class="{% if page.url == '/' %}active{% endif %}">projects</a></li>
+            <li><a href="/about_onato.html" class="{% if page.url == '/about_onato.html' %}active{% endif %}">about</a>
+            </li>
+            <li><a href="/contact_onato.html"
+                class="{% if page.url == '/contact_onato.html' %}active{% endif %}">contact</a></li>
+          </ul>
         </div>
-        <ul id="menu">
-          <li><a href="/">projects</a></li>
-          <li><a href="/about_onato.html">about</a></li>
-          <li><a href="/contact_onato.html">contact</a></li>
-        </ul>
       </div>
-    </div>

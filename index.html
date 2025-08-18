@@ -44,7 +44,44 @@
       border: 1px solid var(--panel-border);
       border-radius: 14px;
       padding: 12px 14px;
-      box-shadow: 0 6px 24px rgba(0, 0, 0, .35)
+      box-shadow: 0 6px 24px rgba(0, 0, 0, .35);
+      transition: transform 0.3s ease, opacity 0.3s ease
+    }
+
+    .panel.collapsed {
+      transform: translateX(-100%);
+      opacity: 0;
+      pointer-events: none
+    }
+
+    .toggle-btn {
+      position: fixed;
+      top: 12px;
+      left: 12px;
+      z-index: 11;
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      border: 1px solid var(--panel-border);
+      background: var(--panel-bg);
+      backdrop-filter: blur(10px) saturate(1.1);
+      -webkit-backdrop-filter: blur(10px) saturate(1.1);
+      color: var(--text);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      transition: transform 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, .25)
+    }
+
+    .toggle-btn:hover {
+      transform: scale(1.05)
+    }
+
+    .toggle-btn.panel-open {
+      transform: translateX(360px)
     }
 
     .panel h1 {
@@ -139,7 +176,10 @@
 <body>
   <canvas id="fog" aria-label="Fog simulation"></canvas>
 
-  <div class="panel" role="group" aria-label="Fog controls">
+  <button id="toggleBtn" class="toggle-btn panel-open" aria-label="Toggle fog controls"
+    title="Toggle fog controls">☰</button>
+
+  <div id="panel" class="panel" role="group" aria-label="Fog controls">
     <h1>🌫️ Fog controls</h1>
     <div class="row"><label for="density">Density</label><input id="density" type="range" min="0" max="1" step="0.01" />
       <div id="densityOut" class="readout"></div>
@@ -147,10 +187,10 @@
     <div class="row"><label for="scale">Scale</label><input id="scale" type="range" min="0.25" max="4" step="0.01" />
       <div id="scaleOut" class="readout"></div>
     </div>
-    <div class="row"><label for="speed">Speed</label><input id="speed" type="range" min="0" max="1" step="0.001" />
+    <div class="row"><label for="speed">Speed</label><input id="speed" type="range" min="0" max="0.1" step="0.0001" />
       <div id="speedOut" class="readout"></div>
     </div>
-    <div class="row"><label for="brownian">Brownian</label><input id="brownian" type="range" min="0" max="2"
+    <div class="row"><label for="brownian">Brownian</label><input id="brownian" type="range" min="0" max="10"
         step="0.01" />
       <div id="brownianOut" class="readout"></div>
     </div>
@@ -221,18 +261,18 @@
 
       // === Defaults ===
       const DEFAULTS = Object.freeze({
-        density: 0.6,
-        scale: 4.0,
-        speed: 0.359,
+        density: 0.75,
+        scale: 1.55,
+        speed: 0.01,
         brownianScale: 2.0,
-        tintHex: '#6bb6ff',
-        hueDeg: 200,
+        tintHex: '#ffffff',
+        hueDeg: 350,
         saturation: 0.0,
-        minBrightness: 0.13,
-        maxBrightness: 1.5,
+        minBrightness: 0.11,
+        maxBrightness: 1.34,
         contrast: 0.9,
       });
-      const BLUR_DEFAULT = 0.0; // CSS px
+      const BLUR_DEFAULT = 9.3; // CSS px
 
       // ========= WebGL Boot =========
       const canvas = $('fog');
@@ -284,10 +324,10 @@
           vec2 p = uv - .5; p.x *= aspect;
 
           float t = u_time * u_speed;
-          // Brownian motion using sin/cos of different frequencies
+          // True Brownian motion - independent x and y movement with multiple frequencies
           vec2 drift = vec2(
-            sin(t * 0.13) + sin(t * 0.21) * 0.5 + sin(t * 0.08) * 0.3,
-            cos(t * 0.11) + cos(t * 0.19) * 0.5 + cos(t * 0.07) * 0.3
+            sin(t * 1.3) + sin(t * 2.1) * 0.5 + sin(t * 0.7) * 0.3,
+            cos(t * 1.1) + cos(t * 1.9) * 0.5 + cos(t * 0.6) * 0.3
           ) * u_brownian;
           float n = fogField(p, drift, u_scale);
           float fogAmt = clamp(n * (0.35 + 0.9 * u_density), 0., 1.);
@@ -306,11 +346,13 @@
           }
 
           vec3 bg = vec3(.07,.085,.11);
+          // Apply hue rotation only to the background to shift from gray to blue
+          vec3 bgColored = hueRotate(bg, u_hue);
           vec3 rawFogC = u_tint * (0.6 + 0.4 * n);
 
-          vec3 fogOnlyCol = mix(bg, applyHS(rawFogC, u_hue, u_sat), fogAmt);
-          vec3 mixedCol   = mix(bg, rawFogC, fogAmt);
-          vec3 allSceneCol= applyHS(mixedCol, u_hue, u_sat);
+          vec3 fogOnlyCol = mix(bgColored, applySaturation(rawFogC, u_sat), fogAmt);
+          vec3 mixedCol   = mix(bgColored, rawFogC, fogAmt);
+          vec3 allSceneCol= applySaturation(mixedCol, u_sat);
           vec3 col = mix(fogOnlyCol, allSceneCol, clamp(u_scope, 0.0, 1.0));
           
           // Apply contrast (reduces difference between light and dark)
@@ -427,8 +469,8 @@
 
       bindRange(ui.density, (v) => state.density = clamp(v, 0, 1));
       bindRange(ui.scale, (v) => state.scale = clamp(v, .25, 4));
-      bindRange(ui.speed, (v) => state.speed = clamp(v, 0, 1));
-      bindRange(ui.brownian, (v) => state.brownianScale = clamp(v, 0, 2));
+      bindRange(ui.speed, (v) => state.speed = clamp(v, 0, 0.1));
+      bindRange(ui.brownian, (v) => state.brownianScale = clamp(v, 0, 10));
       bindRange(ui.blur, (v) => state.blurPx = clamp(v, 0, 24));
       bindRange(ui.hue, (v) => state.hueRad = deg2rad(v));
       bindRange(ui.sat, (v) => state.sat = clamp(v, 0, 6));
@@ -513,6 +555,24 @@
         gl.drawArrays(gl.TRIANGLES, 0, 3);
         requestAnimationFrame(loop);
       };
+
+      // ========= Panel Toggle =========
+      const panel = $('panel');
+      const toggleBtn = $('toggleBtn');
+      let panelOpen = true;
+
+      toggleBtn && toggleBtn.addEventListener('click', () => {
+        panelOpen = !panelOpen;
+        if (panelOpen) {
+          panel?.classList.remove('collapsed');
+          toggleBtn.classList.add('panel-open');
+          toggleBtn.innerHTML = '☰';
+        } else {
+          panel?.classList.add('collapsed');
+          toggleBtn.classList.remove('panel-open');
+          toggleBtn.innerHTML = '☰';
+        }
+      });
 
       // ========= Init =========
       setInputsFromDefaults();

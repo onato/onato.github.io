@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fog Simulation — HTML Canvas (WebGL)</title>
+  <style>
+    :root {
+      --panel-bg: rgba(20, 22, 28, .6);
+      --panel-border: rgba(255, 255, 255, .08);
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #a3e635;
+    }
+
+    html,
+    body {
+      height: 100%;
+      margin: 0
+    }
+
+    body {
+      background: radial-gradient(1200px 800px at 70% 20%, #1b2230, #0b0f16 60%);
+      color: var(--text);
+      font: 14px/1.4 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      overflow: hidden
+    }
+
+    canvas {
+      display: block;
+      width: 100vw;
+      height: 100vh
+    }
+
+    .panel {
+      position: fixed;
+      top: 12px;
+      left: 12px;
+      z-index: 10;
+      background: var(--panel-bg);
+      backdrop-filter: blur(10px) saturate(1.1);
+      -webkit-backdrop-filter: blur(10px) saturate(1.1);
+      border: 1px solid var(--panel-border);
+      border-radius: 14px;
+      padding: 12px 14px;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, .35)
+    }
+
+    .panel h1 {
+      font-size: 13px;
+      margin: 0 0 8px;
+      font-weight: 600;
+      letter-spacing: .02em
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: 92px 180px 64px;
+      align-items: center;
+      gap: 8px;
+      margin: 8px 0
+    }
+
+    label {
+      color: var(--muted)
+    }
+
+    input[type="range"] {
+      width: 100%
+    }
+
+    input[type="color"] {
+      width: 52px;
+      height: 28px;
+      padding: 0;
+      border: 1px solid var(--panel-border);
+      background: transparent;
+      border-radius: 7px
+    }
+
+    .buttons {
+      display: flex;
+      gap: 8px;
+      margin-top: 6px;
+      flex-wrap: wrap
+    }
+
+    button {
+      appearance: none;
+      border: 1px solid var(--panel-border);
+      border-radius: 10px;
+      padding: 6px 10px;
+      cursor: pointer;
+      background: rgba(255, 255, 255, .04);
+      color: var(--text)
+    }
+
+    button:active {
+      transform: translateY(1px)
+    }
+
+    .readout {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+      color: var(--muted)
+    }
+
+    .warn {
+      position: fixed;
+      inset: 0;
+      display: none;
+      place-items: center;
+      padding: 24px;
+      text-align: center;
+      background: #0b0f16
+    }
+
+    .warn.show {
+      display: grid
+    }
+
+    .note {
+      position: fixed;
+      right: 12px;
+      bottom: 12px;
+      font-size: 12px;
+      color: #9aa4b2;
+      opacity: .7
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="fog" aria-label="Fog simulation"></canvas>
+
+  <div class="panel" role="group" aria-label="Fog controls">
+    <h1>🌫️ Fog controls</h1>
+    <div class="row"><label for="density">Density</label><input id="density" type="range" min="0" max="1" step="0.01" />
+      <div id="densityOut" class="readout"></div>
+    </div>
+    <div class="row"><label for="scale">Scale</label><input id="scale" type="range" min="0.25" max="4" step="0.01" />
+      <div id="scaleOut" class="readout"></div>
+    </div>
+    <div class="row"><label for="speed">Speed</label><input id="speed" type="range" min="0" max="1" step="0.001" />
+      <div id="speedOut" class="readout"></div>
+    </div>
+    <div class="row"><label for="direction">Direction</label><input id="direction" type="range" min="0" max="360"
+        step="1" />
+      <div id="directionOut" class="readout"></div>
+    </div>
+    <div class="row"><label for="blur">Blur</label><input id="blur" type="range" min="0" max="24" step="0.1" />
+      <div id="blurOut" class="readout"></div>
+    </div>
+    <div class="row"><label for="hue">Hue</label><input id="hue" type="range" min="0" max="360" step="1" />
+      <div id="hueOut" class="readout"></div>
+    </div>
+    <div class="row"><label for="sat">Saturation</label><input id="sat" type="range" min="0" max="3" step="0.01" />
+      <div id="satOut" class="readout"></div>
+    </div>
+    <div class="row"><label for="brightness">Brightness</label><input id="brightness" type="range" min="0.25" max="4" step="0.01" />
+      <div id="brightnessOut" class="readout"></div>
+    </div>
+    <div class="row"><label for="contrast">Contrast</label><input id="contrast" type="range" min="0.1" max="1" step="0.01" />
+      <div id="contrastOut" class="readout"></div>
+    </div>
+    <div class="row"><label for="scope">Color scope</label><input id="scope" type="checkbox" />
+      <div id="scopeOut" class="readout"></div>
+    </div>
+    <div class="row"><label for="tint">Tint</label><input id="tint" type="color" />
+      <div class="readout">&nbsp;</div>
+    </div>
+    <div class="row">
+      <label>Presets</label>
+      <div class="buttons" id="presetBtns" style="grid-column: 2 / 3;">
+        <button id="warmBtn" title="Hue +30°, Sat 1.20">Warm</button>
+        <button id="neutralBtn" title="Hue 0°, Sat 1.00">Neutral</button>
+        <button id="coolBtn" title="Hue 330°, Sat 1.10">Cool</button>
+      </div>
+      <div></div>
+    </div>
+    <div class="buttons"><button id="pauseBtn" aria-pressed="false">Pause</button><button id="resetBtn">Reset</button>
+    </div>
+  </div>
+
+  <div id="warn" class="warn">
+    <div>
+      <h2>WebGL unavailable</h2>
+      <p>Your browser or device doesn't seem to support WebGL, which this demo uses to render animated fog smoothly.</p>
+      <p>Try a modern browser (Chrome, Edge, Firefox, Safari) and ensure hardware acceleration is enabled.</p>
+    </div>
+  </div>
+
+  <div class="note">Robust UI: event bindings are now null-safe. If an element is missing, the demo still runs.</div>
+
+  <script>
+    (() => {
+      'use strict';
+      // ========= Helpers =========
+      const $ = (id) => document.getElementById(id);
+      const clamp = (v, lo, hi) => Math.min(hi, Math.max(lo, v));
+      const deg2rad = (d) => d * Math.PI / 180;
+      const rad2deg = (r) => r * 180 / Math.PI;
+      const hexToRgb = (hex) => {
+        const m = /^#?([\da-f]{2})([\da-f]{2})([\da-f]{2})$/i.exec(hex);
+        return m ? [parseInt(m[1], 16) / 255, parseInt(m[2], 16) / 255, parseInt(m[3], 16) / 255] : [0.86, 0.91, 1.0];
+      };
+      const set = (el, prop, val) => {if (el) el[prop] = val;};
+      const text = (el, s) => {if (el) el.textContent = s;};
+
+      // === Defaults ===
+      const DEFAULTS = Object.freeze({
+        density: 0.6,
+        scale: 2.5,
+        speed: 0.12,
+        directionDeg: 60,
+        tintHex: '#dbe7ff',
+        hueDeg: 0,
+        saturation: 1.0,
+        brightness: 1.0,
+        contrast: 1.0,
+      });
+      const BLUR_DEFAULT = 1.0; // CSS px
+
+      // ========= WebGL Boot =========
+      const canvas = $('fog');
+      const gl = canvas.getContext('webgl', {antialias: false, depth: false, stencil: false, premultipliedAlpha: false, preserveDrawingBuffer: false});
+      if (!gl) {$('warn')?.classList.add('show'); return;}
+
+      const VS = `
+        attribute vec2 a_position;
+        void main(){ gl_Position = vec4(a_position, 0.0, 1.0); }
+      `;
+      const FS = `
+        precision highp float;
+        uniform vec2  u_resolution;
+        uniform float u_time, u_scale, u_speed, u_density, u_blur;
+        uniform float u_hue, u_sat, u_brightness, u_contrast, u_scope; // hue in radians, saturation factor, brightness, contrast, 0=fog-only,1=whole-scene
+        uniform vec2  u_wind;
+        uniform vec3  u_tint;
+
+        float hash(vec2 p){ return fract(sin(dot(p, vec2(127.1,311.7))) * 43758.5453123); }
+        float noise(vec2 p){ vec2 i=floor(p), f=fract(p); float a=hash(i), b=hash(i+vec2(1.,0.)), c=hash(i+vec2(0.,1.)), d=hash(i+vec2(1.,1.)); vec2 u=f*f*(3.-2.*f); return mix(a,b,u.x)+(c-a)*u.y*(1.-u.x)+(d-b)*u.x*u.y; }
+        float fbm(vec2 p){ float v=0., a=.5; for(int i=0;i<6;i++){ v+=a*noise(p); p=p*2.+vec2(7.1,3.3); a*=.5; } return v; }
+        float fogField(vec2 p, vec2 drift, float sc){
+          float base = fbm(p * sc + drift);
+          float det  = fbm((p * (sc * 1.9) - drift * .35) + vec2(11.2,-4.7));
+          float n = mix(base, det, .5);
+          return smoothstep(.25,.85,n);
+        }
+        vec3 hueRotate(vec3 c, float a){
+          float U = cos(a), W = sin(a);
+          mat3 m = mat3(
+            0.299+0.701*U+0.168*W, 0.587-0.587*U+0.330*W, 0.114-0.114*U-0.497*W,
+            0.299-0.299*U-0.328*W, 0.587+0.413*U+0.035*W, 0.114-0.114*U+0.292*W,
+            0.299-0.300*U+1.250*W, 0.587-0.588*U-1.050*W, 0.114+0.886*U-0.203*W
+          );
+          return clamp(m * c, 0.0, 1.0);
+        }
+        vec3 applySaturation(vec3 c, float s){
+          float rw=0.213, gw=0.715, bw=0.072;
+          mat3 m = mat3(
+            rw+ (1.0-rw)*s, gw- gw*s,       bw- bw*s,
+            rw- rw*s,       gw+ (1.0-gw)*s, bw- bw*s,
+            rw- rw*s,       gw- gw*s,       bw+ (1.0-bw)*s
+          );
+          return clamp(m * c, 0.0, 1.0);
+        }
+        vec3 applyHS(vec3 c, float hue, float sat){
+          return applySaturation(hueRotate(c, hue), sat);
+        }
+        void main(){
+          vec2 uv = gl_FragCoord.xy / u_resolution.xy;
+          float aspect = u_resolution.x / u_resolution.y;
+          vec2 p = uv - .5; p.x *= aspect;
+
+          float t = u_time * u_speed; vec2 drift = u_wind * t;
+          float n = fogField(p, drift, u_scale);
+          float fogAmt = clamp(n * (0.35 + 0.9 * u_density), 0., 1.);
+
+          // Optional blur (5-tap cross)
+          if (u_blur > 0.05) {
+            vec2 stepP = vec2(u_blur / u_resolution.x * aspect, u_blur / u_resolution.y);
+            float acc = fogField(p, drift, u_scale) * 0.36;
+            acc += fogField(p + vec2( stepP.x, 0.0), drift, u_scale) * 0.16;
+            acc += fogField(p + vec2(-stepP.x, 0.0), drift, u_scale) * 0.16;
+            acc += fogField(p + vec2(0.0,  stepP.y), drift, u_scale) * 0.16;
+            acc += fogField(p + vec2(0.0, -stepP.y), drift, u_scale) * 0.16;
+            float k = clamp(u_blur / 24.0, 0.0, 1.0);
+            n = mix(n, acc, k);
+            fogAmt = clamp(n * (0.35 + 0.9 * u_density), 0., 1.);
+          }
+
+          vec3 bg = vec3(.07,.085,.11);
+          vec3 rawFogC = u_tint * (0.6 + 0.4 * n);
+
+          vec3 fogOnlyCol = mix(bg, applyHS(rawFogC, u_hue, u_sat), fogAmt);
+          vec3 mixedCol   = mix(bg, rawFogC, fogAmt);
+          vec3 allSceneCol= applyHS(mixedCol, u_hue, u_sat);
+          vec3 col = mix(fogOnlyCol, allSceneCol, clamp(u_scope, 0.0, 1.0));
+          
+          // Apply contrast (reduces difference between light and dark)
+          vec3 mid = vec3(0.5);
+          col = mix(mid, col, u_contrast);
+          
+          // Apply brightness
+          col = col * u_brightness;
+
+          gl_FragColor = vec4(col, 1.);
+        }
+      `;
+
+      const compile = (type, src) => {
+        const sh = gl.createShader(type); gl.shaderSource(sh, src);
+        gl.compileShader(sh);
+        if (!gl.getShaderParameter(sh, gl.COMPILE_STATUS))
+          throw new Error(gl.getShaderInfoLog(sh) || 'shader');
+        return sh;
+      };
+      const makeProgram = (vs, fs) => {const p = gl.createProgram(); gl.attachShader(p, compile(gl.VERTEX_SHADER, vs)); gl.attachShader(p, compile(gl.FRAGMENT_SHADER, fs)); gl.linkProgram(p); if (!gl.getProgramParameter(p, gl.LINK_STATUS)) throw new Error(gl.getProgramInfoLog(p) || 'link'); return p;};
+
+      const program = makeProgram(VS, FS); gl.useProgram(program);
+
+      // Fullscreen triangle
+      const buf = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 3, -1, -1, 3]), gl.STATIC_DRAW);
+      const aPos = gl.getAttribLocation(program, 'a_position'); gl.enableVertexAttribArray(aPos); gl.vertexAttribPointer(aPos, 2, gl.FLOAT, false, 0, 0);
+
+      // Uniforms
+      const U = {
+        res: gl.getUniformLocation(program, 'u_resolution'),
+        time: gl.getUniformLocation(program, 'u_time'),
+        scale: gl.getUniformLocation(program, 'u_scale'),
+        speed: gl.getUniformLocation(program, 'u_speed'),
+        density: gl.getUniformLocation(program, 'u_density'),
+        blur: gl.getUniformLocation(program, 'u_blur'),
+        hue: gl.getUniformLocation(program, 'u_hue'),
+        sat: gl.getUniformLocation(program, 'u_sat'),
+        brightness: gl.getUniformLocation(program, 'u_brightness'),
+        contrast: gl.getUniformLocation(program, 'u_contrast'),
+        scope: gl.getUniformLocation(program, 'u_scope'),
+        wind: gl.getUniformLocation(program, 'u_wind'),
+        tint: gl.getUniformLocation(program, 'u_tint'),
+      };
+
+      // ========= UI / State =========
+      const ui = {
+        density: $('density'), densityOut: $('densityOut'),
+        scale: $('scale'), scaleOut: $('scaleOut'),
+        speed: $('speed'), speedOut: $('speedOut'),
+        direction: $('direction'), directionOut: $('directionOut'),
+        blur: $('blur'), blurOut: $('blurOut'),
+        hue: $('hue'), hueOut: $('hueOut'),
+        sat: $('sat'), satOut: $('satOut'),
+        brightness: $('brightness'), brightnessOut: $('brightnessOut'),
+        contrast: $('contrast'), contrastOut: $('contrastOut'),
+        scope: $('scope'), scopeOut: $('scopeOut'),
+        tint: $('tint'),
+        pause: $('pauseBtn'), reset: $('resetBtn'),
+        warmBtn: $('warmBtn'), neutralBtn: $('neutralBtn'), coolBtn: $('coolBtn'),
+      };
+
+      const state = {
+        density: DEFAULTS.density,
+        scale: DEFAULTS.scale,
+        speed: DEFAULTS.speed,
+        dirRad: deg2rad(DEFAULTS.directionDeg),
+        blurPx: BLUR_DEFAULT,
+        hueRad: deg2rad(DEFAULTS.hueDeg),
+        sat: DEFAULTS.saturation,
+        brightness: DEFAULTS.brightness,
+        contrast: DEFAULTS.contrast,
+        scope: 0, // 0=fog only, 1=whole scene
+        tint: hexToRgb(DEFAULTS.tintHex),
+        paused: false,
+      };
+
+      const setInputsFromDefaults = () => {
+        set(ui.density, 'value', String(DEFAULTS.density));
+        set(ui.scale, 'value', String(DEFAULTS.scale));
+        set(ui.speed, 'value', String(DEFAULTS.speed));
+        set(ui.direction, 'value', String(DEFAULTS.directionDeg));
+        set(ui.blur, 'value', String(BLUR_DEFAULT));
+        set(ui.hue, 'value', String(DEFAULTS.hueDeg));
+        set(ui.sat, 'value', String(DEFAULTS.saturation));
+        set(ui.brightness, 'value', String(DEFAULTS.brightness));
+        set(ui.contrast, 'value', String(DEFAULTS.contrast));
+        if (ui.scope) ui.scope.checked = false;
+        set(ui.tint, 'value', DEFAULTS.tintHex);
+      };
+
+      const updateReadouts = () => {
+        text(ui.densityOut, state.density.toFixed(2));
+        text(ui.scaleOut, state.scale.toFixed(2) + '×');
+        text(ui.speedOut, state.speed.toFixed(3));
+        text(ui.directionOut, Math.round(rad2deg(state.dirRad)) + '°');
+        text(ui.blurOut, state.blurPx.toFixed(1) + 'px');
+        text(ui.hueOut, Math.round(rad2deg(state.hueRad)) + '°');
+        text(ui.satOut, state.sat.toFixed(2) + '×');
+        text(ui.brightnessOut, state.brightness.toFixed(2) + '×');
+        text(ui.contrastOut, state.contrast.toFixed(2) + '×');
+        text(ui.scopeOut, state.scope ? 'Whole scene' : 'Fog only');
+      };
+
+      // Null-safe binders
+      const bindRange = (el, onChange) => {if (!el) return; el.addEventListener('input', () => {onChange(parseFloat(el.value)); updateReadouts();});};
+      const bindColor = (el, onChange) => {if (!el) return; el.addEventListener('input', () => {onChange(el.value);});};
+
+      bindRange(ui.density, (v) => state.density = clamp(v, 0, 1));
+      bindRange(ui.scale, (v) => state.scale = clamp(v, .25, 4));
+      bindRange(ui.speed, (v) => state.speed = clamp(v, 0, 1));
+      bindRange(ui.brownian, (v) => state.brownianScale = clamp(v, 0, 2));
+      bindRange(ui.blur, (v) => state.blurPx = clamp(v, 0, 24));
+      bindRange(ui.hue, (v) => state.hueRad = deg2rad(v));
+      bindRange(ui.sat, (v) => state.sat = clamp(v, 0, 3));
+      bindRange(ui.brightness, (v) => state.brightness = clamp(v, 0.25, 4));
+      bindRange(ui.contrast, (v) => state.contrast = clamp(v, 0.1, 1));
+      bindColor(ui.tint, (v) => state.tint = hexToRgb(v));
+      if (ui.scope) ui.scope.addEventListener('change', () => {state.scope = ui.scope.checked ? 1 : 0; updateReadouts();});
+
+      // Presets
+      const applyPreset = (deg, sat) => {
+        state.hueRad = deg2rad((deg % 360 + 360) % 360);
+        state.sat = sat;
+        set(ui.hue, 'value', String(((deg % 360) + 360) % 360));
+        set(ui.sat, 'value', String(sat));
+        updateReadouts();
+      };
+      ui.warmBtn && ui.warmBtn.addEventListener('click', () => applyPreset(30, 1.20));
+      ui.neutralBtn && ui.neutralBtn.addEventListener('click', () => applyPreset(0, 1.00));
+      ui.coolBtn && ui.coolBtn.addEventListener('click', () => applyPreset(330, 1.10));
+
+      ui.pause && ui.pause.addEventListener('click', () => {
+        state.paused = !state.paused;
+        ui.pause.setAttribute('aria-pressed', String(state.paused));
+        ui.pause.textContent = state.paused ? 'Resume' : 'Pause';
+        if (!state.paused) {baseTime = performance.now() - elapsed * 1000; requestAnimationFrame(loop);}
+      });
+
+      ui.reset && ui.reset.addEventListener('click', () => {
+        setInputsFromDefaults();
+        Object.assign(state, {
+          density: DEFAULTS.density,
+          scale: DEFAULTS.scale,
+          speed: DEFAULTS.speed,
+          dirRad: deg2rad(DEFAULTS.directionDeg),
+          blurPx: BLUR_DEFAULT,
+          hueRad: deg2rad(DEFAULTS.hueDeg),
+          sat: DEFAULTS.saturation,
+          brightness: DEFAULTS.brightness,
+          contrast: DEFAULTS.contrast,
+          scope: 0,
+          tint: hexToRgb(DEFAULTS.tintHex)
+        });
+        updateReadouts();
+      });
+
+      // ========= Resize =========
+      let dpr = 1;
+      const resize = () => {
+        dpr = Math.min(window.devicePixelRatio || 1, 2);
+        const w = Math.max(1, Math.floor(window.innerWidth * dpr));
+        const h = Math.max(1, Math.floor(window.innerHeight * dpr));
+        canvas.width = w; canvas.height = h; canvas.style.width = '100vw'; canvas.style.height = '100vh';
+        gl.viewport(0, 0, w, h); gl.uniform2f(U.res, w, h);
+      };
+      window.addEventListener('resize', resize, {passive: true});
+
+      // ========= Render =========
+      let baseTime = performance.now();
+      let elapsed = 0; // seconds
+      const updateUniforms = () => {
+        const windX = Math.cos(state.dirRad), windY = Math.sin(state.dirRad);
+        gl.uniform1f(U.time, elapsed);
+        gl.uniform1f(U.scale, state.scale);
+        gl.uniform1f(U.speed, state.speed);
+        gl.uniform1f(U.density, state.density);
+        gl.uniform1f(U.blur, state.blurPx * dpr); // CSS px -> device px
+        gl.uniform1f(U.hue, state.hueRad);
+        gl.uniform1f(U.sat, state.sat);
+        gl.uniform1f(U.brightness, state.brightness);
+        gl.uniform1f(U.contrast, state.contrast);
+        gl.uniform1f(U.scope, state.scope);
+        gl.uniform2f(U.wind, windX, windY);
+        gl.uniform3f(U.tint, state.tint[0], state.tint[1], state.tint[2]);
+      };
+
+      const loop = (now) => {
+        if (state.paused) return;
+        elapsed = (now - baseTime) / 1000;
+        updateUniforms();
+        gl.drawArrays(gl.TRIANGLES, 0, 3);
+        requestAnimationFrame(loop);
+      };
+
+      // ========= Init =========
+      setInputsFromDefaults();
+      updateReadouts();
+      resize();
+      requestAnimationFrame(loop);
+    })();
+  </script>
+</body>
+
+</html>

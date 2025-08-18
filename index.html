@@ -150,9 +150,9 @@
     <div class="row"><label for="speed">Speed</label><input id="speed" type="range" min="0" max="1" step="0.001" />
       <div id="speedOut" class="readout"></div>
     </div>
-    <div class="row"><label for="direction">Direction</label><input id="direction" type="range" min="0" max="360"
-        step="1" />
-      <div id="directionOut" class="readout"></div>
+    <div class="row"><label for="brownian">Brownian</label><input id="brownian" type="range" min="0" max="2"
+        step="0.01" />
+      <div id="brownianOut" class="readout"></div>
     </div>
     <div class="row"><label for="blur">Blur</label><input id="blur" type="range" min="0" max="24" step="0.1" />
       <div id="blurOut" class="readout"></div>
@@ -221,7 +221,7 @@
         density: 0.6,
         scale: 2.5,
         speed: 0.12,
-        directionDeg: 60,
+        brownianScale: 0.5,
         tintHex: '#dbe7ff',
         hueDeg: 0,
         saturation: 1.0,
@@ -245,7 +245,7 @@
         uniform vec2  u_resolution;
         uniform float u_time, u_scale, u_speed, u_density, u_blur;
         uniform float u_hue, u_sat, u_minBright, u_maxBright, u_contrast, u_scope; // hue in radians, saturation, min/max brightness, contrast, 0=fog-only,1=whole-scene
-        uniform vec2  u_wind;
+        uniform float u_brownian;
         uniform vec3  u_tint;
 
         float hash(vec2 p){ return fract(sin(dot(p, vec2(127.1,311.7))) * 43758.5453123); }
@@ -283,7 +283,12 @@
           float aspect = u_resolution.x / u_resolution.y;
           vec2 p = uv - .5; p.x *= aspect;
 
-          float t = u_time * u_speed; vec2 drift = u_wind * t;
+          float t = u_time * u_speed;
+          // Brownian motion using sin/cos of different frequencies
+          vec2 drift = vec2(
+            sin(t * 0.13) + sin(t * 0.21) * 0.5 + sin(t * 0.08) * 0.3,
+            cos(t * 0.11) + cos(t * 0.19) * 0.5 + cos(t * 0.07) * 0.3
+          ) * u_brownian;
           float n = fogField(p, drift, u_scale);
           float fogAmt = clamp(n * (0.35 + 0.9 * u_density), 0., 1.);
 
@@ -349,7 +354,7 @@
         maxBright: gl.getUniformLocation(program, 'u_maxBright'),
         contrast: gl.getUniformLocation(program, 'u_contrast'),
         scope: gl.getUniformLocation(program, 'u_scope'),
-        wind: gl.getUniformLocation(program, 'u_wind'),
+        brownian: gl.getUniformLocation(program, 'u_brownian'),
         tint: gl.getUniformLocation(program, 'u_tint'),
       };
 
@@ -358,7 +363,7 @@
         density: $('density'), densityOut: $('densityOut'),
         scale: $('scale'), scaleOut: $('scaleOut'),
         speed: $('speed'), speedOut: $('speedOut'),
-        direction: $('direction'), directionOut: $('directionOut'),
+        brownian: $('brownian'), brownianOut: $('brownianOut'),
         blur: $('blur'), blurOut: $('blurOut'),
         hue: $('hue'), hueOut: $('hueOut'),
         sat: $('sat'), satOut: $('satOut'),
@@ -375,7 +380,7 @@
         density: DEFAULTS.density,
         scale: DEFAULTS.scale,
         speed: DEFAULTS.speed,
-        dirRad: deg2rad(DEFAULTS.directionDeg),
+        brownianScale: DEFAULTS.brownianScale,
         blurPx: BLUR_DEFAULT,
         hueRad: deg2rad(DEFAULTS.hueDeg),
         sat: DEFAULTS.saturation,
@@ -391,7 +396,7 @@
         set(ui.density, 'value', String(DEFAULTS.density));
         set(ui.scale, 'value', String(DEFAULTS.scale));
         set(ui.speed, 'value', String(DEFAULTS.speed));
-        set(ui.direction, 'value', String(DEFAULTS.directionDeg));
+        set(ui.brownian, 'value', String(DEFAULTS.brownianScale));
         set(ui.blur, 'value', String(BLUR_DEFAULT));
         set(ui.hue, 'value', String(DEFAULTS.hueDeg));
         set(ui.sat, 'value', String(DEFAULTS.saturation));
@@ -406,7 +411,7 @@
         text(ui.densityOut, state.density.toFixed(2));
         text(ui.scaleOut, state.scale.toFixed(2) + '×');
         text(ui.speedOut, state.speed.toFixed(3));
-        text(ui.directionOut, Math.round(rad2deg(state.dirRad)) + '°');
+        text(ui.brownianOut, state.brownianScale.toFixed(2) + '×');
         text(ui.blurOut, state.blurPx.toFixed(1) + 'px');
         text(ui.hueOut, Math.round(rad2deg(state.hueRad)) + '°');
         text(ui.satOut, state.sat.toFixed(2) + '×');
@@ -458,7 +463,7 @@
           density: DEFAULTS.density,
           scale: DEFAULTS.scale,
           speed: DEFAULTS.speed,
-          dirRad: deg2rad(DEFAULTS.directionDeg),
+          brownianScale: DEFAULTS.brownianScale,
           blurPx: BLUR_DEFAULT,
           hueRad: deg2rad(DEFAULTS.hueDeg),
           sat: DEFAULTS.saturation,
@@ -486,7 +491,6 @@
       let baseTime = performance.now();
       let elapsed = 0; // seconds
       const updateUniforms = () => {
-        const windX = Math.cos(state.dirRad), windY = Math.sin(state.dirRad);
         gl.uniform1f(U.time, elapsed);
         gl.uniform1f(U.scale, state.scale);
         gl.uniform1f(U.speed, state.speed);
@@ -498,7 +502,7 @@
         gl.uniform1f(U.maxBright, state.maxBrightness);
         gl.uniform1f(U.contrast, state.contrast);
         gl.uniform1f(U.scope, state.scope);
-        gl.uniform2f(U.wind, windX, windY);
+        gl.uniform1f(U.brownian, state.brownianScale);
         gl.uniform3f(U.tint, state.tint[0], state.tint[1], state.tint[2]);
       };
 

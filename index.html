@@ -163,8 +163,11 @@
     <div class="row"><label for="sat">Saturation</label><input id="sat" type="range" min="0" max="3" step="0.01" />
       <div id="satOut" class="readout"></div>
     </div>
-    <div class="row"><label for="brightness">Brightness</label><input id="brightness" type="range" min="0.25" max="4" step="0.01" />
-      <div id="brightnessOut" class="readout"></div>
+    <div class="row"><label for="minBright">Min Bright</label><input id="minBright" type="range" min="0" max="0.5" step="0.01" />
+      <div id="minBrightOut" class="readout"></div>
+    </div>
+    <div class="row"><label for="maxBright">Max Bright</label><input id="maxBright" type="range" min="0.5" max="1" step="0.01" />
+      <div id="maxBrightOut" class="readout"></div>
     </div>
     <div class="row"><label for="contrast">Contrast</label><input id="contrast" type="range" min="0.1" max="1" step="0.01" />
       <div id="contrastOut" class="readout"></div>
@@ -222,7 +225,8 @@
         tintHex: '#dbe7ff',
         hueDeg: 0,
         saturation: 1.0,
-        brightness: 1.0,
+        minBrightness: 0.1,
+        maxBrightness: 0.9,
         contrast: 1.0,
       });
       const BLUR_DEFAULT = 1.0; // CSS px
@@ -240,7 +244,7 @@
         precision highp float;
         uniform vec2  u_resolution;
         uniform float u_time, u_scale, u_speed, u_density, u_blur;
-        uniform float u_hue, u_sat, u_brightness, u_contrast, u_scope; // hue in radians, saturation factor, brightness, contrast, 0=fog-only,1=whole-scene
+        uniform float u_hue, u_sat, u_minBright, u_maxBright, u_contrast, u_scope; // hue in radians, saturation, min/max brightness, contrast, 0=fog-only,1=whole-scene
         uniform vec2  u_wind;
         uniform vec3  u_tint;
 
@@ -308,8 +312,8 @@
           vec3 mid = vec3(0.5);
           col = mix(mid, col, u_contrast);
           
-          // Apply brightness
-          col = col * u_brightness;
+          // Remap brightness to stay within min/max bounds
+          col = mix(vec3(u_minBright), vec3(u_maxBright), col);
 
           gl_FragColor = vec4(col, 1.);
         }
@@ -341,7 +345,8 @@
         blur: gl.getUniformLocation(program, 'u_blur'),
         hue: gl.getUniformLocation(program, 'u_hue'),
         sat: gl.getUniformLocation(program, 'u_sat'),
-        brightness: gl.getUniformLocation(program, 'u_brightness'),
+        minBright: gl.getUniformLocation(program, 'u_minBright'),
+        maxBright: gl.getUniformLocation(program, 'u_maxBright'),
         contrast: gl.getUniformLocation(program, 'u_contrast'),
         scope: gl.getUniformLocation(program, 'u_scope'),
         wind: gl.getUniformLocation(program, 'u_wind'),
@@ -357,7 +362,8 @@
         blur: $('blur'), blurOut: $('blurOut'),
         hue: $('hue'), hueOut: $('hueOut'),
         sat: $('sat'), satOut: $('satOut'),
-        brightness: $('brightness'), brightnessOut: $('brightnessOut'),
+        minBright: $('minBright'), minBrightOut: $('minBrightOut'),
+        maxBright: $('maxBright'), maxBrightOut: $('maxBrightOut'),
         contrast: $('contrast'), contrastOut: $('contrastOut'),
         scope: $('scope'), scopeOut: $('scopeOut'),
         tint: $('tint'),
@@ -373,7 +379,8 @@
         blurPx: BLUR_DEFAULT,
         hueRad: deg2rad(DEFAULTS.hueDeg),
         sat: DEFAULTS.saturation,
-        brightness: DEFAULTS.brightness,
+        minBrightness: DEFAULTS.minBrightness,
+        maxBrightness: DEFAULTS.maxBrightness,
         contrast: DEFAULTS.contrast,
         scope: 0, // 0=fog only, 1=whole scene
         tint: hexToRgb(DEFAULTS.tintHex),
@@ -388,7 +395,8 @@
         set(ui.blur, 'value', String(BLUR_DEFAULT));
         set(ui.hue, 'value', String(DEFAULTS.hueDeg));
         set(ui.sat, 'value', String(DEFAULTS.saturation));
-        set(ui.brightness, 'value', String(DEFAULTS.brightness));
+        set(ui.minBright, 'value', String(DEFAULTS.minBrightness));
+        set(ui.maxBright, 'value', String(DEFAULTS.maxBrightness));
         set(ui.contrast, 'value', String(DEFAULTS.contrast));
         if (ui.scope) ui.scope.checked = false;
         set(ui.tint, 'value', DEFAULTS.tintHex);
@@ -402,7 +410,8 @@
         text(ui.blurOut, state.blurPx.toFixed(1) + 'px');
         text(ui.hueOut, Math.round(rad2deg(state.hueRad)) + '°');
         text(ui.satOut, state.sat.toFixed(2) + '×');
-        text(ui.brightnessOut, state.brightness.toFixed(2) + '×');
+        text(ui.minBrightOut, state.minBrightness.toFixed(2));
+        text(ui.maxBrightOut, state.maxBrightness.toFixed(2));
         text(ui.contrastOut, state.contrast.toFixed(2) + '×');
         text(ui.scopeOut, state.scope ? 'Whole scene' : 'Fog only');
       };
@@ -418,7 +427,8 @@
       bindRange(ui.blur, (v) => state.blurPx = clamp(v, 0, 24));
       bindRange(ui.hue, (v) => state.hueRad = deg2rad(v));
       bindRange(ui.sat, (v) => state.sat = clamp(v, 0, 3));
-      bindRange(ui.brightness, (v) => state.brightness = clamp(v, 0.25, 4));
+      bindRange(ui.minBright, (v) => state.minBrightness = clamp(v, 0, 0.5));
+      bindRange(ui.maxBright, (v) => state.maxBrightness = clamp(v, 0.5, 1));
       bindRange(ui.contrast, (v) => state.contrast = clamp(v, 0.1, 1));
       bindColor(ui.tint, (v) => state.tint = hexToRgb(v));
       if (ui.scope) ui.scope.addEventListener('change', () => {state.scope = ui.scope.checked ? 1 : 0; updateReadouts();});
@@ -452,7 +462,8 @@
           blurPx: BLUR_DEFAULT,
           hueRad: deg2rad(DEFAULTS.hueDeg),
           sat: DEFAULTS.saturation,
-          brightness: DEFAULTS.brightness,
+          minBrightness: DEFAULTS.minBrightness,
+          maxBrightness: DEFAULTS.maxBrightness,
           contrast: DEFAULTS.contrast,
           scope: 0,
           tint: hexToRgb(DEFAULTS.tintHex)
@@ -483,7 +494,8 @@
         gl.uniform1f(U.blur, state.blurPx * dpr); // CSS px -> device px
         gl.uniform1f(U.hue, state.hueRad);
         gl.uniform1f(U.sat, state.sat);
-        gl.uniform1f(U.brightness, state.brightness);
+        gl.uniform1f(U.minBright, state.minBrightness);
+        gl.uniform1f(U.maxBright, state.maxBrightness);
         gl.uniform1f(U.contrast, state.contrast);
         gl.uniform1f(U.scope, state.scope);
         gl.uniform2f(U.wind, windX, windY);

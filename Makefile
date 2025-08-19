@@ -8,10 +8,12 @@ DIST_DIR = dist
 PERF_DIR = performance-reports
 
 # Source files
-JS_SRC = fog-renderer.js fog-renderer-optimized.js
+JS_SRC = fog-renderer.js details.js
+CSS_SRC = styles.css
 
-# Tools (install with: npm install -g uglify-js)
+# Tools (install with: npm install -g uglify-js clean-css-cli)
 UGLIFY = npx uglify-js
+CLEANCSS = npx cleancss
 PYTHON = python3
 BROWSER = open # Use 'xdg-open' on Linux, 'start' on Windows
 
@@ -24,50 +26,109 @@ all: clean build
 dirs:
 	@mkdir -p $(BUILD_DIR) $(DIST_DIR) $(PERF_DIR)
 
-# Clean build artifacts
+# Clean build artifacts (contents only, keep directories)
 .PHONY: clean
 clean:
 	@echo "🧹 Cleaning build artifacts..."
-	@rm -rf $(BUILD_DIR) $(DIST_DIR) $(PERF_DIR)
+	@rm -rf $(BUILD_DIR)/* $(DIST_DIR)/* $(PERF_DIR)/*
+	@rm -rf $(BUILD_DIR)/.* $(DIST_DIR)/.* $(PERF_DIR)/.* 2>/dev/null || true
 
 # Build minified JavaScript
 .PHONY: build-js
 build-js: dirs
 	@echo "📦 Minifying JavaScript files..."
 	@for file in $(JS_SRC); do \
-		echo "  Minifying $$file..."; \
-		$(UGLIFY) $$file \
-			--compress drop_console=true,drop_debugger=true,pure_funcs=['console.log'] \
-			--mangle toplevel \
-			--output $(BUILD_DIR)/$${file%.js}.min.js \
-			2>/dev/null || echo "    ⚠️  Failed to minify $$file"; \
+		echo "  Processing $$file..."; \
+		if [ "$$file" = "fog-renderer.js" ]; then \
+			echo "    Minifying shaders..."; \
+			node scripts/minify-shaders.js $$file $(BUILD_DIR)/$${file%.js}.shader-min.js; \
+			echo "    Minifying JavaScript..."; \
+			$(UGLIFY) $(BUILD_DIR)/$${file%.js}.shader-min.js \
+				--compress drop_console=true,drop_debugger=true,pure_funcs=['console.log'] \
+				--mangle toplevel \
+				--output $(BUILD_DIR)/$${file%.js}.min.js \
+				2>/dev/null || echo "    ⚠️  Failed to minify $$file"; \
+			rm -f $(BUILD_DIR)/$${file%.js}.shader-min.js; \
+		else \
+			$(UGLIFY) $$file \
+				--compress drop_console=true,drop_debugger=true,pure_funcs=['console.log'] \
+				--mangle toplevel \
+				--output $(BUILD_DIR)/$${file%.js}.min.js \
+				2>/dev/null || echo "    ⚠️  Failed to minify $$file"; \
+		fi; \
 	done
 	@echo "  ✅ JavaScript minification complete"
 
+# Build minified CSS
+.PHONY: build-css
+build-css: dirs
+	@echo "📦 Minifying CSS files..."
+	@for file in $(CSS_SRC); do \
+		echo "  Minifying $$file..."; \
+		$(CLEANCSS) -o $(BUILD_DIR)/$${file%.css}.min.css $$file \
+			2>/dev/null || echo "    ⚠️  Failed to minify $$file"; \
+	done
+	@echo "  ✅ CSS minification complete"
+
+# Process HTML files and assets for production
+.PHONY: build-html
+build-html: dirs
+	@echo "📦 Processing HTML files and assets..."
+	@node scripts/process-html.js index.html $(BUILD_DIR)/index.html
+	@cp favicon.ico $(BUILD_DIR)/favicon.ico 2>/dev/null || true
+	@echo "  ✅ HTML files and assets processed"
+
 # Combined build target
 .PHONY: build
-build: build-js
+build: build-js build-css build-html check-sizes
 	@echo "🎉 Build complete!"
 	@echo "📊 File size comparison:"
 	@echo "  Original:"
-	@du -sh *.js *.html 2>/dev/null | head -5
+	@du -sh *.js *.css *.html 2>/dev/null | head -5
 	@echo "  Minified:"
 	@du -sh $(BUILD_DIR)/*.min.* 2>/dev/null | head -5
+
+# Check file sizes to ensure they fit in one TCP packet
+.PHONY: check-sizes
+check-sizes:
+	@echo "📏 Checking build file sizes (max 10KB per file)..."
+	@failed=0; \
+	for file in $(BUILD_DIR)/*.min.* $(BUILD_DIR)/*.html; do \
+		if [ -f "$$file" ]; then \
+			size=$$(stat -f%z "$$file" 2>/dev/null || stat -c%s "$$file" 2>/dev/null); \
+			if [ "$$size" -gt 10240 ]; then \
+				kb=$$(echo "scale=1; $$size/1024" | bc); \
+				echo "  ❌ $$file is $$kb KB (exceeds 10KB limit)"; \
+				failed=1; \
+			else \
+				kb=$$(echo "scale=1; $$size/1024" | bc); \
+				echo "  ✅ $$file is $$kb KB"; \
+			fi; \
+		fi; \
+	done; \
+	if [ "$$failed" -eq 1 ]; then \
+		echo "  ⛔ Build failed: Some files exceed 10KB limit"; \
+		exit 1; \
+	else \
+		echo "  ✅ All build files within size limit"; \
+	fi
 
 # Create production distribution
 .PHONY: dist
 dist: build
 	@echo "📦 Creating production distribution..."
-	@cp $(BUILD_DIR)/fog-renderer.min.js $(DIST_DIR)/fog.min.js
-	@cp index.html $(DIST_DIR)/index.html
+	@cp $(BUILD_DIR)/fog-renderer.min.js $(DIST_DIR)/fog-renderer.min.js
+	@cp $(BUILD_DIR)/styles.min.css $(DIST_DIR)/styles.min.css 2>/dev/null || true
+	@cp $(BUILD_DIR)/details.min.js $(DIST_DIR)/details.min.js
+	@cp $(BUILD_DIR)/index.html $(DIST_DIR)/index.html
 	@echo "  ✅ Distribution created in $(DIST_DIR)/"
 	@echo "  📁 Total size: $$(du -sh $(DIST_DIR) | cut -f1)"
 
 # Run local development server
 .PHONY: serve
 serve:
-	@echo "🚀 Starting development server on http://localhost:8000"
-	@$(PYTHON) -m http.server 8000
+	@echo "🚀 Starting development server on http://localhost:5001"
+	@$(PYTHON) -m http.server 5001
 
 # Run production server with minified files
 .PHONY: serve-prod
@@ -110,7 +171,7 @@ size-analysis: build
 	@echo "📊 Bundle Size Analysis"
 	@echo "========================"
 	@echo "Original files:"
-	@wc -c fog-renderer.js index.html | tail -1 | awk '{print "  Total: " $$1 " bytes"}'
+	@wc -c fog-renderer.js styles.css index.html 2>/dev/null | tail -1 | awk '{print "  Total: " $$1 " bytes"}'
 	@echo ""
 	@echo "Minified files:"
 	@wc -c $(BUILD_DIR)/*.min.* 2>/dev/null | tail -1 | awk '{print "  Total: " $$1 " bytes"}'
@@ -120,15 +181,21 @@ size-analysis: build
 
 # Lighthouse performance audit (requires Chrome and lighthouse CLI)
 .PHONY: lighthouse
-lighthouse: serve-prod
+lighthouse: build dirs
 	@echo "🔦 Running Lighthouse audit..."
+	@echo "  Starting temporary server..."
+	@cd $(BUILD_DIR) && $(PYTHON) -m http.server 8001 > /dev/null 2>&1 & echo $$! > /tmp/lighthouse-server.pid
+	@sleep 2
 	@npx lighthouse http://localhost:8001/index.html \
 		--output json \
-		--output-path $(PERF_DIR)/lighthouse-report.json \
+		--output html \
+		--output-path $(PERF_DIR)/lighthouse-report \
 		--only-categories=performance \
 		--chrome-flags="--headless" \
 		2>/dev/null || echo "⚠️  Lighthouse not installed. Run: npm install -g lighthouse"
-	@echo "  ✅ Report saved to $(PERF_DIR)/lighthouse-report.json"
+	@kill `cat /tmp/lighthouse-server.pid` 2>/dev/null || true
+	@rm -f /tmp/lighthouse-server.pid
+	@echo "  ✅ Reports saved to $(PERF_DIR)/lighthouse-report.json and lighthouse-report.html"
 
 # Browser performance test
 .PHONY: browser-test
@@ -150,7 +217,7 @@ watch:
 .PHONY: install-deps
 install-deps:
 	@echo "📦 Installing build dependencies..."
-	npm install -g uglify-js
+	npm install -g uglify-js clean-css-cli
 	@echo "  ✅ Dependencies installed"
 
 # Full test suite
@@ -208,4 +275,4 @@ help:
 	@echo "Requirements:"
 	@echo "  - Node.js and npm"
 	@echo "  - Python 3 (for local server)"
-	@echo "  - uglify-js (run 'make install-deps')"
+	@echo "  - uglify-js and clean-css-cli (run 'make install-deps')"

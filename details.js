@@ -86,10 +86,16 @@ document.addEventListener('DOMContentLoaded', function() {
     // Make summaries focusable
     summary.setAttribute('tabindex', '0');
     
-    // Handle click
+    // Handle click on summary
     summary.addEventListener('click', (e) => {
       e.preventDefault();
       toggleDetail(detail);
+    });
+    
+    // Stop propagation when clicking inside detail content
+    const content = detail.querySelector('.detail-content');
+    content.addEventListener('click', (e) => {
+      e.stopPropagation();
     });
     
     // Handle keyboard navigation
@@ -116,5 +122,17 @@ document.addEventListener('DOMContentLoaded', function() {
         // Allow default behavior for links
       }
     });
+  });
+  
+  // Close details when clicking outside
+  document.addEventListener('click', (e) => {
+    // If click is not on a details element or its children
+    if (!e.target.closest('details.stack-item')) {
+      details.forEach(detail => {
+        if (detail.open) {
+          closeDetail(detail);
+        }
+      });
+    }
   });
 });

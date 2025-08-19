@@ -9,6 +9,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 16px;
   font-weight: 100;
+  font-style: italic;
   line-height: 1.4;
   padding: 20px;
   min-height: 100vh;
@@ -53,6 +54,7 @@ body {
 
 .stack-item {
   font-weight: 100;
+  font-style: italic;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   cursor: pointer;
@@ -128,6 +130,7 @@ summary {
   outline: none;
   position: relative;
   display: inline-block;
+  padding-right: 10px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -141,7 +144,9 @@ details[open] summary {
 
 .stack-item:hover summary {
   color: black;
-  transform: translateX(5px);
+  font-weight: 300;
+  padding-left: 10px;
+  padding-right: 0;
 }
 
 .detail-content {
@@ -151,7 +156,8 @@ details[open] summary {
   padding: 0 30px;
   margin: 0;
   font-size: 16px;
-  font-weight: 200;
+  font-weight: 100;
+  font-style: italic;
   text-transform: none;
   letter-spacing: normal;
   max-width: 500px;
@@ -176,7 +182,8 @@ details[open] .detail-content {
 
 .detail-content a {
   color: #fff;
-  font-weight: 300;
+  font-weight: 100;
+  font-style: italic;
   text-decoration: none;
   border: 1px solid #fff;
   padding: 8px 16px;
@@ -186,7 +193,7 @@ details[open] .detail-content {
 
 .detail-content a:hover {
   background: #fff;
-  color: #000;
+  color: black;
 }
 
 .bottom-links {
@@ -198,16 +205,19 @@ details[open] .detail-content {
 }
 
 .bottom-links a {
-  color: black;
+  color: white;
   text-decoration: none;
-  font-weight: 400;
+  font-weight: 100;
+  font-style: italic;
   font-size: 18px;
   display: block;
   margin-top: 10px;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, color 0.2s ease, font-weight 0.2s ease;
 }
 
 .bottom-links a:hover {
+  color: black;
+  font-weight: 300;
   transform: translateX(-10px);
 }
 
@@ -216,14 +226,13 @@ details[open] .detail-content {
     margin-left: 0 !important;
   }
 
+  .stack-item:hover summary {
+    font-weight: 100;
+  }
+
   .detail-content {
     max-width: 100%;
   }
 
-  .bottom-links {
-    position: static;
-    margin-top: 30px;
-    text-align: left;
-    padding-bottom: 20px;
-  }
+
 }

@@ -194,13 +194,10 @@
         step="0.01" />
       <div id="brownianOut" class="readout"></div>
     </div>
-    <div class="row"><label for="blur">Blur</label><input id="blur" type="range" min="0" max="24" step="0.1" />
-      <div id="blurOut" class="readout"></div>
-    </div>
     <div class="row"><label for="hue">Hue</label><input id="hue" type="range" min="0" max="360" step="1" />
       <div id="hueOut" class="readout"></div>
     </div>
-    <div class="row"><label for="sat">Saturation</label><input id="sat" type="range" min="0" max="6" step="0.01" />
+    <div class="row"><label for="sat">Saturation</label><input id="sat" type="range" min="0" max="10" step="0.01" />
       <div id="satOut" class="readout"></div>
     </div>
     <div class="row"><label for="minBright">Min Bright</label><input id="minBright" type="range" min="0" max="0.5"
@@ -242,171 +239,35 @@
     </div>
   </div>
 
-  <div class="note">Robust UI: event bindings are now null-safe. If an element is missing, the demo still runs.</div>
-
+  <script src="fog-renderer.js"></script>
   <script>
     (() => {
       'use strict';
-      // ========= Helpers =========
+      
+      // Helper functions
       const $ = (id) => document.getElementById(id);
       const clamp = (v, lo, hi) => Math.min(hi, Math.max(lo, v));
-      const deg2rad = (d) => d * Math.PI / 180;
-      const rad2deg = (r) => r * 180 / Math.PI;
-      const hexToRgb = (hex) => {
-        const m = /^#?([\da-f]{2})([\da-f]{2})([\da-f]{2})$/i.exec(hex);
-        return m ? [parseInt(m[1], 16) / 255, parseInt(m[2], 16) / 255, parseInt(m[3], 16) / 255] : [0.86, 0.91, 1.0];
-      };
-      const set = (el, prop, val) => {if (el) el[prop] = val;};
-      const text = (el, s) => {if (el) el.textContent = s;};
-
-      // === Defaults ===
-      const DEFAULTS = Object.freeze({
-        density: 0.75,
-        scale: 1.55,
-        speed: 0.01,
-        brownianScale: 2.0,
-        tintHex: '#ffffff',
-        hueDeg: 350,
-        saturation: 0.0,
-        minBrightness: 0.11,
-        maxBrightness: 1.34,
-        contrast: 0.9,
-      });
-      const BLUR_DEFAULT = 9.3; // CSS px
-
-      // ========= WebGL Boot =========
+      const set = (el, prop, val) => { if (el) el[prop] = val; };
+      const text = (el, s) => { if (el) el.textContent = s; };
+      
+      // Initialize fog renderer
       const canvas = $('fog');
-      const gl = canvas.getContext('webgl', {antialias: false, depth: false, stencil: false, premultipliedAlpha: false, preserveDrawingBuffer: false});
-      if (!gl) {$('warn')?.classList.add('show'); return;}
-
-      const VS = `
-        attribute vec2 a_position;
-        void main(){ gl_Position = vec4(a_position, 0.0, 1.0); }
-      `;
-      const FS = `
-        precision highp float;
-        uniform vec2  u_resolution;
-        uniform float u_time, u_scale, u_speed, u_density, u_blur;
-        uniform float u_hue, u_sat, u_minBright, u_maxBright, u_contrast, u_scope; // hue in radians, saturation, min/max brightness, contrast, 0=fog-only,1=whole-scene
-        uniform float u_brownian;
-        uniform vec3  u_tint;
-
-        float hash(vec2 p){ return fract(sin(dot(p, vec2(127.1,311.7))) * 43758.5453123); }
-        float noise(vec2 p){ vec2 i=floor(p), f=fract(p); float a=hash(i), b=hash(i+vec2(1.,0.)), c=hash(i+vec2(0.,1.)), d=hash(i+vec2(1.,1.)); vec2 u=f*f*(3.-2.*f); return mix(a,b,u.x)+(c-a)*u.y*(1.-u.x)+(d-b)*u.x*u.y; }
-        float fbm(vec2 p){ float v=0., a=.5; for(int i=0;i<6;i++){ v+=a*noise(p); p=p*2.+vec2(7.1,3.3); a*=.5; } return v; }
-        float fogField(vec2 p, vec2 drift, float sc){
-          float base = fbm(p * sc + drift);
-          float det  = fbm((p * (sc * 1.9) - drift * .35) + vec2(11.2,-4.7));
-          float n = mix(base, det, .5);
-          return smoothstep(.25,.85,n);
-        }
-        vec3 hueRotate(vec3 c, float a){
-          float U = cos(a), W = sin(a);
-          mat3 m = mat3(
-            0.299+0.701*U+0.168*W, 0.587-0.587*U+0.330*W, 0.114-0.114*U-0.497*W,
-            0.299-0.299*U-0.328*W, 0.587+0.413*U+0.035*W, 0.114-0.114*U+0.292*W,
-            0.299-0.300*U+1.250*W, 0.587-0.588*U-1.050*W, 0.114+0.886*U-0.203*W
-          );
-          return clamp(m * c, 0.0, 1.0);
-        }
-        vec3 applySaturation(vec3 c, float s){
-          // Convert to grayscale using luminance weights
-          float gray = dot(c, vec3(0.213, 0.715, 0.072));
-          // Mix between grayscale and original color based on saturation
-          return clamp(mix(vec3(gray), c, s), 0.0, 1.0);
-        }
-        vec3 applyHS(vec3 c, float hue, float sat){
-          return applySaturation(hueRotate(c, hue), sat);
-        }
-        void main(){
-          vec2 uv = gl_FragCoord.xy / u_resolution.xy;
-          float aspect = u_resolution.x / u_resolution.y;
-          vec2 p = uv - .5; p.x *= aspect;
-
-          float t = u_time * u_speed;
-          // True Brownian motion - independent x and y movement with multiple frequencies
-          vec2 drift = vec2(
-            sin(t * 1.3) + sin(t * 2.1) * 0.5 + sin(t * 0.7) * 0.3,
-            cos(t * 1.1) + cos(t * 1.9) * 0.5 + cos(t * 0.6) * 0.3
-          ) * u_brownian;
-          float n = fogField(p, drift, u_scale);
-          float fogAmt = clamp(n * (0.35 + 0.9 * u_density), 0., 1.);
-
-          // Optional blur (5-tap cross)
-          if (u_blur > 0.05) {
-            vec2 stepP = vec2(u_blur / u_resolution.x * aspect, u_blur / u_resolution.y);
-            float acc = fogField(p, drift, u_scale) * 0.36;
-            acc += fogField(p + vec2( stepP.x, 0.0), drift, u_scale) * 0.16;
-            acc += fogField(p + vec2(-stepP.x, 0.0), drift, u_scale) * 0.16;
-            acc += fogField(p + vec2(0.0,  stepP.y), drift, u_scale) * 0.16;
-            acc += fogField(p + vec2(0.0, -stepP.y), drift, u_scale) * 0.16;
-            float k = clamp(u_blur / 24.0, 0.0, 1.0);
-            n = mix(n, acc, k);
-            fogAmt = clamp(n * (0.35 + 0.9 * u_density), 0., 1.);
-          }
-
-          vec3 bg = vec3(.07,.085,.11);
-          // Apply hue rotation only to the background to shift from gray to blue
-          vec3 bgColored = hueRotate(bg, u_hue);
-          vec3 rawFogC = u_tint * (0.6 + 0.4 * n);
-
-          vec3 fogOnlyCol = mix(bgColored, applySaturation(rawFogC, u_sat), fogAmt);
-          vec3 mixedCol   = mix(bgColored, rawFogC, fogAmt);
-          vec3 allSceneCol= applySaturation(mixedCol, u_sat);
-          vec3 col = mix(fogOnlyCol, allSceneCol, clamp(u_scope, 0.0, 1.0));
-          
-          // Apply contrast (reduces difference between light and dark)
-          vec3 mid = vec3(0.5);
-          col = mix(mid, col, u_contrast);
-          
-          // Remap brightness to stay within min/max bounds
-          col = mix(vec3(u_minBright), vec3(u_maxBright), col);
-
-          gl_FragColor = vec4(col, 1.);
-        }
-      `;
-
-      const compile = (type, src) => {
-        const sh = gl.createShader(type); gl.shaderSource(sh, src);
-        gl.compileShader(sh);
-        if (!gl.getShaderParameter(sh, gl.COMPILE_STATUS))
-          throw new Error(gl.getShaderInfoLog(sh) || 'shader');
-        return sh;
-      };
-      const makeProgram = (vs, fs) => {const p = gl.createProgram(); gl.attachShader(p, compile(gl.VERTEX_SHADER, vs)); gl.attachShader(p, compile(gl.FRAGMENT_SHADER, fs)); gl.linkProgram(p); if (!gl.getProgramParameter(p, gl.LINK_STATUS)) throw new Error(gl.getProgramInfoLog(p) || 'link'); return p;};
-
-      const program = makeProgram(VS, FS); gl.useProgram(program);
-
-      // Fullscreen triangle
-      const buf = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, buf);
-      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 3, -1, -1, 3]), gl.STATIC_DRAW);
-      const aPos = gl.getAttribLocation(program, 'a_position'); gl.enableVertexAttribArray(aPos); gl.vertexAttribPointer(aPos, 2, gl.FLOAT, false, 0, 0);
-
-      // Uniforms
-      const U = {
-        res: gl.getUniformLocation(program, 'u_resolution'),
-        time: gl.getUniformLocation(program, 'u_time'),
-        scale: gl.getUniformLocation(program, 'u_scale'),
-        speed: gl.getUniformLocation(program, 'u_speed'),
-        density: gl.getUniformLocation(program, 'u_density'),
-        blur: gl.getUniformLocation(program, 'u_blur'),
-        hue: gl.getUniformLocation(program, 'u_hue'),
-        sat: gl.getUniformLocation(program, 'u_sat'),
-        minBright: gl.getUniformLocation(program, 'u_minBright'),
-        maxBright: gl.getUniformLocation(program, 'u_maxBright'),
-        contrast: gl.getUniformLocation(program, 'u_contrast'),
-        scope: gl.getUniformLocation(program, 'u_scope'),
-        brownian: gl.getUniformLocation(program, 'u_brownian'),
-        tint: gl.getUniformLocation(program, 'u_tint'),
-      };
-
-      // ========= UI / State =========
+      let renderer;
+      
+      try {
+        renderer = new FogRenderer(canvas);
+      } catch (e) {
+        $('warn')?.classList.add('show');
+        console.error('Failed to initialize fog renderer:', e);
+        return;
+      }
+      
+      // UI state
       const ui = {
         density: $('density'), densityOut: $('densityOut'),
         scale: $('scale'), scaleOut: $('scaleOut'),
         speed: $('speed'), speedOut: $('speedOut'),
         brownian: $('brownian'), brownianOut: $('brownianOut'),
-        blur: $('blur'), blurOut: $('blurOut'),
         hue: $('hue'), hueOut: $('hueOut'),
         sat: $('sat'), satOut: $('satOut'),
         minBright: $('minBright'), minBrightOut: $('minBrightOut'),
@@ -417,168 +278,137 @@
         pause: $('pauseBtn'), reset: $('resetBtn'),
         warmBtn: $('warmBtn'), neutralBtn: $('neutralBtn'), coolBtn: $('coolBtn'),
       };
-
-      const state = {
-        density: DEFAULTS.density,
-        scale: DEFAULTS.scale,
-        speed: DEFAULTS.speed,
-        brownianScale: DEFAULTS.brownianScale,
-        blurPx: BLUR_DEFAULT,
-        hueRad: deg2rad(DEFAULTS.hueDeg),
-        sat: DEFAULTS.saturation,
-        minBrightness: DEFAULTS.minBrightness,
-        maxBrightness: DEFAULTS.maxBrightness,
-        contrast: DEFAULTS.contrast,
-        scope: 0, // 0=fog only, 1=whole scene
-        tint: hexToRgb(DEFAULTS.tintHex),
-        paused: false,
+      
+      // Set inputs from renderer defaults
+      const setInputsFromParams = () => {
+        const p = renderer.params;
+        set(ui.density, 'value', String(p.density));
+        set(ui.scale, 'value', String(p.scale));
+        set(ui.speed, 'value', String(p.speed));
+        set(ui.brownian, 'value', String(p.brownianScale));
+        set(ui.hue, 'value', String(p.hueDeg));
+        set(ui.sat, 'value', String(p.saturation));
+        set(ui.minBright, 'value', String(p.minBrightness));
+        set(ui.maxBright, 'value', String(p.maxBrightness));
+        set(ui.contrast, 'value', String(p.contrast));
+        if (ui.scope) ui.scope.checked = p.scope === 1;
+        set(ui.tint, 'value', p.tintHex);
       };
-
-      const setInputsFromDefaults = () => {
-        set(ui.density, 'value', String(DEFAULTS.density));
-        set(ui.scale, 'value', String(DEFAULTS.scale));
-        set(ui.speed, 'value', String(DEFAULTS.speed));
-        set(ui.brownian, 'value', String(DEFAULTS.brownianScale));
-        set(ui.blur, 'value', String(BLUR_DEFAULT));
-        set(ui.hue, 'value', String(DEFAULTS.hueDeg));
-        set(ui.sat, 'value', String(DEFAULTS.saturation));
-        set(ui.minBright, 'value', String(DEFAULTS.minBrightness));
-        set(ui.maxBright, 'value', String(DEFAULTS.maxBrightness));
-        set(ui.contrast, 'value', String(DEFAULTS.contrast));
-        if (ui.scope) ui.scope.checked = false;
-        set(ui.tint, 'value', DEFAULTS.tintHex);
-      };
-
+      
+      // Update readouts
       const updateReadouts = () => {
-        text(ui.densityOut, state.density.toFixed(2));
-        text(ui.scaleOut, state.scale.toFixed(2) + '×');
-        text(ui.speedOut, state.speed.toFixed(3));
-        text(ui.brownianOut, state.brownianScale.toFixed(2) + '×');
-        text(ui.blurOut, state.blurPx.toFixed(1) + 'px');
-        text(ui.hueOut, Math.round(rad2deg(state.hueRad)) + '°');
-        text(ui.satOut, state.sat.toFixed(2) + '×');
-        text(ui.minBrightOut, state.minBrightness.toFixed(2));
-        text(ui.maxBrightOut, state.maxBrightness.toFixed(2));
-        text(ui.contrastOut, state.contrast.toFixed(2) + '×');
-        text(ui.scopeOut, state.scope ? 'Whole scene' : 'Fog only');
+        const p = renderer.params;
+        text(ui.densityOut, p.density.toFixed(2));
+        text(ui.scaleOut, p.scale.toFixed(2) + '×');
+        text(ui.speedOut, p.speed.toFixed(3));
+        text(ui.brownianOut, p.brownianScale.toFixed(2) + '×');
+        text(ui.hueOut, Math.round(p.hueDeg) + '°');
+        text(ui.satOut, p.saturation.toFixed(2) + '×');
+        text(ui.minBrightOut, p.minBrightness.toFixed(2));
+        text(ui.maxBrightOut, p.maxBrightness.toFixed(2));
+        text(ui.contrastOut, p.contrast.toFixed(2) + '×');
+        text(ui.scopeOut, p.scope ? 'Whole scene' : 'Fog only');
       };
-
-      // Null-safe binders
-      const bindRange = (el, onChange) => {if (!el) return; el.addEventListener('input', () => {onChange(parseFloat(el.value)); updateReadouts();});};
-      const bindColor = (el, onChange) => {if (!el) return; el.addEventListener('input', () => {onChange(el.value);});};
-
-      bindRange(ui.density, (v) => state.density = clamp(v, 0, 1));
-      bindRange(ui.scale, (v) => state.scale = clamp(v, .25, 4));
-      bindRange(ui.speed, (v) => state.speed = clamp(v, 0, 0.1));
-      bindRange(ui.brownian, (v) => state.brownianScale = clamp(v, 0, 10));
-      bindRange(ui.blur, (v) => state.blurPx = clamp(v, 0, 24));
-      bindRange(ui.hue, (v) => state.hueRad = deg2rad(v));
-      bindRange(ui.sat, (v) => state.sat = clamp(v, 0, 6));
-      bindRange(ui.minBright, (v) => state.minBrightness = clamp(v, 0, 0.5));
-      bindRange(ui.maxBright, (v) => state.maxBrightness = clamp(v, 0.5, 1.5));
-      bindRange(ui.contrast, (v) => state.contrast = clamp(v, 0.1, 1));
-      bindColor(ui.tint, (v) => state.tint = hexToRgb(v));
-      if (ui.scope) ui.scope.addEventListener('change', () => {state.scope = ui.scope.checked ? 1 : 0; updateReadouts();});
-
+      
+      // Bind range inputs
+      const bindRange = (el, key, min, max) => {
+        if (!el) return;
+        el.addEventListener('input', () => {
+          renderer.setParam(key, clamp(parseFloat(el.value), min, max));
+          updateReadouts();
+        });
+      };
+      
+      // Bind controls
+      bindRange(ui.density, 'density', 0, 1);
+      bindRange(ui.scale, 'scale', 0.25, 4);
+      bindRange(ui.speed, 'speed', 0, 0.1);
+      bindRange(ui.brownian, 'brownianScale', 0, 10);
+      bindRange(ui.hue, 'hueDeg', 0, 360);
+      bindRange(ui.sat, 'saturation', 0, 10);
+      bindRange(ui.minBright, 'minBrightness', 0, 0.5);
+      bindRange(ui.maxBright, 'maxBrightness', 0.5, 1.5);
+      bindRange(ui.contrast, 'contrast', 0.1, 1);
+      
+      if (ui.tint) {
+        ui.tint.addEventListener('input', () => {
+          renderer.setParam('tintHex', ui.tint.value);
+        });
+      }
+      
+      if (ui.scope) {
+        ui.scope.addEventListener('change', () => {
+          renderer.setParam('scope', ui.scope.checked ? 1 : 0);
+          updateReadouts();
+        });
+      }
+      
       // Presets
-      const applyPreset = (deg, sat) => {
-        state.hueRad = deg2rad((deg % 360 + 360) % 360);
-        state.sat = sat;
-        set(ui.hue, 'value', String(((deg % 360) + 360) % 360));
+      const applyPreset = (hueDeg, sat) => {
+        renderer.setParams({ hueDeg, saturation: sat });
+        set(ui.hue, 'value', String(hueDeg));
         set(ui.sat, 'value', String(sat));
         updateReadouts();
       };
-      ui.warmBtn && ui.warmBtn.addEventListener('click', () => applyPreset(30, 1.20));
-      ui.neutralBtn && ui.neutralBtn.addEventListener('click', () => applyPreset(0, 1.00));
-      ui.coolBtn && ui.coolBtn.addEventListener('click', () => applyPreset(330, 1.10));
-
-      ui.pause && ui.pause.addEventListener('click', () => {
-        state.paused = !state.paused;
-        ui.pause.setAttribute('aria-pressed', String(state.paused));
-        ui.pause.textContent = state.paused ? 'Resume' : 'Pause';
-        if (!state.paused) {baseTime = performance.now() - elapsed * 1000; requestAnimationFrame(loop);}
+      
+      ui.warmBtn?.addEventListener('click', () => applyPreset(30, 1.20));
+      ui.neutralBtn?.addEventListener('click', () => applyPreset(0, 1.00));
+      ui.coolBtn?.addEventListener('click', () => applyPreset(330, 1.10));
+      
+      // Pause/Resume
+      ui.pause?.addEventListener('click', () => {
+        if (renderer.params.paused) {
+          renderer.resume();
+          ui.pause.textContent = 'Pause';
+          ui.pause.setAttribute('aria-pressed', 'false');
+        } else {
+          renderer.pause();
+          ui.pause.textContent = 'Resume';
+          ui.pause.setAttribute('aria-pressed', 'true');
+        }
       });
-
-      ui.reset && ui.reset.addEventListener('click', () => {
-        setInputsFromDefaults();
-        Object.assign(state, {
-          density: DEFAULTS.density,
-          scale: DEFAULTS.scale,
-          speed: DEFAULTS.speed,
-          brownianScale: DEFAULTS.brownianScale,
-          blurPx: BLUR_DEFAULT,
-          hueRad: deg2rad(DEFAULTS.hueDeg),
-          sat: DEFAULTS.saturation,
-          minBrightness: DEFAULTS.minBrightness,
-          maxBrightness: DEFAULTS.maxBrightness,
-          contrast: DEFAULTS.contrast,
-          scope: 0,
-          tint: hexToRgb(DEFAULTS.tintHex)
-        });
+      
+      // Reset
+      ui.reset?.addEventListener('click', () => {
+        // Reset to original defaults
+        const defaults = {
+          density: 0.75,
+          scale: 1.55,
+          speed: 0.01,
+          brownianScale: 2.0,
+          tintHex: '#A8C6FE',
+          hueDeg: 350,
+          saturation: 2.0,
+          minBrightness: 0.11,
+          maxBrightness: 1.34,
+          contrast: 0.9,
+          scope: 0
+        };
+        renderer.setParams(defaults);
+        renderer.reset();
+        setInputsFromParams();
         updateReadouts();
       });
-
-      // ========= Resize =========
-      let dpr = 1;
-      const resize = () => {
-        dpr = Math.min(window.devicePixelRatio || 1, 2);
-        const w = Math.max(1, Math.floor(window.innerWidth * dpr));
-        const h = Math.max(1, Math.floor(window.innerHeight * dpr));
-        canvas.width = w; canvas.height = h; canvas.style.width = '100vw'; canvas.style.height = '100vh';
-        gl.viewport(0, 0, w, h); gl.uniform2f(U.res, w, h);
-      };
-      window.addEventListener('resize', resize, {passive: true});
-
-      // ========= Render =========
-      let baseTime = performance.now();
-      let elapsed = 0; // seconds
-      const updateUniforms = () => {
-        gl.uniform1f(U.time, elapsed);
-        gl.uniform1f(U.scale, state.scale);
-        gl.uniform1f(U.speed, state.speed);
-        gl.uniform1f(U.density, state.density);
-        gl.uniform1f(U.blur, state.blurPx * dpr); // CSS px -> device px
-        gl.uniform1f(U.hue, state.hueRad);
-        gl.uniform1f(U.sat, state.sat);
-        gl.uniform1f(U.minBright, state.minBrightness);
-        gl.uniform1f(U.maxBright, state.maxBrightness);
-        gl.uniform1f(U.contrast, state.contrast);
-        gl.uniform1f(U.scope, state.scope);
-        gl.uniform1f(U.brownian, state.brownianScale);
-        gl.uniform3f(U.tint, state.tint[0], state.tint[1], state.tint[2]);
-      };
-
-      const loop = (now) => {
-        if (state.paused) return;
-        elapsed = (now - baseTime) / 1000;
-        updateUniforms();
-        gl.drawArrays(gl.TRIANGLES, 0, 3);
-        requestAnimationFrame(loop);
-      };
-
-      // ========= Panel Toggle =========
+      
+      // Panel toggle
       const panel = $('panel');
       const toggleBtn = $('toggleBtn');
       let panelOpen = true;
-
-      toggleBtn && toggleBtn.addEventListener('click', () => {
+      
+      toggleBtn?.addEventListener('click', () => {
         panelOpen = !panelOpen;
         if (panelOpen) {
           panel?.classList.remove('collapsed');
           toggleBtn.classList.add('panel-open');
-          toggleBtn.innerHTML = '☰';
         } else {
           panel?.classList.add('collapsed');
           toggleBtn.classList.remove('panel-open');
-          toggleBtn.innerHTML = '☰';
         }
       });
-
-      // ========= Init =========
-      setInputsFromDefaults();
+      
+      // Initialize UI
+      setInputsFromParams();
       updateReadouts();
-      resize();
-      requestAnimationFrame(loop);
     })();
   </script>
 </body>

@@ -17,7 +17,7 @@ class FogRenderer {
     this.params = {
       density: 0.75,
       scale: 1.55,
-      speed: 0.01,
+      speed: 0.02,
       brownianScale: 2.0,
       tintHex: '#A8C6FE',
       saturation: 2.0,

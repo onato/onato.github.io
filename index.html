@@ -2,23 +2,10 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Fog Simulation — Minimal</title>
-  <style>
-    html,
-    body {
-      height: 100%;
-      margin: 0;
-      overflow: hidden;
-    }
-
-    canvas {
-      display: block;
-      width: 100vw;
-      height: 100vh;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Software Engineer & Sheep Shearer</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -26,8 +13,124 @@
   <script src="fog-renderer.js"></script>
   <script>
     const canvas = document.getElementById('fog');
-    const fog = new FogRenderer(canvas, {});
+    const fog = new FogRenderer(canvas);
   </script>
+  <script src="details.js"></script>
+  
+  <div class="container">
+    <div class="stack">
+      <div class="stack-item">
+        <details>
+          <summary>ENGINEER</summary>
+          <div class="detail-content">
+            <p>Software Engineer crafting digital experiences from the bottom of the world.</p>
+            <a href="#about">More about me →</a>
+          </div>
+        </details>
+      </div>
+
+      <div class="stack-item">
+        <details>
+          <summary>WHO BUILDS</summary>
+          <div class="detail-content">
+            <p>Creating software that connects, educates, and solves real problems.</p>
+            <a href="#portfolio">View portfolio →</a>
+          </div>
+        </details>
+      </div>
+
+      <div class="stack-item">
+        <details>
+          <summary>SOCIAL MEDIA APPS</summary>
+          <div class="detail-content">
+            <p>Built platforms that bring communities together, focusing on meaningful connections over vanity metrics.
+            </p>
+            <a href="#social">Case studies →</a>
+          </div>
+        </details>
+      </div>
+
+      <div class="stack-item">
+        <details>
+          <summary>LEARNING PLATFORMS</summary>
+          <div class="detail-content">
+            <p>Developed online education systems that adapt to how people actually learn, not how we think they should.
+            </p>
+            <a href="#education">See the impact →</a>
+          </div>
+        </details>
+      </div>
+
+      <div class="stack-item">
+        <details>
+          <summary>BLUETOOTH SYSTEMS</summary>
+          <div class="detail-content">
+            <p>Conservation apps that manage IoT devices in the field, helping protect native species across New
+              Zealand.</p>
+            <a href="#conservation">Conservation tech →</a>
+          </div>
+        </details>
+      </div>
+
+      <div class="stack-item">
+        <details>
+          <summary>GIS MAPPING</summary>
+          <div class="detail-content">
+            <p>Geographic Information Systems that turn complex spatial data into actionable insights.</p>
+            <a href="#gis">Explore maps →</a>
+          </div>
+        </details>
+      </div>
+
+      <div class="stack-item">
+        <details>
+          <summary>ACCELEROMETERS</summary>
+          <div class="detail-content">
+            <p>Structural engineering tools that measure what matters, helping keep buildings safe in earthquake
+              country.</p>
+            <a href="#engineering">Technical details →</a>
+          </div>
+        </details>
+      </div>
+
+      <div class="stack-item">
+        <details>
+          <summary>ELECTRONICS</summary>
+          <div class="detail-content">
+            <p>Hardware meets software in projects ranging from Arduino prototypes to production IoT devices.</p>
+            <a href="#hardware">Circuit diagrams →</a>
+          </div>
+        </details>
+      </div>
+
+      <div class="stack-item">
+        <details>
+          <summary>AND READS</summary>
+          <div class="detail-content">
+            <p>Voracious reader of technical docs, sci-fi epics, and everything in between.</p>
+            <a href="reading-list.html">View reading list →</a>
+          </div>
+        </details>
+      </div>
+
+      <div class="stack-item">
+        <details>
+          <summary>AND SHEARS</summary>
+          <div class="detail-content">
+            <p>Yes, I can actually shear a sheep. Working from New Zealand with teams in the US and Europe has its
+              perks.</p>
+            <a href="#nz">Life in Aotearoa →</a>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <div class="bottom-links">
+      <a href="#contact">Contact</a>
+      <a href="#github">GitHub</a>
+      <a href="#reading">Reading List</a>
+    </div>
+  </div>
 </body>
 
 </html>

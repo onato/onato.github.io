@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fog Simulation — HTML Canvas (WebGL)</title>
+  <style>
+    :root {
+      --panel-bg: rgba(20, 22, 28, .6);
+      --panel-border: rgba(255, 255, 255, .08);
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #a3e635;
+    }
+
+    html,
+    body {
+      height: 100%;
+      margin: 0
+    }
+
+    body {
+      background: radial-gradient(1200px 800px at 70% 20%, #1b2230, #0b0f16 60%);
+      color: var(--text);
+      font: 14px/1.4 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      overflow: hidden
+    }
+
+    canvas {
+      display: block;
+      width: 100vw;
+      height: 100vh
+    }
+
+    .panel {
+      position: fixed;
+      top: 12px;
+      left: 12px;
+      z-index: 10;
+      background: var(--panel-bg);
+      backdrop-filter: blur(10px) saturate(1.1);
+      -webkit-backdrop-filter: blur(10px) saturate(1.1);
+      border: 1px solid var(--panel-border);
+      border-radius: 14px;
+      padding: 12px 14px;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, .35);
+      transition: transform 0.3s ease, opacity 0.3s ease
+    }
+
+    .panel.collapsed {
+      transform: translateX(-100%);
+      opacity: 0;
+      pointer-events: none
+    }
+
+    .toggle-btn {
+      position: fixed;
+      top: 12px;
+      left: 12px;
+      z-index: 11;
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      border: 1px solid var(--panel-border);
+      background: var(--panel-bg);
+      backdrop-filter: blur(10px) saturate(1.1);
+      -webkit-backdrop-filter: blur(10px) saturate(1.1);
+      color: var(--text);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      transition: transform 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, .25)
+    }
+
+    .toggle-btn:hover {
+      transform: scale(1.05)
+    }
+
+    .toggle-btn.panel-open {
+      transform: translateX(360px)
+    }
+
+    .panel h1 {
+      font-size: 13px;
+      margin: 0 0 8px;
+      font-weight: 600;
+      letter-spacing: .02em
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: 92px 180px 64px;
+      align-items: center;
+      gap: 8px;
+      margin: 8px 0
+    }
+
+    label {
+      color: var(--muted)
+    }
+
+    input[type="range"] {
+      width: 100%
+    }
+
+    input[type="color"] {
+      width: 52px;
+      height: 28px;
+      padding: 0;
+      border: 1px solid var(--panel-border);
+      background: transparent;
+      border-radius: 7px
+    }
+
+    .buttons {
+      display: flex;
+      gap: 8px;
+      margin-top: 6px;
+      flex-wrap: wrap
+    }
+
+    button {
+      appearance: none;
+      border: 1px solid var(--panel-border);
+      border-radius: 10px;
+      padding: 6px 10px;
+      cursor: pointer;
+      background: rgba(255, 255, 255, .04);
+      color: var(--text)
+    }
+
+    button:active {
+      transform: translateY(1px)
+    }
+
+    .readout {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+      color: var(--muted)
+    }
+
+    .warn {
+      position: fixed;
+      inset: 0;
+      display: none;
+      place-items: center;
+      padding: 24px;
+      text-align: center;
+      background: #0b0f16
+    }
+
+    .warn.show {
+      display: grid
+    }
+
+    .note {
+      position: fixed;
+      right: 12px;
+      bottom: 12px;
+      font-size: 12px;
+      color: #9aa4b2;
+      opacity: .7
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="fog" aria-label="Fog simulation"></canvas>
+
+  <button id="toggleBtn" class="toggle-btn panel-open" aria-label="Toggle fog controls"
+    title="Toggle fog controls">☰</button>
+
+  <div id="panel" class="panel" role="group" aria-label="Fog controls">
+    <h1>🌫️ Fog controls</h1>
+    <div class="row"><label for="density">Density</label><input id="density" type="range" min="0" max="1" step="0.01" />
+      <div id="densityOut" class="readout"></div>
+    </div>
+    <div class="row"><label for="scale">Scale</label><input id="scale" type="range" min="0.25" max="4" step="0.01" />
+      <div id="scaleOut" class="readout"></div>
+    </div>
+    <div class="row"><label for="speed">Speed</label><input id="speed" type="range" min="0" max="0.1" step="0.0001" />
+      <div id="speedOut" class="readout"></div>
+    </div>
+    <div class="row"><label for="brownian">Brownian</label><input id="brownian" type="range" min="0" max="10"
+        step="0.01" />
+      <div id="brownianOut" class="readout"></div>
+    </div>
+    <div class="row"><label for="sat">Saturation</label><input id="sat" type="range" min="0" max="10" step="0.01" />
+      <div id="satOut" class="readout"></div>
+    </div>
+    <div class="row"><label for="minBright">Min Bright</label><input id="minBright" type="range" min="0" max="0.5"
+        step="0.01" />
+      <div id="minBrightOut" class="readout"></div>
+    </div>
+    <div class="row"><label for="maxBright">Max Bright</label><input id="maxBright" type="range" min="0.5" max="1.5"
+        step="0.01" />
+      <div id="maxBrightOut" class="readout"></div>
+    </div>
+    <div class="row"><label for="contrast">Contrast</label><input id="contrast" type="range" min="0.1" max="1"
+        step="0.01" />
+      <div id="contrastOut" class="readout"></div>
+    </div>
+    <div class="row"><label for="scope">Color scope</label><input id="scope" type="checkbox" />
+      <div id="scopeOut" class="readout"></div>
+    </div>
+    <div class="row"><label for="tint">Tint</label><input id="tint" type="color" />
+      <div class="readout">&nbsp;</div>
+    </div>
+    <div class="row">
+      <label>Presets</label>
+      <div class="buttons" id="presetBtns" style="grid-column: 2 / 3;">
+        <button id="warmBtn" title="Hue +30°, Sat 1.20">Warm</button>
+        <button id="neutralBtn" title="Hue 0°, Sat 1.00">Neutral</button>
+        <button id="coolBtn" title="Hue 330°, Sat 1.10">Cool</button>
+      </div>
+      <div></div>
+    </div>
+    <div class="buttons"><button id="pauseBtn" aria-pressed="false">Pause</button><button id="resetBtn">Reset</button>
+    </div>
+  </div>
+
+  <div id="warn" class="warn">
+    <div>
+      <h2>WebGL unavailable</h2>
+      <p>Your browser or device doesn't seem to support WebGL, which this demo uses to render animated fog smoothly.</p>
+      <p>Try a modern browser (Chrome, Edge, Firefox, Safari) and ensure hardware acceleration is enabled.</p>
+    </div>
+  </div>
+
+  <script src="fog-renderer.js"></script>
+  <script>
+    (() => {
+      'use strict';
+      
+      // Helper functions
+      const $ = (id) => document.getElementById(id);
+      const clamp = (v, lo, hi) => Math.min(hi, Math.max(lo, v));
+      const set = (el, prop, val) => { if (el) el[prop] = val; };
+      const text = (el, s) => { if (el) el.textContent = s; };
+      
+      // Initialize fog renderer
+      const canvas = $('fog');
+      let renderer;
+      
+      try {
+        renderer = new FogRenderer(canvas);
+      } catch (e) {
+        $('warn')?.classList.add('show');
+        console.error('Failed to initialize fog renderer:', e);
+        return;
+      }
+      
+      // UI state
+      const ui = {
+        density: $('density'), densityOut: $('densityOut'),
+        scale: $('scale'), scaleOut: $('scaleOut'),
+        speed: $('speed'), speedOut: $('speedOut'),
+        brownian: $('brownian'), brownianOut: $('brownianOut'),
+        sat: $('sat'), satOut: $('satOut'),
+        minBright: $('minBright'), minBrightOut: $('minBrightOut'),
+        maxBright: $('maxBright'), maxBrightOut: $('maxBrightOut'),
+        contrast: $('contrast'), contrastOut: $('contrastOut'),
+        scope: $('scope'), scopeOut: $('scopeOut'),
+        tint: $('tint'),
+        pause: $('pauseBtn'), reset: $('resetBtn'),
+        warmBtn: $('warmBtn'), neutralBtn: $('neutralBtn'), coolBtn: $('coolBtn'),
+      };
+      
+      // Set inputs from renderer defaults
+      const setInputsFromParams = () => {
+        const p = renderer.params;
+        set(ui.density, 'value', String(p.density));
+        set(ui.scale, 'value', String(p.scale));
+        set(ui.speed, 'value', String(p.speed));
+        set(ui.brownian, 'value', String(p.brownianScale));
+        set(ui.sat, 'value', String(p.saturation));
+        set(ui.minBright, 'value', String(p.minBrightness));
+        set(ui.maxBright, 'value', String(p.maxBrightness));
+        set(ui.contrast, 'value', String(p.contrast));
+        if (ui.scope) ui.scope.checked = p.scope === 1;
+        set(ui.tint, 'value', p.tintHex);
+      };
+      
+      // Update readouts
+      const updateReadouts = () => {
+        const p = renderer.params;
+        text(ui.densityOut, p.density.toFixed(2));
+        text(ui.scaleOut, p.scale.toFixed(2) + '×');
+        text(ui.speedOut, p.speed.toFixed(3));
+        text(ui.brownianOut, p.brownianScale.toFixed(2) + '×');
+        text(ui.satOut, p.saturation.toFixed(2) + '×');
+        text(ui.minBrightOut, p.minBrightness.toFixed(2));
+        text(ui.maxBrightOut, p.maxBrightness.toFixed(2));
+        text(ui.contrastOut, p.contrast.toFixed(2) + '×');
+        text(ui.scopeOut, p.scope ? 'Whole scene' : 'Fog only');
+      };
+      
+      // Bind range inputs
+      const bindRange = (el, key, min, max) => {
+        if (!el) return;
+        el.addEventListener('input', () => {
+          renderer.setParam(key, clamp(parseFloat(el.value), min, max));
+          updateReadouts();
+        });
+      };
+      
+      // Bind controls
+      bindRange(ui.density, 'density', 0, 1);
+      bindRange(ui.scale, 'scale', 0.25, 4);
+      bindRange(ui.speed, 'speed', 0, 0.1);
+      bindRange(ui.brownian, 'brownianScale', 0, 10);
+      bindRange(ui.sat, 'saturation', 0, 10);
+      bindRange(ui.minBright, 'minBrightness', 0, 0.5);
+      bindRange(ui.maxBright, 'maxBrightness', 0.5, 1.5);
+      bindRange(ui.contrast, 'contrast', 0.1, 1);
+      
+      if (ui.tint) {
+        ui.tint.addEventListener('input', () => {
+          renderer.setParam('tintHex', ui.tint.value);
+        });
+      }
+      
+      if (ui.scope) {
+        ui.scope.addEventListener('change', () => {
+          renderer.setParam('scope', ui.scope.checked ? 1 : 0);
+          updateReadouts();
+        });
+      }
+      
+      // Presets
+      const applyPreset = (sat) => {
+        renderer.setParams({ saturation: sat });
+        set(ui.sat, 'value', String(sat));
+        updateReadouts();
+      };
+      
+      ui.warmBtn?.addEventListener('click', () => applyPreset(1.20));
+      ui.neutralBtn?.addEventListener('click', () => applyPreset(1.00));
+      ui.coolBtn?.addEventListener('click', () => applyPreset(1.10));
+      
+      // Pause/Resume
+      ui.pause?.addEventListener('click', () => {
+        if (renderer.params.paused) {
+          renderer.resume();
+          ui.pause.textContent = 'Pause';
+          ui.pause.setAttribute('aria-pressed', 'false');
+        } else {
+          renderer.pause();
+          ui.pause.textContent = 'Resume';
+          ui.pause.setAttribute('aria-pressed', 'true');
+        }
+      });
+      
+      // Reset
+      ui.reset?.addEventListener('click', () => {
+        // Reset to original defaults
+        const defaults = {
+          density: 0.75,
+          scale: 1.55,
+          speed: 0.01,
+          brownianScale: 2.0,
+          tintHex: '#A8C6FE',
+          saturation: 2.0,
+          minBrightness: 0.11,
+          maxBrightness: 1.34,
+          contrast: 0.9,
+          scope: 0
+        };
+        renderer.setParams(defaults);
+        renderer.reset();
+        setInputsFromParams();
+        updateReadouts();
+      });
+      
+      // Panel toggle
+      const panel = $('panel');
+      const toggleBtn = $('toggleBtn');
+      let panelOpen = true;
+      
+      toggleBtn?.addEventListener('click', () => {
+        panelOpen = !panelOpen;
+        if (panelOpen) {
+          panel?.classList.remove('collapsed');
+          toggleBtn.classList.add('panel-open');
+        } else {
+          panel?.classList.add('collapsed');
+          toggleBtn.classList.remove('panel-open');
+        }
+      });
+      
+      // Initialize UI
+      setInputsFromParams();
+      updateReadouts();
+    })();
+  </script>
+</body>
+
+</html>

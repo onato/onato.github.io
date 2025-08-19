@@ -5,222 +5,303 @@ class FogRenderer {
       antialias: false,
       depth: false,
       stencil: false,
+      alpha: false,
       premultipliedAlpha: false,
-      preserveDrawingBuffer: false
+      preserveDrawingBuffer: false,
+      powerPreference: 'low-power'  // Prefer integrated GPU for lower power
     });
 
-    if (!this.gl) {
-      throw new Error('WebGL not supported');
-    }
+    if (!this.gl) throw new Error('WebGL not supported');
 
-    // Default parameters
+    // Default parameters with performance in mind
     this.params = {
       density: 0.75,
       scale: 1.55,
       speed: 0.01,
       brownianScale: 2.0,
       tintHex: '#A8C6FE',
-      hueDeg: 0,
       saturation: 2.0,
       minBrightness: 0.11,
       maxBrightness: 1.34,
       contrast: 0.9,
       scope: 0,
       paused: false,
+      quality: 1.0,  // Quality multiplier for adaptive performance
+      targetFPS: 30,  // Target frame rate for adaptive quality
       ...options
     };
 
     this.dpr = 1;
     this.baseTime = performance.now();
     this.elapsed = 0;
+    this.frameCount = 0;
+    this.lastFrameTime = performance.now();
+    this.fps = 60;
+    this.isVisible = true;
+    this.rafId = null;
+
+    // Pre-calculate values that don't change often
+    this.tintRgb = this.hexToRgb(this.params.tintHex);
 
     this.init();
+    this.setupVisibilityHandling();
   }
 
   init() {
     const gl = this.gl;
 
-    // Vertex shader
+    // Optimized shaders with reduced iterations
     const VS = `
-      attribute vec2 a_position;
-      void main(){ gl_Position = vec4(a_position, 0.0, 1.0); }
+      attribute vec2 a;
+      void main(){gl_Position=vec4(a,0.,1.);}
     `;
 
-    // Fragment shader
+    // Optimized fragment shader - reduced FBM iterations, simplified math
     const FS = `
-      precision highp float;
-      uniform vec2  u_resolution;
-      uniform float u_time, u_scale, u_speed, u_density;
-      uniform float u_hue, u_sat, u_minBright, u_maxBright, u_contrast, u_scope;
-      uniform float u_brownian;
-      uniform vec3  u_tint;
-
-      float hash(vec2 p){ return fract(sin(dot(p, vec2(127.1,311.7))) * 43758.5453123); }
-      float noise(vec2 p){ vec2 i=floor(p), f=fract(p); float a=hash(i), b=hash(i+vec2(1.,0.)), c=hash(i+vec2(0.,1.)), d=hash(i+vec2(1.,1.)); vec2 u=f*f*(3.-2.*f); return mix(a,b,u.x)+(c-a)*u.y*(1.-u.x)+(d-b)*u.x*u.y; }
-      float fbm(vec2 p){ float v=0., a=.5; for(int i=0;i<6;i++){ v+=a*noise(p); p=p*2.+vec2(7.1,3.3); a*=.5; } return v; }
+      precision mediump float;
+      uniform vec2 r;
+      uniform float t,sc,sp,d,sa,mb,xb,c,sco,b;
+      uniform vec3 ti;
+      
+      float hash(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5);}
+      
+      // Optimized to 5 iterations for balance between quality and performance
+      float noise(vec2 p){
+        vec2 i=floor(p),f=fract(p);
+        f=f*f*(3.-2.*f);
+        return mix(mix(hash(i),hash(i+vec2(1.,0.)),f.x),
+                   mix(hash(i+vec2(0.,1.)),hash(i+vec2(1.,1.)),f.x),f.y);
+      }
+      
+      float fbm(vec2 p){
+        float v=0.,a=.5;
+        for(int i=0;i<5;i++){v+=a*noise(p);p=p*2.+vec2(7.1,3.3);a*=.5;}
+        return v;
+      }
+      
       float fogField(vec2 p, vec2 drift, float sc){
         float base = fbm(p * sc + drift);
         float det  = fbm((p * (sc * 1.9) - drift * .35) + vec2(11.2,-4.7));
         float n = mix(base, det, .5);
         return smoothstep(.25,.85,n);
       }
-      vec3 hueRotate(vec3 c, float a){
-        float U = cos(a), W = sin(a);
-        mat3 m = mat3(
-          0.299+0.701*U+0.168*W, 0.587-0.587*U+0.330*W, 0.114-0.114*U-0.497*W,
-          0.299-0.299*U-0.328*W, 0.587+0.413*U+0.035*W, 0.114-0.114*U+0.292*W,
-          0.299-0.300*U+1.250*W, 0.587-0.588*U-1.050*W, 0.114+0.886*U-0.203*W
-        );
-        return clamp(m * c, 0.0, 1.0);
-      }
-      vec3 applySaturation(vec3 c, float s){
-        float gray = dot(c, vec3(0.213, 0.715, 0.072));
-        return clamp(mix(vec3(gray), c, s), 0.0, 1.0);
-      }
+      
       void main(){
-        vec2 uv = gl_FragCoord.xy / u_resolution.xy;
-        float aspect = u_resolution.x / u_resolution.y;
-        vec2 p = uv - .5; p.x *= aspect;
-
-        float t = u_time * u_speed;
-        // True Brownian motion - independent x and y movement with multiple frequencies
-        vec2 drift = vec2(
-          sin(t * 1.3) + sin(t * 2.1) * 0.5 + sin(t * 0.7) * 0.3,
-          cos(t * 1.1) + cos(t * 1.9) * 0.5 + cos(t * 0.6) * 0.3
-        ) * u_brownian;
-        float n = fogField(p, drift, u_scale);
-        float fogAmt = clamp(n * (0.35 + 0.9 * u_density), 0., 1.);
-
-        vec3 bg = vec3(.07,.085,.11);
-        // Apply hue rotation only to the background to shift from gray to blue
-        vec3 bgColored = hueRotate(bg, u_hue);
-        vec3 rawFogC = u_tint * (0.6 + 0.4 * n);
-
-        vec3 fogOnlyCol = mix(bgColored, applySaturation(rawFogC, u_sat), fogAmt);
-        vec3 mixedCol   = mix(bgColored, rawFogC, fogAmt);
-        vec3 allSceneCol= applySaturation(mixedCol, u_sat);
-        vec3 col = mix(fogOnlyCol, allSceneCol, clamp(u_scope, 0.0, 1.0));
+        vec2 uv=gl_FragCoord.xy/r;
+        vec2 p=(uv-.5)*vec2(r.x/r.y,1.);
         
-        // Apply contrast (reduces difference between light and dark)
-        vec3 mid = vec3(0.5);
-        col = mix(mid, col, u_contrast);
+        // Brownian motion with multiple frequencies
+        float tm=t*sp;
+        vec2 drift=vec2(
+          sin(tm*1.3)+sin(tm*2.1)*.5+sin(tm*.7)*.3,
+          cos(tm*1.1)+cos(tm*1.9)*.5+cos(tm*.6)*.3
+        )*b;
         
-        // Remap brightness to stay within min/max bounds
-        col = mix(vec3(u_minBright), vec3(u_maxBright), col);
-
-        gl_FragColor = vec4(col, 1.);
+        // Two-layer fog with base and detail
+        float n=fogField(p,drift,sc);
+        float fog=clamp(n*(.35+.9*d),0.,1.);
+        
+        // Simplified color processing
+        vec3 bg=vec3(.07,.085,.11);
+        
+        vec3 fogCol=ti*(.6+.4*n);
+        
+        // Simplified saturation
+        float gray=dot(fogCol,vec3(.3,.6,.1));
+        fogCol=mix(vec3(gray),fogCol,sa);
+        
+        vec3 col=mix(bg,fogCol,fog);
+        
+        // Simplified contrast and brightness
+        col=mix(vec3(.5),col,c);
+        col=mix(vec3(mb),vec3(xb),col);
+        
+        gl_FragColor=vec4(col,1.);
       }
     `;
 
-    // Compile shaders
+    // Compile shaders with error checking
     const compile = (type, src) => {
       const sh = gl.createShader(type);
       gl.shaderSource(sh, src);
       gl.compileShader(sh);
       if (!gl.getShaderParameter(sh, gl.COMPILE_STATUS)) {
-        throw new Error(gl.getShaderInfoLog(sh) || 'shader compilation failed');
+        throw new Error(gl.getShaderInfoLog(sh));
       }
       return sh;
     };
 
-    // Create program
-    const vs = compile(gl.VERTEX_SHADER, VS);
-    const fs = compile(gl.FRAGMENT_SHADER, FS);
+    // Create and link program
     this.program = gl.createProgram();
-    gl.attachShader(this.program, vs);
-    gl.attachShader(this.program, fs);
+    gl.attachShader(this.program, compile(gl.VERTEX_SHADER, VS));
+    gl.attachShader(this.program, compile(gl.FRAGMENT_SHADER, FS));
     gl.linkProgram(this.program);
     if (!gl.getProgramParameter(this.program, gl.LINK_STATUS)) {
-      throw new Error(gl.getProgramInfoLog(this.program) || 'program link failed');
+      throw new Error(gl.getProgramInfoLog(this.program));
     }
     gl.useProgram(this.program);
 
-    // Setup geometry (fullscreen triangle)
+    // Simplified geometry
     const buf = gl.createBuffer();
     gl.bindBuffer(gl.ARRAY_BUFFER, buf);
     gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 3, -1, -1, 3]), gl.STATIC_DRAW);
-    const aPos = gl.getAttribLocation(this.program, 'a_position');
+    const aPos = gl.getAttribLocation(this.program, 'a');
     gl.enableVertexAttribArray(aPos);
     gl.vertexAttribPointer(aPos, 2, gl.FLOAT, false, 0, 0);
 
-    // Get uniform locations
-    this.uniforms = {
-      res: gl.getUniformLocation(this.program, 'u_resolution'),
-      time: gl.getUniformLocation(this.program, 'u_time'),
-      scale: gl.getUniformLocation(this.program, 'u_scale'),
-      speed: gl.getUniformLocation(this.program, 'u_speed'),
-      density: gl.getUniformLocation(this.program, 'u_density'),
-      hue: gl.getUniformLocation(this.program, 'u_hue'),
-      sat: gl.getUniformLocation(this.program, 'u_sat'),
-      minBright: gl.getUniformLocation(this.program, 'u_minBright'),
-      maxBright: gl.getUniformLocation(this.program, 'u_maxBright'),
-      contrast: gl.getUniformLocation(this.program, 'u_contrast'),
-      scope: gl.getUniformLocation(this.program, 'u_scope'),
-      brownian: gl.getUniformLocation(this.program, 'u_brownian'),
-      tint: gl.getUniformLocation(this.program, 'u_tint'),
+    // Cache uniform locations with shortened names
+    this.u = {
+      r: gl.getUniformLocation(this.program, 'r'),
+      t: gl.getUniformLocation(this.program, 't'),
+      sc: gl.getUniformLocation(this.program, 'sc'),
+      sp: gl.getUniformLocation(this.program, 'sp'),
+      d: gl.getUniformLocation(this.program, 'd'),
+      sa: gl.getUniformLocation(this.program, 'sa'),
+      mb: gl.getUniformLocation(this.program, 'mb'),
+      xb: gl.getUniformLocation(this.program, 'xb'),
+      c: gl.getUniformLocation(this.program, 'c'),
+      sco: gl.getUniformLocation(this.program, 'sco'),
+      b: gl.getUniformLocation(this.program, 'b'),
+      ti: gl.getUniformLocation(this.program, 'ti'),
     };
 
-    // Setup resize handler
+    // Set initial size
     this.resize();
-    window.addEventListener('resize', () => this.resize(), { passive: true });
+
+    // Debounced resize handler
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => this.resize(), 150);
+    }, { passive: true });
 
     // Start render loop
-    this.render();
+    this.startRenderLoop();
+  }
+
+  setupVisibilityHandling() {
+    // Pause when tab is not visible
+    document.addEventListener('visibilitychange', () => {
+      this.isVisible = !document.hidden;
+      if (this.isVisible && !this.params.paused) {
+        this.baseTime = performance.now() - this.elapsed * 1000;
+        this.startRenderLoop();
+      } else {
+        this.stopRenderLoop();
+      }
+    });
+
+    // Pause when window loses focus (optional, more aggressive)
+    window.addEventListener('blur', () => {
+      this.stopRenderLoop();
+    });
+
+    window.addEventListener('focus', () => {
+      if (!this.params.paused && this.isVisible) {
+        this.baseTime = performance.now() - this.elapsed * 1000;
+        this.startRenderLoop();
+      }
+    });
   }
 
   resize() {
-    this.dpr = Math.min(window.devicePixelRatio || 1, 2);
+    // Use lower resolution for better performance
+    const quality = this.params.quality || 1.0;
+    this.dpr = Math.min(window.devicePixelRatio || 1, 1.5) * quality;
     const w = Math.max(1, Math.floor(window.innerWidth * this.dpr));
     const h = Math.max(1, Math.floor(window.innerHeight * this.dpr));
-    this.canvas.width = w;
-    this.canvas.height = h;
-    this.canvas.style.width = '100vw';
-    this.canvas.style.height = '100vh';
-    this.gl.viewport(0, 0, w, h);
-    this.gl.uniform2f(this.uniforms.res, w, h);
+
+    // Only resize if dimensions actually changed
+    if (this.canvas.width !== w || this.canvas.height !== h) {
+      this.canvas.width = w;
+      this.canvas.height = h;
+      this.canvas.style.width = '100vw';
+      this.canvas.style.height = '100vh';
+      this.gl.viewport(0, 0, w, h);
+      this.gl.uniform2f(this.u.r, w, h);
+    }
   }
 
   hexToRgb(hex) {
+    // Cache the result
+    if (this.lastHex === hex && this.lastRgb) return this.lastRgb;
+    this.lastHex = hex;
+
     const m = /^#?([\da-f]{2})([\da-f]{2})([\da-f]{2})$/i.exec(hex);
-    return m ? [
+    this.lastRgb = m ? [
       parseInt(m[1], 16) / 255,
       parseInt(m[2], 16) / 255,
       parseInt(m[3], 16) / 255
     ] : [0.86, 0.91, 1.0];
+    return this.lastRgb;
   }
 
   updateUniforms() {
     const gl = this.gl;
-    const U = this.uniforms;
+    const u = this.u;
     const p = this.params;
 
-    const tint = this.hexToRgb(p.tintHex);
-    const hueRad = p.hueDeg * Math.PI / 180;
+    // Only update tint if it changed
+    if (p.tintHex !== this.lastTintHex) {
+      this.tintRgb = this.hexToRgb(p.tintHex);
+      this.lastTintHex = p.tintHex;
+    }
 
-    gl.uniform1f(U.time, this.elapsed);
-    gl.uniform1f(U.scale, p.scale);
-    gl.uniform1f(U.speed, p.speed);
-    gl.uniform1f(U.density, p.density);
-    gl.uniform1f(U.hue, hueRad);
-    gl.uniform1f(U.sat, p.saturation);
-    gl.uniform1f(U.minBright, p.minBrightness);
-    gl.uniform1f(U.maxBright, p.maxBrightness);
-    gl.uniform1f(U.contrast, p.contrast);
-    gl.uniform1f(U.scope, p.scope);
-    gl.uniform1f(U.brownian, p.brownianScale);
-    gl.uniform3f(U.tint, tint[0], tint[1], tint[2]);
+    gl.uniform1f(u.t, this.elapsed);
+    gl.uniform1f(u.sc, p.scale);
+    gl.uniform1f(u.sp, p.speed);
+    gl.uniform1f(u.d, p.density);
+    gl.uniform1f(u.sa, p.saturation);
+    gl.uniform1f(u.mb, p.minBrightness);
+    gl.uniform1f(u.xb, p.maxBrightness);
+    gl.uniform1f(u.c, p.contrast);
+    gl.uniform1f(u.sco, p.scope);
+    gl.uniform1f(u.b, p.brownianScale);
+    gl.uniform3f(u.ti, this.tintRgb[0], this.tintRgb[1], this.tintRgb[2]);
   }
 
   render(now) {
-    if (!this.params.paused) {
-      this.elapsed = (now - this.baseTime) / 1000;
-      this.updateUniforms();
-      this.gl.drawArrays(this.gl.TRIANGLES, 0, 3);
+    if (this.params.paused || !this.isVisible) return;
+
+    // Calculate FPS
+    this.frameCount++;
+    const deltaTime = now - this.lastFrameTime;
+    if (deltaTime > 1000) {
+      this.fps = (this.frameCount * 1000) / deltaTime;
+      this.frameCount = 0;
+      this.lastFrameTime = now;
+
+      // Adaptive quality based on FPS
+      if (this.params.targetFPS && this.fps < this.params.targetFPS * 0.9) {
+        this.params.quality = Math.max(0.5, this.params.quality - 0.1);
+        this.resize();
+      } else if (this.fps > this.params.targetFPS * 1.1) {
+        this.params.quality = Math.min(1.0, this.params.quality + 0.05);
+        this.resize();
+      }
     }
-    requestAnimationFrame((t) => this.render(t));
+
+    this.elapsed = (now - this.baseTime) / 1000;
+    this.updateUniforms();
+    this.gl.drawArrays(this.gl.TRIANGLES, 0, 3);
+
+    this.rafId = requestAnimationFrame((t) => this.render(t));
   }
 
-  // Public methods for controlling the renderer
+  startRenderLoop() {
+    if (!this.rafId) {
+      this.rafId = requestAnimationFrame((t) => this.render(t));
+    }
+  }
+
+  stopRenderLoop() {
+    if (this.rafId) {
+      cancelAnimationFrame(this.rafId);
+      this.rafId = null;
+    }
+  }
+
+  // Public methods
   setParam(key, value) {
     this.params[key] = value;
   }
@@ -231,16 +312,26 @@ class FogRenderer {
 
   pause() {
     this.params.paused = true;
+    this.stopRenderLoop();
   }
 
   resume() {
     this.params.paused = false;
     this.baseTime = performance.now() - this.elapsed * 1000;
+    this.startRenderLoop();
   }
 
   reset() {
     this.baseTime = performance.now();
     this.elapsed = 0;
+  }
+
+  destroy() {
+    this.stopRenderLoop();
+    const gl = this.gl;
+    if (this.program) gl.deleteProgram(this.program);
+    // Remove event listeners
+    document.removeEventListener('visibilitychange', this.setupVisibilityHandling);
   }
 }
 

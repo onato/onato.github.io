@@ -1,0 +1,33 @@
+# Build directories
+build/
+dist/
+performance-reports/
+
+# Minified files
+*.min.js
+*.min.html
+*.min.css
+
+# Node modules
+node_modules/
+package-lock.json
+
+# Performance test artifacts
+lighthouse-report.json
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.temp
+.cache/

@@ -1,0 +1,33 @@
+{
+  "name": "fog-renderer",
+  "version": "1.0.0",
+  "description": "High-performance WebGL fog simulation",
+  "main": "fog-renderer.js",
+  "scripts": {
+    "build": "make build",
+    "dist": "make dist",
+    "serve": "make serve",
+    "test": "make test",
+    "dev": "make dev",
+    "clean": "make clean",
+    "perf": "node performance-benchmark.js"
+  },
+  "keywords": [
+    "webgl",
+    "fog",
+    "simulation",
+    "graphics",
+    "shader",
+    "performance"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "uglify-js": "^3.17.4",
+    "lighthouse": "^11.0.0",
+    "http-server": "^14.1.1"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

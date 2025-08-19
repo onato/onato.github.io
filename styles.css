@@ -198,9 +198,9 @@ details[open] .detail-content {
 }
 
 .bottom-links a {
-  color: red;
+  color: black;
   text-decoration: none;
-  font-weight: 200;
+  font-weight: 400;
   font-size: 18px;
   display: block;
   margin-top: 10px;

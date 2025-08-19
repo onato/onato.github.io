@@ -4,19 +4,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Software Engineer crafting digital experiences from New Zealand. Building social media apps, learning platforms, IoT systems, and more.">
   <title>Software Engineer & Sheep Shearer</title>
+  <link rel="preload" href="styles.css" as="style">
   <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 
 <body>
   <canvas id="fog"></canvas>
-  <script src="fog-renderer.js"></script>
-  <script>
-    const canvas = document.getElementById('fog');
-    const fog = new FogRenderer(canvas);
+  <script src="fog-renderer.js" defer></script>
+  <script defer>
+    document.addEventListener('DOMContentLoaded', function () {
+      const canvas = document.getElementById('fog');
+      const fog = new FogRenderer(canvas);
+    });
   </script>
-  <script src="details.js"></script>
-  
+  <script src="details.js" defer></script>
+
   <div class="container">
     <div class="stack">
       <div class="stack-item">
@@ -74,7 +80,7 @@
 
       <div class="stack-item">
         <details>
-          <summary>GIS MAPPING</summary>
+          <summary>GEO INFORMATION SYSTEMS</summary>
           <div class="detail-content">
             <p>Geographic Information Systems that turn complex spatial data into actionable insights.</p>
             <a href="#gis">Explore maps →</a>

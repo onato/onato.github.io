@@ -49,7 +49,7 @@ body {
   justify-content: center;
   overflow-y: auto;
   overflow-x: hidden;
-  padding: 20px 0;
+  padding: 20px 10px;
 }
 
 .stack-item {
@@ -132,10 +132,21 @@ summary {
   display: inline-block;
   padding-right: 10px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 4px;
 }
 
 summary::-webkit-details-marker {
   display: none;
+}
+
+/* Focus styles for keyboard navigation */
+summary:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 4px;
+}
+
+summary:focus:not(:focus-visible) {
+  outline: none;
 }
 
 details[open] summary {
@@ -196,6 +207,15 @@ details[open] .detail-content {
   color: black;
 }
 
+.detail-content a:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.8);
+  outline-offset: 2px;
+}
+
+.detail-content a:focus:not(:focus-visible) {
+  outline: none;
+}
+
 .bottom-links {
   position: absolute;
   bottom: 20px;
@@ -219,6 +239,17 @@ details[open] .detail-content {
   color: black;
   font-weight: 300;
   transform: translateX(-10px);
+}
+
+/* Focus styles for bottom links */
+.bottom-links a:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.bottom-links a:focus:not(:focus-visible) {
+  outline: none;
 }
 
 @media (max-width: 768px) {

@@ -56,31 +56,64 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
   
+  // Function to handle opening/closing details
+  function toggleDetail(detail) {
+    if (detail.open) {
+      // Just close this one
+      closeDetail(detail);
+    } else {
+      // Close all other open details first
+      let hasOpenDetails = false;
+      details.forEach(otherDetail => {
+        if (otherDetail !== detail && otherDetail.open) {
+          closeDetail(otherDetail);
+          hasOpenDetails = true;
+        }
+      });
+      
+      // Then open this one with a slight delay if others were closing
+      if (hasOpenDetails) {
+        setTimeout(() => openDetail(detail), 150);
+      } else {
+        openDetail(detail);
+      }
+    }
+  }
+  
   details.forEach(detail => {
     const summary = detail.querySelector('summary');
     
+    // Make summaries focusable
+    summary.setAttribute('tabindex', '0');
+    
+    // Handle click
     summary.addEventListener('click', (e) => {
       e.preventDefault();
-      
-      if (detail.open) {
-        // Just close this one
+      toggleDetail(detail);
+    });
+    
+    // Handle keyboard navigation
+    summary.addEventListener('keydown', (e) => {
+      // Enter or Space to toggle
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggleDetail(detail);
+      }
+      // Escape to close if open
+      else if (e.key === 'Escape' && detail.open) {
+        e.preventDefault();
         closeDetail(detail);
-      } else {
-        // Close all other open details first
-        let hasOpenDetails = false;
-        details.forEach(otherDetail => {
-          if (otherDetail !== detail && otherDetail.open) {
-            closeDetail(otherDetail);
-            hasOpenDetails = true;
-          }
-        });
-        
-        // Then open this one with a slight delay if others were closing
-        if (hasOpenDetails) {
-          setTimeout(() => openDetail(detail), 150);
-        } else {
-          openDetail(detail);
-        }
+      }
+    });
+  });
+  
+  // Also make bottom links keyboard accessible
+  const bottomLinks = document.querySelectorAll('.bottom-links a');
+  bottomLinks.forEach(link => {
+    // Links are already focusable by default, but ensure they have good focus styles
+    link.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' && !e.ctrlKey && !e.metaKey) {
+        // Allow default behavior for links
       }
     });
   });

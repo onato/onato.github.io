@@ -83,6 +83,13 @@ def load_books():
             'rating': int(b.get('rating') or 0),
             'shelf': b.get('shelf') or shelf_for(category),
         })
+    # Volumes of a series collapse to the same title once the subtitle goes; keep theirs
+    counts = {}
+    for b in out:
+        counts[b['title']] = counts.get(b['title'], 0) + 1
+    for b in out:
+        if counts[b['title']] > 1:
+            b['title'] = re.sub(r'\s*\([^)]*\)\s*$', '', b['full'])
     return out, unresolved
 
 

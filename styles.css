@@ -51,6 +51,12 @@ body {
   overflow-y: auto;
   overflow-x: hidden;
   padding: 20px 10px;
+  /* Still scrolls when it must, but never shows a scrollbar over the sky */
+  scrollbar-width: none;
+}
+
+.stack::-webkit-scrollbar {
+  display: none;
 }
 
 details.stack-item {

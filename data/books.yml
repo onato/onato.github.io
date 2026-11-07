@@ -64,11 +64,11 @@ books:
 - isbn: '9789688802052'
   rating: 4
   title: The C Programming Language
-- isbn: '9781491924440'
+- isbn: '9781449335588'
   shelf: software
   rating: 4
   title: "You Don't Know JS: Scope and Closures\n        (You Don't Know JS, #2)"
-- isbn: '9781491924440'
+- isbn: '9781491904152'
   shelf: software
   rating: 4
   title: 'You Don''t Know JS: this & Object Prototypes'

@@ -67,6 +67,7 @@ def clean_author(name):
     """Tidy a cached author name without changing who it names."""
     name = re.sub(r'\s+', ' ', name).strip().rstrip('.')
     name = name.replace('The School The School of Life', 'The School of Life')
+    name = re.sub(r'\s*\((?:PRH )?Rights\)$', '', name)
     if name.isupper():
         words = [w.lower() if w.lower() in SMALL_WORDS else w.capitalize() for w in name.lower().split(' ')]
         words[0] = words[0].capitalize()

@@ -4,9 +4,6 @@ dist/
 performance-reports/
 reading/
 
-# Dropped in by hand before deploy
-cv.pdf
-
 # Minified files
 *.min.js
 *.min.html

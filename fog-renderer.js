@@ -37,6 +37,8 @@ class FogRenderer {
     this.fps = 60;
     this.isVisible = true;
     this.rafId = null;
+    this.slowSeconds = 0;
+    this.tooSlow = false;
 
     // Pre-calculate values that don't change often
     this.tintRgb = this.hexToRgb(this.params.tintHex);
@@ -59,11 +61,13 @@ class FogRenderer {
     this.reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     this.reduceMotion.addEventListener('change', () => this.restart());
 
-    // Software-rendered WebGL (no GPU) would burn the CPU on every frame: stay still instead
+    // Software-rendered WebGL (no GPU) would burn the CPU on every frame: stay still instead.
+    // The Android emulator's GL translator never shows an animating canvas at all, so it
+    // gets the same one still frame.
     const gl = this.gl;
     const dbg = gl.getExtension('WEBGL_debug_renderer_info');
     const renderer = dbg ? String(gl.getParameter(dbg.UNMASKED_RENDERER_WEBGL)) : '';
-    this.softwareGL = /swiftshader|llvmpipe|software/i.test(renderer);
+    this.softwareGL = /swiftshader|llvmpipe|software|android emulator/i.test(renderer);
 
     // Mobile browsers drop the WebGL context when another app (Mail, say) takes the
     // foreground; rebuild it and carry on rather than freezing on the last frame
@@ -217,6 +221,9 @@ class FogRenderer {
   restart() {
     this.stopRenderLoop();
     if (this.params.paused) return;
+    // Give a slow renderer another chance whenever the page comes back
+    this.tooSlow = false;
+    this.slowSeconds = 0;
     this.baseTime = performance.now() - this.elapsed * 1000;
     this.startRenderLoop();
   }
@@ -290,7 +297,7 @@ class FogRenderer {
   }
 
   isStill() {
-    return this.softwareGL || (this.reduceMotion && this.reduceMotion.matches);
+    return this.softwareGL || this.tooSlow || (this.reduceMotion && this.reduceMotion.matches);
   }
 
   hexToRgb(hex) {
@@ -344,6 +351,19 @@ class FogRenderer {
       this.fps = (this.frameCount * 1000) / deltaTime;
       this.frameCount = 0;
       this.lastFrameTime = now;
+
+      // A renderer that cannot manage even a slow animation (the Android emulator, say)
+      // gets one still frame instead of a stutter and a hot CPU
+      if (this.fps < this.params.targetFPS * 0.4) {
+        if (++this.slowSeconds >= 2) {
+          this.tooSlow = true;
+          this.rafId = null;
+          this.renderStill();
+          return;
+        }
+      } else {
+        this.slowSeconds = 0;
+      }
 
       // Adaptive quality based on FPS
       if (this.params.targetFPS && this.fps < this.params.targetFPS * 0.9) {

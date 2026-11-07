@@ -224,15 +224,18 @@ class FogRenderer {
     // Use lower resolution for better performance
     const quality = this.params.quality || 1.0;
     this.dpr = Math.min(window.devicePixelRatio || 1, 1.5) * quality;
-    const w = Math.max(1, Math.floor(window.innerWidth * this.dpr));
-    const h = Math.max(1, Math.floor(window.innerHeight * this.dpr));
+    // Publish the real screen height for the stylesheet (see #fog on phones)
+    document.documentElement.style.setProperty('--screen-height', screen.height + 'px');
+    // Size the buffer from the canvas's own box, which may be taller than the window
+    const cw = this.canvas.clientWidth || window.innerWidth;
+    const ch = this.canvas.clientHeight || window.innerHeight;
+    const w = Math.max(1, Math.floor(cw * this.dpr));
+    const h = Math.max(1, Math.floor(ch * this.dpr));
 
     // Only resize if dimensions actually changed
     if (this.canvas.width !== w || this.canvas.height !== h) {
       this.canvas.width = w;
       this.canvas.height = h;
-      this.canvas.style.width = '100vw';
-      this.canvas.style.height = '100vh';
       this.gl.viewport(0, 0, w, h);
       this.gl.uniform2f(this.u.r, w, h);
       if (this.isStill()) this.renderStill();

@@ -89,7 +89,7 @@ class FogRenderer {
         // Slow drift to the right with a little wander, rather than curling in place
         float tm=t*sp;
         vec2 wander=vec2(sin(tm*1.3)+sin(tm*2.1)*.5,cos(tm*1.1)+cos(tm*1.9)*.5);
-        vec2 drift=(vec2(tm*1.3,tm*.2)+wander*.4)*b;
+        vec2 drift=(vec2(tm*.8,tm*.12)+wander*.3)*b;
 
         float n=fogField(p,drift,sc);
         float cover=clamp(n*(.35+.9*d),0.,1.);

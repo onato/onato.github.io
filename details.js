@@ -1,5 +1,12 @@
 // Smooth animation for details elements
 document.addEventListener('DOMContentLoaded', function() {
+  // Assemble the contact address at runtime so it never appears in the HTML
+  const contact = document.getElementById('contact');
+  if (contact) {
+    const parts = ['stephen', 'onato', 'com'];
+    contact.href = 'mailto:' + parts[0] + '@' + parts[1] + '.' + parts[2];
+  }
+
   const details = document.querySelectorAll('details');
   
   // Initialize all detail contents to prevent first-time jerkiness

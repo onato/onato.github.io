@@ -34,7 +34,11 @@ body {
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
-  flex: 1;
+  /* A zero-length basis, not flex: 1's 0%: Safari resolves 0% against the body's indefinite
+     height as "content", so an open item would grow the page past the viewport. With min-height
+     0 the container stays viewport-sized and .stack scrolls instead. */
+  flex: 1 1 0px;
+  min-height: 0;
   display: flex;
   flex-direction: column;
   padding-bottom: 100px;

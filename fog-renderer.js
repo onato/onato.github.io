@@ -45,6 +45,41 @@ class FogRenderer {
   }
 
   init() {
+    this.setupGL();
+
+    // Debounced resize handler
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => this.resize(), 150);
+    }, { passive: true });
+
+    // Honour prefers-reduced-motion: draw one static frame instead of animating
+    this.reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    this.reduceMotion.addEventListener('change', () => this.restart());
+
+    // Software-rendered WebGL (no GPU) would burn the CPU on every frame: stay still instead
+    const gl = this.gl;
+    const dbg = gl.getExtension('WEBGL_debug_renderer_info');
+    const renderer = dbg ? String(gl.getParameter(dbg.UNMASKED_RENDERER_WEBGL)) : '';
+    this.softwareGL = /swiftshader|llvmpipe|software/i.test(renderer);
+
+    // Mobile browsers drop the WebGL context when another app (Mail, say) takes the
+    // foreground; rebuild it and carry on rather than freezing on the last frame
+    this.canvas.addEventListener('webglcontextlost', (e) => {
+      e.preventDefault();
+      this.stopRenderLoop();
+    });
+    this.canvas.addEventListener('webglcontextrestored', () => {
+      this.setupGL();
+      this.restart();
+    });
+
+    // Start render loop
+    this.startRenderLoop();
+  }
+
+  setupGL() {
     const gl = this.gl;
 
     // Vertex shader
@@ -155,41 +190,34 @@ class FogRenderer {
 
     // Set initial size
     this.resize();
-
-    // Debounced resize handler
-    let resizeTimeout;
-    window.addEventListener('resize', () => {
-      clearTimeout(resizeTimeout);
-      resizeTimeout = setTimeout(() => this.resize(), 150);
-    }, { passive: true });
-
-    // Honour prefers-reduced-motion: draw one static frame instead of animating
-    this.reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-    this.reduceMotion.addEventListener('change', () => {
-      this.stopRenderLoop();
-      this.startRenderLoop();
-    });
-
-    // Software-rendered WebGL (no GPU) would burn the CPU on every frame: stay still instead
-    const dbg = gl.getExtension('WEBGL_debug_renderer_info');
-    const renderer = dbg ? String(gl.getParameter(dbg.UNMASKED_RENDERER_WEBGL)) : '';
-    this.softwareGL = /swiftshader|llvmpipe|software/i.test(renderer);
-
-    // Start render loop
-    this.startRenderLoop();
   }
 
   setupVisibilityHandling() {
-    // Pause when tab is not visible
+    // Pause when the page is hidden, restart when it is shown again
     document.addEventListener('visibilitychange', () => {
       this.isVisible = !document.hidden;
-      if (this.isVisible && !this.params.paused) {
-        this.baseTime = performance.now() - this.elapsed * 1000;
-        this.startRenderLoop();
-      } else {
-        this.stopRenderLoop();
-      }
+      if (this.isVisible) this.restart(); else this.stopRenderLoop();
     });
+    // Coming back from a mailto: or the back button can restore the page without a
+    // visibility change; treat it the same way
+    window.addEventListener('pageshow', () => {
+      this.isVisible = !document.hidden;
+      this.restart();
+    });
+    // Window managers can hide and reshow the window without a clean visibility change;
+    // a focus is one more chance to make sure the loop is running
+    window.addEventListener('focus', () => {
+      this.isVisible = !document.hidden;
+      this.restart();
+    });
+  }
+
+  // Stop whatever loop is running and start again from the current elapsed time
+  restart() {
+    this.stopRenderLoop();
+    if (this.params.paused) return;
+    this.baseTime = performance.now() - this.elapsed * 1000;
+    this.startRenderLoop();
   }
 
   resize() {
@@ -255,7 +283,7 @@ class FogRenderer {
   }
 
   render(now) {
-    if (this.params.paused || !this.isVisible) return;
+    if (this.params.paused || !this.isVisible) { this.rafId = null; return; }
 
     // Skip frames beyond targetFPS (saves GPU time and battery on high-refresh screens)
     if (now - this.lastDrawTime < 1000 / this.params.targetFPS - 4) {
@@ -322,8 +350,7 @@ class FogRenderer {
 
   resume() {
     this.params.paused = false;
-    this.baseTime = performance.now() - this.elapsed * 1000;
-    this.startRenderLoop();
+    this.restart();
   }
 
   reset() {

@@ -60,6 +60,20 @@ def display_title(full):
     return t.strip()
 
 
+SMALL_WORDS = {'of', 'de', 'the', 'and', 'van', 'von'}
+
+
+def clean_author(name):
+    """Tidy a cached author name without changing who it names."""
+    name = re.sub(r'\s+', ' ', name).strip().rstrip('.')
+    name = name.replace('The School The School of Life', 'The School of Life')
+    if name.isupper():
+        words = [w.lower() if w.lower() in SMALL_WORDS else w.capitalize() for w in name.lower().split(' ')]
+        words[0] = words[0].capitalize()
+        name = ' '.join(words)
+    return name
+
+
 def load_books():
     books = yaml.safe_load(BOOKS.read_text())['books']
     unresolved = []
@@ -68,7 +82,7 @@ def load_books():
         isbn = str(b['isbn'])
         path = CACHE / f'{isbn}.json'
         info = json.loads(path.read_text()) if path.exists() else None
-        authors = (info or {}).get('authors') or []
+        authors = [clean_author(a) for a in (info or {}).get('authors') or []]
         category = ((info or {}).get('categories') or [None])[0]
         if info is None:
             unresolved.append((isbn, b['title'], 'no Google Books record'))

@@ -20,3 +20,15 @@ is over 14 KB (the reading page is allowed 60 KB). `make dev` serves `build/` lo
 - Every book in `data/books.yml` needs a record in `data/google-books/<isbn>.json`. Fix data in
   those files; never normalise or invent author names in code.
 - Commit as you go with conventional commits (`feat:`, `fix:`, `perf:`, `chore:`).
+
+## Reviewing pull requests
+
+Judge changes against what matters for this site, and skip style nits and anything `make build`
+already enforces:
+
+- Correctness: broken HTML, dead anchors, shader edits that could fail to compile, JavaScript that
+  breaks without WebGL or under `prefers-reduced-motion`.
+- Weight: the per-file size limits and the home page's request count.
+- Accessibility: contrast over the sky and the fallback colour, keyboard access to the stack.
+- Data: every `data/books.yml` entry has a cache record and no author is invented.
+- Copy: typos and inconsistencies, briefly.

@@ -36,6 +36,7 @@ class FogRenderer {
     this.elapsed = 0;
     this.frameCount = 0;
     this.lastFrameTime = performance.now();
+    this.lastDrawTime = 0;
     this.fps = 60;
     this.isVisible = true;
     this.rafId = null;
@@ -167,6 +168,18 @@ class FogRenderer {
       resizeTimeout = setTimeout(() => this.resize(), 150);
     }, { passive: true });
 
+    // Honour prefers-reduced-motion: draw one static frame instead of animating
+    this.reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    this.reduceMotion.addEventListener('change', () => {
+      this.stopRenderLoop();
+      this.startRenderLoop();
+    });
+
+    // Software-rendered WebGL (no GPU) would burn the CPU on every frame: stay still instead
+    const dbg = gl.getExtension('WEBGL_debug_renderer_info');
+    const renderer = dbg ? String(gl.getParameter(dbg.UNMASKED_RENDERER_WEBGL)) : '';
+    this.softwareGL = /swiftshader|llvmpipe|software/i.test(renderer);
+
     // Start render loop
     this.startRenderLoop();
   }
@@ -211,7 +224,17 @@ class FogRenderer {
       this.canvas.style.height = '100vh';
       this.gl.viewport(0, 0, w, h);
       this.gl.uniform2f(this.u.r, w, h);
+      if (this.isStill()) this.renderStill();
     }
+  }
+
+  renderStill() {
+    this.updateUniforms();
+    this.gl.drawArrays(this.gl.TRIANGLES, 0, 3);
+  }
+
+  isStill() {
+    return this.softwareGL || (this.reduceMotion && this.reduceMotion.matches);
   }
 
   hexToRgb(hex) {
@@ -255,6 +278,13 @@ class FogRenderer {
   render(now) {
     if (this.params.paused || !this.isVisible) return;
 
+    // Skip frames beyond targetFPS (saves GPU time and battery on high-refresh screens)
+    if (now - this.lastDrawTime < 1000 / this.params.targetFPS - 4) {
+      this.rafId = requestAnimationFrame((t) => this.render(t));
+      return;
+    }
+    this.lastDrawTime = now;
+
     // Calculate FPS
     this.frameCount++;
     const deltaTime = now - this.lastFrameTime;
@@ -281,6 +311,10 @@ class FogRenderer {
   }
 
   startRenderLoop() {
+    if (this.isStill()) {
+      this.renderStill();
+      return;
+    }
     if (!this.rafId) {
       this.rafId = requestAnimationFrame((t) => this.render(t));
     }

@@ -138,16 +138,19 @@ class FogRenderer {
         float nl=fogField(p+vec2(-.05,.05),drift,sc);
         float lit=clamp((n-nl)*5.,-1.,1.);
 
-        // Sky behind the cloud: deeper blue at the top, paler toward the horizon
-        vec3 sky=mix(vec3(.58,.68,.84),vec3(.30,.43,.68),uv.y);
+        // Sky behind the cloud: deeper blue at the top, paler toward the horizon.
+        // Kept deep enough at the horizon that white text still reads on clear sky.
+        vec3 sky=mix(vec3(.44,.56,.78),vec3(.28,.40,.66),uv.y);
 
-        // Cloud: white on the lit side, tinted blue-grey in shadow
-        vec3 cloud=vec3(.78+.22*n);
-        cloud*=1.+lit*.35;
+        // Cloud: bright on the lit side but capped short of pure white, so white type
+        // never lands on its own colour; tinted blue-grey in shadow
+        vec3 cloud=vec3(.70+.22*n);
+        cloud*=1.+lit*.25;
         cloud=mix(cloud,cloud*ti,clamp(-lit,0.,1.));
 
         vec3 col=mix(sky,cloud,cover);
-        col=mix(vec3(.5),col,c);
+        // A touch darker overall for the text that sits on it
+        col=mix(vec3(.5),col,c)*.9;
         gl_FragColor=vec4(col,1.);
       }
     `;

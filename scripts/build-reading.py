@@ -96,13 +96,13 @@ def load_books():
 CSS = """
 *{margin:0;padding:0;box-sizing:border-box}
 
-body{color:#000;background:#4a6698;font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;font-weight:100;font-style:italic;line-height:1.4;padding:20px 20px 60px;min-height:100vh}
+body{color:#000;background:#7390bd;font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;font-weight:100;font-style:italic;line-height:1.4;padding:20px 20px 60px;min-height:100vh}
 a{color:inherit;text-decoration:none}
 #fog{position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:-1}
 a:focus-visible{outline:2px solid rgba(0,0,0,.5);outline-offset:4px;border-radius:4px}
 main{max-width:1200px;margin:0 auto}
-.home,h1,h2{color:#fff;text-shadow:0 1px 2px rgba(20,30,50,.35),0 0 18px rgba(20,30,50,.45)}
-.home{display:inline-block;font-size:18px;letter-spacing:.05em;text-transform:uppercase;transition:transform .2s ease,font-weight .2s ease}
+h1,h2{color:#fff;text-shadow:0 1px 2px rgba(20,30,50,.35),0 0 18px rgba(20,30,50,.45)}
+.home{color:#1c2433;display:inline-block;font-size:18px;letter-spacing:.05em;text-transform:uppercase;transition:transform .2s ease,font-weight .2s ease}
 .home:hover{font-weight:300;transform:translateX(10px)}
 h1{font-size:clamp(30px,6vh,120px);font-weight:100;text-transform:uppercase;letter-spacing:.05em;line-height:1.1;margin:8vh 0 .2em}
 .lede{max-width:500px;margin-bottom:8vh;line-height:1.6;font-weight:300}
@@ -110,14 +110,14 @@ section{margin-bottom:8vh}
 h2{font-size:clamp(22px,4vh,60px);font-weight:100;text-transform:uppercase;letter-spacing:.05em;line-height:1.2;margin-bottom:.6em}
 ol{list-style:none;max-width:640px}
 li{padding:5px 0;margin-left:0;position:relative}
-.stars{position:absolute;right:0;top:7px;font-size:11px;font-style:normal;letter-spacing:.15em;opacity:.6}
+.stars{position:absolute;right:0;top:7px;font-size:11px;font-style:normal;letter-spacing:.15em;color:#1c2433}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .r4{margin-top:1.2em}
 .t{font-weight:300;font-style:normal;transition:padding-left .2s ease}
 li:hover .t{padding-left:6px}
-.a{display:block;font-weight:300;opacity:.75}
+.a{display:block;font-weight:300;color:#1c2433}
 .a:empty{display:none}
-h3{font-size:16px;font-weight:300;letter-spacing:.05em;text-transform:uppercase;opacity:.75;margin:1.6em 0 .6em}
+h3{font-size:16px;font-weight:300;letter-spacing:.05em;text-transform:uppercase;color:#1c2433;margin:1.6em 0 .6em}
 .unresolved{opacity:.7;max-width:640px}
 @media(min-width:769px){section{display:grid;grid-template-columns:1fr 2fr;gap:0 40px}h2{grid-column:1;position:sticky;top:20px}.list{grid-column:2}}
 @media(prefers-reduced-motion:reduce){.home,.t{transition:none}}
@@ -164,7 +164,7 @@ def render(books, unresolved):
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Stephen Williams's reading list: the software engineering canon, physics and philosophy, rated.">
 <title>Reading — Stephen Williams</title>
-<meta name="theme-color" content="#4a6698">
+<meta name="theme-color" content="#7390bd">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://onato.com/reading/">
 <meta property="og:title" content="Reading — Stephen Williams">

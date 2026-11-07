@@ -12,18 +12,19 @@ function processHTML(inputFile, outputFile) {
   const outDir = path.dirname(outputFile);
 
   // Short content hash so browsers fetch a changed asset instead of a cached one
-  const stamp = (file) => {
-    const full = path.join(outDir, file);
-    if (!fs.existsSync(full)) return file;
+  const root = process.argv[4] || outDir;
+  const stamp = (prefix, file) => {
+    const full = path.join(prefix === '/' ? root : outDir, file);
+    if (!fs.existsSync(full)) return prefix + file;
     const hash = crypto.createHash('md5').update(fs.readFileSync(full)).digest('hex').slice(0, 8);
-    return `${file}?v=${hash}`;
+    return `${prefix}${file}?v=${hash}`;
   };
 
   // Replace script and style references with minified, stamped versions
   content = content
-    .replace(/src="fog-renderer\.js"/g, `src="${stamp('fog-renderer.min.js')}"`)
-    .replace(/src="details\.js"/g, `src="${stamp('details.min.js')}"`)
-    .replace(/href="styles\.css"/g, `href="${stamp('styles.min.css')}"`);
+    .replace(/src="(\/?)fog-renderer\.js"/g, (m, p) => `src="${stamp(p, 'fog-renderer.min.js')}"`)
+    .replace(/src="(\/?)details\.js"/g, (m, p) => `src="${stamp(p, 'details.min.js')}"`)
+    .replace(/href="(\/?)styles\.css"/g, (m, p) => `href="${stamp(p, 'styles.min.css')}"`);
   
   fs.writeFileSync(outputFile, content, 'utf8');
   
@@ -32,8 +33,8 @@ function processHTML(inputFile, outputFile) {
 
 // Main execution
 const args = process.argv.slice(2);
-if (args.length !== 2) {
-  console.error('Usage: node process-html.js <input-file> <output-file>');
+if (args.length < 2) {
+  console.error('Usage: node process-html.js <input-file> <output-file> [asset-root]');
   process.exit(1);
 }
 

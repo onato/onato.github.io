@@ -83,6 +83,7 @@ build-html: dirs
 build-reading: dirs
 	@echo "📚 Generating reading list..."
 	@$(PYTHON) scripts/build-reading.py $(BUILD_DIR)/reading/index.html
+	@node scripts/process-html.js $(BUILD_DIR)/reading/index.html $(BUILD_DIR)/reading/index.html $(BUILD_DIR)
 	@size=$$(stat -f%z $(BUILD_DIR)/reading/index.html 2>/dev/null || stat -c%s $(BUILD_DIR)/reading/index.html); \
 	if [ "$$size" -gt 61440 ]; then echo "  ❌ reading/index.html is $$size bytes (exceeds 60KB budget)"; exit 1; fi
 	@echo "  ✅ Reading list generated"

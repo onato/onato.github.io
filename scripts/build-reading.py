@@ -101,11 +101,11 @@ a{color:inherit;text-decoration:none}
 #fog{position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:-1}
 a:focus-visible{outline:2px solid rgba(0,0,0,.5);outline-offset:4px;border-radius:4px}
 main{max-width:1200px;margin:0 auto}
-.home,h1,h2,.lede{color:#fff;text-shadow:0 1px 2px rgba(20,30,50,.35),0 0 18px rgba(20,30,50,.45)}
+.home,h1,h2{color:#fff;text-shadow:0 1px 2px rgba(20,30,50,.35),0 0 18px rgba(20,30,50,.45)}
 .home{display:inline-block;font-size:18px;letter-spacing:.05em;text-transform:uppercase;transition:transform .2s ease,font-weight .2s ease}
 .home:hover{font-weight:300;transform:translateX(10px)}
 h1{font-size:clamp(30px,6vh,120px);font-weight:100;text-transform:uppercase;letter-spacing:.05em;line-height:1.1;margin:8vh 0 .2em}
-.lede{max-width:500px;margin-bottom:8vh;line-height:1.6}
+.lede{max-width:500px;margin-bottom:8vh;line-height:1.6;font-weight:300}
 section{margin-bottom:8vh}
 h2{font-size:clamp(22px,4vh,60px);font-weight:100;text-transform:uppercase;letter-spacing:.05em;line-height:1.2;margin-bottom:.6em}
 ol{list-style:none;max-width:640px}

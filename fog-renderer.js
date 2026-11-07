@@ -15,16 +15,12 @@ class FogRenderer {
 
     // Default parameters with performance in mind
     this.params = {
-      density: 0.75,
-      scale: 1.55,
+      density: 0.6,
+      scale: 1.3,
       speed: 0.02,
       brownianScale: 2.0,
-      tintHex: '#A8C6FE',
-      saturation: 2.0,
-      minBrightness: 0.11,
-      maxBrightness: 1.34,
-      contrast: 0.9,
-      scope: 0,
+      tintHex: '#A8C6FE',  // shadow side of the cloud
+      contrast: 1.0,
       paused: false,
       quality: 1.0,  // Quality multiplier for adaptive performance
       targetFPS: 30,  // Target frame rate for adaptive quality
@@ -61,7 +57,7 @@ class FogRenderer {
     const FS = `
       precision mediump float;
       uniform vec2 r;
-      uniform float t,sc,sp,d,sa,mb,xb,c,sco,b;
+      uniform float t,sc,sp,d,c,b;
       uniform vec3 ti;
       
       float hash(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5);}
@@ -89,26 +85,29 @@ class FogRenderer {
       void main(){
         vec2 uv=gl_FragCoord.xy/r;
         vec2 p=(uv-.5)*vec2(r.x/r.y,1.);
-        
+
+        // Slow drift to the right with a little wander, rather than curling in place
         float tm=t*sp;
-        vec2 drift=vec2(
-          sin(tm*1.3)+sin(tm*2.1)*.5+sin(tm*.7)*.3,
-          cos(tm*1.1)+cos(tm*1.9)*.5+cos(tm*.6)*.3
-        )*b;
-        
+        vec2 wander=vec2(sin(tm*1.3)+sin(tm*2.1)*.5,cos(tm*1.1)+cos(tm*1.9)*.5);
+        vec2 drift=(vec2(tm*.6,tm*.1)+wander*.2)*b;
+
         float n=fogField(p,drift,sc);
-        float fog=clamp(n*(.35+.9*d),0.,1.);
-        
-        vec3 bg=vec3(.07,.085,.11);
-        vec3 fogCol=ti*(.6+.4*n);
-        
-        float gray=dot(fogCol,vec3(.3,.6,.1));
-        fogCol=mix(vec3(gray),fogCol,sa);
-        
-        vec3 col=mix(bg,fogCol,fog);
+        float cover=clamp(n*(.35+.9*d),0.,1.);
+
+        // Light from the top-left: compare density with a sample toward the light
+        float nl=fogField(p+vec2(-.05,.05),drift,sc);
+        float lit=clamp((n-nl)*5.,-1.,1.);
+
+        // Sky behind the cloud: deeper blue at the top, paler toward the horizon
+        vec3 sky=mix(vec3(.58,.68,.84),vec3(.30,.43,.68),uv.y);
+
+        // Cloud: white on the lit side, tinted blue-grey in shadow
+        vec3 cloud=vec3(.78+.22*n);
+        cloud*=1.+lit*.35;
+        cloud=mix(cloud,cloud*ti,clamp(-lit,0.,1.));
+
+        vec3 col=mix(sky,cloud,cover);
         col=mix(vec3(.5),col,c);
-        col=mix(vec3(mb),vec3(xb),col);
-        
         gl_FragColor=vec4(col,1.);
       }
     `;
@@ -149,11 +148,7 @@ class FogRenderer {
       sc: gl.getUniformLocation(this.program, 'sc'),
       sp: gl.getUniformLocation(this.program, 'sp'),
       d: gl.getUniformLocation(this.program, 'd'),
-      sa: gl.getUniformLocation(this.program, 'sa'),
-      mb: gl.getUniformLocation(this.program, 'mb'),
-      xb: gl.getUniformLocation(this.program, 'xb'),
       c: gl.getUniformLocation(this.program, 'c'),
-      sco: gl.getUniformLocation(this.program, 'sco'),
       b: gl.getUniformLocation(this.program, 'b'),
       ti: gl.getUniformLocation(this.program, 'ti'),
     };
@@ -266,11 +261,7 @@ class FogRenderer {
     gl.uniform1f(u.sc, p.scale);
     gl.uniform1f(u.sp, p.speed);
     gl.uniform1f(u.d, p.density);
-    gl.uniform1f(u.sa, p.saturation);
-    gl.uniform1f(u.mb, p.minBrightness);
-    gl.uniform1f(u.xb, p.maxBrightness);
     gl.uniform1f(u.c, p.contrast);
-    gl.uniform1f(u.sco, p.scope);
     gl.uniform1f(u.b, p.brownianScale);
     gl.uniform3f(u.ti, this.tintRgb[0], this.tintRgb[1], this.tintRgb[2]);
   }

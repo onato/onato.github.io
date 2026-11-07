@@ -108,7 +108,7 @@ section{margin-bottom:8vh}
 h2{font-size:clamp(22px,4vh,60px);font-weight:100;text-transform:uppercase;letter-spacing:.05em;line-height:1.2;margin-bottom:.6em}
 ol{list-style:none;max-width:640px}
 li{padding:5px 0;margin-left:0;position:relative}
-.stars{margin-left:.9em;font-size:11px;font-style:normal;letter-spacing:.15em;opacity:.5;vertical-align:2px}
+.stars{position:absolute;right:0;top:7px;font-size:11px;font-style:normal;letter-spacing:.15em;opacity:.5}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .r4{margin-top:1.2em}
 .t{font-weight:300;font-style:normal;transition:padding-left .2s ease}

@@ -76,6 +76,8 @@ build-html: dirs
 	@echo "📦 Processing HTML files and assets..."
 	@node scripts/process-html.js index.html $(BUILD_DIR)/index.html
 	@cp favicon.ico $(BUILD_DIR)/favicon.ico 2>/dev/null || true
+	@cp CNAME google5cb3545874244528.html $(BUILD_DIR)/
+	@cp CNAME google5cb3545874244528.html $(BUILD_DIR)/
 	@echo "  ✅ HTML files and assets processed"
 
 # Generate the reading list from data/books.yml (static HTML, text only)

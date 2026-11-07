@@ -166,7 +166,7 @@ def render(books, unresolved):
 <title>Reading — Stephen Williams</title>
 <meta name="theme-color" content="#7390bd">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://onato.com/reading/">
+<meta property="og:url" content="https://www.onato.com/reading/">
 <meta property="og:title" content="Reading — Stephen Williams">
 <meta property="og:description" content="Stephen Williams's reading list: the software engineering canon, physics and philosophy, rated.">
 <link rel="icon" href="/favicon.ico" type="image/x-icon">

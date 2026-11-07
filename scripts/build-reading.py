@@ -133,7 +133,7 @@ def render(books, unresolved):
             if not group:
                 continue
             cls = ' class="r4"' if rating < 5 and rows else ''
-            stars = (f'<span class="stars" aria-hidden="true">{"★" * rating}</span>'
+            stars = (f'<span class="stars" aria-hidden="true">{"★" * rating}{"☆" * (5 - rating)}</span>'
                      f'<span class="sr">Rated {rating} of 5.</span>')
             for n, b in enumerate(group):
                 rows.append(f'<li{cls if n == 0 else ""} data-rating="{rating}">'

@@ -96,9 +96,9 @@ def load_books():
 CSS = """
 *{margin:0;padding:0;box-sizing:border-box}
 
-body{color:#000;background:#7390bd;font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;font-weight:100;font-style:italic;line-height:1.4;padding:20px 20px 60px;min-height:100vh}
+body{color:#000;background:#7390bd;font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;font-weight:100;font-style:italic;line-height:1.4;padding:calc(20px + env(safe-area-inset-top)) calc(20px + env(safe-area-inset-right)) calc(60px + env(safe-area-inset-bottom)) calc(20px + env(safe-area-inset-left));min-height:100vh}
 a{color:inherit;text-decoration:none}
-#fog{position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:-1}
+#fog{position:fixed;inset:0;width:100%;height:100%;z-index:-1}
 a:focus-visible{outline:2px solid rgba(0,0,0,.5);outline-offset:4px;border-radius:4px}
 main{max-width:1200px;margin:0 auto}
 h1,h2{color:#fff;text-shadow:0 1px 2px rgba(20,30,50,.35),0 0 18px rgba(20,30,50,.45)}
@@ -161,7 +161,7 @@ def render(books, unresolved):
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="description" content="Stephen Williams's reading list: the software engineering canon, physics and philosophy, rated.">
 <title>Reading — Stephen Williams</title>
 <meta name="theme-color" content="#7390bd">

@@ -224,8 +224,11 @@ class FogRenderer {
     // Use lower resolution for better performance
     const quality = this.params.quality || 1.0;
     this.dpr = Math.min(window.devicePixelRatio || 1, 1.5) * quality;
-    const w = Math.max(1, Math.floor(window.innerWidth * this.dpr));
-    const h = Math.max(1, Math.floor(window.innerHeight * this.dpr));
+    // The canvas is sized by CSS (it may extend under a phone's safe areas); match it
+    const cw = this.canvas.clientWidth || window.innerWidth;
+    const ch = this.canvas.clientHeight || window.innerHeight;
+    const w = Math.max(1, Math.floor(cw * this.dpr));
+    const h = Math.max(1, Math.floor(ch * this.dpr));
 
     // Only resize if dimensions actually changed
     if (this.canvas.width !== w || this.canvas.height !== h) {

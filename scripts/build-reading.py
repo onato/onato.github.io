@@ -88,8 +88,8 @@ def load_books():
 
 CSS = """
 *{margin:0;padding:0;box-sizing:border-box}
-html{background:#3c4149}
-body{color:#fff;background:#3c4149;font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;font-weight:100;font-style:italic;line-height:1.4;padding:20px 20px 60px;min-height:100vh}
+html{background:#4a6698}
+body{color:#fff;background:#4a6698;font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;font-weight:100;font-style:italic;line-height:1.4;padding:20px 20px 60px;min-height:100vh}
 a{color:#fff;text-decoration:none}
 a:focus-visible{outline:2px solid rgba(255,255,255,.5);outline-offset:4px;border-radius:4px}
 main{max-width:1200px;margin:0 auto}

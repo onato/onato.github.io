@@ -103,17 +103,17 @@ build: build-js build-css build-html build-reading check-sizes
 	@echo "  Minified:"
 	@du -sh $(BUILD_DIR)/*.min.* 2>/dev/null | head -5
 
-# Check file sizes to ensure they fit in one TCP packet
+# Check file sizes: each file within one initial TCP congestion window (~14KB)
 .PHONY: check-sizes
 check-sizes:
-	@echo "📏 Checking build file sizes (max 10KB per file)..."
+	@echo "📏 Checking build file sizes (max 14KB per file)..."
 	@failed=0; \
 	for file in $(BUILD_DIR)/*.min.* $(BUILD_DIR)/*.html; do \
 		if [ -f "$$file" ]; then \
 			size=$$(stat -f%z "$$file" 2>/dev/null || stat -c%s "$$file" 2>/dev/null); \
-			if [ "$$size" -gt 10240 ]; then \
+			if [ "$$size" -gt 14336 ]; then \
 				kb=$$(echo "scale=1; $$size/1024" | bc); \
-				echo "  ❌ $$file is $$kb KB (exceeds 10KB limit)"; \
+				echo "  ❌ $$file is $$kb KB (exceeds 14KB limit)"; \
 				failed=1; \
 			else \
 				kb=$$(echo "scale=1; $$size/1024" | bc); \

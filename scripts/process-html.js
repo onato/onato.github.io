@@ -20,7 +20,16 @@ function processHTML(inputFile, outputFile) {
     return `${prefix}${file}?v=${hash}`;
   };
 
-  // Replace script and style references with minified, stamped versions
+  // Inline the (small) stylesheet so first paint needs no second request
+  const cssFile = path.join(outDir, 'styles.min.css');
+  if (fs.existsSync(cssFile)) {
+    const css = fs.readFileSync(cssFile, 'utf8').trim();
+    content = content
+      .replace(/\s*<link rel="preload" href="styles\.css" as="style">/, '')
+      .replace(/<link rel="stylesheet" href="styles\.css">/, `<style>${css}</style>`);
+  }
+
+  // Replace script references with minified, stamped versions
   content = content
     .replace(/src="(\/?)fog-renderer\.js"/g, (m, p) => `src="${stamp(p, 'fog-renderer.min.js')}"`)
     .replace(/src="(\/?)details\.js"/g, (m, p) => `src="${stamp(p, 'details.min.js')}"`)

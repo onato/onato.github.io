@@ -7,6 +7,12 @@
   <meta name="description"
     content="Software engineer and architect in New Zealand: native mobile, Rust, Rails, and the agents that keep it all shipping.">
   <title>Stephen Williams — Software Engineer</title>
+  <meta name="theme-color" content="#4a6698">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://onato.com/">
+  <meta property="og:title" content="Stephen Williams — Software Engineer">
+  <meta property="og:description"
+    content="Software engineer and architect in New Zealand: native mobile, Rust, Rails, and the agents that keep it all shipping.">
   <link rel="preload" href="styles.css" as="style">
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -16,9 +22,9 @@
   <canvas id="fog"></canvas>
   <script src="fog-renderer.js" defer></script>
   <script defer>
-    document.addEventListener('DOMContentLoaded', function () {
-      const canvas = document.getElementById('fog');
-      const fog = new FogRenderer(canvas);
+    // Start the sky once the page has painted, so the text is usable first
+    window.addEventListener('load', function () {
+      requestAnimationFrame(function () { new FogRenderer(document.getElementById('fog')); });
     });
   </script>
   <script src="details.js" defer></script>

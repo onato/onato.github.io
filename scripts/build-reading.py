@@ -126,6 +126,10 @@ h3{font-size:16px;font-weight:300;letter-spacing:.05em;text-transform:uppercase;
 
 def render(books, unresolved):
     e = html.escape
+
+    def title_span(b):
+        full = f' title="{e(b["full"])}"' if b['full'] != b['title'] else ''
+        return f'<span class="t"{full}>{e(b["title"])}</span>'
     sections = []
     for key, name in SHELVES:
         on_shelf = [b for b in books if b['shelf'] == key]
@@ -139,7 +143,7 @@ def render(books, unresolved):
                      f'<span class="sr">Rated {rating} of 5.</span>')
             for n, b in enumerate(group):
                 rows.append(f'<li{cls if n == 0 else ""} data-rating="{rating}">'
-                            f'<span class="t" title="{e(b["full"])}">{e(b["title"])}</span>'
+                            f'{title_span(b)}'
                             f'{stars if n == 0 else ""}'
                             f'<span class="a">{e(b["author"])}</span></li>')
         rated = f'<ol>{"".join(rows)}</ol>' if rows else ''
@@ -147,7 +151,7 @@ def render(books, unresolved):
         also = ''
         if unrated:
             items = ''.join(
-                f'<li><span class="t" title="{e(b["full"])}">{e(b["title"])}</span>'
+                f'<li>{title_span(b)}'
                 f'<span class="a">{e(b["author"])}</span></li>' for b in unrated)
             also = f'<h3>Also on the shelf</h3><ol>{items}</ol>'
         sections.append(f'<section aria-labelledby="{key}"><h2 id="{key}">{e(name)}</h2>'
@@ -160,6 +164,11 @@ def render(books, unresolved):
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Stephen Williams's reading list: the software engineering canon, physics and philosophy, rated.">
 <title>Reading — Stephen Williams</title>
+<meta name="theme-color" content="#4a6698">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://onato.com/reading/">
+<meta property="og:title" content="Reading — Stephen Williams">
+<meta property="og:description" content="Stephen Williams's reading list: the software engineering canon, physics and philosophy, rated.">
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
 <style>{CSS.strip()}</style>
 </head>
@@ -167,7 +176,7 @@ def render(books, unresolved):
 <canvas id="fog"></canvas>
 <script src="/fog-renderer.js" defer></script>
 <script defer>
-document.addEventListener('DOMContentLoaded', function () {{ new FogRenderer(document.getElementById('fog')); }});
+window.addEventListener('load', function () {{ requestAnimationFrame(function () {{ new FogRenderer(document.getElementById('fog')); }}); }});
 </script>
 <main>
 <a class="home" href="/">← Stephen Williams</a>

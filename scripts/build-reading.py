@@ -107,7 +107,9 @@ h1{font-size:clamp(30px,6vh,120px);font-weight:100;text-transform:uppercase;lett
 section{margin-bottom:8vh}
 h2{font-size:clamp(22px,4vh,60px);font-weight:100;text-transform:uppercase;letter-spacing:.05em;line-height:1.2;margin-bottom:.6em}
 ol{list-style:none;max-width:640px}
-li{padding:5px 0;margin-left:0}
+li{padding:5px 0;margin-left:0;position:relative}
+.stars{margin-left:.9em;font-size:11px;font-style:normal;letter-spacing:.15em;opacity:.5;vertical-align:2px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .r4{margin-top:1.2em}
 .t{font-weight:300;font-style:normal;transition:padding-left .2s ease}
 li:hover .t{padding-left:6px}
@@ -131,9 +133,12 @@ def render(books, unresolved):
             if not group:
                 continue
             cls = ' class="r4"' if rating < 5 and rows else ''
+            stars = (f'<span class="stars" aria-hidden="true">{"★" * rating}</span>'
+                     f'<span class="sr">Rated {rating} of 5.</span>')
             for n, b in enumerate(group):
                 rows.append(f'<li{cls if n == 0 else ""} data-rating="{rating}">'
                             f'<span class="t" title="{e(b["full"])}">{e(b["title"])}</span>'
+                            f'{stars if n == 0 else ""}'
                             f'<span class="a">{e(b["author"])}</span></li>')
         rated = f'<ol>{"".join(rows)}</ol>' if rows else ''
         unrated = [b for b in on_shelf if not b['rating']]

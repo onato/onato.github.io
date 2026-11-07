@@ -85,6 +85,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Make summaries focusable
     summary.setAttribute('tabindex', '0');
+
+    // Let CSS reserve the hover weight's width (see summary::after)
+    summary.dataset.text = summary.textContent.trim();
     
     // Handle click on summary
     summary.addEventListener('click', (e) => {

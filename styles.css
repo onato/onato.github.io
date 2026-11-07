@@ -155,6 +155,16 @@ summary::-webkit-details-marker {
   display: none;
 }
 
+/* Reserve the width of the heavier hover weight so a line never re-wraps on hover */
+summary::after {
+  content: attr(data-text);
+  display: block;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  font-weight: 300;
+}
+
 /* Focus styles for keyboard navigation */
 summary:focus {
   outline: 2px solid rgba(255, 255, 255, 0.5);

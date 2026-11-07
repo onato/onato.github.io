@@ -5,8 +5,9 @@ class FogRenderer {
       antialias: false,
       depth: false,
       stencil: false,
-      alpha: false,
-      premultipliedAlpha: false,
+      // Transparent, not opaque: a frame the compositor drops (the Android emulator, say)
+      // then shows the sky colour behind the canvas rather than solid black
+      alpha: true,
       preserveDrawingBuffer: false,
       powerPreference: 'low-power'  // Prefer integrated GPU for lower power
     });
@@ -36,6 +37,8 @@ class FogRenderer {
     this.fps = 60;
     this.isVisible = true;
     this.rafId = null;
+    this.slowSeconds = 0;
+    this.tooSlow = false;
 
     // Pre-calculate values that don't change often
     this.tintRgb = this.hexToRgb(this.params.tintHex);
@@ -58,11 +61,13 @@ class FogRenderer {
     this.reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     this.reduceMotion.addEventListener('change', () => this.restart());
 
-    // Software-rendered WebGL (no GPU) would burn the CPU on every frame: stay still instead
+    // Software-rendered WebGL (no GPU) would burn the CPU on every frame: stay still instead.
+    // The Android emulator's GL translator never shows an animating canvas at all, so it
+    // gets the same one still frame.
     const gl = this.gl;
     const dbg = gl.getExtension('WEBGL_debug_renderer_info');
     const renderer = dbg ? String(gl.getParameter(dbg.UNMASKED_RENDERER_WEBGL)) : '';
-    this.softwareGL = /swiftshader|llvmpipe|software/i.test(renderer);
+    this.softwareGL = /swiftshader|llvmpipe|software|android emulator/i.test(renderer);
 
     // Mobile browsers drop the WebGL context when another app (Mail, say) takes the
     // foreground; rebuild it and carry on rather than freezing on the last frame
@@ -216,6 +221,9 @@ class FogRenderer {
   restart() {
     this.stopRenderLoop();
     if (this.params.paused) return;
+    // Give a slow renderer another chance whenever the page comes back
+    this.tooSlow = false;
+    this.slowSeconds = 0;
     this.baseTime = performance.now() - this.elapsed * 1000;
     this.startRenderLoop();
   }
@@ -227,8 +235,11 @@ class FogRenderer {
     // Publish the real screen height for the stylesheet (see #fog on phones)
     document.documentElement.style.setProperty('--screen-height', screen.height + 'px');
     // Size the buffer from the canvas's own box, which may be taller than the window
+    const hidden = this.canvas.hidden;
+    if (hidden) this.canvas.hidden = false;
     const cw = this.canvas.clientWidth || window.innerWidth;
     const ch = this.canvas.clientHeight || window.innerHeight;
+    if (hidden) this.canvas.hidden = true;
     const w = Math.max(1, Math.floor(cw * this.dpr));
     const h = Math.max(1, Math.floor(ch * this.dpr));
 
@@ -245,10 +256,48 @@ class FogRenderer {
   renderStill() {
     this.updateUniforms();
     this.gl.drawArrays(this.gl.TRIANGLES, 0, 3);
+    this.presentStill();
+  }
+
+  // Show the one still frame as a page background rather than leaving it on the canvas.
+  // Reading the pixels back works wherever WebGL draws at all, while a canvas that is
+  // never animated can stay black on GPUs that fail to hand its texture to the compositor.
+  // If even the read-back fails, hide the canvas and let the sky colour show.
+  presentStill() {
+    const gl = this.gl;
+    const w = this.canvas.width, h = this.canvas.height;
+    const body = document.body.style;
+    try {
+      const px = new Uint8ClampedArray(w * h * 4);
+      gl.readPixels(0, 0, w, h, gl.RGBA, gl.UNSIGNED_BYTE, px);
+      // GL rows run bottom-up; flip into image order
+      const row = w * 4;
+      const flipped = new Uint8ClampedArray(px.length);
+      for (let y = 0; y < h; y++) flipped.set(px.subarray(y * row, (y + 1) * row), (h - 1 - y) * row);
+      // A frame with no colour in it is a failed draw
+      let lit = 0;
+      for (let i = 0; i < flipped.length; i += 4 * 97) lit |= flipped[i] | flipped[i + 1] | flipped[i + 2];
+      if (!lit) throw new Error('blank frame');
+      const c2 = this.still2d || (this.still2d = document.createElement('canvas'));
+      c2.width = w; c2.height = h;
+      c2.getContext('2d').putImageData(new ImageData(flipped, w, h), 0, 0);
+      body.backgroundImage = 'url(' + c2.toDataURL('image/jpeg', 0.85) + ')';
+      body.backgroundSize = '100% ' + (h / this.dpr) + 'px';  // the canvas's CSS height, even while hidden
+      body.backgroundRepeat = 'no-repeat';
+    } catch (e) {
+      body.backgroundImage = '';
+    }
+    this.canvas.hidden = true;
+  }
+
+  // Back to drawing on the canvas itself
+  showCanvas() {
+    this.canvas.hidden = false;
+    document.body.style.backgroundImage = '';
   }
 
   isStill() {
-    return this.softwareGL || (this.reduceMotion && this.reduceMotion.matches);
+    return this.softwareGL || this.tooSlow || (this.reduceMotion && this.reduceMotion.matches);
   }
 
   hexToRgb(hex) {
@@ -303,6 +352,19 @@ class FogRenderer {
       this.frameCount = 0;
       this.lastFrameTime = now;
 
+      // A renderer that cannot manage even a slow animation (the Android emulator, say)
+      // gets one still frame instead of a stutter and a hot CPU
+      if (this.fps < this.params.targetFPS * 0.4) {
+        if (++this.slowSeconds >= 2) {
+          this.tooSlow = true;
+          this.rafId = null;
+          this.renderStill();
+          return;
+        }
+      } else {
+        this.slowSeconds = 0;
+      }
+
       // Adaptive quality based on FPS
       if (this.params.targetFPS && this.fps < this.params.targetFPS * 0.9) {
         this.params.quality = Math.max(0.5, this.params.quality - 0.1);
@@ -325,6 +387,7 @@ class FogRenderer {
       this.renderStill();
       return;
     }
+    if (this.canvas.hidden) this.showCanvas();
     if (!this.rafId) {
       this.rafId = requestAnimationFrame((t) => this.render(t));
     }

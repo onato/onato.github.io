@@ -33,6 +33,8 @@ class FogRenderer {
     this.frameCount = 0;
     this.lastFrameTime = performance.now();
     this.lastDrawTime = 0;
+    this.lastSampleTime = 0;
+    this.samplePixels = new Uint8Array(64 * 4);
     this.fps = 60;
     this.isVisible = true;
     this.rafId = null;
@@ -313,8 +315,27 @@ class FogRenderer {
     this.elapsed = (now - this.baseTime) / 1000;
     this.updateUniforms();
     this.gl.drawArrays(this.gl.TRIANGLES, 0, 3);
+    if (now - this.lastSampleTime > 1000) {
+      this.lastSampleTime = now;
+      this.matchPageToSky();
+    }
 
     this.rafId = requestAnimationFrame((t) => this.render(t));
+  }
+
+  // Mobile Safari paints the status bar with the page's background colour, so keep that
+  // colour tracking the sky along the top edge of the canvas; the bar then blends in.
+  matchPageToSky() {
+    const gl = this.gl;
+    const px = this.samplePixels;
+    const w = this.canvas.width;
+    const step = Math.max(1, Math.floor(w / 64));
+    let r = 0, g = 0, b = 0, n = 0;
+    for (let x = 0; x + 1 <= w && n < 64; x += step, n++) {
+      gl.readPixels(x, this.canvas.height - 1, 1, 1, gl.RGBA, gl.UNSIGNED_BYTE, px.subarray(n * 4, n * 4 + 4));
+      r += px[n * 4]; g += px[n * 4 + 1]; b += px[n * 4 + 2];
+    }
+    if (n) document.body.style.backgroundColor = `rgb(${Math.round(r / n)},${Math.round(g / n)},${Math.round(b / n)})`;
   }
 
   startRenderLoop() {

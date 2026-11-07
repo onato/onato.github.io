@@ -21,7 +21,9 @@ body {
 }
 
 #fog {
-  position: fixed;
+  /* Absolute rather than fixed: Safari on iPhone then draws the sky behind its toolbar.
+     (It never lets a page behind the status bar.) */
+  position: absolute;
   top: 0;
   left: 0;
   width: 100vw;
@@ -331,6 +333,11 @@ details[open] .detail-content {
   .container {
     height: 100dvh;
     padding-bottom: 70px;
+  }
+
+  /* No CSS unit reaches the whole screen on iOS; vh stops above the home-indicator strip */
+  #fog {
+    height: var(--screen-height, 100vh);
   }
 
   .bottom-links {

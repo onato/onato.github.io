@@ -150,8 +150,7 @@ summary,
   text-shadow: 0 1px 2px rgba(20, 30, 50, 0.35), 0 0 18px rgba(20, 30, 50, 0.45);
 }
 
-details[open] summary,
-details.stack-item:hover summary {
+details[open] summary {
   text-shadow: none;
 }
 
@@ -177,13 +176,6 @@ summary:focus-visible {
 
 details[open] summary {
   color: black;
-}
-
-details.stack-item:hover summary {
-  color: black;
-  font-weight: 300;
-  padding-left: 10px;
-  padding-right: 0;
 }
 
 .detail-content {
@@ -222,11 +214,6 @@ details[open] .detail-content {
   transition: all 0.2s ease;
 }
 
-.detail-content a:hover {
-  background: #000;
-  color: #fff;
-}
-
 .detail-content a:focus-visible {
   outline: 2px solid rgba(0, 0, 0, 0.6);
   outline-offset: 2px;
@@ -248,10 +235,28 @@ details[open] .detail-content {
   transition: transform 0.2s ease, color 0.2s ease, font-weight 0.2s ease;
 }
 
-.bottom-links a:hover {
-  color: black;
-  font-weight: 300;
-  transform: translateX(-10px);
+/* Hover styling only where a pointer can hover. On a touch screen a tap leaves the
+   element in :hover until the next tap elsewhere, so a closed item would stay black
+   and indented. */
+@media (hover: hover) {
+  details.stack-item:hover summary {
+    color: black;
+    font-weight: 300;
+    padding-left: 10px;
+    padding-right: 0;
+    text-shadow: none;
+  }
+
+  .detail-content a:hover {
+    background: #000;
+    color: #fff;
+  }
+
+  .bottom-links a:hover {
+    color: black;
+    font-weight: 300;
+    transform: translateX(-10px);
+  }
 }
 
 .bottom-links a:focus-visible {

@@ -76,6 +76,15 @@ books:
   shelf: software
   rating: 4
   title: 'You Don''t Know JS: Up & Going'
+- isbn: '9781491904190'
+  shelf: software
+  title: 'You Don''t Know JS: Types & Grammar'
+- isbn: '9781491904220'
+  shelf: software
+  title: 'You Don''t Know JS: Async & Performance'
+- isbn: '9781491904244'
+  shelf: software
+  title: 'You Don''t Know JS: ES6 & Beyond'
 - isbn: '9780999335604'
   rating: 4
   title: Timeless Laws of Software Development

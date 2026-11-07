@@ -13,7 +13,10 @@ body {
   font-style: italic;
   line-height: 1.4;
   padding: 20px;
+  /* The dynamic unit shrinks with the browser toolbar, so the bottom links stay on screen;
+     plain vh is the fallback for browsers without it */
   min-height: 100vh;
+  min-height: 100dvh;
   overflow: hidden;
   display: flex;
   flex-direction: column;

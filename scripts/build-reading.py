@@ -172,7 +172,8 @@ document.addEventListener('DOMContentLoaded', function () {{ new FogRenderer(doc
 <main>
 <a class="home" href="/">← Stephen Williams</a>
 <h1>And reads</h1>
-<p class="lede">{len(books)} books, rated where I've made up my mind.</p>
+<p class="lede">Mostly the well-regarded software engineering books, with a long-running interest in philosophy
+and how the mind works.</p>
 {"".join(sections)}
 </main>
 </body>

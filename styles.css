@@ -129,18 +129,6 @@ details.stack-item:nth-child(11) {
   margin-top: -4px;
 }
 
-details.stack-item:nth-child(12) {
-  font-size: clamp(12px, 2.4vh, 30px);
-  margin-left: 55%;
-  margin-top: -3px;
-}
-
-details.stack-item:nth-child(13) {
-  font-size: clamp(12px, 2.2vh, 28px);
-  margin-left: 60%;
-  margin-top: -3px;
-}
-
 summary {
   list-style: none;
   outline: none;
@@ -282,19 +270,17 @@ details[open] .detail-content {
   }
 
   /* Size the stack so each line fits a phone's width and stays thumb-sized */
-  details.stack-item:nth-child(1) { font-size: clamp(22px, 4.6vh, 30px); }
-  details.stack-item:nth-child(2) { font-size: clamp(22px, 4.5vh, 30px); }
-  details.stack-item:nth-child(3) { font-size: clamp(20px, 4.2vh, 28px); }
-  details.stack-item:nth-child(4) { font-size: clamp(20px, 4.0vh, 27px); }
-  details.stack-item:nth-child(5) { font-size: clamp(19px, 3.9vh, 26px); }
+  details.stack-item:nth-child(1) { font-size: clamp(22px, 4.8vh, 31px); }
+  details.stack-item:nth-child(2) { font-size: clamp(22px, 4.6vh, 30px); }
+  details.stack-item:nth-child(3) { font-size: clamp(20px, 4.4vh, 29px); }
+  details.stack-item:nth-child(4) { font-size: clamp(20px, 4.2vh, 27px); }
+  details.stack-item:nth-child(5) { font-size: clamp(19px, 4.0vh, 26px); }
   details.stack-item:nth-child(6) { font-size: clamp(19px, 3.8vh, 25px); }
   details.stack-item:nth-child(7) { font-size: clamp(18px, 3.6vh, 24px); }
-  details.stack-item:nth-child(8) { font-size: clamp(18px, 3.5vh, 23px); }
-  details.stack-item:nth-child(9) { font-size: clamp(18px, 3.3vh, 22px); }
-  details.stack-item:nth-child(10) { font-size: clamp(18px, 3.2vh, 21px); }
-  details.stack-item:nth-child(11) { font-size: clamp(18px, 3.0vh, 20px); }
-  details.stack-item:nth-child(12) { font-size: clamp(18px, 2.9vh, 19px); }
-  details.stack-item:nth-child(13) { font-size: clamp(18px, 2.8vh, 18px); }
+  details.stack-item:nth-child(8) { font-size: clamp(18px, 3.4vh, 22px); }
+  details.stack-item:nth-child(9) { font-size: clamp(18px, 3.0vh, 19px); }
+  details.stack-item:nth-child(10) { font-size: clamp(18px, 2.9vh, 19px); }
+  details.stack-item:nth-child(11) { font-size: clamp(18px, 2.8vh, 19px); }
 
   summary {
     padding-top: 4px;
@@ -325,6 +311,8 @@ details[open] .detail-content {
     right: 20px;
     bottom: 12px;
     display: flex;
+    flex-wrap: wrap;
+    gap: 0 12px;
     justify-content: space-between;
     text-align: left;
   }

@@ -1,0 +1,22 @@
+{
+  "title": "The Ax Book: The Lore and Science of the Woodcutter",
+  "authors": [
+    "Dudley Cook"
+  ],
+  "publisher": "Alan C. Hood & Company",
+  "publishedDate": "2020",
+  "categories": [
+    "Forests and forestry"
+  ],
+  "industryIdentifiers": [
+    {
+      "type": "ISBN_13",
+      "identifier": "9780811739054"
+    },
+    {
+      "type": "ISBN_10",
+      "identifier": "0811739058"
+    }
+  ],
+  "source": "Open Library (Google Books had no record for this edition)"
+}

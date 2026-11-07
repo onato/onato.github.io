@@ -94,9 +94,6 @@ document.addEventListener('DOMContentLoaded', function() {
   details.forEach(detail => {
     const summary = detail.querySelector('summary');
     
-    // Make summaries focusable
-    summary.setAttribute('tabindex', '0');
-
     // Let CSS reserve the hover weight's width (see summary::after)
     summary.dataset.text = summary.textContent.trim();
     

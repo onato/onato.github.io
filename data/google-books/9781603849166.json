@@ -1,0 +1,44 @@
+{
+  "title": "A Plato Reader",
+  "subtitle": "Eight Essential Dialogues",
+  "authors": [
+    "Plato"
+  ],
+  "publisher": "Hackett Publishing",
+  "publishedDate": "2012-09-15",
+  "description": "A Plato Reader offers eight of Plato's best-known works--Euthyphro, Apology, Crito, Meno, Phaedo, Symposium, Phaedrus, and Republic--unabridged, expertly introduced and annotated, and in widely admired translations by C. D. C. Reeve, G. M. A. Grube, Alexander Nehamas, and Paul Woodruff. The collection features Socrates as its central character and a model of the examined life. Its range allows us to see him in action in very different settings and philosophical modes: from the elenctic Socrates of the Meno and the dialogues concerning his trial and death, to the erotic Socrates of the Symposium and Phaedrus, to the dialectician of the Republic. Of Reeve's translation of this final masterpiece, Lloyd P. Gerson writes, \"Taking full advantage of S. R. Slings' new Greek text of the Republic, Reeve has given us a translation both accurate and limpid. Loving attention to detail and deep familiarity with Plato's thought are evident on every page. Reeve's brilliant decision to cast the dialogue into direct speech produces a compelling impression of immediacy unmatched by other English translations currently available.\"",
+  "industryIdentifiers": [
+    {
+      "type": "ISBN_13",
+      "identifier": "9781603849166"
+    },
+    {
+      "type": "ISBN_10",
+      "identifier": "1603849165"
+    }
+  ],
+  "readingModes": {
+    "text": true,
+    "image": true
+  },
+  "pageCount": 587,
+  "printType": "BOOK",
+  "categories": [
+    "Philosophy"
+  ],
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": true,
+  "contentVersion": "0.4.3.0.preview.3",
+  "panelizationSummary": {
+    "containsEpubBubbles": false,
+    "containsImageBubbles": false
+  },
+  "imageLinks": {
+    "smallThumbnail": "http://books.google.com/books/content?id=sMhgDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+    "thumbnail": "http://books.google.com/books/content?id=sMhgDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+  },
+  "language": "en",
+  "previewLink": "http://books.google.co.nz/books?id=sMhgDwAAQBAJ&printsec=frontcover&dq=isbn:9781603849166&hl=&cd=1&source=gbs_api",
+  "infoLink": "https://play.google.com/store/books/details?id=sMhgDwAAQBAJ&source=gbs_api",
+  "canonicalVolumeLink": "https://play.google.com/store/books/details?id=sMhgDwAAQBAJ"
+}

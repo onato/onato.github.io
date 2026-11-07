@@ -1,0 +1,41 @@
+{
+  "title": "Refactoring to Patterns",
+  "authors": [
+    "Joshua Kerievsky"
+  ],
+  "publisher": "Addison-Wesley Professional",
+  "publishedDate": "2005",
+  "description": "Kerievsky lays the foundation for maximizing the use of design patterns by helping the reader view them in the context of refactorings. He ties together two of the most popular methods in software engineering today--refactoring and design patterns--as he helps the experienced developer create more robust software.",
+  "industryIdentifiers": [
+    {
+      "type": "OTHER",
+      "identifier": "UOM:39015059312283"
+    }
+  ],
+  "readingModes": {
+    "text": false,
+    "image": false
+  },
+  "pageCount": 408,
+  "printType": "BOOK",
+  "categories": [
+    "Computers"
+  ],
+  "averageRating": 4,
+  "ratingsCount": 8,
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": false,
+  "contentVersion": "0.4.1.0.preview.0",
+  "panelizationSummary": {
+    "containsEpubBubbles": false,
+    "containsImageBubbles": false
+  },
+  "imageLinks": {
+    "smallThumbnail": "http://books.google.com/books/content?id=ebBQAAAAMAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+    "thumbnail": "http://books.google.com/books/content?id=ebBQAAAAMAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+  },
+  "language": "en",
+  "previewLink": "http://books.google.co.nz/books?id=ebBQAAAAMAAJ&dq=isbn:9780321213358&hl=&cd=1&source=gbs_api",
+  "infoLink": "http://books.google.co.nz/books?id=ebBQAAAAMAAJ&dq=isbn:9780321213358&hl=&source=gbs_api",
+  "canonicalVolumeLink": "https://books.google.com/books/about/Refactoring_to_Patterns.html?hl=&id=ebBQAAAAMAAJ"
+}

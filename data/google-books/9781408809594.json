@@ -1,0 +1,43 @@
+{
+  "title": "Alex's Adventures in Numberland",
+  "authors": [
+    "Alex Bellos"
+  ],
+  "publisher": "A&C Black",
+  "publishedDate": "2011-04-04",
+  "description": "The world of maths can seem mind-boggling, irrelevant and, let's face it, boring. This groundbreaking book reclaims maths from the geeks. Mathematical ideas underpin just about everything in our lives: from the surprising geometry of the 50p piece to how probability can help you win in any casino. In search of weird and wonderful mathematical phenomena, Alex Bellos travels across the globe and meets the world's fastest mental calculators in Germany and a startlingly numerate chimpanzee in Japan. Packed with fascinating, eye-opening anecdotes, Alex's Adventures in Numberland is an exhilarating cocktail of history, reportage and mathematical proofs that will leave you awestruck.",
+  "industryIdentifiers": [
+    {
+      "type": "ISBN_13",
+      "identifier": "9781408809594"
+    },
+    {
+      "type": "ISBN_10",
+      "identifier": "1408809591"
+    }
+  ],
+  "readingModes": {
+    "text": false,
+    "image": true
+  },
+  "pageCount": 450,
+  "printType": "BOOK",
+  "categories": [
+    "Science"
+  ],
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": false,
+  "contentVersion": "0.2.1.0.preview.1",
+  "panelizationSummary": {
+    "containsEpubBubbles": false,
+    "containsImageBubbles": false
+  },
+  "imageLinks": {
+    "smallThumbnail": "http://books.google.com/books/content?id=FA_HwoEzSQUC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+    "thumbnail": "http://books.google.com/books/content?id=FA_HwoEzSQUC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+  },
+  "language": "en",
+  "previewLink": "http://books.google.co.nz/books?id=FA_HwoEzSQUC&printsec=frontcover&dq=isbn:9781408809594&hl=&cd=1&source=gbs_api",
+  "infoLink": "http://books.google.co.nz/books?id=FA_HwoEzSQUC&dq=isbn:9781408809594&hl=&source=gbs_api",
+  "canonicalVolumeLink": "https://books.google.com/books/about/Alex_s_Adventures_in_Numberland.html?hl=&id=FA_HwoEzSQUC"
+}

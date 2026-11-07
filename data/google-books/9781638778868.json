@@ -1,0 +1,40 @@
+{
+  "title": "Building Mobile Apps at Scale",
+  "subtitle": "39 Engineering Challenges",
+  "authors": [
+    "Gergely Orosz"
+  ],
+  "publishedDate": "2021-04-06",
+  "description": "While there is a lot of appreciation for backend and distributed systems challenges, there tends to be less empathy for why mobile development is hard when done at scale. This book collects challenges engineers face when building iOS and Android apps at scale, and common ways to tackle these. By scale, we mean having numbers of users in the millions and being built by large engineering teams. For mobile engineers, this book is a blueprint for modern app engineering approaches. For non-mobile engineers and managers, it is a resource with which to build empathy and appreciation for the complexity of world-class mobile engineering. The book covers iOS and Android mobile app challenges on these dimensions: Challenges due to the unique nature of mobile applications compared to the web, and to the backend. App complexity challenges. How do you deal with increasingly complicated navigation patterns? What about non-deterministic event combinations? How do you localize across several languages, and how do you scale your automated and manual tests? Challenges due to large engineering teams. The larger the mobile team, the more challenging it becomes to ensure a consistent architecture. If your company builds multiple apps, how do you balance not rewriting everything from scratch while moving at a fast pace, over waiting on \"centralized\" teams? Cross-platform approaches. The tooling to build mobile apps keeps changing. New languages, frameworks, and approaches that all promise to address the pain points of mobile engineering keep appearing. But which approach should you choose? Flutter, React Native, Cordova? Native apps? Reuse business logic written in Kotlin, C#, C++ or other languages? What engineering approaches do \"world-class\" mobile engineering teams choose in non-functional aspects like code quality, compliance, privacy, compliance, or with experimentation, performance, or app size?",
+  "industryIdentifiers": [
+    {
+      "type": "ISBN_10",
+      "identifier": "1638778868"
+    },
+    {
+      "type": "ISBN_13",
+      "identifier": "9781638778868"
+    }
+  ],
+  "readingModes": {
+    "text": false,
+    "image": false
+  },
+  "pageCount": 238,
+  "printType": "BOOK",
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": false,
+  "contentVersion": "preview-1.0.0",
+  "panelizationSummary": {
+    "containsEpubBubbles": false,
+    "containsImageBubbles": false
+  },
+  "imageLinks": {
+    "smallThumbnail": "http://books.google.com/books/content?id=plRlzgEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+    "thumbnail": "http://books.google.com/books/content?id=plRlzgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+  },
+  "language": "en",
+  "previewLink": "http://books.google.co.nz/books?id=plRlzgEACAAJ&dq=isbn:9781638778868&hl=&cd=1&source=gbs_api",
+  "infoLink": "http://books.google.co.nz/books?id=plRlzgEACAAJ&dq=isbn:9781638778868&hl=&source=gbs_api",
+  "canonicalVolumeLink": "https://books.google.com/books/about/Building_Mobile_Apps_at_Scale.html?hl=&id=plRlzgEACAAJ"
+}

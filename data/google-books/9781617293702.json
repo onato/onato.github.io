@@ -1,0 +1,43 @@
+{
+  "title": "Grokking Deep Learning",
+  "authors": [
+    "Andrew Trask"
+  ],
+  "publisher": "Manning Publications",
+  "publishedDate": "2019-01-25",
+  "description": "Summary Grokking Deep Learning teaches you to build deep learning neural networks from scratch! In his engaging style, seasoned deep learning expert Andrew Trask shows you the science under the hood, so you grok for yourself every detail of training neural networks. Purchase of the print book includes a free eBook in PDF, Kindle, and ePub formats from Manning Publications. About the Technology Deep learning, a branch of artificial intelligence, teaches computers to learn by using neural networks, technology inspired by the human brain. Online text translation, self-driving cars, personalized product recommendations, and virtual voice assistants are just a few of the exciting modern advancements possible thanks to deep learning. About the Book Grokking Deep Learning teaches you to build deep learning neural networks from scratch! In his engaging style, seasoned deep learning expert Andrew Trask shows you the science under the hood, so you grok for yourself every detail of training neural networks. Using only Python and its math-supporting library, NumPy, you'll train your own neural networks to see and understand images, translate text into different languages, and even write like Shakespeare! When you're done, you'll be fully prepared to move on to mastering deep learning frameworks. What's inside The science behind deep learning Building and training your own neural networks Privacy concepts, including federated learning Tips for continuing your pursuit of deep learning About the Reader For readers with high school-level math and intermediate programming skills. About the Author Andrew Trask is a PhD student at Oxford University and a research scientist at DeepMind. Previously, Andrew was a researcher and analytics product manager at Digital Reasoning, where he trained the world's largest artificial neural network and helped guide the analytics roadmap for the Synthesys cognitive computing platform. Table of Contents Introducing deep learning: why you should learn it Fundamental concepts: how do machines learn? Introduction to neural prediction: forward propagation Introduction to neural learning: gradient descent Learning multiple weights at a time: generalizing gradient descent Building your first deep neural network: introduction to backpropagation How to picture neural networks: in your head and on paper Learning signal and ignoring noise:introduction to regularization and batching Modeling probabilities and nonlinearities: activation functions Neural learning about edges and corners: intro to convolutional neural networks Neural networks that understand language: king - man + woman == ? Neural networks that write like Shakespeare: recurrent layers for variable-length data Introducing automatic optimization: let's build a deep learning framework Learning to write like Shakespeare: long short-term memory Deep learning on unseen data: introducing federated learning Where to go from here: a brief guide",
+  "industryIdentifiers": [
+    {
+      "type": "ISBN_10",
+      "identifier": "1617293709"
+    },
+    {
+      "type": "ISBN_13",
+      "identifier": "9781617293702"
+    }
+  ],
+  "readingModes": {
+    "text": false,
+    "image": false
+  },
+  "pageCount": 336,
+  "printType": "BOOK",
+  "categories": [
+    "Computers"
+  ],
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": false,
+  "contentVersion": "preview-1.0.0",
+  "panelizationSummary": {
+    "containsEpubBubbles": false,
+    "containsImageBubbles": false
+  },
+  "imageLinks": {
+    "smallThumbnail": "http://books.google.com/books/content?id=l7lAvgAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+    "thumbnail": "http://books.google.com/books/content?id=l7lAvgAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+  },
+  "language": "en",
+  "previewLink": "http://books.google.co.nz/books?id=l7lAvgAACAAJ&dq=isbn:9781617293702&hl=&cd=1&source=gbs_api",
+  "infoLink": "http://books.google.co.nz/books?id=l7lAvgAACAAJ&dq=isbn:9781617293702&hl=&source=gbs_api",
+  "canonicalVolumeLink": "https://books.google.com/books/about/Grokking_Deep_Learning.html?hl=&id=l7lAvgAACAAJ"
+}

@@ -1,0 +1,45 @@
+{
+  "title": "Edible Wild Plants",
+  "authors": [
+    "John Kallas"
+  ],
+  "publisher": "Gibbs Smith",
+  "publishedDate": "2020-05-29",
+  "description": "The founder of Wild Food Adventures presents the definitive, fully illustrated guide to foraging and preparing wild edible greens. Beyond the confines of our well-tended vegetable gardens, there is a wide variety of fresh foods growing in our yards, neighborhoods, or local woods. All that's needed to take advantage of this wild bounty is a little knowledge and a sense of adventure. In Edible Wild Plants, wild foods expert John Kallas covers easy-to-identify plants commonly found across North America. The extensive information on each plant includes a full pictorial guide, recipes, and more. This volume covers four types of wild greens: Foundation Greens: wild spinach, chickweed, mallow, and purslane Tart Greens: curlydock, sheep sorrel, and wood sorrel Pungent Greens: wild mustard, wintercress, garlic mustard, and shepherd's purse Bitter Greens: dandelion, cat's ear, sow thistle, and nipplewort",
+  "industryIdentifiers": [
+    {
+      "type": "ISBN_13",
+      "identifier": "9781423616597"
+    },
+    {
+      "type": "ISBN_10",
+      "identifier": "1423616596"
+    }
+  ],
+  "readingModes": {
+    "text": true,
+    "image": true
+  },
+  "pageCount": 418,
+  "printType": "BOOK",
+  "categories": [
+    "Nature"
+  ],
+  "averageRating": 5,
+  "ratingsCount": 2,
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": true,
+  "contentVersion": "2.16.17.0.preview.3",
+  "panelizationSummary": {
+    "containsEpubBubbles": false,
+    "containsImageBubbles": false
+  },
+  "imageLinks": {
+    "smallThumbnail": "http://books.google.com/books/content?id=Q-AZur2fNUwC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+    "thumbnail": "http://books.google.com/books/content?id=Q-AZur2fNUwC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+  },
+  "language": "en",
+  "previewLink": "http://books.google.co.nz/books?id=Q-AZur2fNUwC&printsec=frontcover&dq=isbn:9781423616597&hl=&cd=1&source=gbs_api",
+  "infoLink": "https://play.google.com/store/books/details?id=Q-AZur2fNUwC&source=gbs_api",
+  "canonicalVolumeLink": "https://play.google.com/store/books/details?id=Q-AZur2fNUwC"
+}

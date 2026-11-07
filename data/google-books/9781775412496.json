@@ -1,0 +1,44 @@
+{
+  "title": "Siddhartha",
+  "subtitle": "An Indian Tale",
+  "authors": [
+    "Hermann Hesse"
+  ],
+  "publisher": "The Floating Press",
+  "publishedDate": "2009-01-01",
+  "description": "Hermann Hesse wrote Siddhartha after he traveled to India in the 1910s. It tells the story of a young boy who travels the country in a quest for spiritual enlightenment in the time of Guatama Buddha. It is a compact, lyrical work, which reads like an allegory about the finding of wisdom.",
+  "industryIdentifiers": [
+    {
+      "type": "ISBN_13",
+      "identifier": "9781775412496"
+    },
+    {
+      "type": "ISBN_10",
+      "identifier": "1775412490"
+    }
+  ],
+  "readingModes": {
+    "text": true,
+    "image": false
+  },
+  "pageCount": 188,
+  "printType": "BOOK",
+  "categories": [
+    "Fiction"
+  ],
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": true,
+  "contentVersion": "0.2.2.0.preview.2",
+  "panelizationSummary": {
+    "containsEpubBubbles": false,
+    "containsImageBubbles": false
+  },
+  "imageLinks": {
+    "smallThumbnail": "http://books.google.com/books/content?id=HxzJCGE2oVoC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+    "thumbnail": "http://books.google.com/books/content?id=HxzJCGE2oVoC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+  },
+  "language": "en",
+  "previewLink": "http://books.google.co.nz/books?id=HxzJCGE2oVoC&printsec=frontcover&dq=isbn:9781775412496&hl=&cd=1&source=gbs_api",
+  "infoLink": "https://play.google.com/store/books/details?id=HxzJCGE2oVoC&source=gbs_api",
+  "canonicalVolumeLink": "https://play.google.com/store/books/details?id=HxzJCGE2oVoC"
+}

@@ -1,0 +1,46 @@
+{
+  "title": "From Bash to Z Shell",
+  "subtitle": "Conquering the Command Line",
+  "authors": [
+    "Oliver Kiddle",
+    "Peter Stephenson",
+    "Jerry Peek"
+  ],
+  "publisher": "Apress",
+  "publishedDate": "2007-03-01",
+  "description": "* In-depth, unique coverage of ZSH, one of most modern and powerful of all shells. Also covers Bash, the preferred shell for most serious Linux and Unix users. * Very strong author and tech review team: Co-author Peter Stephenson has been involved in the development of Zsh since the 1990s when he started to write the FAQ. For the last few years, he has served as coordinator of the shell's development. Tech Reviewers: Ed Schaefer is the \"Shell Corner\" columnist for SysAdmin Magazine and Bart Schaefer is one of the lead developers of Zsh development. * Book is immediately useful, packed with short example and suggestions that the reader can put to use in their shell environment. * Extensive coverage of interactive and advanced shell features, including shell extensions, completion functions, and shortcuts. * Great book for users of all expertise; perennial seller.",
+  "industryIdentifiers": [
+    {
+      "type": "ISBN_13",
+      "identifier": "9781430204022"
+    },
+    {
+      "type": "ISBN_10",
+      "identifier": "1430204028"
+    }
+  ],
+  "readingModes": {
+    "text": true,
+    "image": true
+  },
+  "pageCount": 474,
+  "printType": "BOOK",
+  "categories": [
+    "Computers"
+  ],
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": true,
+  "contentVersion": "0.5.4.0.preview.3",
+  "panelizationSummary": {
+    "containsEpubBubbles": false,
+    "containsImageBubbles": false
+  },
+  "imageLinks": {
+    "smallThumbnail": "http://books.google.com/books/content?id=_q7ZgTUvft0C&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+    "thumbnail": "http://books.google.com/books/content?id=_q7ZgTUvft0C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+  },
+  "language": "en",
+  "previewLink": "http://books.google.co.nz/books?id=_q7ZgTUvft0C&printsec=frontcover&dq=isbn:9781430204022&hl=&cd=1&source=gbs_api",
+  "infoLink": "http://books.google.co.nz/books?id=_q7ZgTUvft0C&dq=isbn:9781430204022&hl=&source=gbs_api",
+  "canonicalVolumeLink": "https://books.google.com/books/about/From_Bash_to_Z_Shell.html?hl=&id=_q7ZgTUvft0C"
+}

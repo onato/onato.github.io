@@ -1,5 +1,5 @@
 # Fog Renderer Build System
-# Requires: npm, node, python3, uglify-js, html-minifier, lighthouse (optional)
+# Requires: npm, node, python3 (+ PyYAML), uglify-js, clean-css-cli, lighthouse (optional)
 
 # Variables
 SRC_DIR = .
@@ -76,11 +76,26 @@ build-html: dirs
 	@echo "📦 Processing HTML files and assets..."
 	@node scripts/process-html.js index.html $(BUILD_DIR)/index.html
 	@cp favicon.ico $(BUILD_DIR)/favicon.ico 2>/dev/null || true
+	@cp cv.pdf $(BUILD_DIR)/cv.pdf 2>/dev/null || echo "    ⚠️  cv.pdf not found; /cv.pdf will 404"
 	@echo "  ✅ HTML files and assets processed"
+
+# Generate the reading list from data/books.yml (static HTML, text only)
+.PHONY: build-reading
+build-reading: dirs
+	@echo "📚 Generating reading list..."
+	@$(PYTHON) scripts/build-reading.py $(BUILD_DIR)/reading/index.html
+	@size=$$(stat -f%z $(BUILD_DIR)/reading/index.html 2>/dev/null || stat -c%s $(BUILD_DIR)/reading/index.html); \
+	if [ "$$size" -gt 61440 ]; then echo "  ❌ reading/index.html is $$size bytes (exceeds 60KB budget)"; exit 1; fi
+	@echo "  ✅ Reading list generated"
+
+# Reading list in the source tree for 'make serve' (ignored by git)
+.PHONY: reading
+reading:
+	@$(PYTHON) scripts/build-reading.py reading/index.html
 
 # Combined build target
 .PHONY: build
-build: build-js build-css build-html check-sizes
+build: build-js build-css build-html build-reading check-sizes
 	@echo "🎉 Build complete!"
 	@echo "📊 File size comparison:"
 	@echo "  Original:"

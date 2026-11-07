@@ -1,0 +1,46 @@
+{
+  "title": "Reality Is Not What It Seems",
+  "subtitle": "The Journey to Quantum Gravity",
+  "authors": [
+    "Carlo Rovelli"
+  ],
+  "publisher": "Penguin UK",
+  "publishedDate": "2016-10-06",
+  "description": "'The physicist transforming how we see the universe' Financial Times 'An utter joy' Adam Rutherford Do space and time truly exist? What is reality made of? Can we understand its deep texture? Scientist Carlo Rovelli has spent his whole life exploring these questions and pushing the boundaries of what we know. In this mind-expanding book, he shows how our understanding of reality has changed throughout centuries, from Democritus to loop quantum gravity. Taking us on a wondrous journey, he invites us to imagine a whole new world where black holes are waiting to explode, spacetime is made up of grains, and infinity does not exist -- a vast universe still largely undiscovered. 'A hugely engaging book... Rovelli is a charming, thought-provoking tour guide' Manjit Kumar, Prospect Translated by Simon Carnell and Erica Segre",
+  "industryIdentifiers": [
+    {
+      "type": "ISBN_13",
+      "identifier": "9780241257975"
+    },
+    {
+      "type": "ISBN_10",
+      "identifier": "0241257972"
+    }
+  ],
+  "readingModes": {
+    "text": true,
+    "image": false
+  },
+  "pageCount": 254,
+  "printType": "BOOK",
+  "categories": [
+    "Science"
+  ],
+  "averageRating": 5,
+  "ratingsCount": 2,
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": true,
+  "contentVersion": "1.10.12.0.preview.2",
+  "panelizationSummary": {
+    "containsEpubBubbles": false,
+    "containsImageBubbles": false
+  },
+  "imageLinks": {
+    "smallThumbnail": "http://books.google.com/books/content?id=HBtxCwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+    "thumbnail": "http://books.google.com/books/content?id=HBtxCwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+  },
+  "language": "en",
+  "previewLink": "http://books.google.co.nz/books?id=HBtxCwAAQBAJ&printsec=frontcover&dq=isbn:9780241257975&hl=&cd=1&source=gbs_api",
+  "infoLink": "https://play.google.com/store/books/details?id=HBtxCwAAQBAJ&source=gbs_api",
+  "canonicalVolumeLink": "https://play.google.com/store/books/details?id=HBtxCwAAQBAJ"
+}

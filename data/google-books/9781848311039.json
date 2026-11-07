@@ -1,0 +1,46 @@
+{
+  "title": "Quantum",
+  "subtitle": "Einstein, Bohr and the Great Debate About the Nature of Reality",
+  "authors": [
+    "Manjit Kumar"
+  ],
+  "publisher": "Icon Books Ltd",
+  "publishedDate": "2008-10-02",
+  "description": "'This is about gob-smacking science at the far end of reason ... Take it nice and easy and savour the experience of your mind being blown without recourse to hallucinogens' Nicholas Lezard, Guardian For most people, quantum theory is a byword for mysterious, impenetrable science. And yet for many years it was equally baffling for scientists themselves. In this magisterial book, Manjit Kumar gives a dramatic and superbly-written history of this fundamental scientific revolution, and the divisive debate at its core. Quantum theory looks at the very building blocks of our world, the particles and processes without which it could not exist. Yet for 60 years most physicists believed that quantum theory denied the very existence of reality itself. In this tour de force of science history, Manjit Kumar shows how the golden age of physics ignited the greatest intellectual debate of the twentieth century. Quantum theory is weird. In 1905, Albert Einstein suggested that light was a particle, not a wave, defying a century of experiments. Werner Heisenberg's uncertainty principle and Erwin Schrodinger's famous dead-and-alive cat are similarly strange. As Niels Bohr said, if you weren't shocked by quantum theory, you didn't really understand it. While \"Quantum\" sets the science in the context of the great upheavals of the modern age, Kumar's centrepiece is the conflict between Einstein and Bohr over the nature of reality and the soul of science. 'Bohr brainwashed a whole generation of physicists into believing that the problem had been solved', lamented the Nobel Prize-winning physicist Murray Gell-Mann. But in \"Quantum\", Kumar brings Einstein back to the centre of the quantum debate. \"Quantum\" is the essential read for anyone fascinated by this complex and thrilling story and by the band of brilliant men at its heart.",
+  "industryIdentifiers": [
+    {
+      "type": "ISBN_13",
+      "identifier": "9781848311039"
+    },
+    {
+      "type": "ISBN_10",
+      "identifier": "1848311036"
+    }
+  ],
+  "readingModes": {
+    "text": true,
+    "image": true
+  },
+  "pageCount": 447,
+  "printType": "BOOK",
+  "categories": [
+    "Science"
+  ],
+  "averageRating": 4.5,
+  "ratingsCount": 5,
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": true,
+  "contentVersion": "2.36.33.0.preview.3",
+  "panelizationSummary": {
+    "containsEpubBubbles": false,
+    "containsImageBubbles": false
+  },
+  "imageLinks": {
+    "smallThumbnail": "http://books.google.com/books/content?id=1u_G_QwgxUQC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+    "thumbnail": "http://books.google.com/books/content?id=1u_G_QwgxUQC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+  },
+  "language": "en",
+  "previewLink": "http://books.google.co.nz/books?id=1u_G_QwgxUQC&printsec=frontcover&dq=isbn:9781848311039&hl=&cd=1&source=gbs_api",
+  "infoLink": "https://play.google.com/store/books/details?id=1u_G_QwgxUQC&source=gbs_api",
+  "canonicalVolumeLink": "https://play.google.com/store/books/details?id=1u_G_QwgxUQC"
+}

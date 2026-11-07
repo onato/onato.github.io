@@ -1,0 +1,43 @@
+{
+  "title": "How JavaScript Works",
+  "authors": [
+    "Douglas Crockford"
+  ],
+  "publisher": "Virgule-Solidus",
+  "publishedDate": "2018-10-18",
+  "description": "Douglas Crockford starts by looking at the fundamentals: names, numbers, booleans, characters, and bottom values. JavaScript\u2019s number type is shown to be faulty and limiting, but then Crockford shows how to repair those problems. He then moves on to data structures and functions, exploring the underlying mechanisms and then uses higher order functions to achieve class-free object oriented programming. The book also looks at eventual programming, testing, and purity, all the while looking at the requirements of The Next Language. Most of our languages are deeply rooted in the paradigm that produced FORTRAN. Crockford attacks those roots, liberating us to consider the next paradigm.He also presents a strawman language and develops a complete transpiler to implement it. The book is deep, dense, full of code, and has moments when it is intentionally funny.",
+  "industryIdentifiers": [
+    {
+      "type": "ISBN_13",
+      "identifier": "9781949815023"
+    },
+    {
+      "type": "ISBN_10",
+      "identifier": "1949815021"
+    }
+  ],
+  "readingModes": {
+    "text": true,
+    "image": true
+  },
+  "pageCount": 279,
+  "printType": "BOOK",
+  "categories": [
+    "Computers"
+  ],
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": true,
+  "contentVersion": "2.22.20.0.preview.3",
+  "panelizationSummary": {
+    "containsEpubBubbles": false,
+    "containsImageBubbles": false
+  },
+  "imageLinks": {
+    "smallThumbnail": "http://books.google.com/books/content?id=rwiJDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+    "thumbnail": "http://books.google.com/books/content?id=rwiJDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+  },
+  "language": "en",
+  "previewLink": "http://books.google.co.nz/books?id=rwiJDwAAQBAJ&printsec=frontcover&dq=isbn:9781949815023&hl=&cd=1&source=gbs_api",
+  "infoLink": "https://play.google.com/store/books/details?id=rwiJDwAAQBAJ&source=gbs_api",
+  "canonicalVolumeLink": "https://play.google.com/store/books/details?id=rwiJDwAAQBAJ"
+}

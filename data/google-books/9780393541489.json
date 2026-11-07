@@ -1,0 +1,44 @@
+{
+  "title": "The Case Against Reality",
+  "subtitle": "Why Evolution Hid the Truth from Our Eyes",
+  "authors": [
+    "Donald Hoffman"
+  ],
+  "publisher": "National Geographic Books",
+  "publishedDate": "2022-11-08",
+  "description": "Can we trust our senses to tell us the truth? Challenging leading scientific theories that claim that our senses report back objective reality, cognitive scientist Donald Hoffman argues that while we should take our perceptions seriously, we should not take them literally. From examining why fashion designers create clothes that give the illusion of a more \u201cattractive\u201d body shape to studying how companies use color to elicit specific emotions in consumers, and even dismantling the very notion that spacetime is objective reality, The Case Against Reality dares us to question everything we thought we knew about the world we see.",
+  "industryIdentifiers": [
+    {
+      "type": "ISBN_13",
+      "identifier": "9780393541489"
+    },
+    {
+      "type": "ISBN_10",
+      "identifier": "0393541487"
+    }
+  ],
+  "readingModes": {
+    "text": true,
+    "image": false
+  },
+  "pageCount": 0,
+  "printType": "BOOK",
+  "categories": [
+    "Science"
+  ],
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": false,
+  "contentVersion": "preview-1.0.0",
+  "panelizationSummary": {
+    "containsEpubBubbles": false,
+    "containsImageBubbles": false
+  },
+  "imageLinks": {
+    "smallThumbnail": "http://books.google.com/books/content?id=Dl-NEAAAQBAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+    "thumbnail": "http://books.google.com/books/content?id=Dl-NEAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+  },
+  "language": "en",
+  "previewLink": "http://books.google.co.nz/books?id=Dl-NEAAAQBAJ&dq=isbn:9780393541489&hl=&cd=1&source=gbs_api",
+  "infoLink": "http://books.google.co.nz/books?id=Dl-NEAAAQBAJ&dq=isbn:9780393541489&hl=&source=gbs_api",
+  "canonicalVolumeLink": "https://books.google.com/books/about/The_Case_Against_Reality.html?hl=&id=Dl-NEAAAQBAJ"
+}

@@ -1,0 +1,46 @@
+{
+  "title": "Conscious",
+  "subtitle": "A Brief Guide to the Fundamental Mystery of the Mind",
+  "authors": [
+    "Annaka Harris"
+  ],
+  "publisher": "HarperCollins",
+  "publishedDate": "2019-06-04",
+  "description": "NEW YORK TIMES BESTSELLER \"If you\u2019ve ever wondered how you have the capacity to wonder, some fascinating insights await you in these pages.\u201d --Adam Grant, New York Times bestselling author of Originals As concise and enlightening as Seven Brief Lessons on Physics and Astrophysics for People in a Hurry, this mind-expanding dive into the mystery of consciousness is an illuminating meditation on the self, free will, and felt experience. What is consciousness? How does it arise? And why does it exist? We take our experience of being in the world for granted. But the very existence of consciousness raises profound questions: Why would any collection of matter in the universe be conscious? How are we able to think about this? And why should we? In this wonderfully accessible book, Annaka Harris guides us through the evolving definitions, philosophies, and scientific findings that probe our limited understanding of consciousness. Where does it reside, and what gives rise to it? Could it be an illusion, or a universal property of all matter? As we try to understand consciousness, we must grapple with how to define it and, in the age of artificial intelligence, who or what might possess it. Conscious offers lively and challenging arguments that alter our ideas about consciousness\u2014allowing us to think freely about it for ourselves, if indeed we can.",
+  "industryIdentifiers": [
+    {
+      "type": "ISBN_13",
+      "identifier": "9780062906731"
+    },
+    {
+      "type": "ISBN_10",
+      "identifier": "0062906739"
+    }
+  ],
+  "readingModes": {
+    "text": true,
+    "image": false
+  },
+  "pageCount": 115,
+  "printType": "BOOK",
+  "categories": [
+    "Science"
+  ],
+  "averageRating": 3,
+  "ratingsCount": 2,
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": true,
+  "contentVersion": "1.6.4.0.preview.2",
+  "panelizationSummary": {
+    "containsEpubBubbles": false,
+    "containsImageBubbles": false
+  },
+  "imageLinks": {
+    "smallThumbnail": "http://books.google.com/books/content?id=n6JrDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+    "thumbnail": "http://books.google.com/books/content?id=n6JrDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+  },
+  "language": "en",
+  "previewLink": "http://books.google.co.nz/books?id=n6JrDwAAQBAJ&printsec=frontcover&dq=isbn:9780062906731&hl=&cd=1&source=gbs_api",
+  "infoLink": "https://play.google.com/store/books/details?id=n6JrDwAAQBAJ&source=gbs_api",
+  "canonicalVolumeLink": "https://play.google.com/store/books/details?id=n6JrDwAAQBAJ"
+}

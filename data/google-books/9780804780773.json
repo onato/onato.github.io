@@ -1,0 +1,43 @@
+{
+  "title": "The Complete Essays of Montaigne",
+  "authors": [
+    "Michel Eyquem Montaigne"
+  ],
+  "publisher": "Stanford University Press",
+  "publishedDate": "1958-06-01",
+  "description": "\u201cOne does not seem to be reading a translation, so smooth and easy is the style . . . one seems to be listening to Montaigne himself.\u201d \u2014Andre Maurois, The New York Times Book Review This new translation of Montaigne\u2019s immortal Essays received great acclaim when it was first published in The Complete Works of Montaigne in the 1957 edition. The New York Times said, \u201cIt is a matter for rejoicing that we now have available a new translation that offers definite advantages over even the best of its predecessors,\u201d and The New Republic stated that this edition gives \u201ca more adequate idea of Montaigne\u2019s manner, his straight and unpretentious style, than any of the half-dozen previous English translations.\u201d In his Essays Montaigne warns us from the outset that he has set himself \u201cno goal but a domestic and private one\u201d; yet he is one author whose modernity and universality have been acclaimed by each age since he wrote. Probing into his emotions, attitudes, and behavior, Montaigne reveals to us much about ourselves. As new editions of the Essays were published during his lifetime, Montaigne interpolated many new passages\u2014often of considerable length. This volume indicates the strata of composition, so that the reader may follow the development of Montaigne\u2019s thought over the years. The detailed index provides a convenient means of locating the many famous passages that occur throughout the work.",
+  "industryIdentifiers": [
+    {
+      "type": "ISBN_13",
+      "identifier": "9780804780773"
+    },
+    {
+      "type": "ISBN_10",
+      "identifier": "0804780773"
+    }
+  ],
+  "readingModes": {
+    "text": true,
+    "image": true
+  },
+  "pageCount": 987,
+  "printType": "BOOK",
+  "categories": [
+    "Literary Collections"
+  ],
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": true,
+  "contentVersion": "1.10.10.0.preview.3",
+  "panelizationSummary": {
+    "containsEpubBubbles": false,
+    "containsImageBubbles": false
+  },
+  "imageLinks": {
+    "smallThumbnail": "http://books.google.com/books/content?id=GpHgDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+    "thumbnail": "http://books.google.com/books/content?id=GpHgDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+  },
+  "language": "en",
+  "previewLink": "http://books.google.co.nz/books?id=GpHgDwAAQBAJ&printsec=frontcover&dq=isbn:9780804780773&hl=&cd=1&source=gbs_api",
+  "infoLink": "https://play.google.com/store/books/details?id=GpHgDwAAQBAJ&source=gbs_api",
+  "canonicalVolumeLink": "https://play.google.com/store/books/details?id=GpHgDwAAQBAJ"
+}

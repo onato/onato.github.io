@@ -1,0 +1,44 @@
+{
+  "title": "The Architecture of Trees",
+  "authors": [
+    "Cesare Leonardi",
+    "Franca Stagi"
+  ],
+  "publisher": "Princeton Architectural Press",
+  "publishedDate": "2019-03-26",
+  "description": "\"Any landscape architect worth their soil should pick up The Architecture of Trees, an all-encompassing atlas of all things tree-related.\"\u2014The Architect's Newspaper Gorgeous, large format volume shows each hand-drawn illustration in stunning detail. The Architecture of Trees is the result of over twenty years of dedicated study by landscape architects Cesare Leonardi and Franca Stagi. This new edition preserves the original magnificent illustrations and text, translated into English for the first time. Features more than 550 exquisite quill-pen drawings. Each of the 212 tree species are drawn to a scale of 1:100, with and without foliage. Complete with tables of seasonal color variation and projections of shadows cast during the hours of daylight and season by season, no other book contains such detailed and scientific drawings of trees. A legendary and unsurpassed botanical masterwork. Considered a standard in many landscape architecture firms, the drawings, essays, and detailed charts are essential for large scale landscaping projects and a helpful tool for backyard renovations. Landscape designers will think in new ways about the effect of seasons and the time of day on trees, and anyone interested in nature and trees will be captivated by the stunning illustrations. \"This book could be considered the Bible for tree lovers.\"\u2014Western Art & Architecture",
+  "industryIdentifiers": [
+    {
+      "type": "ISBN_10",
+      "identifier": "1616898062"
+    },
+    {
+      "type": "ISBN_13",
+      "identifier": "9781616898069"
+    }
+  ],
+  "readingModes": {
+    "text": false,
+    "image": false
+  },
+  "pageCount": 0,
+  "printType": "BOOK",
+  "categories": [
+    "Nature"
+  ],
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": false,
+  "contentVersion": "preview-1.0.0",
+  "panelizationSummary": {
+    "containsEpubBubbles": false,
+    "containsImageBubbles": false
+  },
+  "imageLinks": {
+    "smallThumbnail": "http://books.google.com/books/content?id=eDAauAEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+    "thumbnail": "http://books.google.com/books/content?id=eDAauAEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+  },
+  "language": "en",
+  "previewLink": "http://books.google.co.nz/books?id=eDAauAEACAAJ&dq=isbn:9781616898069&hl=&cd=1&source=gbs_api",
+  "infoLink": "http://books.google.co.nz/books?id=eDAauAEACAAJ&dq=isbn:9781616898069&hl=&source=gbs_api",
+  "canonicalVolumeLink": "https://books.google.com/books/about/The_Architecture_of_Trees.html?hl=&id=eDAauAEACAAJ"
+}

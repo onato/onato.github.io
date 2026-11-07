@@ -1,0 +1,45 @@
+{
+  "title": "The School of Life",
+  "subtitle": "An Emotional Education",
+  "authors": [
+    "Alain de Botton",
+    "The School of Life (PRH Rights)"
+  ],
+  "publisher": "Penguin UK",
+  "publishedDate": "2019-09-05",
+  "description": "THE SUNDAY TIMES BESTSELLER Take some time to reflect and refocus this winter, with the essential guide on how to live wisely and well, no matter what challenges the world throws at you - from Alain de Botton, the bestselling author of The Consolations of Philosophy, The Art of Travel and The Course of Love This is a book about everything you were never taught at school. It's about how to understand your emotions, find and sustain love, succeed in your career, fail well and overcome shame and guilt. It's also about letting go of the myth of a perfect life in order to achieve genuine emotional maturity. Written in a hugely accessible, warm and humane style, The School of Life is the ultimate guide to the emotionally fulfilled lives we all long for - and deserve. This book brings together ten years of essential and transformative research on emotional intelligence, with practical topics including: - how to understand yourself - how to master the dilemmas of relationships - how to become more effective at work - how to endure failure - how to grow more serene and resilient Praise for Alain de Botton: 'What he has managed to do is remarkable: to help us think better so that we may live better lives' Irish Times 'A serious and optimistic set of practical ideas that could improve and alter the way we live' Jeanette Winterson, The Times 'Alain de Botton likes to take big, complex subjects and write about them with thoughtful and deceptive innocence' Observer",
+  "industryIdentifiers": [
+    {
+      "type": "ISBN_13",
+      "identifier": "9780241985854"
+    },
+    {
+      "type": "ISBN_10",
+      "identifier": "0241985854"
+    }
+  ],
+  "readingModes": {
+    "text": true,
+    "image": false
+  },
+  "pageCount": 306,
+  "printType": "BOOK",
+  "categories": [
+    "Self-Help"
+  ],
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": true,
+  "contentVersion": "1.14.11.0.preview.2",
+  "panelizationSummary": {
+    "containsEpubBubbles": false,
+    "containsImageBubbles": false
+  },
+  "imageLinks": {
+    "smallThumbnail": "http://books.google.com/books/content?id=vYSCDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+    "thumbnail": "http://books.google.com/books/content?id=vYSCDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+  },
+  "language": "en",
+  "previewLink": "http://books.google.co.nz/books?id=vYSCDwAAQBAJ&printsec=frontcover&dq=isbn:9780241985854&hl=&cd=1&source=gbs_api",
+  "infoLink": "https://play.google.com/store/books/details?id=vYSCDwAAQBAJ&source=gbs_api",
+  "canonicalVolumeLink": "https://play.google.com/store/books/details?id=vYSCDwAAQBAJ"
+}

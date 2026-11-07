@@ -1,0 +1,44 @@
+{
+  "title": "Entangled Life",
+  "subtitle": "How Fungi Make Our Worlds, Change Our Minds and Shape Our Futures",
+  "authors": [
+    "Merlin Sheldrake"
+  ],
+  "publisher": "Random House",
+  "publishedDate": "2020-09-03",
+  "description": "The smash-hit Sunday Times bestseller that will transform your understanding of our planet and life itself. 'Astonishing ... it seems somehow to tip the natural world upside down' Observer 'Completely mind-blowing ... reads like an adventure story' Sunday Times *WINNER OF THE ROYAL SOCIETY BOOK PRIZE 2021* *WINNER OF THE WAINWRIGHT PRIZE FOR CONSERVATION WRITING 2021* The more we learn about fungi, the less makes sense without them. They can change our minds, heal our bodies and even help us avoid environmental disaster; they are metabolic masters, earth-makers and key players in most of nature's processes. In Entangled Life, Merlin Sheldrake takes us on a mind-altering journey into their spectacular world, and reveals how these extraordinary organisms transform our understanding of our planet and life itself. 'Dazzling, vibrant, vision-changing' Robert Macfarlane 'Urgent, astounding and necessary' Helen Macdonald 'Gorgeous!' Margaret Atwood (on Twitter) 'Wonderful' Nigella Lawson 'This book is like one surprise after another' David Byrne 'Uplifting' Jeanette Winterson *SHORTLISTED FOR THE RATHBONES FOLIO PRIZE 2021* *SHORTLISTED FOR THE BRITISH BOOK AWARDS BOOK OF THE YEAR 2021* * A Sunday Times, Daily Telegraph, New Statesman, The Times, Evening Standard, Mail on Sunday, BBC Science Focus and Time Book of the Year *",
+  "industryIdentifiers": [
+    {
+      "type": "ISBN_13",
+      "identifier": "9781473554689"
+    },
+    {
+      "type": "ISBN_10",
+      "identifier": "1473554683"
+    }
+  ],
+  "readingModes": {
+    "text": true,
+    "image": false
+  },
+  "pageCount": 267,
+  "printType": "BOOK",
+  "categories": [
+    "Science"
+  ],
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": true,
+  "contentVersion": "1.12.12.0.preview.2",
+  "panelizationSummary": {
+    "containsEpubBubbles": false,
+    "containsImageBubbles": false
+  },
+  "imageLinks": {
+    "smallThumbnail": "http://books.google.com/books/content?id=FjWpDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+    "thumbnail": "http://books.google.com/books/content?id=FjWpDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+  },
+  "language": "en",
+  "previewLink": "http://books.google.co.nz/books?id=FjWpDwAAQBAJ&printsec=frontcover&dq=isbn:9781473554689&hl=&cd=1&source=gbs_api",
+  "infoLink": "https://play.google.com/store/books/details?id=FjWpDwAAQBAJ&source=gbs_api",
+  "canonicalVolumeLink": "https://play.google.com/store/books/details?id=FjWpDwAAQBAJ"
+}

@@ -1,0 +1,43 @@
+{
+  "title": "Who Am I?",
+  "authors": [
+    "The School of Life"
+  ],
+  "publisher": "School of Life Press",
+  "publishedDate": "2019-01-10",
+  "description": "One of the trickiest tasks we ever face is that of working out who we really are. If we\u2019re asked directly to describe ourselves, our minds tend to go blank. We can\u2019t just sum ourselves up. We need prompts and suggestions and more detailed enquiries that help tease out and organise our picture of ourselves. This book is designed to help us create a psychological portrait of ourselves with the use of some far more unusual, oblique, entertaining and playful prompts. The questions are designed to help us cumulatively appreciate how rich our identities are and how complicated, beautiful and sometimes painful our experiences have been. If self-knowledge is central to a wise and fulfilled life, it is because it teaches us which of our many\u2014often contradictory\u2014feelings and plans we might trust, in order that we can be a little more sceptical around our first impulses and less puzzled by the ebb and flow of our moods. We can understand where some of our feelings have come from and what might be driving our convictions and our longings.",
+  "industryIdentifiers": [
+    {
+      "type": "ISBN_10",
+      "identifier": "1912891085"
+    },
+    {
+      "type": "ISBN_13",
+      "identifier": "9781912891085"
+    }
+  ],
+  "readingModes": {
+    "text": false,
+    "image": false
+  },
+  "pageCount": 0,
+  "printType": "BOOK",
+  "categories": [
+    "Psychology"
+  ],
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": false,
+  "contentVersion": "preview-1.0.0",
+  "panelizationSummary": {
+    "containsEpubBubbles": false,
+    "containsImageBubbles": false
+  },
+  "imageLinks": {
+    "smallThumbnail": "http://books.google.com/books/content?id=mI79wQEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+    "thumbnail": "http://books.google.com/books/content?id=mI79wQEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+  },
+  "language": "en",
+  "previewLink": "http://books.google.co.nz/books?id=mI79wQEACAAJ&dq=isbn:9781912891085&hl=&cd=1&source=gbs_api",
+  "infoLink": "http://books.google.co.nz/books?id=mI79wQEACAAJ&dq=isbn:9781912891085&hl=&source=gbs_api",
+  "canonicalVolumeLink": "https://books.google.com/books/about/Who_Am_I.html?hl=&id=mI79wQEACAAJ"
+}

@@ -1,0 +1,44 @@
+{
+  "title": "The Daily Stoic",
+  "subtitle": "366 Meditations on Wisdom, Perseverance, and the Art of Living",
+  "authors": [
+    "Ryan Holiday",
+    "Stephen Hanselman"
+  ],
+  "publishedDate": "2016-10-27",
+  "description": "Where can you find joy? What's the true measure of success? How should we manage anger? Find meaning? Conquer grief? The answers to these questions and more lie at the heart of Stoic philosophy. The Daily Stoic is a compelling, accessible guide to living a good life, offering daily doses of this classic wisdom.",
+  "industryIdentifiers": [
+    {
+      "type": "ISBN_10",
+      "identifier": "1781257655"
+    },
+    {
+      "type": "ISBN_13",
+      "identifier": "9781781257654"
+    }
+  ],
+  "readingModes": {
+    "text": false,
+    "image": false
+  },
+  "pageCount": 416,
+  "printType": "BOOK",
+  "categories": [
+    "Meditations"
+  ],
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": false,
+  "contentVersion": "preview-1.0.0",
+  "panelizationSummary": {
+    "containsEpubBubbles": false,
+    "containsImageBubbles": false
+  },
+  "imageLinks": {
+    "smallThumbnail": "http://books.google.com/books/content?id=MPcOkAEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+    "thumbnail": "http://books.google.com/books/content?id=MPcOkAEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+  },
+  "language": "en",
+  "previewLink": "http://books.google.co.nz/books?id=MPcOkAEACAAJ&dq=isbn:9781781257654&hl=&cd=1&source=gbs_api",
+  "infoLink": "http://books.google.co.nz/books?id=MPcOkAEACAAJ&dq=isbn:9781781257654&hl=&source=gbs_api",
+  "canonicalVolumeLink": "https://books.google.com/books/about/The_Daily_Stoic.html?hl=&id=MPcOkAEACAAJ"
+}

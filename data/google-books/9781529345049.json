@@ -1,0 +1,44 @@
+{
+  "title": "Know Thyself",
+  "subtitle": "The New Science of Self-Awareness",
+  "authors": [
+    "Stephen M Fleming"
+  ],
+  "publisher": "Hachette UK",
+  "publishedDate": "2021-04-29",
+  "description": "How do you know when you've studied enough to pass an exam? Should you accept the testimony of an eyewitness? How do you know when to trust a doctor's orders? The answer is self awareness. Self awareness is humans' greatest superpower. Like the conductor of an orchestra, self awareness guides the musicians of the mind - memory, creativity, intelligence and skill - to perform at their best. So why do we so often get it wrong? Drawing on his own pioneering studies, as well as cutting-edge research in computer science, psychology and evolutionary biology, Stephen Fleming shows how we can learn from this groundbreaking new science, and gain the edge in a rapidly changing world.",
+  "industryIdentifiers": [
+    {
+      "type": "ISBN_13",
+      "identifier": "9781529345049"
+    },
+    {
+      "type": "ISBN_10",
+      "identifier": "1529345049"
+    }
+  ],
+  "readingModes": {
+    "text": true,
+    "image": false
+  },
+  "pageCount": 294,
+  "printType": "BOOK",
+  "categories": [
+    "Science"
+  ],
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": false,
+  "contentVersion": "1.2.2.0.preview.2",
+  "panelizationSummary": {
+    "containsEpubBubbles": false,
+    "containsImageBubbles": false
+  },
+  "imageLinks": {
+    "smallThumbnail": "http://books.google.com/books/content?id=y3wPEAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+    "thumbnail": "http://books.google.com/books/content?id=y3wPEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+  },
+  "language": "en",
+  "previewLink": "http://books.google.co.nz/books?id=y3wPEAAAQBAJ&printsec=frontcover&dq=isbn:9781529345049&hl=&cd=1&source=gbs_api",
+  "infoLink": "https://play.google.com/store/books/details?id=y3wPEAAAQBAJ&source=gbs_api",
+  "canonicalVolumeLink": "https://play.google.com/store/books/details?id=y3wPEAAAQBAJ"
+}

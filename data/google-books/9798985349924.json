@@ -1,0 +1,32 @@
+{
+  "title": "Engineers Survival Guide",
+  "subtitle": "Advice, Tactics, and Tricks After a Decade of Working at Facebook, Microsoft, and Snapchat",
+  "authors": [
+    "Merih Taze"
+  ],
+  "publishedDate": "2021-11-28",
+  "description": "- Authored by Merih Taze, Senior Software Engineering Lead at Facebook (Previously Microsoft and Snapchat)There are a lot of amazing technical books out there. But what about your life as an engineer? How you interact with others? How happy are you with your career?* Are you tired of the need to put on a fake confidence show?* Are you having a hard time convincing others?* Are you interested in getting promoted?* Are you overworked and can't find a way to get the help you need?* Are you scared of the feedback from your peers?* Do you find yourself in conflicts with no solution in sight?* Want to learn the secrets of having your manager work for you?* Interested in building a career you'll be proud to talk about?If you've been feeling alone in your journey and keep wishing you had a friend or a mentor you could get some advice about non-technical aspects, look no further!Inside, you will find the summary of advice, tactics, and tricks learned the hard way through many years of working on mission-critical components, complex system designs supporting billions of users, and working with thousands of the most brilliant engineers around the world.Have a survival guide for most situations you'll be facing throughout your career as an engineer and learn how to play for the long game.----------------------------------------------------------------Topics Covered: Conflict resolution, finding mentors, prioritization, interviews, importance of data, visibility, failures, consensus, design discussions, how to drive meetings, adaptability, ambiguity, networking, meetings with your managers (one on ones), biggest regret, perfectionism, system design, calendar, focus blocks, office jargon, diversification, positive surroundings, being the happy coworker, working at a startup, office politics, playing for the long game",
+  "industryIdentifiers": [
+    {
+      "type": "ISBN_13",
+      "identifier": "9798985349924"
+    }
+  ],
+  "readingModes": {
+    "text": false,
+    "image": false
+  },
+  "pageCount": 0,
+  "printType": "BOOK",
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": false,
+  "contentVersion": "preview-1.0.0",
+  "panelizationSummary": {
+    "containsEpubBubbles": false,
+    "containsImageBubbles": false
+  },
+  "language": "en",
+  "previewLink": "http://books.google.co.nz/books?id=ZkuSzwEACAAJ&dq=isbn:9798985349924&hl=&cd=1&source=gbs_api",
+  "infoLink": "http://books.google.co.nz/books?id=ZkuSzwEACAAJ&dq=isbn:9798985349924&hl=&source=gbs_api",
+  "canonicalVolumeLink": "https://books.google.com/books/about/Engineers_Survival_Guide.html?hl=&id=ZkuSzwEACAAJ"
+}

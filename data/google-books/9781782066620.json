@@ -1,0 +1,44 @@
+{
+  "title": "Norwegian Wood",
+  "subtitle": "The guide to chopping, stacking and drying wood the Scandinavian way",
+  "authors": [
+    "Lars Mytting"
+  ],
+  "publisher": "Hachette UK",
+  "publishedDate": "2015-10-01",
+  "description": "THE DEFINITIVE WOOD-CUTTER'S BIBLE - THE BESTSELLING, YEAR-ROUND GUIDE TO CHOPPING, STACKING AND DRYING WOOD \"The book has spread like wildfire\" Daily Mail \"A how-to book with poetry at its heart\" T.L.S. \"A step-by-step guide to preparing your wood store\" Independent Whether you're a seasoned woodcutter, or your passion is yet to be kindled, NORWEGIAN WOOD is an entertaining guide for year-round wood management, and the perfect gift. Chopping and stacking wood is a pastime where the world makes sense once more. Because our relationship to fire is so ancient, so universal, it seems that in learning about wood, you can also learn about life. And who better to impart this wisdom than an expert from Scandinavia, where the extreme climate has obliged generations to hone and share their skills with tools, wood and heat production. Lars Mytting has distilled the wisdom of enthusiasts, from experienced lifelong growers, stackers and burners to researchers and professionals of combustion and tree culture. Part guide to the best practice in every aspect of working with this renewable energy source, part meditation on the human instinct for survival, this definitive handbook on the art of chopping, stacking and drying wood in the Scandinavian way has resonated across the world, with more than a million copies sold worldwide. More than 175,000 copies sold in English editions. The book that defined a genre.",
+  "industryIdentifiers": [
+    {
+      "type": "ISBN_13",
+      "identifier": "9781782066620"
+    },
+    {
+      "type": "ISBN_10",
+      "identifier": "1782066624"
+    }
+  ],
+  "readingModes": {
+    "text": true,
+    "image": false
+  },
+  "pageCount": 192,
+  "printType": "BOOK",
+  "categories": [
+    "Crafts & Hobbies"
+  ],
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": true,
+  "contentVersion": "1.3.5.0.preview.2",
+  "panelizationSummary": {
+    "containsEpubBubbles": false,
+    "containsImageBubbles": false
+  },
+  "imageLinks": {
+    "smallThumbnail": "http://books.google.com/books/content?id=h7exCAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+    "thumbnail": "http://books.google.com/books/content?id=h7exCAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+  },
+  "language": "en",
+  "previewLink": "http://books.google.co.nz/books?id=h7exCAAAQBAJ&printsec=frontcover&dq=isbn:9781782066620&hl=&cd=1&source=gbs_api",
+  "infoLink": "https://play.google.com/store/books/details?id=h7exCAAAQBAJ&source=gbs_api",
+  "canonicalVolumeLink": "https://play.google.com/store/books/details?id=h7exCAAAQBAJ"
+}

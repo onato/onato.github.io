@@ -1,0 +1,44 @@
+{
+  "title": "The Age of Surveillance Capitalism",
+  "subtitle": "The Fight for a Human Future at the New Frontier of Power",
+  "authors": [
+    "Shoshana Zuboff"
+  ],
+  "publisher": "Hachette UK",
+  "publishedDate": "2019-01-15",
+  "description": "The challenges to humanity posed by the digital future, the first detailed examination of the unprecedented form of power called \"surveillance capitalism,\" and the quest by powerful corporations to predict and control our behavior. The heady optimism of the Internet\u2019s early days has turned dark. Surveillance capitalism has deepened inequality, sown societal chaos, and undermined democracy. The fight for a human future has never been more urgent. Shoshana Zuboff argues that we still have the power to decide what kind of world we want to live in: Will we allow surveillance capitalism to wrap us in its iron cage as it enriches the few and subjugates the many? Or will we demand the rights and laws that place this rogue power under the democratic rule of law? Only democracy can ensure that the vast new capabilities of the digital era are harnessed to the advancement of humanity. The Age of Surveillance Capitalism is a deeply original, exquisitely reasoned, and spell binding examination of our emerging information civilization and the life and death choices we face.",
+  "industryIdentifiers": [
+    {
+      "type": "ISBN_13",
+      "identifier": "9781610395700"
+    },
+    {
+      "type": "ISBN_10",
+      "identifier": "1610395700"
+    }
+  ],
+  "readingModes": {
+    "text": true,
+    "image": false
+  },
+  "pageCount": 683,
+  "printType": "BOOK",
+  "categories": [
+    "Business & Economics"
+  ],
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": true,
+  "contentVersion": "1.11.10.0.preview.2",
+  "panelizationSummary": {
+    "containsEpubBubbles": false,
+    "containsImageBubbles": false
+  },
+  "imageLinks": {
+    "smallThumbnail": "http://books.google.com/books/content?id=MJ5ADwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+    "thumbnail": "http://books.google.com/books/content?id=MJ5ADwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+  },
+  "language": "en",
+  "previewLink": "http://books.google.co.nz/books?id=MJ5ADwAAQBAJ&printsec=frontcover&dq=isbn:9781610395700&hl=&cd=1&source=gbs_api",
+  "infoLink": "https://play.google.com/store/books/details?id=MJ5ADwAAQBAJ&source=gbs_api",
+  "canonicalVolumeLink": "https://play.google.com/store/books/details?id=MJ5ADwAAQBAJ"
+}

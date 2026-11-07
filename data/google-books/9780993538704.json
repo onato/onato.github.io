@@ -1,0 +1,46 @@
+{
+  "title": "Great Thinkers",
+  "subtitle": "Simple Tools from 60 Great Thinkers to Improve Your Life Today",
+  "authors": [
+    "The School of Life"
+  ],
+  "publisher": "School of Life Press",
+  "publishedDate": "2016-09-08",
+  "description": "The Great Thinkers is a collection of some of the most important ideas of Eastern and Western culture - drawn from the works of those philosophers, political theorists, sociologists, artists and novelists whom we believe have the most to offer to us today. We've worked hard to make the thinkers in this book clear, relevant and charming, mining the history of knowledge to bring you the ideas we think have the greatest importance to our times. This 480-page book contains the canon of The School of Life, the gallery of individuals across the millennia who help to frame our intellectual project - and we have succeeded if, in the days and years ahead, you find yourself turning to our thinkers to illuminate the multiple dilemmas, joys and griefs of daily life.",
+  "industryIdentifiers": [
+    {
+      "type": "ISBN_10",
+      "identifier": "0993538703"
+    },
+    {
+      "type": "ISBN_13",
+      "identifier": "9780993538704"
+    }
+  ],
+  "readingModes": {
+    "text": false,
+    "image": false
+  },
+  "pageCount": 0,
+  "printType": "BOOK",
+  "categories": [
+    "Philosophy"
+  ],
+  "averageRating": 5,
+  "ratingsCount": 1,
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": false,
+  "contentVersion": "preview-1.0.0",
+  "panelizationSummary": {
+    "containsEpubBubbles": false,
+    "containsImageBubbles": false
+  },
+  "imageLinks": {
+    "smallThumbnail": "http://books.google.com/books/content?id=rIGwDAEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+    "thumbnail": "http://books.google.com/books/content?id=rIGwDAEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+  },
+  "language": "en",
+  "previewLink": "http://books.google.co.nz/books?id=rIGwDAEACAAJ&dq=isbn:9780993538704&hl=&cd=1&source=gbs_api",
+  "infoLink": "http://books.google.co.nz/books?id=rIGwDAEACAAJ&dq=isbn:9780993538704&hl=&source=gbs_api",
+  "canonicalVolumeLink": "https://books.google.com/books/about/Great_Thinkers.html?hl=&id=rIGwDAEACAAJ"
+}

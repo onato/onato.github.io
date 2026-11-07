@@ -1,0 +1,35 @@
+{
+  "title": "Zero Bugs and Program Faster",
+  "authors": [
+    "Kate Thompson"
+  ],
+  "publisher": "Thompson",
+  "publishedDate": "2015-08-27",
+  "description": "A book about programming, improving skill, and avoiding mistakes.The author spent two years researching every bug avoidance technique she could find. This book contains the best of them.If you want to program faster, with fewer bugs, and write more secure code, buy this book!",
+  "industryIdentifiers": [
+    {
+      "type": "ISBN_10",
+      "identifier": "0996193308"
+    },
+    {
+      "type": "ISBN_13",
+      "identifier": "9780996193306"
+    }
+  ],
+  "readingModes": {
+    "text": false,
+    "image": false
+  },
+  "printType": "BOOK",
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": false,
+  "contentVersion": "preview-1.0.0",
+  "imageLinks": {
+    "smallThumbnail": "http://books.google.com/books/content?id=ytFIrgEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+    "thumbnail": "http://books.google.com/books/content?id=ytFIrgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+  },
+  "language": "en",
+  "previewLink": "http://books.google.co.nz/books?id=ytFIrgEACAAJ&dq=isbn:9780996193306&hl=&cd=1&source=gbs_api",
+  "infoLink": "http://books.google.co.nz/books?id=ytFIrgEACAAJ&dq=isbn:9780996193306&hl=&source=gbs_api",
+  "canonicalVolumeLink": "https://books.google.com/books/about/Zero_Bugs_and_Program_Faster.html?hl=&id=ytFIrgEACAAJ"
+}

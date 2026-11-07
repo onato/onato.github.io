@@ -1,0 +1,46 @@
+{
+  "title": "21 Lessons for the 21st Century",
+  "subtitle": "'Truly mind-expanding... Ultra-topical' Guardian",
+  "authors": [
+    "Yuval Noah Harari"
+  ],
+  "publisher": "Random House",
+  "publishedDate": "2018-08-30",
+  "description": "**THE NUMBER ONE BESTSELLER** In twenty-one bite-sized lessons, Yuval Noah Harari explores what it means to be human in an age of bewilderment. How can we protect ourselves from nuclear war, ecological cataclysms and technological disruptions? What can we do about the epidemic of fake news or the threat of terrorism? What should we teach our children? The world-renowned historian and intellectual Yuval Noah Harari takes us on a thrilling journey through today's most urgent issues. The golden thread running through his exhilarating new book is the challenge of maintaining our collective and individual focus in the face of constant and disorienting change. Faced with a litany of existential and real crises, are we still capable of understanding the world we have created? '[Harari] has teed up a crucial global conversation about how to take on the problems of the 21st century' Bill Gates, New York Times '21 Lessons is, simply put, a crucial book' Adam Kay, author of Undoctored",
+  "industryIdentifiers": [
+    {
+      "type": "ISBN_13",
+      "identifier": "9781473554719"
+    },
+    {
+      "type": "ISBN_10",
+      "identifier": "1473554713"
+    }
+  ],
+  "readingModes": {
+    "text": true,
+    "image": false
+  },
+  "pageCount": 256,
+  "printType": "BOOK",
+  "categories": [
+    "History"
+  ],
+  "averageRating": 4.5,
+  "ratingsCount": 2,
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": true,
+  "contentVersion": "2.11.11.0.preview.2",
+  "panelizationSummary": {
+    "containsEpubBubbles": false,
+    "containsImageBubbles": false
+  },
+  "imageLinks": {
+    "smallThumbnail": "http://books.google.com/books/content?id=ar44DwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+    "thumbnail": "http://books.google.com/books/content?id=ar44DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+  },
+  "language": "en",
+  "previewLink": "http://books.google.co.nz/books?id=ar44DwAAQBAJ&printsec=frontcover&dq=isbn:9781473554719&hl=&cd=1&source=gbs_api",
+  "infoLink": "https://play.google.com/store/books/details?id=ar44DwAAQBAJ&source=gbs_api",
+  "canonicalVolumeLink": "https://play.google.com/store/books/details?id=ar44DwAAQBAJ"
+}

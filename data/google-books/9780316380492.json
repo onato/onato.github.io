@@ -1,0 +1,46 @@
+{
+  "title": "The Art of Invisibility",
+  "subtitle": "The World's Most Famous Hacker Teaches You How to Be Safe in the Age of Big Brother and Big Data",
+  "authors": [
+    "Kevin Mitnick"
+  ],
+  "publisher": "Hachette UK",
+  "publishedDate": "2017-02-14",
+  "description": "Real-world advice on how to be invisible online from \"the FBI's most wanted hacker\" (Wired). Be online without leaving a trace. Your every step online is being tracked and stored, and your identity literally stolen. Big companies and big governments want to know and exploit what you do, and privacy is a luxury few can afford or understand. In this explosive yet practical book, Kevin Mitnick uses true-life stories to show exactly what is happening without your knowledge, teaching you \"the art of invisibility\" -- online and real-world tactics to protect you and your family, using easy step-by-step instructions. Reading this book, you will learn everything from password protection and smart Wi-Fi usage to advanced techniques designed to maximize your anonymity. Kevin Mitnick knows exactly how vulnerabilities can be exploited and just what to do to prevent that from happening. The world's most famous -- and formerly the US government's most wanted -- computer hacker, he has hacked into some of the country's most powerful and seemingly impenetrable agencies and companies, and at one point was on a three-year run from the FBI. Now Mitnick is reformed and widely regarded as the expert on the subject of computer security. Invisibility isn't just for superheroes; privacy is a power you deserve and need in the age of Big Brother and Big Data. \"Who better than Mitnick -- internationally wanted hacker turned Fortune 500 security consultant -- to teach you how to keep your data safe?\" --Esquire",
+  "industryIdentifiers": [
+    {
+      "type": "ISBN_13",
+      "identifier": "9780316380492"
+    },
+    {
+      "type": "ISBN_10",
+      "identifier": "0316380490"
+    }
+  ],
+  "readingModes": {
+    "text": true,
+    "image": false
+  },
+  "pageCount": 267,
+  "printType": "BOOK",
+  "categories": [
+    "Computers"
+  ],
+  "averageRating": 4.5,
+  "ratingsCount": 2,
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": true,
+  "contentVersion": "1.15.15.0.preview.2",
+  "panelizationSummary": {
+    "containsEpubBubbles": false,
+    "containsImageBubbles": false
+  },
+  "imageLinks": {
+    "smallThumbnail": "http://books.google.com/books/content?id=eEzlDAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+    "thumbnail": "http://books.google.com/books/content?id=eEzlDAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+  },
+  "language": "en",
+  "previewLink": "http://books.google.co.nz/books?id=eEzlDAAAQBAJ&printsec=frontcover&dq=isbn:9780316380492&hl=&cd=1&source=gbs_api",
+  "infoLink": "https://play.google.com/store/books/details?id=eEzlDAAAQBAJ&source=gbs_api",
+  "canonicalVolumeLink": "https://play.google.com/store/books/details?id=eEzlDAAAQBAJ"
+}

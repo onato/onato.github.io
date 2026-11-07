@@ -1,0 +1,45 @@
+{
+  "title": "The Order of Time",
+  "authors": [
+    "Carlo Rovelli"
+  ],
+  "publisher": "Penguin UK",
+  "publishedDate": "2018-04-26",
+  "description": "'A dazzling book ... the new Stephen Hawking' Sunday Times The bestselling author of Seven Brief Lessons on Physics takes us on an enchanting, consoling journey to discover the meaning of time 'We are time. We are this space, this clearing opened by the traces of memory inside the connections between our neurons. We are memory. We are nostalgia. We are longing for a future that will not come.' Time is a mystery that does not cease to puzzle us. Philosophers, artists and poets have long explored its meaning while scientists have found that its structure is different from the simple intuition we have of it. From Boltzmann to quantum theory, from Einstein to loop quantum gravity, our understanding of time has been undergoing radical transformations. Time flows at a different speed in different places, the past and the future differ far less than we might think, and the very notion of the present evaporates in the vast universe. With his extraordinary charm and sense of wonder, bringing together science, philosophy and art, Carlo Rovelli unravels this mystery. Enlightening and consoling, The Order of Time shows that to understand ourselves we need to reflect on time -- and to understand time we need to reflect on ourselves. Translated by Simon Carnell and Erica Segre",
+  "industryIdentifiers": [
+    {
+      "type": "ISBN_13",
+      "identifier": "9780241292532"
+    },
+    {
+      "type": "ISBN_10",
+      "identifier": "0241292530"
+    }
+  ],
+  "readingModes": {
+    "text": true,
+    "image": false
+  },
+  "pageCount": 181,
+  "printType": "BOOK",
+  "categories": [
+    "Science"
+  ],
+  "averageRating": 5,
+  "ratingsCount": 1,
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": true,
+  "contentVersion": "1.7.8.0.preview.2",
+  "panelizationSummary": {
+    "containsEpubBubbles": false,
+    "containsImageBubbles": false
+  },
+  "imageLinks": {
+    "smallThumbnail": "http://books.google.com/books/content?id=4ow7DwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+    "thumbnail": "http://books.google.com/books/content?id=4ow7DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+  },
+  "language": "en",
+  "previewLink": "http://books.google.co.nz/books?id=4ow7DwAAQBAJ&printsec=frontcover&dq=isbn:9780241292532&hl=&cd=1&source=gbs_api",
+  "infoLink": "https://play.google.com/store/books/details?id=4ow7DwAAQBAJ&source=gbs_api",
+  "canonicalVolumeLink": "https://play.google.com/store/books/details?id=4ow7DwAAQBAJ"
+}

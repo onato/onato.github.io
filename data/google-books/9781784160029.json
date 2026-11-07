@@ -1,0 +1,44 @@
+{
+  "title": "Waking Up",
+  "subtitle": "A Guide to Spirituality Without Religion",
+  "authors": [
+    "Sam Harris"
+  ],
+  "publisher": "Random House",
+  "publishedDate": "2015-06-18",
+  "description": "For the millions of people who want spirituality without religion, Sam Harris's new book is a guide to meditation as a rational spiritual practice informed by neuroscience and psychology. From bestselling author, neuroscientist, and \"new atheist\" Sam Harris, Waking Up is for the increasingly large numbers of people who follow no religion, but who suspect that Jesus, Buddha, Lao Tzu, Rumi, and the other saints and sages of history could not have all been epileptics, schizophrenics, or frauds. Throughout the book, Harris argues that there are important truths to be found in the experiences of such contemplatives-and, therefore, that there is more to understanding reality than science and secular culture generally allow. Waking Up is part seeker's memoir and part exploration of the scientific underpinnings of spirituality. No other book marries contemplative wisdom and modern science in this way, and no author other than Sam Harris-a scientist, philosopher, and famous sceptic-could write it.",
+  "industryIdentifiers": [
+    {
+      "type": "ISBN_13",
+      "identifier": "9781784160029"
+    },
+    {
+      "type": "ISBN_10",
+      "identifier": "1784160024"
+    }
+  ],
+  "readingModes": {
+    "text": false,
+    "image": false
+  },
+  "pageCount": 258,
+  "printType": "BOOK",
+  "categories": [
+    "Philosophy"
+  ],
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": false,
+  "contentVersion": "0.2.2.0.preview.0",
+  "panelizationSummary": {
+    "containsEpubBubbles": false,
+    "containsImageBubbles": false
+  },
+  "imageLinks": {
+    "smallThumbnail": "http://books.google.com/books/content?id=f6mGCgAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+    "thumbnail": "http://books.google.com/books/content?id=f6mGCgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+  },
+  "language": "en",
+  "previewLink": "http://books.google.co.nz/books?id=f6mGCgAAQBAJ&printsec=frontcover&dq=isbn:9781784160029&hl=&cd=1&source=gbs_api",
+  "infoLink": "http://books.google.co.nz/books?id=f6mGCgAAQBAJ&dq=isbn:9781784160029&hl=&source=gbs_api",
+  "canonicalVolumeLink": "https://books.google.com/books/about/Waking_Up.html?hl=&id=f6mGCgAAQBAJ"
+}

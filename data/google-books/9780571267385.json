@@ -1,0 +1,45 @@
+{
+  "title": "Lord of the Flies",
+  "authors": [
+    "William Golding"
+  ],
+  "publisher": "Faber & Faber",
+  "publishedDate": "2012-03-15",
+  "description": "Don't miss the world's first graphic novel of William Golding's beloved classic. Lord of the Flies: The Graphic Novel is available for pre-order now The dystopian classic, introduced by Stephen King. W hen a group of schoolboys are stranded on a desert island, what could go wrong? ONE OF THE BBC'S '100 NOVELS THAT SHAPED OUR WORLD' 'The first book with hands - strong ones that reached out of the pages and seized me by the throat. It said to me, 'This is not just entertainment; it's life or death.' ... I've been thinking about it ever since, for fifty years and more.' Stephen King 'One of my favorite books - I read it every couple of years.' Suzanne Collins, author of The Hunger Games INTRODUCED BY STEPHEN KING 'There aren't any grown-ups anywhere.' A plane crashes on a desert island. The only survivors are a group of schoolboys. By day, they explore the dazzling beaches, gorging fruit, seeking shelter, and ripping off their uniforms to swim in the lagoon. At night, in the darkness of the jungle, they are haunted by nightmares of a primitive beast. Orphaned by society, they must forge their own; but it isn't long before their innocent games devolve into something far more dangerous . . . 'Thrills me with all the power a fiction can have ... Exemplary.' Ian McEwan 'An existential fable backlit with death's incandescent glare.' Ben Okri 'Violently real ... An apocalyptic novelist [who writes with] humanist rage and defiance.' Marlon James 'Beautifully written, tragic and provocative.' E. M. Forster 'A fragment of nightmare.' New Statesman 'A post-apocalyptic, dystopian survivor-fantasy ... [A novel] for all time ... A cult classic.' Guardian 'Stands out mightily ... Such a strong statement about the human heart.' Patricia Cornwell 'Terrifying and haunting.' Kingsley Amis What readers are saying: ' Every real human being should read this ... This is what we are.' ' It's brilliant, it's captivating, it's thought provoking and brutal and for some, its truly terrifying.' 'I t can be read and re-read many times, and every time something new will appear.' ' There is a reason why this is studied at school ... Excellent read.' ' This is one of the few books I've read that I keep on my Kindle to read again.' 'I revisit this every few years and it's always fresh and impressive ... One of the best books I've ever read.'",
+  "industryIdentifiers": [
+    {
+      "type": "ISBN_13",
+      "identifier": "9780571267385"
+    },
+    {
+      "type": "ISBN_10",
+      "identifier": "0571267386"
+    }
+  ],
+  "readingModes": {
+    "text": true,
+    "image": true
+  },
+  "pageCount": 226,
+  "printType": "BOOK",
+  "categories": [
+    "Fiction"
+  ],
+  "averageRating": 4.5,
+  "ratingsCount": 6,
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": true,
+  "contentVersion": "2.7.8.0.preview.3",
+  "panelizationSummary": {
+    "containsEpubBubbles": false,
+    "containsImageBubbles": false
+  },
+  "imageLinks": {
+    "smallThumbnail": "http://books.google.com/books/content?id=lG8dzWV28jsC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+    "thumbnail": "http://books.google.com/books/content?id=lG8dzWV28jsC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+  },
+  "language": "en",
+  "previewLink": "http://books.google.co.nz/books?id=lG8dzWV28jsC&printsec=frontcover&dq=isbn:9780571267385&hl=&cd=1&source=gbs_api",
+  "infoLink": "https://play.google.com/store/books/details?id=lG8dzWV28jsC&source=gbs_api",
+  "canonicalVolumeLink": "https://play.google.com/store/books/details?id=lG8dzWV28jsC"
+}

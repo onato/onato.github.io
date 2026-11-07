@@ -1,0 +1,40 @@
+{
+  "title": "The First Six Books of the Elements of Euclid, in which Coloured Diagrams and Symbols are Used Instead of Letters for the Greater Ease of Learners",
+  "authors": [
+    "Euclid",
+    "Oliver Byrne",
+    "Werner Oechslin"
+  ],
+  "publishedDate": "2010",
+  "description": "\"This remarkable example of Victorian printing has been described as one of the most peculiar yet beautiful books of the 19th century\"--Publisher's leaflet laid in case.",
+  "industryIdentifiers": [
+    {
+      "type": "ISBN_10",
+      "identifier": "3836517752"
+    },
+    {
+      "type": "ISBN_13",
+      "identifier": "9783836517751"
+    }
+  ],
+  "readingModes": {
+    "text": false,
+    "image": false
+  },
+  "pageCount": 0,
+  "printType": "BOOK",
+  "categories": [
+    "Geometry"
+  ],
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": false,
+  "contentVersion": "preview-1.0.0",
+  "panelizationSummary": {
+    "containsEpubBubbles": false,
+    "containsImageBubbles": false
+  },
+  "language": "en",
+  "previewLink": "http://books.google.co.nz/books?id=LNsy0QEACAAJ&dq=isbn:9783836517751&hl=&cd=1&source=gbs_api",
+  "infoLink": "http://books.google.co.nz/books?id=LNsy0QEACAAJ&dq=isbn:9783836517751&hl=&source=gbs_api",
+  "canonicalVolumeLink": "https://books.google.com/books/about/The_First_Six_Books_of_the_Elements_of_E.html?hl=&id=LNsy0QEACAAJ"
+}

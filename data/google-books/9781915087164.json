@@ -1,0 +1,41 @@
+{
+  "title": "The School of Life: Small Pleasures",
+  "subtitle": "What Makes Life Truly Valuable",
+  "authors": [
+    "The School of Life"
+  ],
+  "publisher": "School of Life",
+  "publishedDate": "2022-10-04",
+  "description": "An intriguing, evocative guide to the power of life's small pleasures. From the distinctive delight of holding a child's hand to the paradoxical fun of a friendly argument to the peaceful joy of watching a sunset, this is a guide to the wealth of small pleasures that comprise our daily lives. In a culture that encourages the pursuit of large, self-aggrandizing gratification, this book is a refreshing reminder that small pleasures are in fact points of access to the great themes of our lives. By focusing our attention on the small moments that move us, we heighten our senses and return to the world with newfound excitement and enthusiasm.Part of a new essential paperback series from The School of Life, covering a range of emotional lessons needed in order to lead fulfilled and happy lives. 52 SHORT AND DIGESTIBLE meditations on life's small pleasure, designed for five minute snatches of time in between real life demands. REFOCUS YOUR GAZE ON THE SMALL THINGS -- and gain a fresh perspective and look at life with new found enthusiasm and energy. CLASSIC BLACK & WHITE IMAGES throughout. PART OF A NEW, HANDSOME paperback series -- lower price point, brightly colored trade paperbacks.",
+  "industryIdentifiers": [
+    {
+      "type": "ISBN_10",
+      "identifier": "1915087163"
+    },
+    {
+      "type": "ISBN_13",
+      "identifier": "9781915087164"
+    }
+  ],
+  "readingModes": {
+    "text": false,
+    "image": false
+  },
+  "pageCount": 240,
+  "printType": "BOOK",
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": false,
+  "contentVersion": "preview-1.0.0",
+  "panelizationSummary": {
+    "containsEpubBubbles": false,
+    "containsImageBubbles": false
+  },
+  "imageLinks": {
+    "smallThumbnail": "http://books.google.com/books/content?id=eV7dzgEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+    "thumbnail": "http://books.google.com/books/content?id=eV7dzgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+  },
+  "language": "en",
+  "previewLink": "http://books.google.co.nz/books?id=eV7dzgEACAAJ&dq=isbn:9781915087164&hl=&cd=1&source=gbs_api",
+  "infoLink": "http://books.google.co.nz/books?id=eV7dzgEACAAJ&dq=isbn:9781915087164&hl=&source=gbs_api",
+  "canonicalVolumeLink": "https://books.google.com/books/about/The_School_of_Life_Small_Pleasures.html?hl=&id=eV7dzgEACAAJ"
+}

@@ -1,0 +1,43 @@
+{
+  "title": "Smalltalk Best Practice Patterns",
+  "authors": [
+    "Kent Beck"
+  ],
+  "publisher": "Prentice Hall",
+  "publishedDate": "1996-10-03",
+  "description": "This classic book is the definitive real-world style guide for better Smalltalk programming. This author presents a set of patterns that organize all the informal experience successful Smalltalk programmers have learned the hard way. When programmers understand these patterns, they can write much more effective code. The concept of Smalltalk patterns is introduced, and the book explains why they work. Next, the book introduces proven patterns for working with methods, messages, state, collections, classes and formatting. Finally, the book walks through a development example utilizing patterns. For programmers, project managers, teachers and students -- both new and experienced. This book presents a set of patterns that organize all the informal experience of successful Smalltalk programmers. This book will help you understand these patterns, and empower you to write more effective code.",
+  "industryIdentifiers": [
+    {
+      "type": "ISBN_13",
+      "identifier": "9780132852128"
+    },
+    {
+      "type": "ISBN_10",
+      "identifier": "0132852128"
+    }
+  ],
+  "readingModes": {
+    "text": true,
+    "image": false
+  },
+  "pageCount": 281,
+  "printType": "BOOK",
+  "categories": [
+    "Computers"
+  ],
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": true,
+  "contentVersion": "1.18.17.0.preview.2",
+  "panelizationSummary": {
+    "containsEpubBubbles": false,
+    "containsImageBubbles": false
+  },
+  "imageLinks": {
+    "smallThumbnail": "http://books.google.com/books/content?id=QLNGnVIuIuMC&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+    "thumbnail": "http://books.google.com/books/content?id=QLNGnVIuIuMC&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+  },
+  "language": "en",
+  "previewLink": "http://books.google.co.nz/books?id=QLNGnVIuIuMC&dq=isbn:9780132852128&hl=&cd=1&source=gbs_api",
+  "infoLink": "https://play.google.com/store/books/details?id=QLNGnVIuIuMC&source=gbs_api",
+  "canonicalVolumeLink": "https://play.google.com/store/books/details?id=QLNGnVIuIuMC"
+}

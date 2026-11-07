@@ -1,0 +1,43 @@
+{
+  "title": "What Is Psychotherapy?",
+  "authors": [
+    "The School of Life"
+  ],
+  "publisher": "School of Life",
+  "publishedDate": "2018",
+  "description": "An in-depth look at a much misunderstood practice, offering a fresh viewpoint on how this science can be a universally effective route to our better selves.",
+  "industryIdentifiers": [
+    {
+      "type": "ISBN_10",
+      "identifier": "1999747178"
+    },
+    {
+      "type": "ISBN_13",
+      "identifier": "9781999747176"
+    }
+  ],
+  "readingModes": {
+    "text": false,
+    "image": false
+  },
+  "pageCount": 120,
+  "printType": "BOOK",
+  "categories": [
+    "Psychotherapy"
+  ],
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": false,
+  "contentVersion": "preview-1.0.0",
+  "panelizationSummary": {
+    "containsEpubBubbles": false,
+    "containsImageBubbles": false
+  },
+  "imageLinks": {
+    "smallThumbnail": "http://books.google.com/books/content?id=V34UtAEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+    "thumbnail": "http://books.google.com/books/content?id=V34UtAEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+  },
+  "language": "en",
+  "previewLink": "http://books.google.co.nz/books?id=V34UtAEACAAJ&dq=isbn:9781999747176&hl=&cd=1&source=gbs_api",
+  "infoLink": "http://books.google.co.nz/books?id=V34UtAEACAAJ&dq=isbn:9781999747176&hl=&source=gbs_api",
+  "canonicalVolumeLink": "https://books.google.com/books/about/What_Is_Psychotherapy.html?hl=&id=V34UtAEACAAJ"
+}

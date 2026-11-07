@@ -1,0 +1,35 @@
+{
+  "title": "On Confidence",
+  "publishedDate": "2017",
+  "description": "This is a guidebook to what confidence consists of, why we lack it - and how we can acquire more of it in our lives. Meditations on the skill of self-belief.--Publisher",
+  "industryIdentifiers": [
+    {
+      "type": "ISBN_10",
+      "identifier": "1999747100"
+    },
+    {
+      "type": "ISBN_13",
+      "identifier": "9781999747107"
+    }
+  ],
+  "readingModes": {
+    "text": false,
+    "image": false
+  },
+  "pageCount": 44,
+  "printType": "BOOK",
+  "categories": [
+    "Conduct of life"
+  ],
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": false,
+  "contentVersion": "preview-1.0.0",
+  "panelizationSummary": {
+    "containsEpubBubbles": false,
+    "containsImageBubbles": false
+  },
+  "language": "en",
+  "previewLink": "http://books.google.co.nz/books?id=xkbEzgEACAAJ&dq=isbn:9781999747107&hl=&cd=1&source=gbs_api",
+  "infoLink": "http://books.google.co.nz/books?id=xkbEzgEACAAJ&dq=isbn:9781999747107&hl=&source=gbs_api",
+  "canonicalVolumeLink": "https://books.google.com/books/about/On_Confidence.html?hl=&id=xkbEzgEACAAJ"
+}

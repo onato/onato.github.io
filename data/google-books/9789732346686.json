@@ -1,0 +1,41 @@
+{
+  "title": "Machine Learning For Humans (6 X 9)",
+  "subtitle": "Introduction to Machine Learning with Python",
+  "authors": [
+    "Vishal Maini",
+    "Samer Sabri"
+  ],
+  "publishedDate": "2023-03-26",
+  "description": "Machine Learning for Humans is an introduction to machine learning that is accessible to anyone with a basic understanding of high school mathematics. The book provides a practical understanding of machine learning through a hands-on approach, using Python as the programming language. What you'll learn: The fundamentals of machine learning, including supervised and unsupervised learning, and neural networks. How to prepare and preprocess data for machine learning. How to build, train, and evaluate machine learning models in Python. How to use popular machine learning libraries, including scikit-learn and TensorFlow. How to apply machine learning to real-world problems. Who this book is for: This book is for anyone who wants to learn the basics of machine learning, including students, professionals, and hobbyists. It assumes no prior knowledge of machine learning or programming, although familiarity with Python is helpful. Why you should read this book: This book provides a gentle and intuitive introduction to machine learning, with a focus on practical skills and real-world applications. It is written in a clear and engaging style, with plenty of examples and exercises to reinforce your understanding. Whether you want to learn machine learning for a new job, a research project, or just for fun, this book is the perfect place to start.",
+  "industryIdentifiers": [
+    {
+      "type": "ISBN_10",
+      "identifier": "973234668X"
+    },
+    {
+      "type": "ISBN_13",
+      "identifier": "9789732346686"
+    }
+  ],
+  "readingModes": {
+    "text": false,
+    "image": false
+  },
+  "pageCount": 0,
+  "printType": "BOOK",
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": false,
+  "contentVersion": "preview-1.0.0",
+  "panelizationSummary": {
+    "containsEpubBubbles": false,
+    "containsImageBubbles": false
+  },
+  "imageLinks": {
+    "smallThumbnail": "http://books.google.com/books/content?id=iMEN0AEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+    "thumbnail": "http://books.google.com/books/content?id=iMEN0AEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+  },
+  "language": "en",
+  "previewLink": "http://books.google.co.nz/books?id=iMEN0AEACAAJ&dq=isbn:9789732346686&hl=&cd=1&source=gbs_api",
+  "infoLink": "http://books.google.co.nz/books?id=iMEN0AEACAAJ&dq=isbn:9789732346686&hl=&source=gbs_api",
+  "canonicalVolumeLink": "https://books.google.com/books/about/Machine_Learning_For_Humans_6_X_9.html?hl=&id=iMEN0AEACAAJ"
+}

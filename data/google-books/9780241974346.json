@@ -1,0 +1,46 @@
+{
+  "title": "Rest",
+  "subtitle": "Why You Get More Done When You Work Less",
+  "authors": [
+    "Alex Soojung-Kim Pang"
+  ],
+  "publisher": "Penguin UK",
+  "publishedDate": "2016-12-06",
+  "description": "LEARN HOW TO REST BETTER WITH THIS ESSENTIAL BOOK Do you regularly find yourself too tired after a long day to do anything other than binge TV? Do you go on holiday and still compulsively check your email? Do you work through your lunch-break, often not even leaving your desk and getting some fresh air? For most of us, overwork is the new norm, and we never truly take the time to rest and recharge. But as Silicon Valley consultant Alex Soojung-Kim Pang explains in this groundbreaking book, rest needs to be taken seriously and to be done properly, because when you rest better you work better. Drawing on emerging neuroscience, Rest is packed full of practical and easy tips for incorporating rest into our everyday: - Stopping work on a task when you know exactly what the next step is will make it easier to get started the next day - Take a long walk when you're stuck on a task; it will help stimulate new ideas and creativity - Have deliberate rest periods - scheduled into your diary - and use this time on trying a new activity When you rest better you'll find that it won't just be your work which improves - you'll have more time for hobbies, stronger relationships and you'll sleep better, too. \"An incredibly timely read for my own increasingly rest-starved life. This might be the book to finally persuade us that downtime isn't in conflict with good work; rather, it's an essential ingredient of it\" Oliver Burkeman, Guardian \"Take a break and read Rest: you'll make smarter decisions, have better relationships, and be happier and more creative\" James Wallman, author of Stuffocation",
+  "industryIdentifiers": [
+    {
+      "type": "ISBN_13",
+      "identifier": "9780241974346"
+    },
+    {
+      "type": "ISBN_10",
+      "identifier": "0241974348"
+    }
+  ],
+  "readingModes": {
+    "text": true,
+    "image": false
+  },
+  "pageCount": 272,
+  "printType": "BOOK",
+  "categories": [
+    "Health & Fitness"
+  ],
+  "averageRating": 5,
+  "ratingsCount": 1,
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": true,
+  "contentVersion": "1.16.13.0.preview.2",
+  "panelizationSummary": {
+    "containsEpubBubbles": false,
+    "containsImageBubbles": false
+  },
+  "imageLinks": {
+    "smallThumbnail": "http://books.google.com/books/content?id=7k6fDAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+    "thumbnail": "http://books.google.com/books/content?id=7k6fDAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+  },
+  "language": "en",
+  "previewLink": "http://books.google.co.nz/books?id=7k6fDAAAQBAJ&printsec=frontcover&dq=isbn:9780241974346&hl=&cd=1&source=gbs_api",
+  "infoLink": "https://play.google.com/store/books/details?id=7k6fDAAAQBAJ&source=gbs_api",
+  "canonicalVolumeLink": "https://play.google.com/store/books/details?id=7k6fDAAAQBAJ"
+}

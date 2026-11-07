@@ -1,0 +1,43 @@
+{
+  "title": "The Wonderful Wizard of Oz",
+  "authors": [
+    "L. Frank Baum"
+  ],
+  "publisher": "Courier Corporation",
+  "publishedDate": "1960-01-01",
+  "description": "No childhood is complete without a trip down the Yellow Brick Road, and this reprint of the original edition of L. Frank Baum's classic will transport young readers and listeners from the plains of Kansas to the shining towers of Oz. Baum characterized his ever-popular story as \"a modernized fairy tale, in which the wonderment and joy are retained and the heartaches and nightmares are left out.\" His rich fantasies and child-friendly narrative, combined with W. W. Denslow's artistry, made this the bestselling children's book of 1900. More than a century later, children continue to take Dorothy and her friends into their hearts. This version of their adventures is enhanced with the original 143 illustrations and 23 color plates. Dover (2015) republication of the edition originally published by the George M. Hill Company, Chicago and New York, 1900. A selection of the Common Core State Standards Initiative. See every Dover book in print at www.doverpublications.com",
+  "industryIdentifiers": [
+    {
+      "type": "ISBN_13",
+      "identifier": "9780486206912"
+    },
+    {
+      "type": "ISBN_10",
+      "identifier": "0486206912"
+    }
+  ],
+  "readingModes": {
+    "text": false,
+    "image": true
+  },
+  "pageCount": 312,
+  "printType": "BOOK",
+  "categories": [
+    "Juvenile Fiction"
+  ],
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": false,
+  "contentVersion": "0.2.1.0.preview.1",
+  "panelizationSummary": {
+    "containsEpubBubbles": false,
+    "containsImageBubbles": false
+  },
+  "imageLinks": {
+    "smallThumbnail": "http://books.google.com/books/content?id=NxoeBQAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+    "thumbnail": "http://books.google.com/books/content?id=NxoeBQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+  },
+  "language": "en",
+  "previewLink": "http://books.google.co.nz/books?id=NxoeBQAAQBAJ&printsec=frontcover&dq=isbn:9780486206912&hl=&cd=1&source=gbs_api",
+  "infoLink": "http://books.google.co.nz/books?id=NxoeBQAAQBAJ&dq=isbn:9780486206912&hl=&source=gbs_api",
+  "canonicalVolumeLink": "https://books.google.com/books/about/The_Wonderful_Wizard_of_Oz.html?hl=&id=NxoeBQAAQBAJ"
+}

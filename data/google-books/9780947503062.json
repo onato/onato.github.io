@@ -1,0 +1,42 @@
+{
+  "title": "A Bunk for the Night",
+  "subtitle": "A Guide to New Zealand's Best Backcountry Huts",
+  "authors": [
+    "Shaun Barnett",
+    "Geoff Spearpoint",
+    "Rob Brown"
+  ],
+  "publishedDate": "2016-10",
+  "description": "New Zealand has a huge range of backcountry huts, most of which are available for public use. Some can sleep 80 people, while others are tiny two-bunk affairs with not even room to stand up in. They are located in our mountains, on the edges of our fiords, coastlines and lakes, beside rivers, in the bush and on the open tops. Together they form an internationally unique network of backcountry shelter, and these huts, so often full of character and history, are destinations in their own right. A Bunk for the Night offers a guide to over 200 of the best of these huts to visit. This inspirational guide has been written by Shaun Barnett, Rob Brown and Geoff Spearpoint, the authors of the seminal, bestselling history of New Zealand's backcountry huts Shelter from the Storm, and this new book has been written as a companion volume. Featuring well-known tramping huts in the major mountain axis of the North Island, Tongariro and Egmont national parks, as well as the Southern Alps, Fiordland and Stewart Island, the authors have also scoured the country for other interesting huts in out-of-the-way places, such as those in the Bay of Islands, on Banks Peninsula, in the Whanganui hinterland, the Takitimu Mountains and the dry ranges of Marlborough. From the famous huts of our Great Walk tracks to the obscurity of bivs with names like 'Turkeys Nest' and 'Brass Monkey', this is a wonderful smorgasbord of must-visit huts, and an essential book for New Zealand's large tramping community.",
+  "industryIdentifiers": [
+    {
+      "type": "ISBN_10",
+      "identifier": "0947503064"
+    },
+    {
+      "type": "ISBN_13",
+      "identifier": "9780947503062"
+    }
+  ],
+  "readingModes": {
+    "text": false,
+    "image": false
+  },
+  "pageCount": 204,
+  "printType": "BOOK",
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": false,
+  "contentVersion": "preview-1.0.0",
+  "panelizationSummary": {
+    "containsEpubBubbles": false,
+    "containsImageBubbles": false
+  },
+  "imageLinks": {
+    "smallThumbnail": "http://books.google.com/books/content?id=yVxBvgAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+    "thumbnail": "http://books.google.com/books/content?id=yVxBvgAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+  },
+  "language": "en",
+  "previewLink": "http://books.google.co.nz/books?id=yVxBvgAACAAJ&dq=isbn:9780947503062&hl=&cd=1&source=gbs_api",
+  "infoLink": "http://books.google.co.nz/books?id=yVxBvgAACAAJ&dq=isbn:9780947503062&hl=&source=gbs_api",
+  "canonicalVolumeLink": "https://books.google.com/books/about/A_Bunk_for_the_Night.html?hl=&id=yVxBvgAACAAJ"
+}

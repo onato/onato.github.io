@@ -1,0 +1,43 @@
+{
+  "title": "Crafting Interpreters",
+  "authors": [
+    "Robert Nystrom"
+  ],
+  "publisher": "Genever Benning",
+  "publishedDate": "2021-07-27",
+  "description": "Despite using them every day, most software engineers know little about how programming languages are designed and implemented. For many, their only experience with that corner of computer science was a terrifying \"compilers\" class that they suffered through in undergrad and tried to blot from their memory as soon as they had scribbled their last NFA to DFA conversion on the final exam. That fearsome reputation belies a field that is rich with useful techniques and not so difficult as some of its practitioners might have you believe. A better understanding of how programming languages are built will make you a stronger software engineer and teach you concepts and data structures you'll use the rest of your coding days. You might even have fun. This book teaches you everything you need to know to implement a full-featured, efficient scripting language. You'll learn both high-level concepts around parsing and semantics and gritty details like bytecode representation and garbage collection. Your brain will light up with new ideas, and your hands will get dirty and calloused. Starting from main(), you will build a language that features rich syntax, dynamic typing, garbage collection, lexical scope, first-class functions, closures, classes, and inheritance. All packed into a few thousand lines of clean, fast code that you thoroughly understand because you wrote each one yourself.",
+  "industryIdentifiers": [
+    {
+      "type": "ISBN_13",
+      "identifier": "9780990582946"
+    },
+    {
+      "type": "ISBN_10",
+      "identifier": "0990582949"
+    }
+  ],
+  "readingModes": {
+    "text": true,
+    "image": true
+  },
+  "pageCount": 1068,
+  "printType": "BOOK",
+  "categories": [
+    "Computers"
+  ],
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": true,
+  "contentVersion": "0.1.1.0.preview.3",
+  "panelizationSummary": {
+    "containsEpubBubbles": false,
+    "containsImageBubbles": false
+  },
+  "imageLinks": {
+    "smallThumbnail": "http://books.google.com/books/content?id=q0c6EAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+    "thumbnail": "http://books.google.com/books/content?id=q0c6EAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+  },
+  "language": "en",
+  "previewLink": "http://books.google.co.nz/books?id=q0c6EAAAQBAJ&printsec=frontcover&dq=isbn:9780990582946&hl=&cd=1&source=gbs_api",
+  "infoLink": "https://play.google.com/store/books/details?id=q0c6EAAAQBAJ&source=gbs_api",
+  "canonicalVolumeLink": "https://play.google.com/store/books/details?id=q0c6EAAAQBAJ"
+}

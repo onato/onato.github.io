@@ -1,0 +1,43 @@
+{
+  "title": "Implementation Patterns",
+  "authors": [
+    "Kent Beck"
+  ],
+  "publisher": "Pearson Education",
+  "publishedDate": "2007-10-23",
+  "description": "Software Expert Kent Beck Presents a Catalog of Patterns Infinitely Useful for Everyday Programming Great code doesn\u2019t just function: it clearly and consistently communicates your intentions, allowing other programmers to understand your code, rely on it, and modify it with confidence. But great code doesn\u2019t just happen. It is the outcome of hundreds of small but critical decisions programmers make every single day. Now, legendary software innovator Kent Beck\u2014known worldwide for creating Extreme Programming and pioneering software patterns and test-driven development\u2014focuses on these critical decisions, unearthing powerful \u201cimplementation patterns\u201d for writing programs that are simpler, clearer, better organized, and more cost effective. Beck collects 77 patterns for handling everyday programming tasks and writing more readable code. This new collection of patterns addresses many aspects of development, including class, state, behavior, method, collections, frameworks, and more. He uses diagrams, stories, examples, and essays to engage the reader as he illuminates the patterns. You\u2019ll find proven solutions for handling everything from naming variables to checking exceptions.",
+  "industryIdentifiers": [
+    {
+      "type": "ISBN_13",
+      "identifier": "9780132702553"
+    },
+    {
+      "type": "ISBN_10",
+      "identifier": "013270255X"
+    }
+  ],
+  "readingModes": {
+    "text": true,
+    "image": true
+  },
+  "pageCount": 289,
+  "printType": "BOOK",
+  "categories": [
+    "Computers"
+  ],
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": true,
+  "contentVersion": "1.12.10.0.preview.3",
+  "panelizationSummary": {
+    "containsEpubBubbles": false,
+    "containsImageBubbles": false
+  },
+  "imageLinks": {
+    "smallThumbnail": "http://books.google.com/books/content?id=xLyXPCxBhQUC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+    "thumbnail": "http://books.google.com/books/content?id=xLyXPCxBhQUC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+  },
+  "language": "en",
+  "previewLink": "http://books.google.co.nz/books?id=xLyXPCxBhQUC&printsec=frontcover&dq=isbn:9780132702553&hl=&cd=1&source=gbs_api",
+  "infoLink": "https://play.google.com/store/books/details?id=xLyXPCxBhQUC&source=gbs_api",
+  "canonicalVolumeLink": "https://play.google.com/store/books/details?id=xLyXPCxBhQUC"
+}

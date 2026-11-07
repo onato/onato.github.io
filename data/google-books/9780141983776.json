@@ -1,0 +1,46 @@
+{
+  "title": "Why We Sleep",
+  "subtitle": "The New Science of Sleep and Dreams",
+  "authors": [
+    "Matthew Walker"
+  ],
+  "publisher": "Penguin UK",
+  "publishedDate": "2017-09-28",
+  "description": "'Astonishing ... an amazing book ... absolutely chocker full of things that we need to know' Chris Evans 'Matthew Walker is probably one of the most influential people on the planet' Evening Standard THE #1 SUNDAY TIMES BESTSELLER TLS, OBSERVER, SUNDAY TIMES, FT, GUARDIAN, DAILY MAIL AND EVENING STANDARD BOOKS OF THE YEAR 2017 Sleep is one of the most important aspects of our life, health and longevity and yet it is increasingly neglected in twenty-first-century society, with devastating consequences: every major disease in the developed world - Alzheimer's, cancer, obesity, diabetes - has very strong causal links to deficient sleep. In this book, the first of its kind written by a scientific expert, Professor Matthew Walker explores twenty years of cutting-edge research to solve the mystery of why sleep matters. Looking at creatures from across the animal kingdom as well as major human studies, Why We Sleep delves into everything from what really happens during REM sleep to how caffeine and alcohol affect sleep and why our sleep patterns change across a lifetime, transforming our appreciation of the extraordinary phenomenon that safeguards our existence. 'Startling, vital ... a life-raft' Guardian 'A top sleep scientist argues that sleep is more important for our health than diet or exercise' The Times 'Passionate, urgent . . . it had a powerful effect on me' Observer",
+  "industryIdentifiers": [
+    {
+      "type": "ISBN_13",
+      "identifier": "9780141983776"
+    },
+    {
+      "type": "ISBN_10",
+      "identifier": "0141983779"
+    }
+  ],
+  "readingModes": {
+    "text": true,
+    "image": false
+  },
+  "pageCount": 421,
+  "printType": "BOOK",
+  "categories": [
+    "Psychology"
+  ],
+  "averageRating": 5,
+  "ratingsCount": 4,
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": true,
+  "contentVersion": "1.19.19.0.preview.2",
+  "panelizationSummary": {
+    "containsEpubBubbles": false,
+    "containsImageBubbles": false
+  },
+  "imageLinks": {
+    "smallThumbnail": "http://books.google.com/books/content?id=-fKlDgAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+    "thumbnail": "http://books.google.com/books/content?id=-fKlDgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+  },
+  "language": "en",
+  "previewLink": "http://books.google.co.nz/books?id=-fKlDgAAQBAJ&printsec=frontcover&dq=isbn:9780141983776&hl=&cd=1&source=gbs_api",
+  "infoLink": "https://play.google.com/store/books/details?id=-fKlDgAAQBAJ&source=gbs_api",
+  "canonicalVolumeLink": "https://play.google.com/store/books/details?id=-fKlDgAAQBAJ"
+}

@@ -1,0 +1,44 @@
+{
+  "title": "Beyond Good and Evil",
+  "subtitle": "On the Genealogy of Morality",
+  "authors": [
+    "Friedrich Wilhelm Nietzsche"
+  ],
+  "publisher": "Complete Works of Friedrich Ni",
+  "publishedDate": "2014",
+  "description": "Beyond Good and Evil (1886) and On the Genealogy of Morality (1887) are Nietzsche's two most persuasive and philosophical books, following close on the heels of his breakthrough hybrid Thus Spoke Zarathustra (1883-85); here for the first time Nietzsche represents himself as a philosopher, setting forth the proper activity of philosophers and training his formidable genealogical focus on the origins and motivations of morality.",
+  "industryIdentifiers": [
+    {
+      "type": "ISBN_10",
+      "identifier": "0804728801"
+    },
+    {
+      "type": "ISBN_13",
+      "identifier": "9780804728805"
+    }
+  ],
+  "readingModes": {
+    "text": false,
+    "image": false
+  },
+  "pageCount": 0,
+  "printType": "BOOK",
+  "categories": [
+    "Philosophy"
+  ],
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": false,
+  "contentVersion": "preview-1.0.0",
+  "panelizationSummary": {
+    "containsEpubBubbles": false,
+    "containsImageBubbles": false
+  },
+  "imageLinks": {
+    "smallThumbnail": "http://books.google.com/books/content?id=6IbvzwEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+    "thumbnail": "http://books.google.com/books/content?id=6IbvzwEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+  },
+  "language": "en",
+  "previewLink": "http://books.google.co.nz/books?id=6IbvzwEACAAJ&dq=isbn:9780804728805&hl=&cd=1&source=gbs_api",
+  "infoLink": "http://books.google.co.nz/books?id=6IbvzwEACAAJ&dq=isbn:9780804728805&hl=&source=gbs_api",
+  "canonicalVolumeLink": "https://books.google.com/books/about/Beyond_Good_and_Evil.html?hl=&id=6IbvzwEACAAJ"
+}

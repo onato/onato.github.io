@@ -1,0 +1,40 @@
+{
+  "title": "Project Retrospectives",
+  "subtitle": "A Handbook for Team Reviews",
+  "authors": [
+    "Norman L. Kerth"
+  ],
+  "publisher": "Dorset House Publishing Company, Incorporated",
+  "publishedDate": "2001",
+  "description": "Use Team-Based Review Sessions to Maximize What You Learn from Each Project With detailed scenarios, imaginative illustrations, and step-by-step instructions, consultant and speaker Norman L. Kerth guides readers through productive, empowering retrospectives of project performance. Whether your shop calls them postmortems or postpartums or something else, project retrospectives offer organizations a formal method for preserving the valuable lessons learned from the successes and failures of every project. These lessons and the changes identified by the community will foster stronger teams and savings on subsequent efforts. For a retrospective to be effective and successful, though, it needs to be safe. Kerth shows facilitators and participants how to defeat the fear of retribution and establish an air of mutual trust. One tool is Kerth's Prime Directive: Regardless of what we discover, we must understand and truly believe that everyone did the best job he or she could, given what was known at the time, his or her skills and abilities, the resources available, and the situation at hand. Applying years of experience as a project retrospective facilitator for software organizations, Kerth reveals his secrets for managing the sensitive, often emotionally charged issues that arise as teams relive and learn from each project. Don't move on to your next project without consulting and using this readable, practical handbook. Each member of your team will be better prepared for the next deadline.",
+  "industryIdentifiers": [
+    {
+      "type": "OTHER",
+      "identifier": "UCSD:31822029981735"
+    }
+  ],
+  "readingModes": {
+    "text": false,
+    "image": false
+  },
+  "pageCount": 296,
+  "printType": "BOOK",
+  "categories": [
+    "Business & Economics"
+  ],
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": false,
+  "contentVersion": "0.4.1.0.preview.0",
+  "panelizationSummary": {
+    "containsEpubBubbles": false,
+    "containsImageBubbles": false
+  },
+  "imageLinks": {
+    "smallThumbnail": "http://books.google.com/books/content?id=BxROAQAAIAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+    "thumbnail": "http://books.google.com/books/content?id=BxROAQAAIAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+  },
+  "language": "en",
+  "previewLink": "http://books.google.co.nz/books?id=BxROAQAAIAAJ&dq=isbn:9780932633422&hl=&cd=1&source=gbs_api",
+  "infoLink": "http://books.google.co.nz/books?id=BxROAQAAIAAJ&dq=isbn:9780932633422&hl=&source=gbs_api",
+  "canonicalVolumeLink": "https://books.google.com/books/about/Project_Retrospectives.html?hl=&id=BxROAQAAIAAJ"
+}

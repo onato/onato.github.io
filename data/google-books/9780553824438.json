@@ -1,0 +1,45 @@
+{
+  "title": "The Joy of Living",
+  "subtitle": "Unlocking the Secret and Science of Happiness",
+  "authors": [
+    "Yongey Mingyur Rinpoche",
+    "Eric Swanson"
+  ],
+  "publisher": "Random House",
+  "publishedDate": "2009",
+  "description": "For millennia, Buddhists have enjoyed the limitless benefits of meditation. But how does it work and why? This work invites us to join in unlocking the secrets behind the practice of meditation. The author provides clear insights into modern research.",
+  "industryIdentifiers": [
+    {
+      "type": "ISBN_13",
+      "identifier": "9780553824438"
+    },
+    {
+      "type": "ISBN_10",
+      "identifier": "0553824430"
+    }
+  ],
+  "readingModes": {
+    "text": false,
+    "image": false
+  },
+  "pageCount": 290,
+  "printType": "BOOK",
+  "categories": [
+    "Religion"
+  ],
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": false,
+  "contentVersion": "1.13.1.0.preview.0",
+  "panelizationSummary": {
+    "containsEpubBubbles": false,
+    "containsImageBubbles": false
+  },
+  "imageLinks": {
+    "smallThumbnail": "http://books.google.com/books/content?id=UysWhB2SI7sC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+    "thumbnail": "http://books.google.com/books/content?id=UysWhB2SI7sC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+  },
+  "language": "en",
+  "previewLink": "http://books.google.co.nz/books?id=UysWhB2SI7sC&printsec=frontcover&dq=isbn:9780553824438&hl=&cd=1&source=gbs_api",
+  "infoLink": "http://books.google.co.nz/books?id=UysWhB2SI7sC&dq=isbn:9780553824438&hl=&source=gbs_api",
+  "canonicalVolumeLink": "https://books.google.com/books/about/The_Joy_of_Living.html?hl=&id=UysWhB2SI7sC"
+}

@@ -1,0 +1,44 @@
+{
+  "title": "Analysis Patterns",
+  "subtitle": "Reusable Object Models",
+  "authors": [
+    "Martin Fowler"
+  ],
+  "publisher": "Addison-Wesley Professional",
+  "publishedDate": "1996-10-09",
+  "description": "This innovative book recognizes the need within the object-oriented community for a book that goes beyond the tools and techniques of the typical methodology book. In Analysis Patterns: Reusable Object Models, Martin Fowler focuses on the end result of object-oriented analysis and design\u2014the models themselves. He shares with you his wealth of object modeling experience and his keen eye for identifying repeating problems and transforming them into reusable models. Analysis Patterns provides a catalogue of patterns that have emerged in a wide range of domains including trading, measurement, accounting and organizational relationships. Recognizing that conceptual patterns cannot exist in isolation, the author also presents a series of \"support patterns\" that discuss how to turn conceptual models into software that in turn fits into an architecture for a large information system. Included in each pattern is the reasoning behind their design, rules for when they should and should not be used, and tips for implementation. The examples presented in this book comprise a cookbook of useful models and insight into the skill of reuse that will improve analysis, modeling and implementation.",
+  "industryIdentifiers": [
+    {
+      "type": "ISBN_13",
+      "identifier": "9780134271422"
+    },
+    {
+      "type": "ISBN_10",
+      "identifier": "0134271424"
+    }
+  ],
+  "readingModes": {
+    "text": true,
+    "image": true
+  },
+  "pageCount": 742,
+  "printType": "BOOK",
+  "categories": [
+    "Computers"
+  ],
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": true,
+  "contentVersion": "0.8.8.0.preview.3",
+  "panelizationSummary": {
+    "containsEpubBubbles": false,
+    "containsImageBubbles": false
+  },
+  "imageLinks": {
+    "smallThumbnail": "http://books.google.com/books/content?id=x7XxCgAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+    "thumbnail": "http://books.google.com/books/content?id=x7XxCgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+  },
+  "language": "en",
+  "previewLink": "http://books.google.co.nz/books?id=x7XxCgAAQBAJ&printsec=frontcover&dq=isbn:9780134271422&hl=&cd=1&source=gbs_api",
+  "infoLink": "https://play.google.com/store/books/details?id=x7XxCgAAQBAJ&source=gbs_api",
+  "canonicalVolumeLink": "https://play.google.com/store/books/details?id=x7XxCgAAQBAJ"
+}

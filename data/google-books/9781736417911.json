@@ -1,0 +1,35 @@
+{
+  "title": "Staff Engineer",
+  "subtitle": "Leadership Beyond the Management Track",
+  "authors": [
+    "Will Larson"
+  ],
+  "publishedDate": "2021-02-28",
+  "description": "At most technology companies, you'll reach Senior Software Engineer, the career level for software engineers, in five to eight years. At that career level, you'll no longer be required to work towards the next pro? motion, and being promoted beyond it is exceptional rather than ex? pected. At that point your career path will branch, and you have to decide between remaining at your current level, continuing down the path of technical excellence to become a Staff Engineer, or switching into engineering management. Of course, the specific titles vary by company, and you can replace \"Senior Engineer\" and \"Staff Engineer\" with whatever titles your company prefers.Over the past few years we've seen a flurry of books unlocking the en? gineering management career path, like Camille Fournier's The Man? ager's Path, Julie Zhuo's The Making of a Manager, Lara Hogan's Re? silient Management and my own, An Elegant Puzzle. The manage? ment career isn't an easy one, but increasingly there are maps avail? able for navigating it.On the other hand, the transition into Staff Engineer, and its further evolutions like Principal and Distinguished Engineer, remains chal? lenging and undocumented. What are the skills you need to develop to reach Staff Engineer? Are technical abilities alone sufficient to reach and succeed in that role? How do most folks reach this role? What is your manager's role in helping you along the way? Will you enjoy being a Staff Engineer or you will toil for years to achieve a role that doesn't suit you?\"Staff Engineer: Leadership beyond the management track\" is a pragmatic look at attaining and operate in these Staff-plus roles.",
+  "industryIdentifiers": [
+    {
+      "type": "ISBN_10",
+      "identifier": "1736417916"
+    },
+    {
+      "type": "ISBN_13",
+      "identifier": "9781736417911"
+    }
+  ],
+  "readingModes": {
+    "text": false,
+    "image": false
+  },
+  "printType": "BOOK",
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": false,
+  "contentVersion": "preview-1.0.0",
+  "panelizationSummary": {
+    "containsEpubBubbles": false,
+    "containsImageBubbles": false
+  },
+  "language": "en",
+  "previewLink": "http://books.google.co.nz/books?id=1-M0zgEACAAJ&dq=isbn:9781736417911&hl=&cd=1&source=gbs_api",
+  "infoLink": "http://books.google.co.nz/books?id=1-M0zgEACAAJ&dq=isbn:9781736417911&hl=&source=gbs_api",
+  "canonicalVolumeLink": "https://books.google.com/books/about/Staff_Engineer.html?hl=&id=1-M0zgEACAAJ"
+}

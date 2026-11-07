@@ -1,0 +1,45 @@
+{
+  "title": "Continuous Delivery",
+  "subtitle": "Reliable Software Releases through Build, Test, and Deployment Automation",
+  "authors": [
+    "Jez Humble",
+    "David Farley"
+  ],
+  "publisher": "Pearson Education",
+  "publishedDate": "2010-07-27",
+  "description": "Winner of the 2011 Jolt Excellence Award! Getting software released to users is often a painful, risky, and time-consuming process. This groundbreaking new book sets out the principles and technical practices that enable rapid, incremental delivery of high quality, valuable new functionality to users. Through automation of the build, deployment, and testing process, and improved collaboration between developers, testers, and operations, delivery teams can get changes released in a matter of hours\u2014 sometimes even minutes\u2013no matter what the size of a project or the complexity of its code base. Jez Humble and David Farley begin by presenting the foundations of a rapid, reliable, low-risk delivery process. Next, they introduce the \u201cdeployment pipeline,\u201d an automated process for managing all changes, from check-in to release. Finally, they discuss the \u201cecosystem\u201d needed to support continuous delivery, from infrastructure, data and configuration management to governance. The authors introduce state-of-the-art techniques, including automated infrastructure management and data migration, and the use of virtualization. For each, they review key issues, identify best practices, and demonstrate how to mitigate risks. Coverage includes \u2022 Automating all facets of building, integrating, testing, and deploying software \u2022 Implementing deployment pipelines at team and organizational levels \u2022 Improving collaboration between developers, testers, and operations \u2022 Developing features incrementally on large and distributed teams \u2022 Implementing an effective configuration management strategy \u2022 Automating acceptance testing, from analysis to implementation \u2022 Testing capacity and other non-functional requirements \u2022 Implementing continuous deployment and zero-downtime releases \u2022 Managing infrastructure, data, components and dependencies \u2022 Navigating risk management, compliance, and auditing Whether you\u2019re a developer, systems administrator, tester, or manager, this book will help your organization move from idea to release faster than ever\u2014so you can deliver value to your business rapidly and reliably.",
+  "industryIdentifiers": [
+    {
+      "type": "ISBN_13",
+      "identifier": "9780321670229"
+    },
+    {
+      "type": "ISBN_10",
+      "identifier": "0321670221"
+    }
+  ],
+  "readingModes": {
+    "text": true,
+    "image": true
+  },
+  "pageCount": 956,
+  "printType": "BOOK",
+  "categories": [
+    "Computers"
+  ],
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": true,
+  "contentVersion": "1.14.12.0.preview.3",
+  "panelizationSummary": {
+    "containsEpubBubbles": false,
+    "containsImageBubbles": false
+  },
+  "imageLinks": {
+    "smallThumbnail": "http://books.google.com/books/content?id=6ADDuzere-YC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+    "thumbnail": "http://books.google.com/books/content?id=6ADDuzere-YC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+  },
+  "language": "en",
+  "previewLink": "http://books.google.co.nz/books?id=6ADDuzere-YC&printsec=frontcover&dq=isbn:9780321670229&hl=&cd=1&source=gbs_api",
+  "infoLink": "https://play.google.com/store/books/details?id=6ADDuzere-YC&source=gbs_api",
+  "canonicalVolumeLink": "https://play.google.com/store/books/details?id=6ADDuzere-YC"
+}

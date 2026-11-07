@@ -1,0 +1,44 @@
+{
+  "title": "The Obstacle is the Way",
+  "subtitle": "The Ancient Art of Turning Adversity to Advantage",
+  "authors": [
+    "Ryan Holiday"
+  ],
+  "publisher": "Faber & Faber",
+  "publishedDate": "2015-05-07",
+  "description": "We give up too easily. With a simple change of attitude, what seem like insurmountable obstacles become once-in-a-lifetime opportunities. Ryan Holiday, who dropped out of college at nineteen to serve as an apprentice to bestselling 'modern Machiavelli' Robert Greene and is now a media consultant for billion-dollar brands, draws on the philosophy of the Stoics to show you how in every situation, that what blocks our path actually opens one that is new and better.",
+  "industryIdentifiers": [
+    {
+      "type": "ISBN_10",
+      "identifier": "1781251495"
+    },
+    {
+      "type": "ISBN_13",
+      "identifier": "9781781251492"
+    }
+  ],
+  "readingModes": {
+    "text": false,
+    "image": false
+  },
+  "pageCount": 0,
+  "printType": "BOOK",
+  "categories": [
+    "Business & Economics"
+  ],
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": false,
+  "contentVersion": "preview-1.0.0",
+  "panelizationSummary": {
+    "containsEpubBubbles": false,
+    "containsImageBubbles": false
+  },
+  "imageLinks": {
+    "smallThumbnail": "http://books.google.com/books/content?id=WOf7mAEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+    "thumbnail": "http://books.google.com/books/content?id=WOf7mAEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+  },
+  "language": "en",
+  "previewLink": "http://books.google.co.nz/books?id=WOf7mAEACAAJ&dq=isbn:9781781251492&hl=&cd=1&source=gbs_api",
+  "infoLink": "http://books.google.co.nz/books?id=WOf7mAEACAAJ&dq=isbn:9781781251492&hl=&source=gbs_api",
+  "canonicalVolumeLink": "https://books.google.com/books/about/The_Obstacle_is_the_Way.html?hl=&id=WOf7mAEACAAJ"
+}

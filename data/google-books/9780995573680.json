@@ -1,0 +1,43 @@
+{
+  "title": "Things Never to Tell Children",
+  "authors": [
+    "The School of Life"
+  ],
+  "publisher": "School of Life Press",
+  "publishedDate": "2017-06-08",
+  "description": "This is a book that should never fall into the hands of children \u2013 for it is filled with the darkest truths about life that might unbearably depress the young. However, for the older ones among us, this is a book full of solace, humour and relief. In a charming, naively illustrated tale, we follow the adventures of Bunny \u2013 a version of all of us \u2013 as he encounters a series of obstacles we are in some ways liable to recognise from our own lives. Watching poor Bunny, we end up delighted we\u2019re not alone, and perhaps smiling darkly in sympathy with his sorrows. Children might even have the odd peek inside if they dare.",
+  "industryIdentifiers": [
+    {
+      "type": "ISBN_10",
+      "identifier": "0995573689"
+    },
+    {
+      "type": "ISBN_13",
+      "identifier": "9780995573680"
+    }
+  ],
+  "readingModes": {
+    "text": false,
+    "image": false
+  },
+  "pageCount": 0,
+  "printType": "BOOK",
+  "categories": [
+    "Psychology"
+  ],
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": false,
+  "contentVersion": "preview-1.0.0",
+  "panelizationSummary": {
+    "containsEpubBubbles": false,
+    "containsImageBubbles": false
+  },
+  "imageLinks": {
+    "smallThumbnail": "http://books.google.com/books/content?id=AZGmtAEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+    "thumbnail": "http://books.google.com/books/content?id=AZGmtAEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+  },
+  "language": "en",
+  "previewLink": "http://books.google.co.nz/books?id=AZGmtAEACAAJ&dq=isbn:9780995573680&hl=&cd=1&source=gbs_api",
+  "infoLink": "http://books.google.co.nz/books?id=AZGmtAEACAAJ&dq=isbn:9780995573680&hl=&source=gbs_api",
+  "canonicalVolumeLink": "https://books.google.com/books/about/Things_Never_to_Tell_Children.html?hl=&id=AZGmtAEACAAJ"
+}

@@ -1,0 +1,44 @@
+{
+  "title": "Data Visualization",
+  "subtitle": "A Practical Introduction",
+  "authors": [
+    "Kieran Healy"
+  ],
+  "publisher": "Princeton University Press",
+  "publishedDate": "2018-12-18",
+  "description": "An accessible primer on how to create effective graphics from data This book provides students and researchers a hands-on introduction to the principles and practice of data visualization. It explains what makes some graphs succeed while others fail, how to make high-quality figures from data using powerful and reproducible methods, and how to think about data visualization in an honest and effective way. Data Visualization builds the reader\u2019s expertise in ggplot2, a versatile visualization library for the R programming language. Through a series of worked examples, this accessible primer then demonstrates how to create plots piece by piece, beginning with summaries of single variables and moving on to more complex graphics. Topics include plotting continuous and categorical variables; layering information on graphics; producing effective \u201csmall multiple\u201d plots; grouping, summarizing, and transforming data for plotting; creating maps; working with the output of statistical models; and refining plots to make them more comprehensible. Effective graphics are essential to communicating ideas and a great way to better understand data. This book provides the practical skills students and practitioners need to visualize quantitative data and get the most out of their research findings. Provides hands-on instruction using R and ggplot2 Shows how the \u201ctidyverse\u201d of data analysis tools makes working with R easier and more consistent Includes a library of data sets, code, and functions",
+  "industryIdentifiers": [
+    {
+      "type": "ISBN_13",
+      "identifier": "9780691181622"
+    },
+    {
+      "type": "ISBN_10",
+      "identifier": "0691181624"
+    }
+  ],
+  "readingModes": {
+    "text": false,
+    "image": true
+  },
+  "pageCount": 292,
+  "printType": "BOOK",
+  "categories": [
+    "Social Science"
+  ],
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": false,
+  "contentVersion": "0.1.2.0.preview.1",
+  "panelizationSummary": {
+    "containsEpubBubbles": false,
+    "containsImageBubbles": false
+  },
+  "imageLinks": {
+    "smallThumbnail": "http://books.google.com/books/content?id=3XOYDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+    "thumbnail": "http://books.google.com/books/content?id=3XOYDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+  },
+  "language": "en",
+  "previewLink": "http://books.google.co.nz/books?id=3XOYDwAAQBAJ&printsec=frontcover&dq=isbn:9780691181622&hl=&cd=1&source=gbs_api",
+  "infoLink": "http://books.google.co.nz/books?id=3XOYDwAAQBAJ&dq=isbn:9780691181622&hl=&source=gbs_api",
+  "canonicalVolumeLink": "https://books.google.com/books/about/Data_Visualization.html?hl=&id=3XOYDwAAQBAJ"
+}

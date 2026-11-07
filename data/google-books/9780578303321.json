@@ -1,0 +1,40 @@
+{
+  "title": "Fly Agaric",
+  "subtitle": "A Compendium of History, Pharmacology, Mythology, & Exploration",
+  "authors": [
+    "Kevin M Feeney"
+  ],
+  "publishedDate": "2021-10-31",
+  "description": "With more than two-dozen contributors and over 450-pages of content Fly Agaric is the most comprehensive book on the iconic red and white-spotted mushroom ever assembled. In the 29 chapters contained herein the reader is taken on a journey through history, folklore, and the magical landscapes experienced under the influence of the Fly Agaric, and its many close relatives. The reader of this book will learn: How to recognize and identify over a dozen types of psychoactive Amanita species, subspecies, and varieties occurring in North America, and how to distinguish them from look-alikes. What psychoactive and other active compounds are found in psychoactive Amanitas, and how they affect the mind and body. The differences between the effects and experiences produced by psychoactive Amanitas and psychedelic Psilocybe mushrooms. How the Fly Agaric can be detoxified and safely prepared for the dinner table. The history of medicinal and homeopathic use of the Fly Agaric. How the Fly Agaric can be used topically and internally to treat conditions such as pain, inflammation, insomnia, and anxiety. Theories regarding the historical and religious use of psychoactive Amanitas around the world based on archaeological, folkloric, and other evidence.",
+  "industryIdentifiers": [
+    {
+      "type": "ISBN_10",
+      "identifier": "0578303329"
+    },
+    {
+      "type": "ISBN_13",
+      "identifier": "9780578303321"
+    }
+  ],
+  "readingModes": {
+    "text": false,
+    "image": false
+  },
+  "pageCount": 508,
+  "printType": "BOOK",
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": false,
+  "contentVersion": "preview-1.0.0",
+  "panelizationSummary": {
+    "containsEpubBubbles": false,
+    "containsImageBubbles": false
+  },
+  "imageLinks": {
+    "smallThumbnail": "http://books.google.com/books/content?id=yVq6zgEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+    "thumbnail": "http://books.google.com/books/content?id=yVq6zgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+  },
+  "language": "en",
+  "previewLink": "http://books.google.co.nz/books?id=yVq6zgEACAAJ&dq=isbn:9780578303321&hl=&cd=1&source=gbs_api",
+  "infoLink": "http://books.google.co.nz/books?id=yVq6zgEACAAJ&dq=isbn:9780578303321&hl=&source=gbs_api",
+  "canonicalVolumeLink": "https://books.google.com/books/about/Fly_Agaric.html?hl=&id=yVq6zgEACAAJ"
+}

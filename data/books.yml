@@ -1,0 +1,483 @@
+books:
+- isbn: '9780134052588'
+  rating: 5
+  title: 'Software Craftsman, The: Professionalism, Pragmatism, Pride'
+- isbn: '9780133065268'
+  rating: 5
+  title: 'Refactoring: Improving the Design of Existing Code'
+- isbn: '9780136083252'
+  rating: 5
+  title: 'Clean Code: A Handbook of Agile Software Craftsmanship'
+- isbn: '9780735636972'
+  rating: 5
+  title: 'Code Complete: A Practical Handbook of Software Construction'
+- isbn: '9780134051994'
+  rating: 5
+  title: 'Extreme Programming Explained: Embrace Change'
+- isbn: '9780596551865'
+  rating: 5
+  title: The Productive Programmer
+- isbn: '9783827330437'
+  shelf: software
+  rating: 5
+  title: 'Design Patterns: Elements of Reusable Object-Oriented Software'
+- isbn: '9780134494326'
+  rating: 5
+  title: Clean Architecture
+- isbn: '9780321934116'
+  shelf: software
+  rating: 5
+  title: 'Peopleware: Productive Projects and Teams'
+- isbn: '9780132119177'
+  rating: 5
+  title: 'The Pragmatic Programmer: From Journeyman to Master'
+- isbn: '9780132931755'
+  rating: 5
+  title: Working Effectively with Legacy Code
+- isbn: '9780132119160'
+  rating: 5
+  title: 'The Mythical Man-Month: Essays on Software Engineering'
+- isbn: '9780596554873'
+  rating: 5
+  title: 'JavaScript: The Good Parts'
+- isbn: '9780132542883'
+  rating: 5
+  title: 'The Clean Coder: A Code of Conduct for Professional Programmers'
+- isbn: '9780137909292'
+  rating: 4
+  title: 'Code: The Hidden Language of Computer Hardware and Software'
+- isbn: '9781430218340'
+  rating: 4
+  title: Pro Git
+- isbn: '9781098152444'
+  rating: 4
+  title: 'Developing Apps with GPT-4 and ChatGPT: Build Intelligent Chatbots, Content Generators, and More'
+- isbn: '9781680507973'
+  rating: 4
+  title: iOS Unit Testing by Example
+- isbn: '9780735220584'
+  rating: 4
+  title: 'Coders: The Making of a New Tribe and the Remaking of the World'
+- isbn: '9781484272169'
+  rating: 4
+  title: 'Docs for Developers: An Engineer’s Field Guide to Technical Writing'
+- isbn: '9789688802052'
+  rating: 4
+  title: The C Programming Language
+- isbn: '9781491924440'
+  shelf: software
+  rating: 4
+  title: "You Don't Know JS: Scope and Closures\n        (You Don't Know JS, #2)"
+- isbn: '9781491924440'
+  shelf: software
+  rating: 4
+  title: 'You Don''t Know JS: this & Object Prototypes'
+- isbn: '9781491924440'
+  shelf: software
+  rating: 4
+  title: 'You Don''t Know JS: Up & Going'
+- isbn: '9780999335604'
+  rating: 4
+  title: Timeless Laws of Software Development
+- isbn: '9781680504224'
+  rating: 4
+  title: 'Pragmatic Thinking and Learning: Refactor Your Wetware'
+- isbn: '9781935182504'
+  rating: 4
+  title: Dependency Injection in .NET
+- isbn: '9781449331498'
+  rating: 4
+  title: Head First Design Patterns
+- isbn: '9798888650844'
+  rating: 4
+  title: 'Your Code As a Crime Scene: Use Forensic Techniques to Arrest Defects, Bottlenecks, and Bad Design in Your Programs'
+- isbn: '9780135781999'
+  rating: 4
+  title: 'Clean Agile: Back to Basics'
+- isbn: '9780136915836'
+  rating: 4
+  title: 'Clean Craftsmanship: Disciplines, Standards, and Ethics'
+- isbn: '9781430207535'
+  rating: 4
+  title: Joel on Software
+- isbn: '9781680504101'
+  rating: 4
+  title: 'Practical Vim: Edit Text at the Speed of Thought'
+- isbn: '9781942788355'
+  shelf: software
+  rating: 4
+  title: 'Accelerate: Building and Scaling High Performing Technology Organizations'
+- isbn: '9781449321383'
+  rating: 4
+  title: 'The Art of Readable Code: Simple and Practical Techniques for Writing Better Code'
+- isbn: '9781430200383'
+  rating: 4
+  title: 'The Best Software Writing I: Selected and Introduced by Joel Spolsky'
+- isbn: '9780137585236'
+  rating: 4
+  title: 'Test-Driven Development: By Example'
+- isbn: '9780578755038'
+  shelf: science
+  rating: 4
+  title: Debugging Your Brain
+- isbn: '9781718503106'
+  rating: 3
+  title: The Rust Programming Language
+- isbn: '9781530281756'
+  rating: 3
+  title: 'Beautiful Code: Leading Programmers Explain How They Think'
+- isbn: '9781449388966'
+  rating: 3
+  title: '97 Things Every Programmer Should Know: Collective Wisdom from the Experts'
+- isbn: '9781638350460'
+  rating: 3
+  title: 'Grokking Simplicity: Taming complex software with functional thinking'
+- isbn: '9780134498034'
+  title: Programming Pearls
+- isbn: '9781556159008'
+  title: 'Rapid Development: Taming Wild Software Schedules'
+- isbn: '9780132181273'
+  title: 'Domain-Driven Design: Tackling Complexity in the Heart of Software'
+- isbn: '9780201544350'
+  title: 'Object-Oriented Software Engineering: A Use Case Driven Approach'
+- isbn: '9780132797467'
+  title: 'xUnit Test Patterns: Refactoring Test Code'
+- isbn: '9780387948607'
+  title: The Algorithm Design Manual
+- isbn: '9780070342071'
+  title: The Elements of Programming Style
+- isbn: '9780471358466'
+  title: Testing Computer Software
+- isbn: '9780195102697'
+  title: 'Patterns of Software: Tales from the Software Community'
+- isbn: '9780596000707'
+  title: Effective awk Programming
+- isbn: '9780262510875'
+  title: Structure and Interpretation of Computer Programs
+- isbn: '9780136291558'
+  title: Object-Oriented Software Construction
+- isbn: '9780201615869'
+  title: The Practice of Programming
+- isbn: '9781850328803'
+  title: Software Testing Techniques, 2nd Edition
+- isbn: '9780132158718'
+  title: A Discipline of Programming
+- isbn: '9780321699763'
+  title: Growing Object-Oriented Software, Guided by Tests
+- isbn: '9780122005503'
+  title: Structured Programming
+- isbn: '9781680504712'
+  title: 'Seven Languages in Seven Weeks: A Pragmatic Guide to Learning Programming Languages'
+- isbn: '9780132762564'
+  title: Algorithms
+- isbn: '9781638356110'
+  title: Classic Computer Science Problems in Swift
+- isbn: '9781680505801'
+  title: 'Software Design X-Rays: Fix Technical Debt with Behavioral Code Analysis'
+- isbn: '9781680506853'
+  title: 'Programming WebAssembly with Rust: Unified Development for Web, Mobile, and Embedded Applications'
+- isbn: '9781492082781'
+  shelf: software
+  title: 'Software Engineering at Google: Lessons Learned from Programming Over Time'
+- isbn: '9781803236650'
+  title: 'Rust Web Programming: A hands-on guide to developing fast and secure web apps with the Rust programming language'
+- isbn: '9780137314867'
+  title: 'Modern Software Engineering: Doing What Works to Build Better Software Faster'
+- isbn: '9780137464357'
+  title: 'Code That Fits in Your Head : Heuristics for Software Engineering'
+- isbn: '9780135344231'
+  rating: 4
+  title: 'We, Programmers: A Chronicle of Coders from Ada to AI'
+- isbn: '9780133749564'
+  rating: 4
+  title: 'More Agile Testing: Learning Journeys for the Whole Team (Addison-Wesley Signature Series'
+- isbn: '9780133065213'
+  title: Patterns of Enterprise Application Architecture
+- isbn: '9780321213358'
+  title: Refactoring to Patterns
+- isbn: '9781430204022'
+  title: 'From Bash to Z Shell: Conquering the Command Line'
+- isbn: '9780470229057'
+  title: 'The Annotated Turing: A Guided Tour Through Alan Turing''s Historic Paper on Computability and the Turing Machine'
+- isbn: '9781610395700'
+  title: 'The Age of Surveillance Capitalism: The Fight for a Human Future at the New Frontier of Power'
+- isbn: '9781491971918'
+  title: 'Mastering Ethereum: Building Smart Contracts and DApps'
+- isbn: '9781949815023'
+  title: How Javascript Works
+- isbn: '9781935006978'
+  shelf: science
+  title: 'On the Shadows of the Ideas: Comprising an art of investigating, discovering, judging, ordering, and applying, set
+    forth for the purpose of inner writing, and not for vulgar operations of memory'
+- isbn: '9781638778868'
+  shelf: software
+  rating: 3
+  title: 'Building Mobile Apps at Scale: 39 Engineering Challenges'
+- isbn: '9789732346686'
+  shelf: software
+  title: 'Machine Learning For Humans: Introduction to Machine Learning with Python'
+- isbn: '9780996193306'
+  shelf: software
+  rating: 4
+  title: Zero Bugs and Program Faster
+- isbn: '9781999579500'
+  rating: 4
+  title: The Hundred-Page Machine Learning Book
+- isbn: '9798985349924'
+  shelf: software
+  rating: 4
+  title: 'Engineers Survival Guide: Advice, tactics, and tricks After a decade of working at Facebook, Snapchat, and Microsoft'
+- isbn: '9780691181622'
+  shelf: software
+  title: 'Data Visualization: A Practical Introduction'
+- isbn: '9780134271422'
+  title: 'Analysis Patterns: Reusable Object Models'
+- isbn: '9780917072079'
+  shelf: software
+  title: Structured Analysis and System Specification
+- isbn: '9780132702553'
+  title: Implementation Patterns
+- isbn: '9780132852128'
+  title: Smalltalk Best Practice Patterns
+- isbn: '9780321670229'
+  title: Continuous delivery
+- isbn: '9780262337373'
+  title: "Deep Learning\n        (Adaptive Computation and Machine Learning series)"
+- isbn: '9781617293702'
+  title: Grokking Deep Learning
+- isbn: '9781492032595'
+  title: Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow
+- isbn: '9780990582946'
+  title: Crafting Interpreters
+- isbn: '9781736417911'
+  shelf: software
+  title: 'Staff Engineer: Leadership Beyond the Management Track'
+- isbn: '9781098118709'
+  shelf: software
+  title: 'The Staff Engineer''s Path: A Guide for Individual Contributors Navigating Growth and Change'
+- isbn: '9780316380492'
+  rating: 5
+  title: 'The Art of Invisibility: The World''s Most Famous Hacker Teaches You How to Be Safe in the Age of Big Brother and
+    Big Data'
+- isbn: '9781732102217'
+  rating: 4
+  title: A Philosophy of Software Design
+- isbn: '9780932633422'
+  shelf: software
+  title: The Psychology of Computer Programming
+- isbn: '9780961392178'
+  title: Beautiful Evidence
+- isbn: '9780470171356'
+  title: 'About Face 3: The Essentials of Interaction Design'
+- isbn: '9781933820897'
+  shelf: software
+  title: 'The User Experience Team of One: A Research and Design Survival Guide'
+- isbn: '9780465072996'
+  rating: 4
+  title: The Design of Everyday Things
+- isbn: '9780133597264'
+  rating: 4
+  title: 'Don''t Make Me Think, Revisited: A Common Sense Approach to Web Usability'
+- isbn: '9780672326141'
+  shelf: software
+  rating: 5
+  title: 'The Inmates Are Running the Asylum: Why High Tech Products Drive Us Crazy and How to Restore the Sanity'
+- isbn: '9780691220574'
+  rating: 5
+  title: 'Losing Ourselves: Learning to Live without a Self'
+- isbn: '9781529345049'
+  rating: 4
+  title: 'Know Thyself: The Science of Self-Awareness'
+- isbn: '9781775412496'
+  rating: 4
+  title: Siddhartha
+- isbn: '9780993538704'
+  rating: 4
+  title: 'Great Thinkers: Simple Tools from 60 Great Thinkers to Improve Your Life Today'
+- isbn: '9780995573680'
+  rating: 4
+  title: Things Never to Tell Children
+- isbn: '9780393541489'
+  rating: 5
+  title: 'The Case Against Reality: Why Evolution Hid the Truth from Our Eyes'
+- isbn: '9780241985854'
+  shelf: science
+  rating: 4
+  title: 'The School of Life: An Emotional Education'
+- isbn: '9781608683895'
+  rating: 4
+  title: 'Don''t Be a Jerk: And Other Practical Advice from Dogen, Japan''s Greatest Zen Master'
+- isbn: '9781784160029'
+  rating: 4
+  title: 'Waking Up: A Guide to Spirituality Without Religion'
+- isbn: '9781608688043'
+  rating: 4
+  title: 'The Other Side of Nothing: The Zen Ethics of Time, Space, and Being'
+- isbn: '9780062906731'
+  rating: 4
+  title: 'Conscious: A Brief Guide to the Fundamental Mystery of the Mind'
+- isbn: '9781443434492'
+  rating: 4
+  title: The Doors of Perception & Heaven and Hell
+- isbn: '9780967444468'
+  shelf: science
+  rating: 4
+  title: The Fire of Self Knowledge
+- isbn: '9780525564775'
+  rating: 4
+  title: 'Galileo''s Error: Foundations for a New Science of Consciousness'
+- isbn: '9780374227760'
+  shelf: science
+  rating: 4
+  title: Other Minds
+- isbn: '9781781257654'
+  rating: 3
+  title: 'The Daily Stoic: 366 Meditations on Wisdom, Perseverance, and the Art of Living: Featuring new translations of Seneca,
+    Epictetus, and Marcus Aurelius'
+- isbn: '9781912891818'
+  shelf: science
+  rating: 3
+  title: 'Calm: Educate Yourself in the Art of Remaining Calm, and Learn how to Defend Yourself from Panic and Fury'
+- isbn: '9781999917999'
+  rating: 3
+  title: How to Overcome Your Childhood
+- isbn: '9781915087164'
+  shelf: science
+  rating: 3
+  title: Small Pleasures
+- isbn: '9781915087317'
+  shelf: science
+  rating: 3
+  title: 'A Job to Love: A practical guide to finding fulfilling work by better understanding yourself'
+- isbn: '9781999747107'
+  rating: 3
+  title: On Confidence
+- isbn: '9780995573635'
+  rating: 3
+  title: Why We Hate Cheap Things
+- isbn: '9781915087102'
+  shelf: science
+  rating: 3
+  title: Self-Knowledge
+- isbn: '9781999747176'
+  rating: 3
+  title: What is Psychotherapy?
+- isbn: '9780995753587'
+  shelf: science
+  rating: 3
+  title: 'The Emotionally Intelligent Office: 20 Key Emotional Skills for the Workplace'
+- isbn: '9781912891085'
+  rating: 3
+  title: 'Who Am I?: Psychological Exercises to Develop Self-understanding'
+- isbn: '9780410004553'
+  title: A History of Western Philosophy
+- isbn: '9780804728805'
+  title: Beyond Good and Evil / On the Genealogy of Morality
+- isbn: '9788197275203'
+  title: 'Mind Map Mastery: The Complete Guide to Learning and Using the Most Powerful Thinking Tool in the Universe'
+- isbn: '9780804780773'
+  title: The Complete Essays of Montaigne
+- isbn: '9780199681037'
+  title: "On What Matters: Volumes 1 & 2\n        (2 Volumes)"
+- isbn: '9780199226559'
+  shelf: science
+  title: 'Embodiment and the inner life: Cognition and Consciousness in the Space of Possible Minds'
+- isbn: '9781603849166'
+  title: 'A Plato Reader: Eight Essential Dialogues'
+- isbn: '9780199681037'
+  title: 'On What Matters: Volume 3'
+- isbn: '9781684031832'
+  shelf: science
+  title: 'This Extraordinary Moment: Moving Beyond the Mind to Embrace the Miracle of What Is'
+- isbn: '9780691178479'
+  rating: 5
+  title: 'Ethics in the Real World: 82 Brief Essays on Things That Matter'
+- isbn: '9780553824438'
+  rating: 5
+  title: 'The Joy of Living: Unlocking the Secret and Science of Happiness'
+- isbn: '9780007547982'
+  rating: 4
+  title: 'Algorithms to Live By: The Computer Science of Human Decisions'
+- isbn: '9780465026562'
+  title: 'Gödel, Escher, Bach: An Eternal Golden Braid'
+- isbn: '9780141993263'
+  shelf: science
+  rating: 5
+  title: There Are Places in the World Where Rules Are Less Important Than Kindness
+- isbn: '9780241292532'
+  rating: 5
+  title: The Order of Time
+- isbn: '9780241235973'
+  rating: 4
+  title: Seven Brief Lessons on Physics
+- isbn: '9783836517751'
+  title: 'Oliver Byrne''s Elements of Euclid: The First Six Books with Coloured Diagrams and Symbols'
+- isbn: '9780241257975'
+  rating: 5
+  title: 'Reality is Not What it Seems: The Journey to Quantum Gravity'
+- isbn: '9781848311039'
+  title: 'Quantum: Einstein, Bohr and the Great Debate About the Nature of Reality'
+- isbn: '9780393089820'
+  rating: 4
+  title: 'Naked Statistics: Stripping the Dread from the Data'
+- isbn: '9781408809594'
+  rating: 4
+  title: Alex's Adventures in Numberland
+- isbn: '9780486284958'
+  rating: 5
+  title: Walden or, Life in the Woods
+- isbn: '9781782066620'
+  rating: 4
+  title: 'Norwegian Wood: Chopping, Stacking, and Drying Wood the Scandinavian Way'
+- isbn: '9781423616597'
+  title: 'Edible Wild Plants: Wild Foods from Dirt to Plate'
+- isbn: '9780976626626'
+  title: 'Incredible Wild Edibles: 36 Plants That Can Change Your Life'
+- isbn: '9781760890049'
+  rating: 4
+  title: The Proof is in the Plants
+- isbn: '9780578303321'
+  title: 'Fly Agaric: A Compendium of History, Pharmacology, Mythology, & Exploration'
+- isbn: '9781616898069'
+  title: The Architecture of Trees
+- isbn: '9781473554689'
+  rating: 5
+  title: 'Entangled Life: How Fungi Make Our Worlds, Change Our Minds & Shape Our Futures'
+- isbn: '9780913178140'
+  rating: 5
+  title: 'The Ax Book: The Lore and Science of the Woodcutter'
+- isbn: '9780141983776'
+  rating: 5
+  title: 'Why We Sleep: Unlocking the Power of Sleep and Dreams'
+- isbn: '9780735211292'
+  rating: 4
+  title: 'Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones'
+- isbn: '9780753558386'
+  rating: 4
+  title: 'Effortless: Make It Easier to Do What Matters Most'
+- isbn: '9781781251492'
+  shelf: science
+  rating: 3
+  title: 'The Obstacle is the Way: The Ancient Art of Turning Adversity to Advantage'
+- isbn: '9780241974346'
+  rating: 3
+  title: 'Rest: Why You Get More Done When You Work Less'
+- isbn: '9781473554719'
+  rating: 4
+  title: 21 Lessons for the 21st Century
+- isbn: '9780571267385'
+  rating: 4
+  title: Lord of the Flies
+- isbn: '9780141928739'
+  rating: 4
+  title: 'Freakonomics: A Rogue Economist Explores the Hidden Side of Everything'
+- isbn: '9780486206912'
+  rating: 4
+  title: 'The Wonderful Wizard of Oz: the original wizzard of oz first edition'
+- isbn: '9780947503062'
+  title: A Bunk for the Night REVISED
+- isbn: '9781980839071'
+  title: 'MODERN VALUE INVESTING: 25 Tools to Invest With a Margin of Safety in Today''s Financial Environment'
+- isbn: '9781439126158'
+  rating: 4
+  title: 'One Up On Wall Street: How to Use What You Already Know to Make Money in the Market'

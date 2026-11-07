@@ -1,0 +1,47 @@
+{
+  "title": "Mastering Ethereum",
+  "subtitle": "Building Smart Contracts and DApps",
+  "authors": [
+    "Andreas M. Antonopoulos",
+    "Gavin Wood Ph.D."
+  ],
+  "publisher": "O'Reilly Media",
+  "publishedDate": "2018-11-13",
+  "description": "Ethereum represents the gateway to a worldwide, decentralized computing paradigm. This platform enables you to run decentralized applications (DApps) and smart contracts that have no central points of failure or control, integrate with a payment network, and operate on an open blockchain. With this practical guide, Andreas M. Antonopoulos and Gavin Wood provide everything you need to know about building smart contracts and DApps on Ethereum and other virtual-machine blockchains. Discover why IBM, Microsoft, NASDAQ, and hundreds of other organizations are experimenting with Ethereum. This essential guide shows you how to develop the skills necessary to be an innovator in this growing and exciting new industry. Run an Ethereum client, create and transmit basic transactions, and program smart contracts Learn the essentials of public key cryptography, hashes, and digital signatures Understand how \"wallets\" hold digital keys that control funds and smart contracts Interact with Ethereum clients programmatically using JavaScript libraries and Remote Procedure Call interfaces Learn security best practices, design patterns, and anti-patterns with real-world examples Create tokens that represent assets, shares, votes, or access control rights Build decentralized applications using multiple peer-to-peer (P2P) components",
+  "industryIdentifiers": [
+    {
+      "type": "ISBN_13",
+      "identifier": "9781491971918"
+    },
+    {
+      "type": "ISBN_10",
+      "identifier": "1491971916"
+    }
+  ],
+  "readingModes": {
+    "text": false,
+    "image": true
+  },
+  "pageCount": 424,
+  "printType": "BOOK",
+  "categories": [
+    "Computers"
+  ],
+  "averageRating": 4,
+  "ratingsCount": 1,
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": false,
+  "contentVersion": "0.1.2.0.preview.1",
+  "panelizationSummary": {
+    "containsEpubBubbles": false,
+    "containsImageBubbles": false
+  },
+  "imageLinks": {
+    "smallThumbnail": "http://books.google.com/books/content?id=nJJ5DwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+    "thumbnail": "http://books.google.com/books/content?id=nJJ5DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+  },
+  "language": "en",
+  "previewLink": "http://books.google.co.nz/books?id=nJJ5DwAAQBAJ&printsec=frontcover&dq=isbn:9781491971918&hl=&cd=1&source=gbs_api",
+  "infoLink": "http://books.google.co.nz/books?id=nJJ5DwAAQBAJ&dq=isbn:9781491971918&hl=&source=gbs_api",
+  "canonicalVolumeLink": "https://books.google.com/books/about/Mastering_Ethereum.html?hl=&id=nJJ5DwAAQBAJ"
+}

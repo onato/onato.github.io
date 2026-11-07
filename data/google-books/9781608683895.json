@@ -1,0 +1,44 @@
+{
+  "title": "Don't Be a Jerk",
+  "subtitle": "And Other Practical Advice from Dogen, Japan's Greatest Zen Master",
+  "authors": [
+    "Brad Warner"
+  ],
+  "publisher": "New World Library",
+  "publishedDate": "2016-02-15",
+  "description": "The Sh\u014db\u014dgenz\u014d (The Treasury of the True Dharma Eye) is a revered eight-hundred-year-old Zen Buddhism classic written by the Japanese monk Eihei D\u014dgen. Despite the timeless wisdom of his teachings, many consider the book difficult to understand and daunting to read. In Don\u2019t Be a Jerk, Zen priest and bestselling author Brad Warner, through accessible paraphrasing and incisive commentary, applies D\u014dgen\u2019s teachings to modern times. While entertaining and sometimes irreverent, Warner is also an astute scholar who sees in D\u014dgen very modern psychological concepts, as well as insights on such topics as feminism and reincarnation. Warner even shows that D\u014dgen offered a \u201cMiddle Way\u201d in the currently raging debate between science and religion. For curious readers worried that D\u014dgen\u2019s teachings are too philosophically opaque, Don\u2019t Be a Jerk is hilarious, understandable, and wise.",
+  "industryIdentifiers": [
+    {
+      "type": "ISBN_13",
+      "identifier": "9781608683895"
+    },
+    {
+      "type": "ISBN_10",
+      "identifier": "1608683893"
+    }
+  ],
+  "readingModes": {
+    "text": true,
+    "image": true
+  },
+  "pageCount": 330,
+  "printType": "BOOK",
+  "categories": [
+    "Religion"
+  ],
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": true,
+  "contentVersion": "0.3.2.0.preview.3",
+  "panelizationSummary": {
+    "containsEpubBubbles": false,
+    "containsImageBubbles": false
+  },
+  "imageLinks": {
+    "smallThumbnail": "http://books.google.com/books/content?id=ErWRCwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+    "thumbnail": "http://books.google.com/books/content?id=ErWRCwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+  },
+  "language": "en",
+  "previewLink": "http://books.google.co.nz/books?id=ErWRCwAAQBAJ&printsec=frontcover&dq=isbn:9781608683895&hl=&cd=1&source=gbs_api",
+  "infoLink": "https://play.google.com/store/books/details?id=ErWRCwAAQBAJ&source=gbs_api",
+  "canonicalVolumeLink": "https://play.google.com/store/books/details?id=ErWRCwAAQBAJ"
+}

@@ -1,0 +1,46 @@
+{
+  "title": "Effortless",
+  "subtitle": "Make It Easier to Do What Matters Most: The Instant New York Times Bestseller",
+  "authors": [
+    "Greg McKeown"
+  ],
+  "publisher": "Random House",
+  "publishedDate": "2021-04-27",
+  "description": "'In a world beset by burnout, Greg McKeown's work is essential' -- Daniel H. Pink 'Effortless shows that achieving more doesn't have to be as hard as we make it out to be' -- Arianna Huffington NEW YORK TIMES BESTSELLER \u00b7 A Times (UK) Best Book of the Year \u00b7 From the author of the million-copy-selling Essentialism comes an empowering guide to achieving your goals. It all starts with a simple principle: Not everything has to be so hard. The intricacy of modern life has created a false dichotomy between things that are 'hard and important,' and those that are 'easy and trivial.' Everything has become so much harder than it ought to be. But, Greg McKeown, bestselling author of Essentialism, says, there is a third alternative. In Effortless, he offers practical tools for making the most essential activities the easiest ones, so you can achieve the results you want, without burning out. Honed over the better part of a decade, these strategies include: \u00b7Turning tedious tasks into enjoyable rituals \u00b7Preventing frustration by solving problems before they arise \u00b7Setting a sustainable pace instead of powering through \u00b7Making one-time choices that eliminate many future decisions \u00b7Making relationships easier to maintain and manage \u00b7And much more McKeown's philosophy of essentialism has helped thousands to recognise that the effortless way isn't the lazy way. It's the smart way. Not every hard thing in life can be made easy but we can make it easier to do more of what matters most. Effortless will show you how.",
+  "industryIdentifiers": [
+    {
+      "type": "ISBN_13",
+      "identifier": "9780753558386"
+    },
+    {
+      "type": "ISBN_10",
+      "identifier": "0753558386"
+    }
+  ],
+  "readingModes": {
+    "text": true,
+    "image": false
+  },
+  "pageCount": 148,
+  "printType": "BOOK",
+  "categories": [
+    "Business & Economics"
+  ],
+  "averageRating": 5,
+  "ratingsCount": 1,
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": true,
+  "contentVersion": "1.6.6.0.preview.2",
+  "panelizationSummary": {
+    "containsEpubBubbles": false,
+    "containsImageBubbles": false
+  },
+  "imageLinks": {
+    "smallThumbnail": "http://books.google.com/books/content?id=XoP8DwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+    "thumbnail": "http://books.google.com/books/content?id=XoP8DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+  },
+  "language": "en",
+  "previewLink": "http://books.google.co.nz/books?id=XoP8DwAAQBAJ&printsec=frontcover&dq=isbn:9780753558386&hl=&cd=1&source=gbs_api",
+  "infoLink": "https://play.google.com/store/books/details?id=XoP8DwAAQBAJ&source=gbs_api",
+  "canonicalVolumeLink": "https://play.google.com/store/books/details?id=XoP8DwAAQBAJ"
+}

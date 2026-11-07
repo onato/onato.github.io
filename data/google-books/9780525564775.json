@@ -1,0 +1,44 @@
+{
+  "title": "Galileo's Error",
+  "subtitle": "Foundations for a New Science of Consciousness",
+  "authors": [
+    "Philip Goff"
+  ],
+  "publisher": "Vintage",
+  "publishedDate": "2020-10-06",
+  "description": "From a leading philosopher of the mind comes this lucid, provocative argument that offers a radically new picture of human consciousness\u2014panpsychism. Understanding how brains produce consciousness is one of the great scientific challenges of our age. Some philosophers argue that consciousness is something \"extra,\" beyond the physical workings of the brain. Others think that if we persist in our standard scientific methods, our questions about consciousness will eventually be answered. And some even suggest that the mystery is so deep, it will never be solved. Decades have been spent trying to explain consciousness from within our current scientific paradigm, but little progress has been made. Now, Philip Goff offers an exciting alternative that could pave the way forward. Rooted in an analysis of the philosophical underpinnings of modern science and based on the early twentieth-century work of Arthur Eddington and Bertrand Russell, Goff makes the case for panpsychism, a theory which posits that consciousness is not confined to biological entities but is a fundamental feature of all physical matter\u2014from subatomic particles to the human brain. In Galileo's Error, he has provided the first step on a new path to the final theory of human consciousness.",
+  "industryIdentifiers": [
+    {
+      "type": "ISBN_13",
+      "identifier": "9780525564775"
+    },
+    {
+      "type": "ISBN_10",
+      "identifier": "0525564772"
+    }
+  ],
+  "readingModes": {
+    "text": true,
+    "image": false
+  },
+  "pageCount": 0,
+  "printType": "BOOK",
+  "categories": [
+    "Philosophy"
+  ],
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": false,
+  "contentVersion": "preview-1.0.0",
+  "panelizationSummary": {
+    "containsEpubBubbles": false,
+    "containsImageBubbles": false
+  },
+  "imageLinks": {
+    "smallThumbnail": "http://books.google.com/books/content?id=XF-TEAAAQBAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+    "thumbnail": "http://books.google.com/books/content?id=XF-TEAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+  },
+  "language": "en",
+  "previewLink": "http://books.google.co.nz/books?id=XF-TEAAAQBAJ&dq=isbn:9780525564775&hl=&cd=1&source=gbs_api",
+  "infoLink": "http://books.google.co.nz/books?id=XF-TEAAAQBAJ&dq=isbn:9780525564775&hl=&source=gbs_api",
+  "canonicalVolumeLink": "https://books.google.com/books/about/Galileo_s_Error.html?hl=&id=XF-TEAAAQBAJ"
+}

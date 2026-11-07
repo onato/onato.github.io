@@ -1,0 +1,44 @@
+{
+  "title": "On What Matters",
+  "subtitle": "Volume One",
+  "authors": [
+    "Derek Parfit"
+  ],
+  "publisher": "Academic",
+  "publishedDate": "2013-07-11",
+  "description": "This is the first volume of a major work in moral philosophy, the long-awaited follow-up to Parfit's classic Reasons and Persons, a landmark of 20th-century philosophy. Parfit presents a powerful new treatment of reasons and a critical examination of the most prominent systematic moral theories, leading to his own ground-breaking conclusion.",
+  "industryIdentifiers": [
+    {
+      "type": "ISBN_13",
+      "identifier": "9780199681037"
+    },
+    {
+      "type": "ISBN_10",
+      "identifier": "0199681031"
+    }
+  ],
+  "readingModes": {
+    "text": false,
+    "image": true
+  },
+  "pageCount": 590,
+  "printType": "BOOK",
+  "categories": [
+    "Philosophy"
+  ],
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": false,
+  "contentVersion": "0.2.1.0.preview.1",
+  "panelizationSummary": {
+    "containsEpubBubbles": false,
+    "containsImageBubbles": false
+  },
+  "imageLinks": {
+    "smallThumbnail": "http://books.google.com/books/content?id=mTpLAAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+    "thumbnail": "http://books.google.com/books/content?id=mTpLAAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+  },
+  "language": "en",
+  "previewLink": "http://books.google.co.nz/books?id=mTpLAAAAQBAJ&printsec=frontcover&dq=isbn:9780199681037&hl=&cd=1&source=gbs_api",
+  "infoLink": "http://books.google.co.nz/books?id=mTpLAAAAQBAJ&dq=isbn:9780199681037&hl=&source=gbs_api",
+  "canonicalVolumeLink": "https://books.google.com/books/about/On_What_Matters.html?hl=&id=mTpLAAAAQBAJ"
+}

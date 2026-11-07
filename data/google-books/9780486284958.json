@@ -1,0 +1,43 @@
+{
+  "title": "Walden, Or, Life in the Woods",
+  "authors": [
+    "Henry David Thoreau"
+  ],
+  "publisher": "Courier Corporation",
+  "publishedDate": "1995",
+  "description": "The author's famous work on his time living on the shores of Walden Pond and ruminating on nature, life, and human existence.",
+  "industryIdentifiers": [
+    {
+      "type": "ISBN_13",
+      "identifier": "9780486284958"
+    },
+    {
+      "type": "ISBN_10",
+      "identifier": "0486284956"
+    }
+  ],
+  "readingModes": {
+    "text": false,
+    "image": true
+  },
+  "pageCount": 228,
+  "printType": "BOOK",
+  "categories": [
+    "Literary Collections"
+  ],
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": true,
+  "contentVersion": "2.6.3.0.preview.1",
+  "panelizationSummary": {
+    "containsEpubBubbles": false,
+    "containsImageBubbles": false
+  },
+  "imageLinks": {
+    "smallThumbnail": "http://books.google.com/books/content?id=42HcDAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+    "thumbnail": "http://books.google.com/books/content?id=42HcDAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+  },
+  "language": "en",
+  "previewLink": "http://books.google.co.nz/books?id=42HcDAAAQBAJ&printsec=frontcover&dq=isbn:9780486284958&hl=&cd=1&source=gbs_api",
+  "infoLink": "http://books.google.co.nz/books?id=42HcDAAAQBAJ&dq=isbn:9780486284958&hl=&source=gbs_api",
+  "canonicalVolumeLink": "https://books.google.com/books/about/Walden_Or_Life_in_the_Woods.html?hl=&id=42HcDAAAQBAJ"
+}

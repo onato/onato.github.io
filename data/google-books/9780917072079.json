@@ -1,0 +1,41 @@
+{
+  "title": "Structured Analysis and System Specification",
+  "authors": [
+    "Tom DeMarco"
+  ],
+  "publisher": "Yourdon Press",
+  "publishedDate": "1978",
+  "description": "This classic book of tools and methods for the analyst brings order and precisions to the specification process as it provides guidance and development of a structured specification. Covers functional decomposition; data dictionary; process specification; system modeling; structured analysis for a future system. Suitable for practicing systems analysts.",
+  "industryIdentifiers": [
+    {
+      "type": "OTHER",
+      "identifier": "UCAL:$B169285"
+    }
+  ],
+  "readingModes": {
+    "text": false,
+    "image": false
+  },
+  "pageCount": 382,
+  "printType": "BOOK",
+  "categories": [
+    "Business & Economics"
+  ],
+  "averageRating": 3,
+  "ratingsCount": 1,
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": false,
+  "contentVersion": "0.5.2.0.preview.0",
+  "panelizationSummary": {
+    "containsEpubBubbles": false,
+    "containsImageBubbles": false
+  },
+  "imageLinks": {
+    "smallThumbnail": "http://books.google.com/books/content?id=7o0-AAAAIAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+    "thumbnail": "http://books.google.com/books/content?id=7o0-AAAAIAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+  },
+  "language": "en",
+  "previewLink": "http://books.google.co.nz/books?id=7o0-AAAAIAAJ&dq=isbn:9780917072079&hl=&cd=1&source=gbs_api",
+  "infoLink": "http://books.google.co.nz/books?id=7o0-AAAAIAAJ&dq=isbn:9780917072079&hl=&source=gbs_api",
+  "canonicalVolumeLink": "https://books.google.com/books/about/Structured_Analysis_and_System_Specifica.html?hl=&id=7o0-AAAAIAAJ"
+}

@@ -1,0 +1,45 @@
+{
+  "title": "Seven Brief Lessons on Physics",
+  "authors": [
+    "Carlo Rovelli"
+  ],
+  "publisher": "Penguin UK",
+  "publishedDate": "2015-09-24",
+  "description": "THE PHENOMENAL BESTSELLER 'Honestly I cannot recommend it too strongly... one of the fastest selling science titles of all time because it is so clear' Jeremy Vine, BBC Radio 2 'There's a book I've been carrying around like a small Bible, Seven Brief Lessons on Physics' - Benedict Cumberbatch Everything you need to know about modern physics, the universe and your place in the world in seven enlightening lessons These seven short lessons guide us, with simplicity and clarity, through the scientific revolution that shook physics in the twentieth century and still continues to shake us today. In this beautiful and mind-bending introduction to modern physics, Carlo Rovelli explains Einstein's theory of general relativity, quantum mechanics, black holes, the complex architecture of the universe, elementary particles, gravity, and the nature of the mind. In under eighty pages, readers will understand the most transformative scientific discoveries of the twentieth century and what they mean for us. Not since Richard Feynman's celebrated best-seller Six Easy Pieces has physics been so vividly, intelligently and entertainingly revealed.",
+  "industryIdentifiers": [
+    {
+      "type": "ISBN_13",
+      "identifier": "9780241235973"
+    },
+    {
+      "type": "ISBN_10",
+      "identifier": "0241235979"
+    }
+  ],
+  "readingModes": {
+    "text": true,
+    "image": false
+  },
+  "pageCount": 64,
+  "printType": "BOOK",
+  "categories": [
+    "Science"
+  ],
+  "averageRating": 5,
+  "ratingsCount": 1,
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": true,
+  "contentVersion": "1.15.18.0.preview.2",
+  "panelizationSummary": {
+    "containsEpubBubbles": false,
+    "containsImageBubbles": false
+  },
+  "imageLinks": {
+    "smallThumbnail": "http://books.google.com/books/content?id=wU_ZCQAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+    "thumbnail": "http://books.google.com/books/content?id=wU_ZCQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+  },
+  "language": "en",
+  "previewLink": "http://books.google.co.nz/books?id=wU_ZCQAAQBAJ&printsec=frontcover&dq=isbn:9780241235973&hl=&cd=1&source=gbs_api",
+  "infoLink": "https://play.google.com/store/books/details?id=wU_ZCQAAQBAJ&source=gbs_api",
+  "canonicalVolumeLink": "https://play.google.com/store/books/details?id=wU_ZCQAAQBAJ"
+}

@@ -1,0 +1,43 @@
+{
+  "title": "The Doors Of Perception & Heaven And Hell",
+  "authors": [
+    "Aldous Huxley"
+  ],
+  "publisher": "Harper Collins",
+  "publishedDate": "2014-01-01",
+  "description": "Long before the psychedelic drug movement of the 1960s, Aldous Huxley wrote about his mind-expanding experiences taking mescaline and participating in ecstatic meditation in his essays The Doors of Perception and Heaven and Hell. In The Doors of Perception, Huxley blends Eastern mysticism with scientific experimentation to produce one of the most influential works on the effects of hallucinatory drugs on the human psyche. Heaven and Hell focuses on how science, art, religion, literature, and psychoactive drugs can expand the everyday view of reality and offer a more profound grasp of the human experience. Huxley\u2019s essays The Doors of Perception and Heaven and Hell ushered in a whole new generation of counter-culture icons such as Jackson Pollock, John Cage, Timothy Leary and Jim Morrison. In fact, Morrison\u2019s band name The Doors was inspired by The Doors of Perception. HarperTorch brings great works of non-fiction and the dramatic arts to life in digital format, upholding the highest standards in ebook production and celebrating reading in all its forms. Look for more titles in the HarperTorch collection to build your digital library.",
+  "industryIdentifiers": [
+    {
+      "type": "ISBN_13",
+      "identifier": "9781443434492"
+    },
+    {
+      "type": "ISBN_10",
+      "identifier": "1443434493"
+    }
+  ],
+  "readingModes": {
+    "text": true,
+    "image": false
+  },
+  "pageCount": 142,
+  "printType": "BOOK",
+  "categories": [
+    "Philosophy"
+  ],
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": true,
+  "contentVersion": "2.4.3.0.preview.2",
+  "panelizationSummary": {
+    "containsEpubBubbles": false,
+    "containsImageBubbles": false
+  },
+  "imageLinks": {
+    "smallThumbnail": "http://books.google.com/books/content?id=tpkpAgAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+    "thumbnail": "http://books.google.com/books/content?id=tpkpAgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+  },
+  "language": "en",
+  "previewLink": "http://books.google.co.nz/books?id=tpkpAgAAQBAJ&printsec=frontcover&dq=isbn:9781443434492&hl=&cd=1&source=gbs_api",
+  "infoLink": "https://play.google.com/store/books/details?id=tpkpAgAAQBAJ&source=gbs_api",
+  "canonicalVolumeLink": "https://play.google.com/store/books/details?id=tpkpAgAAQBAJ"
+}

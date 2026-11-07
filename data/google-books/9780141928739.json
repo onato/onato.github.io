@@ -1,0 +1,47 @@
+{
+  "title": "Freakonomics",
+  "subtitle": "A Rogue Economist Explores the Hidden Side of Everything",
+  "authors": [
+    "Steven D. Levitt",
+    "Stephen J. Dubner"
+  ],
+  "publisher": "Penguin UK",
+  "publishedDate": "2006-10-05",
+  "description": "Assume nothing, question everything. This is the message at the heart of Freakonomics, Levitt and Dubner's rule-breaking, iconoclastic book about crack dealers, cheating teachers and bizarre baby names that turned everyone's view of the world upside-down and became an international multi-million-copy-selling phenomenon. 'Prepare to be dazzled' Malcolm Gladwell 'A sensation ... you'll be stimulated, provoked and entertained. Of how many books can that be said?' Sunday Telegraph 'Has you chuckling one minute and gasping in amazement the next' Wall Street Journal 'Dazzling ... a delight' Economist 'Made me laugh out loud' Scotland on Sunday",
+  "industryIdentifiers": [
+    {
+      "type": "ISBN_13",
+      "identifier": "9780141928739"
+    },
+    {
+      "type": "ISBN_10",
+      "identifier": "0141928735"
+    }
+  ],
+  "readingModes": {
+    "text": true,
+    "image": false
+  },
+  "pageCount": 274,
+  "printType": "BOOK",
+  "categories": [
+    "Business & Economics"
+  ],
+  "averageRating": 4,
+  "ratingsCount": 4,
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": true,
+  "contentVersion": "2.18.17.0.preview.2",
+  "panelizationSummary": {
+    "containsEpubBubbles": false,
+    "containsImageBubbles": false
+  },
+  "imageLinks": {
+    "smallThumbnail": "http://books.google.com/books/content?id=kxsQhM4D8uIC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+    "thumbnail": "http://books.google.com/books/content?id=kxsQhM4D8uIC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+  },
+  "language": "en",
+  "previewLink": "http://books.google.co.nz/books?id=kxsQhM4D8uIC&printsec=frontcover&dq=isbn:9780141928739&hl=&cd=1&source=gbs_api",
+  "infoLink": "https://play.google.com/store/books/details?id=kxsQhM4D8uIC&source=gbs_api",
+  "canonicalVolumeLink": "https://play.google.com/store/books/details?id=kxsQhM4D8uIC"
+}

@@ -1,0 +1,33 @@
+{
+  "title": "A History of Western Philosophy",
+  "authors": [
+    "Bertrand Russell"
+  ],
+  "publishedDate": "1984",
+  "industryIdentifiers": [
+    {
+      "type": "ISBN_10",
+      "identifier": "0410004553"
+    },
+    {
+      "type": "ISBN_13",
+      "identifier": "9780410004553"
+    }
+  ],
+  "readingModes": {
+    "text": false,
+    "image": false
+  },
+  "pageCount": 842,
+  "printType": "BOOK",
+  "categories": [
+    "Philosophy"
+  ],
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": false,
+  "contentVersion": "preview-1.0.0",
+  "language": "en",
+  "previewLink": "http://books.google.co.nz/books?id=qHvetgAACAAJ&dq=isbn:9780410004553&hl=&cd=1&source=gbs_api",
+  "infoLink": "http://books.google.co.nz/books?id=qHvetgAACAAJ&dq=isbn:9780410004553&hl=&source=gbs_api",
+  "canonicalVolumeLink": "https://books.google.com/books/about/A_History_of_Western_Philosophy.html?hl=&id=qHvetgAACAAJ"
+}

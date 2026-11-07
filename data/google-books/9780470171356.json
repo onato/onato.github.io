@@ -1,0 +1,46 @@
+{
+  "title": "About Face 3",
+  "subtitle": "The Essentials of Interaction Design",
+  "authors": [
+    "Alan Cooper",
+    "Robert Reimann",
+    "David Cronin"
+  ],
+  "publisher": "John Wiley & Sons",
+  "publishedDate": "2007-04-18",
+  "description": "This completely updated volume presents the effective and practical tools you need to design great desktop applications, Web 2.0 sites, and mobile devices. You\u2019ll learn the principles of good product behavior and gain an understanding of Cooper\u2019s Goal-Directed Design method, which involves everything from conducting user research to defining your product using personas and scenarios. Ultimately, you\u2019ll acquire the knowledge to design the best possible digital products and services.",
+  "industryIdentifiers": [
+    {
+      "type": "ISBN_13",
+      "identifier": "9780470171356"
+    },
+    {
+      "type": "ISBN_10",
+      "identifier": "0470171359"
+    }
+  ],
+  "readingModes": {
+    "text": false,
+    "image": true
+  },
+  "pageCount": 650,
+  "printType": "BOOK",
+  "categories": [
+    "Computers"
+  ],
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": false,
+  "contentVersion": "0.2.1.0.preview.1",
+  "panelizationSummary": {
+    "containsEpubBubbles": false,
+    "containsImageBubbles": false
+  },
+  "imageLinks": {
+    "smallThumbnail": "http://books.google.com/books/content?id=xk1S1-wGZbAC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+    "thumbnail": "http://books.google.com/books/content?id=xk1S1-wGZbAC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+  },
+  "language": "en",
+  "previewLink": "http://books.google.co.nz/books?id=xk1S1-wGZbAC&printsec=frontcover&dq=isbn:9780470171356&hl=&cd=1&source=gbs_api",
+  "infoLink": "http://books.google.co.nz/books?id=xk1S1-wGZbAC&dq=isbn:9780470171356&hl=&source=gbs_api",
+  "canonicalVolumeLink": "https://books.google.com/books/about/About_Face_3.html?hl=&id=xk1S1-wGZbAC"
+}

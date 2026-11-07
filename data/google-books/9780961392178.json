@@ -1,0 +1,40 @@
+{
+  "title": "Beautiful Evidence",
+  "authors": [
+    "Edward R. Tufte"
+  ],
+  "publishedDate": "2006",
+  "description": "Science and art have in common intense seeing, the wide-eyed observing that generates empirical information. Beautiful Evidence is about how seeing turns into showing, how empirical observations turn into explanations and evidence presentations. The book identifies excellent and effective methods for presenting information, suggests new designs, and provides tools for assessing the credibility of evidence presentations.Here we will see many close readings of serious evidence presentations-ranging through evolutionary trees and rocket science to economics, art history, and sculpture. Insistent application of the principles of analytical thinking helps both insiders and outsiders assess the credibility of evidence.",
+  "industryIdentifiers": [
+    {
+      "type": "ISBN_10",
+      "identifier": "0961392177"
+    },
+    {
+      "type": "ISBN_13",
+      "identifier": "9780961392178"
+    }
+  ],
+  "readingModes": {
+    "text": false,
+    "image": false
+  },
+  "pageCount": 213,
+  "printType": "BOOK",
+  "categories": [
+    "Computers"
+  ],
+  "averageRating": 5,
+  "ratingsCount": 1,
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": false,
+  "contentVersion": "preview-1.0.0",
+  "imageLinks": {
+    "smallThumbnail": "http://books.google.com/books/content?id=v302PAAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+    "thumbnail": "http://books.google.com/books/content?id=v302PAAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+  },
+  "language": "en",
+  "previewLink": "http://books.google.co.nz/books?id=v302PAAACAAJ&dq=isbn:9780961392178&hl=&cd=1&source=gbs_api",
+  "infoLink": "http://books.google.co.nz/books?id=v302PAAACAAJ&dq=isbn:9780961392178&hl=&source=gbs_api",
+  "canonicalVolumeLink": "https://books.google.com/books/about/Beautiful_Evidence.html?hl=&id=v302PAAACAAJ"
+}

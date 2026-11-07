@@ -153,7 +153,6 @@ def render(books, unresolved):
         sections.append(f'<section aria-labelledby="{key}"><h2 id="{key}">{e(name)}</h2>'
                         f'<div class="list">{rated}{also}</div></section>')
 
-    rated_n = sum(1 for b in books if b['rating'])
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -173,8 +172,7 @@ document.addEventListener('DOMContentLoaded', function () {{ new FogRenderer(doc
 <main>
 <a class="home" href="/">← Stephen Williams</a>
 <h1>And reads</h1>
-<p class="lede">{len(books)} books, {rated_n} of them rated. Within each shelf the order carries the rating:
-the best first, then the very good, then the good. The rest sit quietly at the end.</p>
+<p class="lede">{len(books)} books, rated where I've made up my mind.</p>
 {"".join(sections)}
 </main>
 </body>

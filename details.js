@@ -1,10 +1,14 @@
 // Smooth animation for details elements
 document.addEventListener('DOMContentLoaded', function() {
-  // Assemble the contact address at runtime so it never appears in the HTML
+  // Build the contact address only when someone acts on the link, so it is never in the
+  // served HTML or the rendered DOM; the LinkedIn href stays as the fallback until then.
   const contact = document.getElementById('contact');
   if (contact) {
-    const parts = ['stephen', 'onato', 'com'];
-    contact.href = 'mailto:' + parts[0] + '@' + parts[1] + '.' + parts[2];
+    const arm = function () {
+      const p = ['nehpets', 'otano', 'moc'].map(s => s.split('').reverse().join(''));
+      contact.href = 'mailto:' + p[0] + '@' + p[1] + '.' + p[2];
+    };
+    ['mousedown', 'touchstart', 'focus'].forEach(ev => contact.addEventListener(ev, arm, { passive: true }));
   }
 
   const details = document.querySelectorAll('details');

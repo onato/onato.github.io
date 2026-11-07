@@ -142,12 +142,21 @@ summary {
   padding-right: 10px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 4px;
+  /* The open state is the tap feedback; no blue flash, and no text selection on a quick double tap */
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 /* Lift white type off the bright patches of cloud */
 summary,
 .bottom-links a {
   text-shadow: 0 1px 2px rgba(20, 30, 50, 0.35), 0 0 18px rgba(20, 30, 50, 0.45);
+}
+
+.detail-content a,
+.bottom-links a {
+  -webkit-tap-highlight-color: transparent;
 }
 
 details[open] summary {

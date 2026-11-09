@@ -25,7 +25,7 @@ books:
   rating: 5
   title: Clean Architecture
 - isbn: '9780321934116'
-  shelf: software
+  shelf: management
   rating: 5
   title: 'Peopleware: Productive Projects and Teams'
 - isbn: '9780132119177'
@@ -35,6 +35,7 @@ books:
   rating: 5
   title: Working Effectively with Legacy Code
 - isbn: '9780132119160'
+  shelf: management
   rating: 5
   title: 'The Mythical Man-Month: Essays on Software Engineering'
 - isbn: '9780596554873'
@@ -113,7 +114,7 @@ books:
   rating: 4
   title: 'Practical Vim: Edit Text at the Speed of Thought'
 - isbn: '9781942788355'
-  shelf: software
+  shelf: management
   rating: 4
   title: 'Accelerate: Building and Scaling High Performing Technology Organizations'
 - isbn: '9781449321383'
@@ -144,6 +145,7 @@ books:
 - isbn: '9780134498034'
   title: Programming Pearls
 - isbn: '9781556159008'
+  shelf: management
   title: 'Rapid Development: Taming Wild Software Schedules'
 - isbn: '9780132181273'
   title: 'Domain-Driven Design: Tackling Complexity in the Heart of Software'
@@ -233,7 +235,7 @@ books:
   rating: 4
   title: The Hundred-Page Machine Learning Book
 - isbn: '9798985349924'
-  shelf: software
+  shelf: management
   rating: 4
   title: 'Engineers Survival Guide: Advice, tactics, and tricks After a decade of working at Facebook, Snapchat, and Microsoft'
 - isbn: '9780691181622'
@@ -259,10 +261,10 @@ books:
 - isbn: '9780990582946'
   title: Crafting Interpreters
 - isbn: '9781736417911'
-  shelf: software
+  shelf: management
   title: 'Staff Engineer: Leadership Beyond the Management Track'
 - isbn: '9781098118709'
-  shelf: software
+  shelf: management
   title: 'The Staff Engineer''s Path: A Guide for Individual Contributors Navigating Growth and Change'
 - isbn: '9780316380492'
   rating: 5
@@ -272,7 +274,7 @@ books:
   rating: 4
   title: A Philosophy of Software Design
 - isbn: '9780932633422'
-  shelf: software
+  shelf: management
   title: The Psychology of Computer Programming
 - isbn: '9780961392178'
   title: Beautiful Evidence
@@ -490,3 +492,10 @@ books:
 - isbn: '9781439126158'
   rating: 4
   title: 'One Up On Wall Street: How to Use What You Already Know to Make Money in the Market'
+- isbn: '9781732265189'
+  shelf: management
+  title: 'An Elegant Puzzle: Systems of Engineering Management'
+- isbn: '9781491973899'
+  shelf: management
+  rating: 4
+  title: 'The Manager''s Path: A Guide for Tech Leaders Navigating Growth and Change'

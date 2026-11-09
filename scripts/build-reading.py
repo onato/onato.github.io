@@ -22,6 +22,7 @@ CACHE = ROOT / 'data' / 'google-books'
 
 SHELVES = [
     ('software', 'Software engineering'),
+    ('management', 'Engineering management'),
     ('science', 'Science and philosophy'),
     ('other', 'Everything else'),
 ]

@@ -1,0 +1,23 @@
+{
+  "title": "An Elegant Puzzle",
+  "subtitle": "Systems of Engineering Management",
+  "authors": [
+    "Will Larson"
+  ],
+  "publisher": "Stripe Press",
+  "publishedDate": "2019-05-20",
+  "categories": [
+    "Business"
+  ],
+  "industryIdentifiers": [
+    {
+      "type": "ISBN_13",
+      "identifier": "9781732265189"
+    },
+    {
+      "type": "ISBN_10",
+      "identifier": "1732265186"
+    }
+  ],
+  "source": "Open Library; Google Books returned no record for this ISBN"
+}

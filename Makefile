@@ -76,6 +76,7 @@ build-html: dirs
 	@echo "📦 Processing HTML files and assets..."
 	@node scripts/process-html.js index.html $(BUILD_DIR)/index.html
 	@cp favicon.ico $(BUILD_DIR)/favicon.ico 2>/dev/null || true
+	@cp og-image.jpg $(BUILD_DIR)/og-image.jpg
 	@cp CNAME google5cb3545874244528.html $(BUILD_DIR)/
 	@cp CNAME google5cb3545874244528.html $(BUILD_DIR)/
 	@echo "  ✅ HTML files and assets processed"
@@ -89,6 +90,18 @@ build-reading: dirs
 	@size=$$(stat -f%z $(BUILD_DIR)/reading/index.html 2>/dev/null || stat -c%s $(BUILD_DIR)/reading/index.html); \
 	if [ "$$size" -gt 61440 ]; then echo "  ❌ reading/index.html is $$size bytes (exceeds 60KB budget)"; exit 1; fi
 	@echo "  ✅ Reading list generated"
+
+# Re-render the link-preview card (og-image.jpg) from scripts/og-card.html.
+# Needs Google Chrome and ImageMagick; the result is committed, so the build never runs this.
+CHROME = /Applications/Google Chrome.app/Contents/MacOS/Google Chrome
+.PHONY: og-image
+og-image:
+	@"$(CHROME)" --headless=new --hide-scrollbars --force-device-scale-factor=1 \
+		--window-size=1200,630 --use-angle=metal --virtual-time-budget=4000 \
+		--screenshot=$(CURDIR)/og-image.png file://$(CURDIR)/scripts/og-card.html 2>/dev/null
+	@magick og-image.png -strip -sampling-factor 4:4:4 -quality 86 og-image.jpg
+	@rm -f og-image.png
+	@echo "  ✅ og-image.jpg rendered ($$(wc -c < og-image.jpg | tr -d ' ') bytes)"
 
 # Reading list in the source tree for 'make serve' (ignored by git)
 .PHONY: reading

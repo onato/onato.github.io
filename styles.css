@@ -269,6 +269,7 @@ details[open] .detail-content {
     color: black;
     font-weight: 300;
     transform: translateX(-10px);
+    text-shadow: none;
   }
 }
 

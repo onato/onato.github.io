@@ -497,4 +497,5 @@ books:
   title: 'An Elegant Puzzle: Systems of Engineering Management'
 - isbn: '9781491973899'
   shelf: management
+  rating: 4
   title: 'The Manager''s Path: A Guide for Tech Leaders Navigating Growth and Change'

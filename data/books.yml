@@ -495,6 +495,7 @@ books:
 - isbn: '9781732265189'
   shelf: management
   title: 'An Elegant Puzzle: Systems of Engineering Management'
+  display: 'An Elegant Puzzle: Systems of Engineering Management'
 - isbn: '9781491973899'
   shelf: management
   rating: 4

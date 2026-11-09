@@ -3,7 +3,7 @@
 
 Usage: build-reading.py OUTPUT_HTML
 
-Source of truth is data/books.yml (isbn, rating, title, optional shelf override).
+Source of truth is data/books.yml (isbn, rating, title, optional shelf and display overrides).
 Authors and categories come from data/google-books/<isbn>.json and are never invented.
 Books whose ISBN has no cache entry, or whose entry has no author, are listed on stderr.
 """
@@ -79,7 +79,7 @@ def load_books():
         out.append({
             'isbn': isbn,
             'full': full,
-            'title': display_title(full),
+            'title': b.get('display') or display_title(full),
             'author': ', '.join(authors),
             'rating': int(b.get('rating') or 0),
             'shelf': b.get('shelf') or shelf_for(category),

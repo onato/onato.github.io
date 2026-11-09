@@ -169,6 +169,11 @@ def render(books, unresolved):
 <meta property="og:url" content="https://www.onato.com/reading/">
 <meta property="og:title" content="Reading — Stephen Williams">
 <meta property="og:description" content="Stephen Williams's reading list: the software engineering canon, physics and philosophy, rated.">
+<meta property="og:image" content="https://www.onato.com/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Stephen Williams, Software Engineer">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
 <style>{CSS.strip()}</style>
 </head>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<!-- Source of og-image.jpg, the link-preview card. Not published; render it with `make og-image`. -->
+<html lang="en"><head><meta charset="UTF-8">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1200px;height:630px;overflow:hidden}
+body{color:#fff;background:#4a6698;font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',Helvetica,Arial,sans-serif;font-weight:100;font-style:italic;text-transform:uppercase;letter-spacing:.05em;line-height:1.4}
+#fog{position:absolute;inset:0;width:1200px;height:630px;z-index:-1}
+.stack{position:absolute;left:170px;right:60px;top:50%;transform:translateY(-50%)}
+.a{font-size:92px}
+.b{font-size:64px;margin-left:10%;margin-top:-18px}
+.c{position:absolute;right:60px;bottom:44px;font-size:30px;text-transform:none;letter-spacing:.03em}
+</style></head><body>
+<canvas id="fog"></canvas>
+<div class="stack"><div class="a">Stephen Williams</div><div class="b">Software Engineer</div></div>
+<div class="c">onato.com</div>
+<script src="../fog-renderer.js"></script>
+<script>new FogRenderer(document.getElementById('fog'));</script>
+</body></html>

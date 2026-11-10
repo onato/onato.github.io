@@ -265,6 +265,7 @@ books:
   title: 'Staff Engineer: Leadership Beyond the Management Track'
 - isbn: '9781098118709'
   shelf: management
+  rating: 4
   title: 'The Staff Engineer''s Path: A Guide for Individual Contributors Navigating Growth and Change'
 - isbn: '9780316380492'
   rating: 5

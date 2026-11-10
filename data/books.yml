@@ -146,6 +146,7 @@ books:
   title: Programming Pearls
 - isbn: '9781556159008'
   shelf: management
+  rating: 4
   title: 'Rapid Development: Taming Wild Software Schedules'
 - isbn: '9780132181273'
   title: 'Domain-Driven Design: Tackling Complexity in the Heart of Software'
